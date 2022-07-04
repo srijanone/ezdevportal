@@ -1,0 +1,78 @@
+.path-request-form {
+  h2 {
+    @include heading;
+    text-align: left;
+  }
+
+  .select-services,
+  label {
+    @include request-form-label;
+    margin-left: 15px;
+    margin-top: 16px;
+    margin-bottom: 11px;
+
+  }
+
+  textarea,
+  select {
+    border: 1px solid $lightgray;
+  }
+
+  button {
+    @include button-default;
+    width: auto;
+    background: $green;
+
+    &:hover {
+      background: $green;
+    }
+  }
+
+  .form-check-input {
+    margin-right: 16px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+  }
+
+  .idp-service-request-form {
+    position: relative;
+
+    .dropdown-toggle {
+
+      border: 1px solid $lightgray;
+      text-align: left;
+      padding: 0.5rem 1rem;
+      margin-top: 11px;
+      display: block;
+
+      &:after {
+        margin-left: 15px;
+        background: url(../images/down-arrow.png) no-repeat;
+        width: 15px;
+        height: 8px;
+        border: 0;
+        vertical-align: 2px;
+        float: right;
+        margin-top: 8px;
+      }
+    }
+
+    ul {
+      &.dropdown-menu {
+        width: 96%;
+        padding: 0px;
+        border: 0px;
+        transition: border-color.15s ease-in-out, box-shadow .15s ease-in-out;
+      }
+
+      li {
+        line-height: 30px;
+
+        &:hover {
+          background: $green;
+          color: $white;
+        }
+      }
+    }
+  }
+}

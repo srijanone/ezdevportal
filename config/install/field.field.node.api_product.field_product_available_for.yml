@@ -1,0 +1,28 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_product_available_for
+    - node.type.api_product
+    - taxonomy.vocabulary.product_available_for
+id: node.api_product.field_product_available_for
+field_name: field_product_available_for
+entity_type: node
+bundle: api_product
+label: Industry
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      product_available_for: product_available_for
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

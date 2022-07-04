@@ -1,0 +1,38 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.admin-sidebar
+  module:
+    - system
+    - user
+  theme:
+    - ezdevportal_theme
+id: adminsidebar
+theme: ezdevportal_theme
+region: sidebar_first
+weight: -9
+provider: null
+plugin: 'system_menu_block:admin-sidebar'
+settings:
+  id: 'system_menu_block:admin-sidebar'
+  label: 'Admin Sidebar'
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility:
+  user_role:
+    id: user_role
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+    roles:
+      administrator: administrator
+      site_admin: site_admin
+      editor: editor
+  request_path:
+    id: request_path
+    negate: false
+    pages: "/content-management\r\n/content-management/*\r\n/user-list\r\n/api-list\r\n/forum-list\r\n/platform-management\r\n/app-list\r\n/admin/structure/taxonomy\r\n/admin/structure/menu\r\n/webform-submission\r\n/admin/structure/taxonomy/manage/*/overview\r\n/admin/structure/menu/manage/*\r\n/admin/structure/webform/manage/*/submission/*\r\n/admin/reports/google-analytics-reports/summary"

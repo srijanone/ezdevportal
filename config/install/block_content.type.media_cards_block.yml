@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+id: media_cards_block
+label: 'Media Cards Block'
+revision: 0
+description: 'Use this block to add card list of any media types(image and remote video supported)'

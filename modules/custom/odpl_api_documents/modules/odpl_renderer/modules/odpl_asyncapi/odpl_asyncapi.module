@@ -1,0 +1,36 @@
+<?php
+
+/**
+ * @file
+ * Async API module file.
+ */
+
+use Drupal\views\ViewExecutable;
+use Drupal\odpl_api_documents\ApiDocumentInterface;
+
+/**
+ * Implements hook_views_pre_render().
+ */
+function odpl_asyncapi_views_pre_render(ViewExecutable $view) {
+  // Gets the api type of the node and passes the formatter type to the view.
+  // @todo move the code inside the condition incase it throws undefined warning
+  $api_type = isset($view->result[0]->_entity->field_api_type) ?
+    $view->result[0]->_entity->field_api_type->value : '';
+
+  if ($view->storage->id() == 'api_document_formatter' &&
+  isset($view->field['field_document']) &&
+  $api_type == ApiDocumentInterface::API_TYPE[2]) {
+    $view->field['field_document']->options['type'] = $api_type;
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function odpl_asyncapi_theme($existing, $type, $theme, $path) {
+  return [
+    'asyncapi_ui_field_item' => [
+      'variables' => [],
+    ],
+  ];
+}

@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+id: filter_block
+label: 'Filter Block'
+revision: 0
+description: 'Use this block type to add custom filter dropdown on content pages.'

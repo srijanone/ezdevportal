@@ -1,0 +1,124 @@
+<?php
+
+/**
+ * @file
+ * Place your custom preprocessing code in this file.
+ */
+
+use Drupal\file\Entity\File;
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter() for form templates.
+ */
+function ezdevportal_theme_theme_suggestions_form_alter(array &$suggestions, array $variables) {
+  if (!empty($variables['element']['#form_id'])) {
+    $suggestions[] = 'form__' . $variables['element']['#form_id'];
+  }
+}
+
+/**
+ * Implements hook_preprocess_page() for form templates.
+ */
+function ezdevportal_theme_preprocess_page(&$variables) {
+  global $base_url;
+  $fid = theme_get_setting('background_image');
+  if (!empty($fid[0])) {
+    $file = File::load($fid[0]);
+    $variables['background_image'] = $base_url . $file->createFileUrl();
+  }
+}
+
+// Commented the hook since its causing issue for main theme config save logic.
+/**
+ * Implements hook_form_alter() for form templates.
+ */
+/*function ezdevportal_theme_form_system_theme_settings_alter(&$form, &$form_state) {
+// Theme settings.
+$form['background_image'] = [
+'#type' => 'managed_file',
+'#title' => t('Background  image'),
+'#required' => FALSE,
+'#upload_location' => 'public://',
+'#default_value' => theme_get_setting('background_image'),
+'#upload_validators' => [
+'file_validate_extensions' => ['gif png jpg jpeg'],
+],
+];
+$form['actions']['submit']['#submit'][] = 'custom_theme_submit_handler';
+}*/
+
+/**
+ * Implements Custom form submit handler.
+ */
+/*function custom_theme_submit_handler(&$form, $form_state) {
+$fid = $form_state->getValue('background_image');
+if (!empty($fid[0])) {
+$file = File::load($fid[0]);
+$file->setPermanent()->save();
+}
+}*/
+
+/**
+ * Implements hook_theme_suggestions_alter().
+ */
+function ezdevportal_theme_theme_suggestions_alter(array &$suggestions, array $variables, $hook) {
+  $node = \Drupal::routeMatch()->getParameter('node');
+  if (!is_null($node) && in_array($hook, ['layout', 'layout-builder'])) {
+    $suggestions[] = $hook . "__" . $node->bundle() . "__" . $variables['theme_hook_original'];
+  }
+
+  $currentpath = \Drupal::service('path.current')->getpath();
+  $array_currentpath = explode('/', $currentpath);
+  $content_type = end($array_currentpath);
+  $current_user = \Drupal::currentUser();
+
+  if (in_array($hook, ['node_edit_form']) &&
+  in_array($content_type, ['forum', 'issue']) &&
+  in_array('developer', $current_user->getRoles())) {
+    $suggestions[] = $hook . "__" . $content_type;
+  }
+}
+
+/**
+ * Implements hook_theme_suggestions_container_alter().
+ */
+function ezdevportal_theme_theme_suggestions_container_alter(array &$suggestions, array $variables) {
+  $element = $variables['element'];
+  // Special handling for form elements.
+  if (isset($element['#array_parents'])) {
+    $suggestions[] = 'container__has_parent';
+  }
+  else {
+    $suggestions[] = 'container__no_parent';
+  }
+  if (isset($element['#type']) && $element['#type'] != 'container') {
+    $suggestions[] = 'container__' . $element['#type'];
+  }
+  if (isset($element['#type']) && $element['#type'] == 'container' && isset($element['children']['#type'])) {
+    $suggestions[] = 'container__' . $element['children']['#type'];
+  }
+
+  $current_user = \Drupal::currentUser();
+  $roles = $current_user->getRoles();
+  $current_route = \Drupal::routeMatch()->getRouteName();
+
+  if (in_array('developer', $roles) && $current_route = 'entity.developer_app.canonical_by_developer') {
+    if (isset($element['#type']) && $element['#type'] == 'container') {
+      $suggestions[] = 'container__credential';
+    }
+  }
+}
+
+/**
+ * Implements hook_theme_suggestions_input_alter().
+ */
+function ezdevportal_theme_theme_suggestions_input_alter(array &$suggestions, array $variables) {
+  $element = $variables['element'];
+  $current_route = \Drupal::routeMatch()->getRouteName();
+
+  if ($current_route == 'entity.developer_app.analytics_for_developer') {
+    if (isset($element['#type']) && $element['#type'] == 'submit') {
+      $suggestions[] = 'input__submit__app_analytics';
+    }
+  }
+}

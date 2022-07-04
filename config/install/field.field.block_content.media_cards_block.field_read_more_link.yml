@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.media_cards_block
+    - field.storage.block_content.field_read_more_link
+  module:
+    - link
+id: block_content.media_cards_block.field_read_more_link
+field_name: field_read_more_link
+entity_type: block_content
+bundle: media_cards_block
+label: 'Read More Link'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 1
+field_type: link

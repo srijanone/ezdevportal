@@ -1,0 +1,33 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.banner_block
+    - core.entity_view_mode.block_content.inner_api_page
+    - field.field.block_content.banner_block.body
+    - field.field.block_content.banner_block.field_banner_image
+    - field.field.block_content.banner_block.field_title
+  module:
+    - layout_builder
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: block_content.banner_block.inner_api_page
+targetEntityType: block_content
+bundle: banner_block
+mode: inner_api_page
+content:
+  field_banner_image:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: banner_image
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  body: true
+  breadcrumbs: true
+  field_title: true

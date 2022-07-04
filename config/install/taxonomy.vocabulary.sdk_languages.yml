@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 'Sdk Languages'
+vid: sdk_languages
+description: 'List of SDk languages'
+weight: 0

@@ -1,0 +1,467 @@
+.dashboard-menu-item {
+  .add-icon-dashboards {
+    float: right;
+    margin-right: 40px;
+  }
+}
+
+.node--type-landing-page {
+  .layout--twocol-section--25-75 {
+    .view-display-id-issue_block {
+      .bef-exposed-form {
+        margin-top: 0;
+      }
+    }
+  }
+
+  .form-item-field-status-target-id {
+    width: auto;
+    float: right;
+
+    .form-select {
+      border: 1px solid $vilot;
+      border-radius: 10px;
+      padding: 9px 24px;
+    }
+  }
+
+
+
+  .view-issue {
+    .views-row {
+      border-bottom: 1px solid rgba(127, 39, 196, 0.55);
+      padding-top: 20px;
+      padding-bottom: 22px;
+
+      .views-field-field-status {
+
+        position: relative;
+
+        .field-content {
+          position: absolute;
+          right: 10px;
+          top: -72px;
+        }
+
+      }
+    }
+
+    .views-field-title {
+      a {
+        @include request-form-label;
+        margin-bottom: 15px;
+        display: block;
+      }
+    }
+
+    .views-field-body {
+      .field-content {
+        @include card-title;
+        margin-bottom: 25px;
+      }
+    }
+
+    .views-field-created {
+      span {
+        @include card-text;
+      }
+    }
+
+    .views-field-field-status {
+      .field-content {
+        @include request-form-label;
+        text-transform: uppercase;
+      }
+
+    }
+  }
+}
+
+.block-block-content,
+.block-inline-blockbasic {
+  margin-top: 97px;
+
+}
+
+.field--name-field-filter-options {
+  select {
+    border: 1px solid $black;
+    padding: 9px 20px;
+    border-radius: 10px;
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1em;
+    min-width: 250px;
+  }
+
+}
+
+.view-faq {
+  margin-top: 197px;
+}
+
+.accordion-button:focus {
+  box-shadow: none;
+}
+
+.accordion-button:not(.collapsed) {
+  color: inherit;
+  background-color: inherit;
+  box-shadow: none;
+
+  &:after {
+    background: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23212529'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+
+  }
+}
+
+.view-id-forum {
+  .view-content {
+    clear: both;
+  }
+
+  .form-item-taxonomy-forums-target-id {
+    width: auto;
+    float: right;
+
+    .form-select {
+      border: 1px solid $black;
+      border-radius: 10px;
+      padding: 9px 24px;
+    }
+
+  }
+}
+
+.view-forum {
+  .views-field-nothing {
+    border-bottom: 1px solid #b7b7b7;
+
+    .title_fourm {
+      a {
+        @include filters-heading;
+        margin-bottom: 4px;
+      }
+    }
+
+    .user_fourm {
+      @include filter-label;
+      margin-bottom: 34px;
+    }
+
+    .tags {
+      margin-bottom: 8px;
+
+      ul {
+        padding-left: 0;
+
+        li {
+          @include tags;
+          text-transform: uppercase;
+          border: 1px solid #000;
+          display: inline-block;
+          padding: 1px 20px;
+          border-radius: 5px;
+          margin-right: 5px;
+        }
+      }
+    }
+
+    .add-icon-dashboards {
+      float: right;
+    }
+
+    .like_dislike {
+      a {
+        @include border-box;
+      }
+
+      .count {
+        @include request-form-label;
+        color: #6a6a6a;
+
+        &::after {
+          content: " Likes";
+        }
+      }
+    }
+
+    .title_fourm {
+      margin-top: 24px;
+    }
+
+    .flex-like {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 30px;
+
+      .vote-like {
+        a {
+          background: url(../images/like.png) no-repeat 12px 12px;
+
+          &.voted {
+            background: url(../images/like.png) no-repeat 12px 12px !important;
+          }
+        }
+
+        .count {
+          margin-top: 30px;
+          display: block;
+        }
+
+      }
+
+      .comment-count {
+        .img2 {
+          @include border-box;
+          margin-top: 0;
+          margin-left: 14px;
+          background: url(../images/answers.png) no-repeat 13px 14px;
+        }
+
+        img {
+          @include border-box;
+          margin-left: 15px;
+        }
+
+        span {
+          @include request-form-label;
+          color: #6a6a6a;
+          margin-top: 30px;
+          display: block;
+        }
+      }
+
+      .total-count {
+        .img3 {
+          @include border-box;
+          margin-top: 0;
+          background: url(../images/views.png) no-repeat 9px 13px;
+        }
+
+        img {
+          @include border-box;
+        }
+
+        span {
+          @include request-form-label;
+          color: #6a6a6a;
+          margin-top: 30px;
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+.in-progress {
+  color: $inprogress-green;
+}
+
+.resolved {
+  color: $lightgray;
+}
+
+.node--type-forum,
+.node-issue-form,
+.developer-app-add-for-developer-form,
+.node-forum-form {
+
+  input[type=reset] {
+    order: 2;
+    margin-left: 24px;
+    background: $white;
+    color: $black;
+
+  }
+
+  button[type="submit"] {
+    order: 1;
+    margin-left: 15px;
+    background: $black;
+    color: $white;
+  }
+
+}
+
+.block-odpl-apigee-connector {
+  h2 {
+    @include banner-para;
+    margin-bottom: 20px;
+  }
+
+  .appname {
+    @include banner-para;
+    margin-top: 14px;
+  }
+
+  .appcreated {
+    @include card-text;
+  }
+}
+
+.approval-pending-apps {
+  margin-top: 88px;
+}
+
+.apigee-entity--app {
+  h2 {
+    @include head-inner;
+  }
+
+  .use-ajax {
+    float: right;
+  }
+}
+
+#block-developernavigationblock {
+  ul {
+    li {
+      margin-bottom: 27px;
+
+      a {
+        border-bottom: 1px solid $black;
+      }
+    }
+  }
+}
+
+.app-credential {
+  margin-top: 20px;
+}
+
+.node--type-issue,
+.node--type-landing-page {
+  .dashboard-children {
+    padding-left: 0;
+    list-style: none;
+
+    li {
+      margin-bottom: 45px;
+
+      a {
+        @include request-form-label;
+        color: $lightgray;
+
+        &.active {
+          color: $black;
+        }
+      }
+    }
+  }
+}
+
+.field--name-title {
+  @include filters-service-heading;
+  margin-bottom: 14px;
+}
+
+.field--name-created {
+  @include card-text;
+  margin-top: 60px;
+  display: block;
+}
+
+.developer-app-add-for-developer-form {
+  .machine-name-source {
+    border-top-right-radius: 5px !important;
+    border-bottom-right-radius: 5px !important;
+  }
+
+  .input-group-append {
+    display: none;
+  }
+
+  .form-check {
+    display: inline-block;
+    margin-right: 15px;
+
+    .form-check-label {
+      padding-left: 3px;
+    }
+
+  }
+}
+
+.layout--twocol-section--25-75 {
+  .layout__region--first {
+    .block-views-blockforum-forum-topic-list {
+      h2 {
+        @include card-title;
+        text-transform: inherit;
+      }
+    }
+  }
+}
+
+.view-id-forum {
+  .views-field-title {
+    a {
+      @include card-text;
+    }
+  }
+}
+
+.block-field-blocknodeforumbody {
+  .field--name-body {
+    p {
+      @include request-form-label;
+    }
+  }
+}
+
+.field--name-field-forum-tags {
+  margin-top: 20px;
+  margin-bottom: 10px;
+
+  .field__item {
+    display: inline-block;
+
+    a {
+      @include tags;
+      text-transform: uppercase;
+      border: 1px solid #000;
+      display: inline-block;
+      padding: 1px 20px;
+      border-radius: 5px;
+      margin-right: 5px;
+    }
+  }
+}
+
+.block-extra-field-blocknodeforumlike-and-dislike {
+  margin-top: 20px;
+}
+
+.block-extra-field-blocknodeforumlinks {
+  .comment-add {
+    margin-right: 20px;
+
+  }
+
+  .statistics-counter {
+    margin-top: 10px;
+  }
+}
+
+.notification-icon {
+  &:after {
+    background: $black;
+  }
+}
+
+.notify-drop {
+  li {
+    &.unread {
+      border-left: 4px solid $black;
+    }
+  }
+}
+
+.sidebar_first {
+  ul {
+    list-style: none;
+  }
+}

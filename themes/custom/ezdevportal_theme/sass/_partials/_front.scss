@@ -1,0 +1,212 @@
+.get-started {
+  padding-top: 1px;
+
+  .card {
+    width: 205px;
+    height: 200px;
+    margin: 0 auto;
+
+    .card-body {
+      padding: 0;
+    }
+
+    .card-title {
+      padding: 0;
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    img {
+      margin-top: 40px;
+      width: 42px;
+      height: 42px;
+      margin-bottom: 12px;
+    }
+  }
+
+  h2 {
+    &.title {
+      margin-top: 42px;
+    }
+  }
+}
+
+.slick-slider {
+  margin: 0 7%;
+}
+
+.slick-slide {
+  img {
+    margin-top: 65px;
+    height: 422px;
+  }
+}
+
+.text-banner-left {
+  margin-top: 115px;
+}
+
+.slidehead1 {
+  font-size: 48px;
+  line-height: 50px;
+}
+
+.slidehead2 {
+  font-size: 24px;
+  line-height: 29px;
+  margin-top: 50px;
+}
+
+.slidedesc {
+  @include banner-para;
+}
+
+.slidecta {
+  @include banner-link;
+  text-decoration: none;
+  text-transform: uppercase;
+  padding-left: 50px;
+  padding-top: 10px;
+  background: url('../images/banner-arrow.png') left no-repeat;
+  display: block;
+  height: 44px;
+
+}
+
+.slick-dots {
+  list-style: none;
+  margin: 30px 0 60px 0;
+  display: inline-block;
+
+  li {
+    display: inline-block;
+    margin-right: 10px;
+
+    button {
+      border: none;
+      font-size: 0;
+      padding: 7px;
+      background: #A69D9D;
+      border-radius: 50%;
+
+    }
+
+    &.slick-active {
+      button {
+        background: #333;
+        padding: 10px;
+      }
+    }
+  }
+}
+
+.get-started-mb {
+  margin-bottom: 100px;
+}
+
+.use-case {
+  .card {
+    img {
+      height: 82px;
+      width: 82px;
+      margin-top: 50px;
+      margin-bottom: 34px;
+    }
+  }
+}
+
+.blog-container {
+  .text-lg-right {
+    padding-left: 10%;
+  }
+
+  .image-banner-left {
+    img {
+      margin-top: 125px;
+      margin-bottom: 120px;
+    }
+
+  }
+
+  .blog-date {
+    @include card-text;
+  }
+
+  .blog-title {
+    @include blog-title;
+  }
+
+  .blog-text {
+    @include filters-service-heading;
+    margin-top: 14px;
+  }
+
+  .top-trend {
+    @include card-text;
+    text-align: right;
+    background: url('../images/trending_up.png') right no-repeat;
+    padding-right: 35px;
+    margin-right: 25px;
+  }
+}
+
+.blog-footer {
+  a {
+    margin-top: 50px;
+    margin-bottom: 66px;
+    @include explore-all-link;
+
+    &:after {
+      content: "";
+      width: 39px;
+      height: 16px;
+      background: url(../images/right-arrow.png) no-repeat 3px 4px;
+      background-size: 24px;
+      padding: 0px 14px;
+      margin-left: 12px;
+    }
+  }
+}
+
+
+
+details[open] {
+  summary {
+    &:after {
+      content: "";
+      background: url(../images/down-arrow.png) no-repeat 0px 3px;
+    }
+  }
+}
+
+details {
+  summary {
+    &:after {
+      content: "";
+      background: url(../images/right-arrow-breadcrumb.png) no-repeat 0px 0px;
+      width: 14px;
+      height: 11px;
+      display: inline-block;
+      margin-left: 35px;
+    }
+  }
+
+}
+
+.social-media-links--platforms {
+  li {
+    a {
+
+
+      span {
+        color: $white;
+        background: $black;
+        padding: 5px;
+        border-radius: 50%;
+        width: 25px;
+        height: 25px;
+
+      }
+    }
+  }
+}

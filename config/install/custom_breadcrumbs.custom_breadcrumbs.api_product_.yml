@@ -1,0 +1,14 @@
+langcode: en
+status: true
+dependencies: {  }
+id: api_product_
+label: 'Api Product '
+description: ''
+entityType: _none
+entityBundle: _none
+language: und
+breadcrumbPaths: "/products\r\n/docs"
+breadcrumbTitles: "API Product\r\nAll APIs"
+type: '2'
+pathPattern: '/api-document/*'
+extraCacheContexts: ''

@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+id: content_list_block
+label: 'Content List Block'
+revision: 0
+description: 'Use this block type to create list view of different content types.'

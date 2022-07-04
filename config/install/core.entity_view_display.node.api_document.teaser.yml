@@ -1,0 +1,123 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.base_field_override.node.api_document.title
+    - core.entity_view_mode.node.teaser
+    - field.field.node.api_document.body
+    - field.field.node.api_document.field_api_display
+    - field.field.node.api_document.field_api_type
+    - field.field.node.api_document.field_banner_image
+    - field.field.node.api_document.field_document
+    - field.field.node.api_document.field_environment
+    - field.field.node.api_document.field_format
+    - field.field.node.api_document.field_listing_image
+    - field.field.node.api_document.field_sdk_language
+    - field.field.node.api_document.layout_builder__layout
+    - node.type.api_document
+  module:
+    - layout_builder
+    - layout_discovery
+    - text
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: true
+    allow_custom: false
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components:
+          27606083-e696-40a3-9162-2f58dc13c087:
+            uuid: 27606083-e696-40a3-9162-2f58dc13c087
+            region: content
+            configuration:
+              id: 'field_block:node:api_document:title'
+              label: Title
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: string
+                label: hidden
+                settings:
+                  link_to_entity: false
+                third_party_settings: {  }
+            weight: 1
+            additional: {  }
+          32186d36-5c0e-49c9-83b6-95071a5aae00:
+            uuid: 32186d36-5c0e-49c9-83b6-95071a5aae00
+            region: content
+            configuration:
+              id: 'field_block:node:api_document:body'
+              label: 'API Description'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: text_trimmed
+                label: hidden
+                settings:
+                  trim_length: 600
+                third_party_settings: {  }
+            weight: 2
+            additional: {  }
+          ef908582-5429-4897-9f7a-48732436de17:
+            uuid: ef908582-5429-4897-9f7a-48732436de17
+            region: content
+            configuration:
+              id: 'field_block:node:api_document:field_listing_image'
+              label: 'API Image'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: media_thumbnail
+                label: hidden
+                settings:
+                  image_link: ''
+                  image_style: ''
+                third_party_settings: {  }
+            weight: 0
+            additional: {  }
+        third_party_settings: {  }
+id: node.api_document.teaser
+targetEntityType: node
+bundle: api_document
+mode: teaser
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_listing_image:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  breadcrumbs: true
+  field_api_display: true
+  field_api_type: true
+  field_banner_image: true
+  field_document: true
+  field_environment: true
+  field_format: true
+  field_sdk_language: true
+  layout_builder__layout: true
+  links: true

@@ -1,0 +1,15 @@
+{#
+/**
+ * @file
+ */
+#}
+<div class="developer-navigation-main">
+    <ul class="dashboard-children">
+    {% for key,value in navigationData %}
+      <li class="developer-menu-item"><a href="{{ value.path }}" class=" {{ value.class}}">
+        {{ value.text }}
+      </a>
+      </li>
+    {% endfor %}
+  </ul>
+</div>

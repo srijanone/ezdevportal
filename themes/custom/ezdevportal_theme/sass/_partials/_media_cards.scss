@@ -1,0 +1,58 @@
+.media-card {
+  .m-card {
+    img {
+      width: 100%;
+      height: auto;
+      box-shadow: $dropshadow-dd;
+      min-height: 200px;
+    }
+  }
+
+  .media-oembed-content {
+    width: 100%;
+    height: auto;
+    box-shadow: $dropshadow-dd;
+    min-height: 200px;
+  }
+}
+
+.video-collection {
+    .blk{
+        box-shadow: $dropshadow-dd;
+    }
+  .media-oembed-content {
+    width: 100%;
+   }
+
+  .field--name-field-video-caption {
+    @include explore-link;
+    font-size: $basic-font-size;
+    margin-bottom: 28px;
+    margin-left: 18px;
+  }
+
+  .field--name-field-video-description {
+    margin-left: 18px;
+    p {
+      @include request-form-label;
+    }
+    margin-bottom: 40px;
+  }
+  .field--name-field-video-tags{
+    margin-left: 18px;
+    .field__item{
+        display: inline-block;
+        margin-right: 10px;
+        margin-bottom: 20px;
+        a{
+            @include card-title;
+            font-size: $basic-font-small-size;
+            text-transform: uppercase;
+            border: 1px solid $black;
+            padding: 6px 25px;
+            border-radius: 10px;
+            
+        }
+    }
+  }
+}

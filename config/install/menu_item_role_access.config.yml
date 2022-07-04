@@ -1,0 +1,2 @@
+overwrite_internal_link_target_access: true
+inherit_parent_access: true

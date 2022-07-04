@@ -1,0 +1,202 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.base_field_override.node.issue.title
+    - core.entity_view_mode.node.full
+    - field.field.node.issue.body
+    - field.field.node.issue.field_issue_image
+    - field.field.node.issue.field_status
+    - field.field.node.issue.field_type
+    - field.field.node.issue.layout_builder__layout
+    - node.type.issue
+  module:
+    - layout_builder
+    - layout_discovery
+    - odpl_base
+    - odpl_dashboard
+    - text
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: true
+    allow_custom: true
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+          context_mapping: {  }
+        components:
+          1e466230-bbc7-4fc9-a2cc-b53acffa25f2:
+            uuid: 1e466230-bbc7-4fc9-a2cc-b53acffa25f2
+            region: content
+            configuration:
+              id: banner_content_block
+              label: 'Banner Content Block'
+              label_display: '0'
+              provider: odpl_product
+              context_mapping: {  }
+              banner_title: ''
+              banner_text: ''
+              banner_image: {  }
+            weight: 0
+            additional: {  }
+        third_party_settings: {  }
+      -
+        layout_id: layout_threecol_section
+        layout_settings:
+          label: ''
+          column_widths: 25-50-25
+          context_mapping: {  }
+        components:
+          fd6eddeb-b556-439b-8686-cb3e020e66eb:
+            uuid: fd6eddeb-b556-439b-8686-cb3e020e66eb
+            region: first
+            configuration:
+              id: dashboard_navigation_block
+              label: 'Dashboard Navigation Block'
+              label_display: '0'
+              provider: odpl_dashboard
+              context_mapping: {  }
+              dashboard_sidebar_navigation:
+                -
+                  text: 'My Applications'
+                  path: '/dashboard?view=app'
+                  add_icon_path: /node/add/issue
+                  type: Applications
+                -
+                  text: Support
+                  path: '/dashboard?view=support'
+                  add_icon_path: /node/add/issue
+                  type: Support
+                -
+                  text: Forum
+                  path: '/dashboard?view=forum'
+                  add_icon_path: /node/add/forum
+                  type: Forum
+            weight: 0
+            additional: {  }
+          bc234f20-d756-41c2-b327-2ac0d76f6b04:
+            uuid: bc234f20-d756-41c2-b327-2ac0d76f6b04
+            region: second
+            configuration:
+              id: 'field_block:node:issue:created'
+              label: 'Authored on'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: timestamp
+                label: hidden
+                settings:
+                  date_format: medium
+                  custom_date_format: ''
+                  timezone: ''
+                third_party_settings: {  }
+            weight: 2
+            additional: {  }
+          831b4191-f102-47f9-9d15-e47660f4c8e1:
+            uuid: 831b4191-f102-47f9-9d15-e47660f4c8e1
+            region: third
+            configuration:
+              id: 'field_block:node:issue:field_status'
+              label: 'Issue Status'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: entity_reference_label
+                label: hidden
+                settings:
+                  link: false
+                third_party_settings: {  }
+            weight: 0
+            additional: {  }
+          a833e006-1932-4298-8db9-910dd63e5600:
+            uuid: a833e006-1932-4298-8db9-910dd63e5600
+            region: second
+            configuration:
+              id: 'field_block:node:issue:title'
+              label: Title
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: string
+                label: hidden
+                settings:
+                  link_to_entity: false
+                third_party_settings: {  }
+            weight: 0
+            additional: {  }
+          dc5ebcb8-5100-4267-b879-e62dc45b3015:
+            uuid: dc5ebcb8-5100-4267-b879-e62dc45b3015
+            region: second
+            configuration:
+              id: 'field_block:node:issue:body'
+              label: 'Issue Description'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: text_default
+                label: hidden
+                settings: {  }
+                third_party_settings: {  }
+            weight: 1
+            additional: {  }
+        third_party_settings: {  }
+id: node.issue.full
+targetEntityType: node
+bundle: issue
+mode: full
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_issue_image:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 104
+    region: content
+  field_status:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  field_type:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  breadcrumbs: true
+  layout_builder__layout: true

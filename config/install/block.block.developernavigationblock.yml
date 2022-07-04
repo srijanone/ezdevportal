@@ -1,0 +1,55 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - odpl_dashboard
+    - system
+  theme:
+    - ezdevportal_theme
+id: developernavigationblock
+theme: ezdevportal_theme
+region: sidebar_first
+weight: 0
+provider: null
+plugin: developer_navigation_block
+settings:
+  id: developer_navigation_block
+  label: 'Account sidebar menu'
+  label_display: '0'
+  provider: odpl_dashboard
+  dashboard_sidebar_navigation:
+    -
+      text: 'Go to your Apps'
+      path: /dashboard
+      visibility:
+        developer: developer
+        siteadmin: 0
+    -
+      text: 'Get Started'
+      path: /quick-guide
+      visibility:
+        developer: developer
+        siteadmin: 0
+    -
+      text: FAQs
+      path: /faqs
+      visibility:
+        developer: developer
+        siteadmin: 0
+    -
+      text: 'ACCOUNT SETTINGS'
+      path: ''
+      visibility:
+        siteadmin: siteadmin
+        developer: 0
+    -
+      text: 'VIEW SITE'
+      path: /home
+      visibility:
+        siteadmin: siteadmin
+        developer: 0
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: "/user/*\r\n/user/*/edit"

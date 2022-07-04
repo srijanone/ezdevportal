@@ -1,0 +1,28 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_sdk_language
+    - node.type.api_document
+    - taxonomy.vocabulary.sdk_languages
+id: node.api_document.field_sdk_language
+field_name: field_sdk_language
+entity_type: node
+bundle: api_document
+label: 'SDK Language'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      sdk_languages: sdk_languages
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

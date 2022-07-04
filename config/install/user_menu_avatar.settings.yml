@@ -1,0 +1,18 @@
+langcode: en
+link_text: 'My account'
+custom_anonymous_text: ''
+dependencies:
+  module:
+    - user_menu_avatar
+  enforced:
+    module:
+      - user_menu_avatar
+avatar_shape: circle
+avatar_size: '50'
+avatar_image_field: user_picture
+show_menu_avatar: 'yes'
+show_user_name: 'no'
+avatar_custom_name_field: ''
+show_anonymous_avatar: 'no'
+anonymous_user_avatar: {  }
+show_anonymous_name: 'no'

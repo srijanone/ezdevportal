@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - odpl_notification
+  theme:
+    - ezdevportal_theme
+id: odplnotificationwidgetblock
+theme: ezdevportal_theme
+region: primary_menu
+weight: -12
+provider: null
+plugin: odpl_notification_widget_block
+settings:
+  id: odpl_notification_widget_block
+  label: 'ODPL Notification widget block'
+  label_display: '0'
+  provider: odpl_notification
+  block_notification_type: '0'
+  block_notification_logs_display: 1
+visibility: {  }

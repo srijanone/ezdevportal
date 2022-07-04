@@ -1,0 +1,49 @@
+{#
+/**
+ * @file
+ * Theme implementation for FYI notification.
+ */
+#}
+
+<ul class="nav navbar-nav navbar-right d-notification">
+  <li class="dropdown">
+    <a href="#notifications-panel" class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+      {% if unread > 0 %}
+        <i data-count="{{ unread }}" id="notificationcount" class="glyphicon glyphicon-bell notification-icon"></i>
+      {% else %}
+        <i class="glyphicon glyphicon-bell notification-icon-read"></i>
+      {% endif %}
+    </a>
+    <ul class="dropdown-menu notify-drop">
+      <div class="notify-drop-title fyi-notification">
+        {% if unread > 1 %}
+          {% trans %} You have {{ unread }} unread notifications {% endtrans %}
+        {% elseif unread > 0 %}
+          {% trans %} You have {{ unread }} unread notification {% endtrans %}
+        {% endif %}
+        {% if unread == 0 %}
+          {% trans %} You have no unread notifications {% endtrans %}
+        {% endif %}
+      </div>
+      <!-- end notify title -->
+      <!-- notify content -->
+      <div class="drop-content">
+      {% set today = now|date('D d M y') %}
+        {% for date, notifications in notification_list %}
+            <span class="created-date">{{ date == today ? 'Today' : date }}</span>
+            {% for notification in notifications %}
+            <li data-id="{{  notification.id }}" data-nas-id = "{{ notifications.nas_id }}" data-read-status = "{{ notification.status ? 'read' : 'unread' }}" class="notification-items {{ notification.status ? 'read' : 'unread' }}">
+              <i class="fa fa-dot-circle-o" aria-hidden="true"></i>
+              <span class="notification-msg">{{ notification.message | raw }}</span>
+              <span class="glyphicon glyphicon-trash notification-remove"></span>
+              <span class="timeAgo">{{ notification.timeAgo }}</span>
+            </li>
+         {% endfor %}
+        {% endfor %}
+      </div>
+      {% if total > 0 %}
+        <span class="clear-all-notification" data-uid="{{ uid }}" data-notification-type = "{{ notification_type }}">Clear All</span>
+      {% endif %}
+    </ul>
+  </li>
+</ul>

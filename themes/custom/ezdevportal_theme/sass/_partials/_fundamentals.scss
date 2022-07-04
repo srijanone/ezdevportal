@@ -1,0 +1,78 @@
+/* _fundamentals.scss */
+
+/* Variables */
+
+$black: #333333;
+$white: #FFFFFF;
+$primary: #352F2F;
+$green: #00461C;
+$lightgreen:#00461C4D;
+$thickgreen:#004813;
+$select-box-green:#4B8C49;
+$lightgray: #B7B7B7;
+$vilot:#7F27C4;
+$lightgrayborder: #21212114;
+$lightgrayhover:#87848EBF;
+$dropshadow:#00000014;
+$dropshadow-dd: 0px 4px 16px 0px #0000001A;
+$searchcolor:#9E8E8E;
+$textbox-bg:#F0F0F0;
+$lighest-grey:#A8A8A8;
+$blue:#4D83E4;
+$inprogress-green:#37A825;
+$light-blue: #EAF1FF;
+$headingfont: 'Open Sans';
+$bodyfont: 'Open Sans';
+$secret-bg:#C4C4C459;
+$basicgreen:#48CB19;
+/* Card */
+$card_frontend_color: #61AFFE26;
+$card_frontend_border_color: #61AFFE;
+$card_backend_color: #49CC9026;
+$card_backend_border_color: #49CC90;
+$basic-font-size-10:0.625rem;/*10px*/
+$basic-font-xtra-small-size:0.75rem;/*12px*/
+$basic-font-size-13: 0.8125rem;/*13px*/
+$basic-font-small-size:0.875rem;/*14px*/
+$basic-font-size:1rem;/*16px*/
+$basic-font-size-18:1.125rem;/*18px*/
+$basic-font-size-20:1.25rem;/*20px*/
+$basic-font-size-22:1.375rem;/*22px*/
+$basic-font-size-24:1.5rem;/*24px*/
+$basic-font-size-26:1.625rem;/*26px*/
+$basic-font-size-30:1.875rem;/*30px*/
+
+$basic-font-size-48:3rem;/*48px*/
+/* font-weight*/
+$font-weight-normal:normal;
+$font-weight-300:300;
+$font-weight-400:400;
+$font-weight-500:500;
+$font-weight-600:600;
+$font-weight-700:700;
+/*line height*/
+$line-height-13:13px;
+$line-height-16:16px;
+$line-height-18:18px;
+$line-height-19:19px;
+$line-height-20:20px;
+$line-height-21:21px;
+$line-height-22:22px;
+$line-height-24:24px;
+$line-height-40:40px;
+$line-height-50:50px;
+$line-height-25:25px;
+$line-height-28:28px;
+$line-height-32:32px;
+$line-height-35:35px;
+$line-height-66:66px;
+/* Font Awesome codes */
+$fa-free:"Font Awesome 5 Free";
+$fa: "FontAwesome";
+$fa_search: "\f002";
+$fa_sliders_h: "\f1de";
+$fa_angle_right: "\f105";
+$fa_angle_down: "\f107";
+$fa_long_arrow_alt_right: "\f30b";
+
+

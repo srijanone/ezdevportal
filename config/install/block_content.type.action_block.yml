@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+id: action_block
+label: 'Action Block'
+revision: 0
+description: 'Use this block type to create global subscribe and support blocks.'

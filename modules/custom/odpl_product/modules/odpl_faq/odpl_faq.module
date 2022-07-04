@@ -1,0 +1,22 @@
+<?php
+
+/**
+ * @file
+ * FAQ module.
+ */
+
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\odpl_product\ProductHelper;
+
+/**
+ * Implements hook_entity_presave().
+ */
+function odpl_faq_entity_presave(EntityInterface $entity) {
+  if ($entity->getEntityType()->id() !== 'node') {
+    return;
+  }
+  if ($entity->bundle() == 'faq') {
+    $faq = new ProductHelper();
+    $entity->title->value = $faq->getTrimText($entity->toArray()['body'][0]['value']);
+  }
+}

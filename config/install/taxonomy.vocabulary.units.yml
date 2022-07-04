@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+name: Units
+vid: units
+description: 'Product Attribute Units'
+weight: 0

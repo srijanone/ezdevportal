@@ -1,0 +1,95 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/block\/25?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/block_content\/basic"
+        }
+    },
+    "id": [
+        {
+            "value": 25
+        }
+    ],
+    "uuid": [
+        {
+            "value": "d751c8f7-0a71-49b0-bff4-2d79767f1065"
+        }
+    ],
+    "revision_id": [
+        {
+            "value": 25
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "basic"
+        }
+    ],
+    "revision_created": [
+        {
+            "value": "2021-11-23T12:31:02+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "status": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "info": [
+        {
+            "value": "Docs description",
+            "lang": "en"
+        }
+    ],
+    "changed": [
+        {
+            "value": "2021-11-23T12:31:02+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "reusable": [
+        {
+            "value": false
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "revision_translation_affected": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "metatag": [
+        {
+            "value": {
+                "canonical_url": "http:\/\/default\/home",
+                "title": "| ODP"
+            }
+        }
+    ],
+    "body": [
+        {
+            "value": "<p><strong>All APIs<\/strong><\/p>\r\n",
+            "format": "basic_html",
+            "processed": "<p><strong>All APIs<\/strong><\/p>",
+            "summary": "",
+            "lang": "en"
+        }
+    ]
+}

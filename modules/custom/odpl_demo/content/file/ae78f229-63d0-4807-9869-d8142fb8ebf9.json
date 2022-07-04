@@ -1,0 +1,92 @@
+{
+    "_links": {
+        "self": {
+            "href": ""
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/file\/file\/uid": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json"
+            }
+        ]
+    },
+    "fid": [
+        {
+            "value": 59
+        }
+    ],
+    "uuid": [
+        {
+            "value": "ae78f229-63d0-4807-9869-d8142fb8ebf9"
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/file\/file\/uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "3f6114f4-7508-4d03-a8d9-d921300515a8"
+                    }
+                ]
+            }
+        ]
+    },
+    "filename": [
+        {
+            "value": "Vector (1).png"
+        }
+    ],
+    "uri": [
+        {
+            "value": "public:\/\/2022-02\/Vector (1)_0.png",
+            "url": "\/sites\/default\/files\/2022-02\/Vector%20%281%29_0.png"
+        }
+    ],
+    "filemime": [
+        {
+            "value": "image\/png"
+        }
+    ],
+    "filesize": [
+        {
+            "value": 2215
+        }
+    ],
+    "status": [
+        {
+            "value": true
+        }
+    ],
+    "created": [
+        {
+            "value": "2022-02-08T09:28:04+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "changed": [
+        {
+            "value": "2022-02-08T09:28:26+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "data": [
+        {
+            "value": "iVBORw0KGgoAAAANSUhEUgAAAEQAAABFCAYAAADzT0AXAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAg8SURBVHgB7VtdUttIEO4ZY5EKhHVOEFGbv7eEEwAnCDlBTNXCpmofgBMAJwi85W8Lc4LACXBOEO\/bbsgW2hPERTZVQcbq7ZZlI41G8kjyD7j2q3JhD\/qbT909X\/fMCBgh7Eq1Um6XV0DIJwLRRgG2AKiEj0GApkBwUAjHQ\/zYbrkN50fNgRFBwJDBJFietYGIS0KIJcgBIqkhwTu8cC+Phk3O0Ai5P\/sLE7Cdl4REoKi5rYvdYREzcEIeV6o2tq1X5A4rMEwMiZiBEvJobm2DzHuHLlvpc6iDKOpC4D\/kSk74H2RRNvnIE3oym34+7XOdJnVg96\/zt3swIAyEEI4T023rIM0qqON1KfD4Qs7WnOZeEwxgVzYpCH9fESCeQZrFsbWULracZs3oumkoTAi7iOdZJ\/TV1h5AD4uet3\/6\/V0DCuBx5SXdx9uhry8SDnFc110u6kKFCEkjgy0CPNgqSkT8nqnEFCYlNyFpZNBFtwbp1zrcn1vflIDbmnhViBQJOdH2rA8QIwOb9PaWh00G4wvdQ8rSAn11lH\/ZZct\/tlzIRcjDufVtER8B6M2UFr78+74OI8KfzdeOlHIZFFL42R7Nrb+CHMjsMiy46CFOoq3YxDYsDzpemCKIKzH3ZWvN+oIyWwiRcaC2IRYLnvatl\/aDmbV+miMRbCnYxudqOz8rSwLIgEyEsKuA8hYQcP\/027sa5ARf07K8M1ESn\/KaOYNfiEfBXGm2KY\/ahAzIaiFV5bfTkjM7kBM\/31lnsbXT\/U0qd3P+1m\/3ICc40LICVpo3sliJMSEP7qxVQbUOxF1T1amCh+2SgJhFlK3WKhQAYntXaapMe1YVDGFMCGeuSpOT11X6qNsNKAAOoqqVUF3lmen5RoQEAc8Ot7F1QA48mKk+TZX69EZ5JIMCUK2ESxCm1zQihAJeLLFqtUp1yAjOhkWpnEZG535xa8yEzlCLEVemEWfJ5FwjQsgEF5WWY+fHawcMwW+HYtAJgtjTSW36HIYbsrzRJKByTbLoRZPzUgnpdoTqFkvhdkrH62CA7vks5HSVMy4NuvL2givdTc0bPYAC8NCrh3\/z\/flZgsEhEVqlykGv3S4fJJX\/PPC2Lt2po7CV+AXkVtkmiineyEUhvJW0QpGvX87f9TQC6ZEd+qO6yu7n87c7kANBLfcr6G9+5LbcLV0CGCOEg17Hz4Xx2J0RDknqVVVSdzpQPlPuSykB5k4JHs6tfU3ph69u1WtHXGa4ZPguscsuossvuNrVRk\/VIBUK6B+yyu8uyMLTNJJN1z5RU4YeIewmwyCDC0WCXMyVM\/Ns\/mlC7u9vvx+xOSvNtkXlScgBzxNOn0OY8BP7VtXuNsirk60YGdwZGhn2o9fAfsqUC8i1Dgm375J4o\/rI+z1TReuWXLYSJ9JI9dQieU4IhxppXymXyz3CfUISZHmdOyMUAiizbdCbFq4r5\/lDfrjQ\/c7t9Jk\/\/fZmNQsJYbDr6DJXznOC5LIISF2\/WVatMBiBqvx9KmiIyXISXqk5RRYdkhUc6OgBV+m5VFfZoXabXlShfIetkEagiPoOOKjJQADZ4RP8pG2IHTZBkCfF0gN68CpZylnY77OCrZBHOqXZ9otfQsZkuVOkvjFIBBpElzPZlmX1FVlp0Ml75oIK1\/JJ5Eg0U6GjQhop7FIP7\/x6kNdaVHnPM4akkNGOHnZ5DNcMTArXRyFeYafXilWylrNcxNAAEbkUTaNKGjXscKOHovB04DDAJq6rsPcQIsY0MVTnlQl27nmZcYCLyTysg96FOiBiOJnkwEv5VObCtRRCmdPg2fdrDnYh6jQTc5hymN1PdaNA9f9NGZO3AjKzOg4E1lI1ICYRJTEVKS2SCzXIQvBjuJFqHS\/yJlPjgIYYx\/zsaJ2HOv8HWUi0kEKoZJ3LuA7oEsMxhkekTg6WnHdp0xUPj6SuSg08l1FACY4b3KfT8zebiFJbR\/Eze0264o9k\/E03l8Ez6DfJdUzBfdKtXOjOIviE6KyEZ9DJdT5RKM49k3b9IO5xn2IrFyj77aYrPR1SKol4HYJZpHEdJgZ+X2yl0XFbsjcn3CMkaa3FTUY8LVGBTarjLIcz+4hSnTRS1LREgb\/ARy1zxKQ7k0LzJLxUKZfYuS5IXW\/Cyzip2K2r+WhzGS6gJKpAEi9wEyDjipvLoqxRPlOJM6m8OZVySd9a6E+VREyd7vCCVW1LzuzBDYAQctGvePSADa4R9ztvCgwQDEk1uFHwZw6vfiaINBU3Kv03RUeWRzNdD9tGMXEiCUmS5QanTh4huqSNHGff9PyJIyRuHdi8cOWR6fkTRYhu2ShRtJ9ljmliCFGXeAYgkXk7k0yYCEI6SzxRs8I6+7JRIx0yLPgbFWXpmb9lFajgK2QDvfZxlvXpoSWeynbXfCusBYwBwWqhV3T7qvaAlCVPYXQW+Oi2qUB3uiIzxuIy5c5alGriAQJWeO42rWLXWeJJBSxdfcOVfSV6EkbuMsFIYDLVYU97Fh8bWdDfXRBIReQlzTmOWt\/IipG7DM+oQeStYhNBHgqOIcBLsKOSm0oRdzn77sSK6e2g6qVDYTIYIyVEt\/mIVx51O6HdnMS7OsGz03eIe4eunN3MuxEhjHETEgt+j35aP+tT6QoBmzSxNtCNzCMNqiK+ssAOz\/\/42+RNyfCrXjPzg97wOFILSVic67SxEzilAN3mxhBoJg7lEafyw9rsOI6gWoPk3dla5NkmnxcjH3Z5oT9NFvHOBDv9SN4DjM8vp2YbwyYhjLEo1aRtpVcY37bXsRDSBRdzaDjlLWXduOHQ55Az1FFaxf9IwX8M3Uw03pwklQAAAABJRU5ErkJggg=="
+        }
+    ]
+}

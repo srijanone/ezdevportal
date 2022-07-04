@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+id: admin-sidebar
+label: 'Admin Sidebar'
+description: 'Sidebar navigation for admin role'
+locked: false

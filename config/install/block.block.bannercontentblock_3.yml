@@ -1,0 +1,37 @@
+langcode: en
+status: false
+dependencies:
+  module:
+    - odpl_base
+    - system
+    - user
+  theme:
+    - ezdevportal_theme
+id: bannercontentblock_3
+theme: ezdevportal_theme
+region: featured_top
+weight: -12
+provider: null
+plugin: banner_content_block
+settings:
+  id: banner_content_block
+  label: 'Admin Banner Block'
+  label_display: '0'
+  provider: odpl_base
+  banner_title: ''
+  banner_text: ''
+  banner_height: 307px
+  banner_image: {  }
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: "/content-management\r\n/content-management/*\r\n/api-list\r\n/user-list\r\n/forum-list\r\n/app-list\r\n/platform-management\r\n/admin/structure/taxonomy\r\n/admin/structure/menu\r\n/webform-submission\r\n/admin/structure/taxonomy/*\r\n/admin/structure/menu/*\r\n/node/*/edit\r\n/node/add/*\r\n/node/*/delete\r\n/user/*/edit\r\n/media/*/delete\r\n/admin/config/apigee-edge/*\r\n/admin/config/apigee-monetization\r\n/admin/config/apigee-monetization/*\r\n/admin/structure/webform/manage/*/submission/*\r\n/node/*/layout\r\n/admin/reports/google-analytics-reports/summary\r\n/taxonomy/term/*/edit"
+  user_role:
+    id: user_role
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+    roles:
+      site_admin: site_admin
+      editor: editor

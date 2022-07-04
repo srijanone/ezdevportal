@@ -1,0 +1,30 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.filter_block
+    - field.field.block_content.filter_block.field_filter_options
+  module:
+    - link
+id: block_content.filter_block.default
+targetEntityType: block_content
+bundle: filter_block
+mode: default
+content:
+  field_filter_options:
+    weight: 26
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  info:
+    type: string_textfield
+    weight: -5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden: {  }

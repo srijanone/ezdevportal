@@ -1,0 +1,14 @@
+langcode: en
+status: true
+dependencies: {  }
+id: blog_breadcrumb
+label: 'Blog Breadcrumb'
+description: ''
+entityType: _none
+entityBundle: _none
+language: und
+breadcrumbPaths: /all-blogs
+breadcrumbTitles: 'All Blogs'
+type: '2'
+pathPattern: '/blog/*'
+extraCacheContexts: ''

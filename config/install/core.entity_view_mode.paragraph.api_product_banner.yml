@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.api_product_banner
+label: 'Api Product  Banner'
+targetEntityType: paragraph
+cache: true

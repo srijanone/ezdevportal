@@ -1,0 +1,6 @@
+name: EzDevPortal User
+description : 'Extends the users functionality.'
+type: module
+package: EzDevPortal
+core: 8.x
+core_version_requirement: ^8 || ^9

@@ -1,0 +1,227 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.base_field_override.node.api_document.title
+    - core.entity_view_mode.node.full
+    - field.field.node.api_document.body
+    - field.field.node.api_document.field_api_display
+    - field.field.node.api_document.field_api_type
+    - field.field.node.api_document.field_banner_image
+    - field.field.node.api_document.field_document
+    - field.field.node.api_document.field_environment
+    - field.field.node.api_document.field_format
+    - field.field.node.api_document.field_listing_image
+    - field.field.node.api_document.field_sdk_language
+    - field.field.node.api_document.layout_builder__layout
+    - node.type.api_document
+    - views.view.api_document_formatter
+  module:
+    - layout_builder
+    - layout_discovery
+    - odpl_api_documents
+    - odpl_asyncapi
+    - odpl_base
+    - odpl_sdk
+    - options
+    - system
+    - text
+    - user
+    - views
+third_party_settings:
+  layout_builder:
+    enabled: true
+    allow_custom: true
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+          context_mapping: {  }
+        components:
+          727e8eab-b3c6-485b-8cbb-5bf47cb73745:
+            uuid: 727e8eab-b3c6-485b-8cbb-5bf47cb73745
+            region: content
+            configuration:
+              id: banner_content_block
+              label: 'Banner Content Block'
+              label_display: '0'
+              provider: odpl_product
+              context_mapping: {  }
+              banner_title: ''
+              banner_text: ''
+              banner_image: {  }
+            weight: -10
+            additional: {  }
+        third_party_settings: {  }
+      -
+        layout_id: layout_twocol_section
+        layout_settings:
+          label: ''
+          column_widths: 75-25
+          context_mapping: {  }
+        components:
+          0544500b-43bf-4a08-9225-855c4383c477:
+            uuid: 0544500b-43bf-4a08-9225-855c4383c477
+            region: first
+            configuration:
+              id: system_breadcrumb_block
+              label: Breadcrumbs
+              label_display: '0'
+              provider: system
+              context_mapping: {  }
+            weight: -9
+            additional: {  }
+          2fb18b37-269e-46f2-ad83-86dcd8957cab:
+            uuid: 2fb18b37-269e-46f2-ad83-86dcd8957cab
+            region: second
+            configuration:
+              id: download_sdk
+              label: 'Download SDK'
+              label_display: '0'
+              provider: odpl_sdk
+              context_mapping: {  }
+            weight: -8
+            additional: {  }
+        third_party_settings: {  }
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components:
+          62a582fa-a547-4865-972f-08d0f7dbf7f3:
+            uuid: 62a582fa-a547-4865-972f-08d0f7dbf7f3
+            region: content
+            configuration:
+              id: api_formatter_option_block
+              label: 'API Formatter Option Block'
+              label_display: '0'
+              provider: odpl_api_documents
+              context_mapping: {  }
+            weight: -7
+            additional: {  }
+          ddc99399-a521-4cd9-a877-b06ca8825255:
+            uuid: ddc99399-a521-4cd9-a877-b06ca8825255
+            region: content
+            configuration:
+              id: 'views_block:api_document_formatter-block_1'
+              label: ''
+              label_display: '0'
+              provider: views
+              context_mapping: {  }
+              views_label: ''
+              items_per_page: none
+            weight: -6
+            additional: {  }
+          ed630002-0823-4a76-a778-340a0244a88b:
+            uuid: ed630002-0823-4a76-a778-340a0244a88b
+            region: content
+            configuration:
+              id: 'field_block:node:api_document:title'
+              label: Title
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: string
+                label: hidden
+                settings:
+                  link_to_entity: false
+                third_party_settings: {  }
+            weight: -10
+            additional: {  }
+          442a2675-f37f-4649-a4c3-3adf6b5ee358:
+            uuid: 442a2675-f37f-4649-a4c3-3adf6b5ee358
+            region: content
+            configuration:
+              id: 'field_block:node:api_document:body'
+              label: 'API Description'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: text_default
+                label: hidden
+                settings: {  }
+                third_party_settings: {  }
+            weight: -9
+            additional: {  }
+        third_party_settings: {  }
+id: node.api_document.full
+targetEntityType: node
+bundle: api_document
+mode: full
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_api_display:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 108
+    region: content
+  field_api_type:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 105
+    region: content
+  field_banner_image:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  field_document:
+    type: async
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 104
+    region: content
+  field_environment:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 106
+    region: content
+  field_format:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 107
+    region: content
+  field_listing_image:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  breadcrumbs: true
+  field_sdk_language: true
+  field_sdk_language_: true
+  layout_builder__layout: true

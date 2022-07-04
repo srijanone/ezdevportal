@@ -1,0 +1,7 @@
+api_document_formatter:
+  version: 1.x
+  js:
+    js/api_document_formatter.js: {}
+  dependencies:
+    - core/jquery
+    - core/jquery.once

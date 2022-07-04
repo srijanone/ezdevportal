@@ -1,0 +1,257 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/products?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/node\/landing_page"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/node\/landing_page\/revision_uid": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/landing_page\/uid": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json",
+                "lang": "en"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/landing_page\/field_icon": [
+            {
+                "href": "http:\/\/default\/media\/19\/edit?_format=hal_json"
+            }
+        ]
+    },
+    "nid": [
+        {
+            "value": 54
+        }
+    ],
+    "uuid": [
+        {
+            "value": "6e20d149-f6c2-48d5-b173-25a1c320db7e"
+        }
+    ],
+    "vid": [
+        {
+            "value": 223
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "landing_page"
+        }
+    ],
+    "revision_timestamp": [
+        {
+            "value": "2022-06-07T08:53:16+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/node\/landing_page\/revision_uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "1267684c-4fd4-47da-b72e-c0aa18e7a733"
+                    }
+                ]
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/landing_page\/uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "1267684c-4fd4-47da-b72e-c0aa18e7a733"
+                    }
+                ],
+                "lang": "en"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/landing_page\/field_icon": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/media\/19\/edit?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/media\/image"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "37a3f760-e084-4923-baa5-1dbfb10a300b"
+                    }
+                ]
+            }
+        ]
+    },
+    "status": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "title": [
+        {
+            "value": "Products",
+            "lang": "en"
+        }
+    ],
+    "created": [
+        {
+            "value": "2021-11-23T11:54:46+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "changed": [
+        {
+            "value": "2022-06-07T08:53:16+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "promote": [
+        {
+            "value": false,
+            "lang": "en"
+        }
+    ],
+    "sticky": [
+        {
+            "value": false,
+            "lang": "en"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "revision_translation_affected": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "moderation_state": [
+        {
+            "value": "published",
+            "lang": "en"
+        }
+    ],
+    "metatag": [
+        {
+            "value": {
+                "canonical_url": "http:\/\/default\/products",
+                "title": "Products | ODP"
+            }
+        }
+    ],
+    "path": [
+        {
+            "alias": "\/products",
+            "pid": 30,
+            "langcode": "en",
+            "lang": "en"
+        }
+    ],
+    "layout_builder__layout": [
+        {
+            "section": {
+                "layout_id": "layout_onecol",
+                "layout_settings": {
+                    "label": "Banner Section",
+                    "context_mapping": []
+                },
+                "components": {
+                    "db2c6c29-6206-4a5c-9fed-fcdd1651a83e": {
+                        "uuid": "db2c6c29-6206-4a5c-9fed-fcdd1651a83e",
+                        "region": "content",
+                        "configuration": {
+                            "id": "banner_content_block",
+                            "label": "Banner Content Block",
+                            "label_display": 0,
+                            "provider": "odpl_base",
+                            "banner_title": "Explore Our Products",
+                            "banner_text": "Rapidly build, test, and deploy applications that make work better for your organization.",
+                            "banner_image": [],
+                            "context_mapping": [],
+                            "banner_height": "307px"
+                        },
+                        "weight": 0,
+                        "additional": []
+                    }
+                },
+                "third_party_settings": []
+            }
+        },
+        {
+            "section": {
+                "layout_id": "layout_twocol_section",
+                "layout_settings": {
+                    "label": "Main Section",
+                    "column_widths": "25-75",
+                    "context_mapping": []
+                },
+                "components": {
+                    "0cbf331d-5dd5-4960-99f5-a20f80566ddd": {
+                        "uuid": "0cbf331d-5dd5-4960-99f5-a20f80566ddd",
+                        "region": "first",
+                        "configuration": {
+                            "id": "views_exposed_filter_block:api_product-api_products_block",
+                            "label": "",
+                            "provider": "views",
+                            "label_display": "visible",
+                            "views_label": "Filters",
+                            "context_mapping": []
+                        },
+                        "weight": 0,
+                        "additional": []
+                    },
+                    "cdee1634-ec6b-45f9-940e-3955f639d831": {
+                        "uuid": "cdee1634-ec6b-45f9-940e-3955f639d831",
+                        "region": "second",
+                        "configuration": {
+                            "id": "views_block:api_product-api_products_block",
+                            "label": "",
+                            "provider": "views",
+                            "label_display": 0,
+                            "views_label": "",
+                            "items_per_page": "none",
+                            "context_mapping": []
+                        },
+                        "weight": 0,
+                        "additional": []
+                    }
+                },
+                "third_party_settings": []
+            }
+        }
+    ]
+}

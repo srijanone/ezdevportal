@@ -1,0 +1,21 @@
+.block {
+ &.block-banner {
+  &.card {
+    border: 0px;
+  }
+ }
+  .card-img {
+    img{
+    &.image-style-wide{
+      width: 100%;
+    }
+   }
+  }
+}
+.block-inline-blockbasic{
+  h3{
+    @include prod-title;
+    margin-top: 63px;
+    margin-bottom: 97px;
+  }
+}

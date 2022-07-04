@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+id: content_cards_block
+label: 'Content Cards Block'
+revision: 0
+description: 'Use this block type to add card list of any content type.'

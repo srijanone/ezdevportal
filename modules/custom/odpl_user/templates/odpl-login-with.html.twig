@@ -1,0 +1,34 @@
+{% set module = 'social-auth' %}
+
+{{ attach_library('social_auth/auth-icons') }}
+
+<div class="orTag">
+ <span> OR</span>
+</div>
+<div class="login-with">
+  <div class="login-with-text">Log in with</div>
+  <div class="login-with-social">
+    {% for social_network in social_networks %}
+      {% if destination %}
+        <a class="{{ module }} auth-link" href="{{ path(social_network.route) }}?destination={{ destination | url_encode }}">
+      {% else %}
+        <a class="{{ module }} auth-link" href="{{ path(social_network.route) }}">
+      {% endif %}
+        <img class="{{ module }} auth-icon"
+            src="{{ base_path }}{{ social_network.img_path }}"
+            alt="{{ 'Authenticate through @social_network_name' | t({'@social_network_name': social_network.name}) }}">
+      </a>
+    {% endfor %}
+  </div>
+</div>
+<div class="srijan-logo-wrapper" >
+  <div class="srijan-logo"><img src="/profiles/contrib/odplite/themes/custom/ezdevportal_theme/images/srijan-logo.png" alt="srijan" /></div>
+  <div class="dont-have-account">
+    
+    {% if (current_path == '/user/login') or (current_path == '/user/password') %}
+      <div>Don't have an account? <a href="/user/register">Register</a></div>
+    {% elseif current_path == '/user/register' %}
+      <div>Already have an account? <a href="/user/login">Login</a></div>
+    {% endif %} 
+  </div>
+</div>

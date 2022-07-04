@@ -1,0 +1,102 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/taxonomy\/term\/31?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/sdk_languages"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/sdk_languages\/parent": [
+            null
+        ]
+    },
+    "tid": [
+        {
+            "value": 31
+        }
+    ],
+    "uuid": [
+        {
+            "value": "aacbb16a-83c9-405a-b104-df4f29f3e3ec"
+        }
+    ],
+    "revision_id": [
+        {
+            "value": 31
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "vid": [
+        {
+            "target_id": "sdk_languages"
+        }
+    ],
+    "revision_created": [
+        {
+            "value": "2022-04-05T05:56:10+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "status": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "name": [
+        {
+            "value": "php",
+            "lang": "en"
+        }
+    ],
+    "weight": [
+        {
+            "value": 0
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/sdk_languages\/parent": [
+            null
+        ]
+    },
+    "changed": [
+        {
+            "value": "2022-04-05T05:56:10+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "revision_translation_affected": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "metatag": [
+        {
+            "value": {
+                "canonical_url": "http:\/\/default\/taxonomy\/term\/31",
+                "title": "php | ODP"
+            }
+        }
+    ],
+    "path": [
+        {
+            "alias": null,
+            "pid": null,
+            "langcode": "en",
+            "lang": "en"
+        }
+    ]
+}

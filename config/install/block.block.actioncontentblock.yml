@@ -1,0 +1,30 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - odpl_base
+    - system
+  theme:
+    - ezdevportal_theme
+id: actioncontentblock
+theme: ezdevportal_theme
+region: featured_bottom_first
+weight: -11
+provider: null
+plugin: action_content_block
+settings:
+  id: action_content_block
+  label: Subscribe
+  label_display: visible
+  provider: odpl_base
+  action_title: Subscribe
+  action_text: 'Subscribe so that you do not miss out on any notifications.'
+  action_image: {  }
+  action_link: /user/login
+  action_url_text: 'LOGIN TO CHECKOUT UPDATES'
+  webform: subscribe
+visibility:
+  request_path:
+    id: request_path
+    negate: true
+    pages: "/user/login\r\n/user/password\r\n/user/register"

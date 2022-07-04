@@ -1,0 +1,24 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - odpl_user
+    - system
+  theme:
+    - ezdevportal_theme
+id: ezdevportal_theme_odplsocialauthlogin
+theme: ezdevportal_theme
+region: content
+weight: -7
+provider: null
+plugin: odpl_social_auth_login
+settings:
+  id: odpl_social_auth_login
+  label: 'Odpl Social Auth Login'
+  label_display: '0'
+  provider: odpl_user
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: "/user/login\r\n/user/register\r\n/user/password"

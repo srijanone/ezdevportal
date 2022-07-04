@@ -1,0 +1,6 @@
+name: EzDevPortal API Product Feature
+description: Provides the API Product customisations.
+type: module
+package: EzDevPortal
+core: 8.x
+core_version_requirement: ^8 || ^9

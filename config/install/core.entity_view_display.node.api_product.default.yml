@@ -1,0 +1,371 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.api_product.body
+    - field.field.node.api_product.field_api_specifications
+    - field.field.node.api_product.field_banner_image
+    - field.field.node.api_product.field_blogs
+    - field.field.node.api_product.field_environment
+    - field.field.node.api_product.field_faqs
+    - field.field.node.api_product.field_listing_image
+    - field.field.node.api_product.field_product_attributes
+    - field.field.node.api_product.field_product_available_for
+    - field.field.node.api_product.field_product_category
+    - field.field.node.api_product.field_product_version
+    - field.field.node.api_product.field_summary
+    - field.field.node.api_product.field_use_cases
+    - field.field.node.api_product.layout_builder__layout
+    - node.type.api_product
+  module:
+    - entity_reference_revisions
+    - layout_builder
+    - layout_discovery
+    - text
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: true
+    allow_custom: true
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components:
+          ebc2d2a0-15af-459a-a7d7-a98863eec5df:
+            uuid: ebc2d2a0-15af-459a-a7d7-a98863eec5df
+            region: content
+            configuration:
+              id: 'extra_field_block:node:api_product:links'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+            weight: 0
+            additional: {  }
+          4560e2bc-35ea-45e1-a5fd-6fa967b6fc6e:
+            uuid: 4560e2bc-35ea-45e1-a5fd-6fa967b6fc6e
+            region: content
+            configuration:
+              id: 'field_block:node:api_product:body'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: text_default
+                label: hidden
+                settings: {  }
+                third_party_settings: {  }
+            weight: 1
+            additional: {  }
+          861c1199-2d99-4a2a-bfcb-68f4b7ba4436:
+            uuid: 861c1199-2d99-4a2a-bfcb-68f4b7ba4436
+            region: content
+            configuration:
+              id: 'field_block:node:api_product:field_product_category'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_label
+                label: above
+                settings:
+                  link: true
+                third_party_settings: {  }
+            weight: 3
+            additional: {  }
+          b11372ec-8ae5-4f04-bcb4-b5aae635900c:
+            uuid: b11372ec-8ae5-4f04-bcb4-b5aae635900c
+            region: content
+            configuration:
+              id: 'field_block:node:api_product:field_banner_image'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_entity_view
+                label: above
+                settings:
+                  view_mode: default
+                  link: false
+                third_party_settings: {  }
+            weight: 4
+            additional: {  }
+          698ed319-e630-47ba-8814-734ad270a146:
+            uuid: 698ed319-e630-47ba-8814-734ad270a146
+            region: content
+            configuration:
+              id: 'field_block:node:api_product:field_environment'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_label
+                label: above
+                settings:
+                  link: true
+                third_party_settings: {  }
+            weight: 5
+            additional: {  }
+          6c34cac2-6e65-4ab9-8d68-b56afa64bd65:
+            uuid: 6c34cac2-6e65-4ab9-8d68-b56afa64bd65
+            region: content
+            configuration:
+              id: 'field_block:node:api_product:field_listing_image'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_label
+                label: above
+                settings:
+                  link: true
+                third_party_settings: {  }
+            weight: 6
+            additional: {  }
+          780803dd-7e79-4b55-a70a-8f184fed2f4c:
+            uuid: 780803dd-7e79-4b55-a70a-8f184fed2f4c
+            region: content
+            configuration:
+              id: 'field_block:node:api_product:field_use_cases'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_label
+                label: above
+                settings:
+                  link: true
+                third_party_settings: {  }
+            weight: 8
+            additional: {  }
+          8e89aaa3-ad54-44d4-b3e3-fa87df655a1b:
+            uuid: 8e89aaa3-ad54-44d4-b3e3-fa87df655a1b
+            region: content
+            configuration:
+              id: 'field_block:node:api_product:field_blogs'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_label
+                label: above
+                settings:
+                  link: true
+                third_party_settings: {  }
+            weight: 9
+            additional: {  }
+          481122e8-2205-4932-accb-783eef0d0bd4:
+            uuid: 481122e8-2205-4932-accb-783eef0d0bd4
+            region: content
+            configuration:
+              id: 'field_block:node:api_product:field_faqs'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_label
+                label: above
+                settings:
+                  link: true
+                third_party_settings: {  }
+            weight: 10
+            additional: {  }
+          994aaa73-cd68-4028-9ac8-a17059c6b8e9:
+            uuid: 994aaa73-cd68-4028-9ac8-a17059c6b8e9
+            region: content
+            configuration:
+              id: 'field_block:node:api_product:field_api_specifications'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_label
+                label: above
+                settings:
+                  link: true
+                third_party_settings: {  }
+            weight: 11
+            additional: {  }
+          f5d203cf-262e-4c88-85ec-7eb37a1158a3:
+            uuid: f5d203cf-262e-4c88-85ec-7eb37a1158a3
+            region: content
+            configuration:
+              id: 'field_block:node:api_product:field_product_version'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: string
+                label: above
+                settings:
+                  link_to_entity: false
+                third_party_settings: {  }
+            weight: 12
+            additional: {  }
+          611bda9f-c42e-41b0-acd4-22eb39e320f6:
+            uuid: 611bda9f-c42e-41b0-acd4-22eb39e320f6
+            region: content
+            configuration:
+              id: 'field_block:node:api_product:field_product_available_for'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_label
+                label: above
+                settings:
+                  link: true
+                third_party_settings: {  }
+            weight: 13
+            additional: {  }
+          b4be131d-4fcc-492e-9e94-456c289a0abe:
+            uuid: b4be131d-4fcc-492e-9e94-456c289a0abe
+            region: content
+            configuration:
+              id: 'field_block:node:api_product:field_product_attributes'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_revisions_entity_view
+                label: above
+                settings:
+                  view_mode: default
+                  link: ''
+                third_party_settings: {  }
+            weight: 14
+            additional: {  }
+          abea8b67-58e5-4bba-808a-61be508212bc:
+            uuid: abea8b67-58e5-4bba-808a-61be508212bc
+            region: content
+            configuration:
+              id: 'field_block:node:api_product:field_summary'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: text_default
+                label: above
+                settings: {  }
+                third_party_settings: {  }
+            weight: 15
+            additional: {  }
+        third_party_settings: {  }
+id: node.api_product.default
+targetEntityType: node
+bundle: api_product
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_api_specifications:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 111
+    region: content
+  field_banner_image:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 104
+    region: content
+  field_blogs:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 109
+    region: content
+  field_environment:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 105
+    region: content
+  field_faqs:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 110
+    region: content
+  field_listing_image:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 106
+    region: content
+  field_product_attributes:
+    type: entity_reference_revisions_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 114
+    region: content
+  field_product_available_for:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 113
+    region: content
+  field_product_category:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  field_product_version:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 112
+    region: content
+  field_summary:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 115
+    region: content
+  field_use_cases:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 108
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  breadcrumbs: true
+  layout_builder__layout: true

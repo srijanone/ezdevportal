@@ -1,0 +1,100 @@
+.card {
+  width: 100%;
+  margin: 1rem 0rem;
+  border-radius: 10px;
+  border: 1px solid $lightgray;
+
+  &:hover {
+    box-shadow: 0px 8px 24px 0px rgba(0, 0, 0, 0.15);
+    top: -5px;
+    transition: all 0.2s ease;
+  }
+
+  img {
+    margin-bottom: 18px;
+    margin-top: 20px;
+    height: 60px;
+    width: 60px;
+  }
+
+  .card-header {
+    background: none;
+    border-style: none;
+
+    img {
+      margin-top: 16px;
+      margin-bottom: -8px;
+    }
+  }
+
+  .card-body {
+    padding: 0px 14px 4px;
+
+    p {
+      @include card-text;
+
+      &.service-para-card {
+        font-size: $basic-font-small-size;
+        line-height: $line-height-20;
+      }
+    }
+
+  }
+
+  .btn-outline-secondary {
+    &:hover {
+      background: none;
+    }
+  }
+
+  .card-title {
+    padding: 0.5rem 1rem;
+
+    h3 {
+      @include card-title;
+      margin-top: 20px;
+      margin-bottom: 0;
+    }
+  }
+
+  .card-footer {
+    border-top: 1px solid $lightgray;
+    .explore{
+      a{
+      text-transform: uppercase;
+      }
+    }
+
+    a {
+      &:hover {
+        text-decoration: none;
+      }
+    }
+
+    background: none;
+
+    .frontend-service {
+      cursor: default;
+      background-color: $card_frontend_color;
+      border: 1px solid $card_frontend_border_color;
+    }
+
+    .backend-service {
+      cursor: default;
+      background-color: $card_backend_color;
+      border: 1px solid $card_backend_border_color;
+    }
+
+    .explore {
+      a {
+        @include explore-link;
+      }
+
+    
+    }
+  }
+}
+
+.service-btn {
+  @include card-text;
+}

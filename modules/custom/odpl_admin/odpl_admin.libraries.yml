@@ -1,0 +1,7 @@
+classy.media_library:
+  version: VERSION
+  css:
+    layout:
+      /core/themes/seven/css/theme/media-library.css: {}
+  dependencies:
+    - core/drupal.dialog.ajax
