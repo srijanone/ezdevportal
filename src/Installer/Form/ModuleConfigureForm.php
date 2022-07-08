@@ -35,11 +35,6 @@ class ModuleConfigureForm extends ConfigFormBase {
         'label' => $this->t('OpenDevPortal Lite Demo Content'),
         'description' => $this->t('Installs content which allows you to explore the features.'),
       ],
-      [
-        'id' => 'odpl_apigee_connector',
-        'label' => $this->t('OpenDevPortal Lite Apigee Connector'),
-        'description' => $this->t('Installs APIGEE connector modules.'),
-      ],
     ];
     foreach ($modules as $module) {
       $form['install_modules_' . $module['id']] = [
