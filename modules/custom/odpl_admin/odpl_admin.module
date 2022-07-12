@@ -121,12 +121,6 @@ function odpl_admin_preprocess_block(&$variables) {
     elseif (str_contains($current_path, '/admin/structure/menu')) {
       $variables['content']['#bannerdata']['title']['#markup'] = 'Menu Management';
     }
-    elseif (str_contains($current_path, '/platform-management') || str_contains($current_path, '/admin/config/apigee-edge')) {
-      $variables['content']['#bannerdata']['title']['#markup'] = 'Platform Management';
-    }
-    elseif (str_contains($current_path, '/admin/config/apigee-monetization')) {
-      $variables['content']['#bannerdata']['title']['#markup'] = 'Monetization';
-    }
     elseif (str_contains($current_path, '/admin/structure/webform')) {
       $variables['content']['#bannerdata']['title']['#markup'] = 'Queries And Subscriptions';
     }
@@ -199,10 +193,6 @@ function odpl_admin_preprocess_block(&$variables) {
 
       case '/forum-list':
         $variables['content']['#bannerdata']['title']['#markup'] = 'Forum';
-        break;
-
-      case '/app-list':
-        $variables['content']['#bannerdata']['title']['#markup'] = 'Manage Apps';
         break;
 
       case '/webform-submission':
