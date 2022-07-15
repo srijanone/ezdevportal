@@ -214,19 +214,6 @@
   }
 }
 
-#app-list {
-  tr {
-    border-bottom: 1px solid $lightgray;
-    background: $white;
-
-    td {
-      background: $white;
-      border: none;
-      display: inline-block;
-    }
-  }
-}
-
 .tabledrag-toggle-weight-wrapper {
   display: none;
 }
