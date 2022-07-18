@@ -35,7 +35,7 @@
     ],
     "vid": [
         {
-            "value": 221
+            "value": 357
         }
     ],
     "langcode": [
@@ -51,7 +51,7 @@
     ],
     "revision_timestamp": [
         {
-            "value": "2022-06-07T08:52:34+00:00",
+            "value": "2022-07-18T10:18:40+00:00",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
@@ -68,7 +68,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "1267684c-4fd4-47da-b72e-c0aa18e7a733"
+                        "value": "309a091f-b162-49c3-8378-bab2d0d9e032"
                     }
                 ]
             }
@@ -85,7 +85,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "1267684c-4fd4-47da-b72e-c0aa18e7a733"
+                        "value": "309a091f-b162-49c3-8378-bab2d0d9e032"
                     }
                 ],
                 "lang": "en"
@@ -130,7 +130,7 @@
     ],
     "changed": [
         {
-            "value": "2022-06-07T08:52:34+00:00",
+            "value": "2022-07-18T10:18:40+00:00",
             "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
         }
@@ -195,8 +195,8 @@
                     "context_mapping": []
                 },
                 "components": {
-                    "e03d1000-7e66-4fef-8a89-8c76fb381b39": {
-                        "uuid": "e03d1000-7e66-4fef-8a89-8c76fb381b39",
+                    "4967c8b2-9b32-4dd4-946c-11f53e72cddf": {
+                        "uuid": "4967c8b2-9b32-4dd4-946c-11f53e72cddf",
                         "region": "content",
                         "configuration": {
                             "id": "banner_content_block",
@@ -205,6 +205,7 @@
                             "provider": "odpl_base",
                             "banner_title": "Videos and Learnings",
                             "banner_text": "Let\u2019s find out how our products\/ APIs work by some great real-world examples!",
+                            "banner_height": "307px",
                             "banner_image": [],
                             "context_mapping": []
                         },
@@ -224,24 +225,8 @@
                     "context_mapping": []
                 },
                 "components": {
-                    "34e09798-adb1-4b37-a792-4c4d9b4eb0e5": {
-                        "uuid": "34e09798-adb1-4b37-a792-4c4d9b4eb0e5",
-                        "region": "second",
-                        "configuration": {
-                            "id": "block_content:77f7e7bb-eef0-4b2f-bcf6-670d94e44178",
-                            "label": "Help Pages Filter Block",
-                            "provider": "block_content",
-                            "label_display": 0,
-                            "status": true,
-                            "info": "",
-                            "view_mode": "full",
-                            "context_mapping": []
-                        },
-                        "weight": 0,
-                        "additional": []
-                    },
-                    "53bcbbaa-c337-4ec1-af0b-532630630936": {
-                        "uuid": "53bcbbaa-c337-4ec1-af0b-532630630936",
+                    "f47e3c79-1cca-4a55-b9ce-f3939756a380": {
+                        "uuid": "f47e3c79-1cca-4a55-b9ce-f3939756a380",
                         "region": "first",
                         "configuration": {
                             "id": "inline_block:basic",
@@ -249,11 +234,27 @@
                             "label_display": 0,
                             "provider": "layout_builder",
                             "view_mode": "full",
-                            "block_revision_id": "34",
+                            "block_revision_id": "39",
                             "block_serialized": null,
                             "context_mapping": [],
                             "type": "basic",
-                            "uuid": "9473e8eb-9179-451c-a317-84afbf3ffe3e"
+                            "uuid": "a78b49c2-ce3c-4dc3-9a58-a2d28760dd24"
+                        },
+                        "weight": 0,
+                        "additional": []
+                    },
+                    "013887e7-12ac-448d-aeb9-a09975555d3b": {
+                        "uuid": "013887e7-12ac-448d-aeb9-a09975555d3b",
+                        "region": "second",
+                        "configuration": {
+                            "id": "block_content:77f7e7bb-eef0-4b2f-bcf6-670d94e44178",
+                            "label": "Help Pages Filter Block",
+                            "label_display": 0,
+                            "provider": "block_content",
+                            "status": true,
+                            "info": "",
+                            "view_mode": "full",
+                            "context_mapping": []
                         },
                         "weight": 0,
                         "additional": []
@@ -269,7 +270,24 @@
                     "label": "Main Section",
                     "context_mapping": []
                 },
-                "components": [],
+                "components": {
+                    "cc734840-09ff-4494-ad10-5387cecc5253": {
+                        "uuid": "cc734840-09ff-4494-ad10-5387cecc5253",
+                        "region": "content",
+                        "configuration": {
+                            "id": "block_content:c93ab8ef-6141-4170-b905-6272148ff69f",
+                            "label": "Videos and Learnings",
+                            "label_display": 0,
+                            "provider": "block_content",
+                            "status": true,
+                            "info": "",
+                            "view_mode": "full",
+                            "context_mapping": []
+                        },
+                        "weight": 0,
+                        "additional": []
+                    }
+                },
                 "third_party_settings": []
             }
         }
