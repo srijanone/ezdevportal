@@ -165,7 +165,7 @@ class BannerContentBlock extends BlockBase implements ContainerFactoryPluginInte
     }
     else {
       $build['bannerimg'] = [
-        '#markup' => '/profiles/contrib/odplite/themes/custom/ezdevportal_theme/images/banner_image.png',
+        '#markup' => '/profiles/contrib/ezdevportal/themes/custom/ezdevportal_theme/images/banner_image.png',
       ];
     }
 
