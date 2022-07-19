@@ -38,6 +38,10 @@ label{
     background: $black;
     color: $white;
   }
+  &:disabled {
+    background: $lightgrayhover;
+    border-color: $lightgrayhover;
+  }
 }
 
 body {
@@ -86,4 +90,12 @@ h2{
 }
 .accordion-body {
   padding: 0rem;
+}
+
+.page-link{
+  color: $black;
+  &:hover,
+  span{
+    color: $black;
+  }
 }

@@ -77,8 +77,11 @@ function odpl_api_documents_views_pre_render(ViewExecutable $view) {
         foreach ($selected_formatters as $selected_formatter) {
           $formatter_options[] = $selected_formatter['value'];
         }
-        if (!in_array('redoc_ui', $formatter_options)) {
+        if (!in_array('swagger_ui_file', $formatter_options)) {
           $view->field['field_document']->options['type'] = $formatter_options[0];
+        }
+        else {
+          $view->field['field_document']->options['type'] = 'swagger_ui_file';
         }
       }
     }

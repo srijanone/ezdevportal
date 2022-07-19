@@ -16,7 +16,7 @@ required: false
 translatable: false
 default_value:
   -
-    value: redoc_ui
+    value: swagger_ui_file
 default_value_callback: ''
 settings: {  }
 field_type: list_string
