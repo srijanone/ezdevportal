@@ -92,7 +92,7 @@ class ApiFormatterOptionsForm extends FormBase {
     $form['formatter_options'] = [
       '#type' => 'select',
       '#options' => $options,
-      '#default_value' => (!empty($formatter_option) ? $formatter_option : 'redoc_ui'),
+      '#default_value' => (!empty($formatter_option) ? $formatter_option : 'swagger_ui_file'),
       '#ajax' => [
         'callback' => [$this, 'apiFormatSwitcherHandler'],
         'event' => 'change',
