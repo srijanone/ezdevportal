@@ -63,23 +63,27 @@
   .view-content {
     clear: both;
   }
-.vbo-view-form {
-  > .container{
-    padding-left: 15px;
-  }
-  .views-form{
-    padding-left: 0!important;
-    .form-wrapper {
-      .container{
-        padding-left: 0!important;
+
+  .vbo-view-form {
+    >.container {
+      padding-left: 15px;
+    }
+
+    .views-form {
+      padding-left: 0 !important;
+
+      .form-wrapper {
+        .container {
+          padding-left: 0 !important;
+        }
       }
     }
+
+    .form-item-action {
+      margin-left: 0;
+      padding-left: 0;
+    }
   }
-  .form-item-action{
-    margin-left: 0;
-    padding-left: 0;
-  }
-}
 
 }
 
@@ -229,26 +233,49 @@ a {
   }
 }
 
-  .field--type-entity-reference {
-    a {
-      &.tabledrag-handle {
-        overflow: visible;
-        .handle {
-          margin: 16px 8px 3px 0px;
-        }
+.field--type-entity-reference {
+  a {
+    &.tabledrag-handle {
+      overflow: visible;
+
+      .handle {
+        margin: 16px 8px 3px 0px;
       }
     }
   }
+}
 
-.menu-edit-form{
-  .form-check-label{
+.menu-edit-form {
+  .form-check-label {
     display: none;
   }
 }
 
-[id ^= “views-form-products-listing-page-page-1”]{
+[id ^="views-form-products-listing-page-page-1"] {
+
   .form-item-select-all,
   .vbo-multipage-selector {
     display: none;
+  }
+
+  .form-item-action {
+    select {
+      width: 270px;
+    }
+  }
+}
+
+.progress {
+  height: 34px;
+  .progress__track {
+    min-width: 950px;
+    height: 25px;
+  }
+  .progress__bar{
+    height:23px;
+  }
+  .progress__percentage,
+  .progress__description{
+    font-size: $basic-font-size-18;
   }
 }
