@@ -54,7 +54,7 @@
       jQuery('#views-exposed-form-media-library-page-1 .bef-links').removeClass('form-select');
       jQuery('.select-all .form-checkbox').addClass('form-check-input'); 
       jQuery('.apigee-entity--app  fieldset.app-credential').removeClass('items--inline');
-      
+      jQuery('.block-ezdevportal-soap-ui-odp-integration').addClass('container');
     }
   };
   Drupal.behaviors.odplite_developerSlickConfig = {

@@ -26,7 +26,7 @@ visibility:
   request_path:
     id: request_path
     negate: false
-    pages: "/node/add/issue\r\n/node/add/forum\r\n/user/*/apps/*\r\n/user/*/create-app\r\n/user/*\r\n/comment/reply/*\r\n/content-management\r\n/content-management/*\r\n/api-list\r\n/user-list\r\n/forum-list\r\n/app-list\r\n/platform-management\r\n/admin/structure/taxonomy\r\n/admin/structure/menu\r\n/webform-submission\r\n/admin/structure/taxonomy/*\r\n/admin/structure/menu/*\r\n/node/*/edit\r\n/node/add/*\r\n/node/*/delete\r\n/user/*/edit\r\n/media/*/delete\r\n/admin/config/apigee-edge/*\r\n/admin/config/apigee-monetization\r\n/admin/config/apigee-monetization/*\r\n/admin/structure/webform/manage/*/submission/*\r\n/node/*/layout\r\n/admin/reports/google-analytics-reports/summary\r\n/taxonomy/term/*/edit"
+    pages: "/node/add/issue\r\n/node/add/forum\r\n/user/*/apps/*\r\n/user/*/create-app\r\n/user/*\r\n/comment/reply/*\r\n/content-management\r\n/content-management/*\r\n/api-list\r\n/user-list\r\n/forum-list\r\n/app-list\r\n/platform-management\r\n/admin/structure/taxonomy\r\n/admin/structure/menu\r\n/webform-submission\r\n/admin/structure/taxonomy/*\r\n/admin/structure/menu/*\r\n/node/*/edit\r\n/node/add/*\r\n/node/*/delete\r\n/user/*/edit\r\n/media/*/delete\r\n/admin/config/apigee-edge/*\r\n/admin/config/apigee-monetization\r\n/admin/config/apigee-monetization/*\r\n/admin/structure/webform/manage/*/submission/*\r\n/node/*/layout\r\n/admin/reports/google-analytics-reports/summary\r\n/taxonomy/term/*/edit\r\n/product_batch\r\n/admin/settings/aws-credentials\r\n/admin/settings/aws-api"
   user_role:
     id: user_role
     negate: false
