@@ -42,6 +42,11 @@ function odpl_api_documents_form_alter(&$form, FormStateInterface $form_state, $
         ':input[name="field_api_type"]' => ['value' => ApiDocumentInterface::API_TYPE[1]],
       ],
     ];
+    $form['field_sdk_language']['#states'] = [
+      'visible' => [
+        ':input[name="field_api_type"]' => ['value' => ApiDocumentInterface::API_TYPE[0]],
+      ],
+    ];
   }
 }
 
