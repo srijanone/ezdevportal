@@ -8,7 +8,9 @@
 
       .nav-item {
         padding: 5px 20px;
-
+        &:first-child{
+        padding-left: 0;
+        }
         .nav-link {
           border: none;
           color: $black;
@@ -206,7 +208,7 @@
 
 #views-form-user-list-page-1 {
   button {
-    margin-left: 15px;
+   /* margin-left: 15px;*/
   }
 }
 
@@ -251,7 +253,7 @@ a {
   }
 }
 
-[id ^="views-form-products-listing-page-page-1"] {
+[id ^="views-form-products-listing-page-page-"] {
 
   .form-item-select-all,
   .vbo-multipage-selector {
@@ -262,6 +264,9 @@ a {
     select {
       width: 270px;
     }
+  }
+  div[data-drupal-selector="edit-actions"]{
+    clear: both;
   }
 }
 
@@ -278,4 +283,7 @@ a {
   .progress__description{
     font-size: $basic-font-size-18;
   }
+}
+.table-responsive {
+  overflow-x: inherit;
 }
