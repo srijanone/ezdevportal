@@ -8,9 +8,11 @@
 
       .nav-item {
         padding: 5px 20px;
-        &:first-child{
-        padding-left: 0;
+
+        &:first-child {
+          padding-left: 0;
         }
+
         .nav-link {
           border: none;
           color: $black;
@@ -208,7 +210,7 @@
 
 #views-form-user-list-page-1 {
   button {
-   /* margin-left: 15px;*/
+    /* margin-left: 15px;*/
   }
 }
 
@@ -265,25 +267,42 @@ a {
       width: 270px;
     }
   }
-  div[data-drupal-selector="edit-actions"]{
+
+  div[data-drupal-selector="edit-actions"] {
     clear: both;
   }
 }
 
 .progress {
   height: 34px;
+
   .progress__track {
     min-width: 950px;
     height: 25px;
   }
-  .progress__bar{
-    height:23px;
+
+  .progress__bar {
+    height: 23px;
   }
+
   .progress__percentage,
-  .progress__description{
+  .progress__description {
     font-size: $basic-font-size-18;
   }
 }
+
 .table-responsive {
   overflow-x: inherit;
+}
+
+.node-forum-edit-form {
+  .form-check {
+    margin-left: 12px;
+  }
+}
+
+[id ^="views-form-webform-submission-page-"] {
+  .form-check-label {
+    display: none;
+  }
 }

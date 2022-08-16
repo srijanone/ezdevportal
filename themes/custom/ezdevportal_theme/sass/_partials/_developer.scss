@@ -271,7 +271,6 @@
 
   input[type=reset] {
     order: 2;
-    margin-left: 24px;
     background: $white;
     color: $black;
 
@@ -279,7 +278,7 @@
 
   button[type="submit"] {
     order: 1;
-    margin-left: 15px;
+    /*margin-left: 15px;*/
     background: $black;
     color: $white;
   }
@@ -459,5 +458,11 @@
 .sidebar_first {
   ul {
     list-style: none;
+  }
+}
+.node-forum-form,
+.node-issue-form {
+  .layout-region-node-footer {
+    margin-left: 25px;
   }
 }
