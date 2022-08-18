@@ -27,6 +27,7 @@
         "drupal/better_exposed_filters": "^5.0",
         "drupal/better_normalizers": "^1.0@beta",
         "drupal/blog": "^3.0",
+        "drupal/charts": "^5.0",
         "drupal/codesnippet": "^1.7",
         "drupal/color_field": "^2.5",
         "drupal/components": "^2.4",

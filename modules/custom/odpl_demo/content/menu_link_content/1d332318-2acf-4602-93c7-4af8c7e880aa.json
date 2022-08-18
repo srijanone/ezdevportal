@@ -57,7 +57,7 @@
     ],
     "link": [
         {
-            "uri": "internal:\/admin\/reports\/google-analytics-reports\/summary",
+            "uri": "internal:\/google-analytics-reports",
             "title": "",
             "options": []
         }

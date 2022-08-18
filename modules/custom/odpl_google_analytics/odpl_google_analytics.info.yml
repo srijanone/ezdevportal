@@ -1,0 +1,14 @@
+name: EzDevPortal Analytics Module
+description : 'All customizations related to the google analytics feature'
+type: module
+package: EzDevPortal
+core: 8.x
+core_version_requirement: ^8 || ^9
+
+dependencies:
+  - 'charts:charts'
+  - 'charts:charts_chartjs'
+  - 'charts_highcharts:charts_highcharts'
+  - 'google_analytics:google_analytics'
+  - 'google_analytics_reports:google_analytics_reports'
+  - 'google_analytics_reports_api:google_analytics_reports_api'
