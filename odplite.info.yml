@@ -78,6 +78,7 @@ install:
   - odpl_asyncapi
   - odpl_base
   - odpl_faq
+  - odpl_google_analytics
   - odpl_product
   - odpl_rapidoc_formatter
   - odpl_renderer
@@ -135,9 +136,6 @@ install:
   - custom_breadcrumbs
   - odpl_sdk
   - user_menu_avatar
-  - google_analytics
-  - google_analytics_reports
-  - google_analytics_reports_api
   - content_moderation
   - workflows
 themes:

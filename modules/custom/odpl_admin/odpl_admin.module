@@ -202,6 +202,10 @@ function odpl_admin_preprocess_block(&$variables) {
       case '/admin/reports/google-analytics-reports/summary':
         $variables['content']['#bannerdata']['title']['#markup'] = 'Google Analytics';
         break;
+
+      case '/google-analytics-reports':
+        $variables['content']['#bannerdata']['title']['#markup'] = 'Google Analytics';
+        break;
     }
   }
 }
