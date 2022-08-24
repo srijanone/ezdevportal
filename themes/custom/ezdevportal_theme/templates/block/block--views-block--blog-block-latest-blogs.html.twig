@@ -37,7 +37,8 @@
     'container'
   ]
 %}
-<div{{ attributes.addClass(classes) }} style="background-image: url(/sites/default/files/2022-02/Rectangle%20394_0.png );">
+<div{{ attributes.addClass(classes) }}>
+<div class="row">
   {{ title_prefix }}
   {% if label %}
     <h2{{ title_attributes }}>{{ label }}</h2>
@@ -48,4 +49,5 @@
       {{ content }}
     </div>
   {% endblock %}
+</div>
 </div>

@@ -37,7 +37,8 @@
     color: $white;
     text-transform: uppercase;
     margin-bottom: 28px;
-    margin-top: -40px;
+    text-align: center;
+    margin-right: 0;
   }
 }
 
@@ -48,20 +49,8 @@
     margin-top: 12px;
   }
 
-  .form-select,
-  .form-control {
-    float: left;
-    width: 160px;
-  }
-
-  .form-type-textfield,
-  .form-type-select {
-    float: left;
-  }
-
-  .form-type-select {
-    margin-left: 60px;
-  }
+ 
+ 
 
 
   .view-content {
@@ -208,11 +197,6 @@
   }
 }
 
-#views-form-user-list-page-1 {
-  button {
-    /* margin-left: 15px;*/
-  }
-}
 
 .js-media-library-item-preview {
   .field--type-image {
@@ -262,11 +246,6 @@ a {
     display: none;
   }
 
-  .form-item-action {
-    select {
-      width: 270px;
-    }
-  }
 
   div[data-drupal-selector="edit-actions"] {
     clear: both;
@@ -306,3 +285,4 @@ a {
     display: none;
   }
 }
+
