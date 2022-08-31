@@ -69,136 +69,147 @@ function odpl_admin_user_login($account) {
  * Implements hook_preprocess_HOOK() for menu dashboard link.
  */
 function odpl_admin_preprocess_menu__account(&$variables) {
-    foreach ($variables['items'] as $key => $item) {
-      if ($item['title'] == 'My account' && count($item['below'])) {
-        $user = Drupal::CurrentUser();
-        $roles = $user->getRoles();
-        foreach ($item['below'] as $k => $child) {
-          if (in_array('site_admin', $roles) && $child['title'] == 'Dashboard') {
-            unset($variables['items'][$key]['below'][$k]);
-          }
-          elseif (in_array('site_admin', $roles) && $child['title'] == 'Admin dashboard') {
-              $variables['items'][$key]['below'][$k]['title'] = "Dashboard";
-          }
-          elseif ($child['title'] == 'Admin dashboard') {
-            unset($variables['items'][$key]['below'][$k]);
-          }
+  foreach ($variables['items'] as $key => $item) {
+    if ($item['title'] == 'My account' && count($item['below'])) {
+      $user = Drupal::CurrentUser();
+      $roles = $user->getRoles();
+      foreach ($item['below'] as $k => $child) {
+        if (in_array('site_admin', $roles) && $child['title'] == 'Dashboard') {
+          unset($variables['items'][$key]['below'][$k]);
+        }
+        elseif (in_array('site_admin', $roles) && $child['title'] == 'Admin dashboard') {
+          $variables['items'][$key]['below'][$k]['title'] = "Dashboard";
+        }
+        elseif ($child['title'] == 'Admin dashboard') {
+          unset($variables['items'][$key]['below'][$k]);
         }
       }
     }
+  }
 }
 
 /**
- * Implements hook_preprocess_HOOK() for notification block.
+ * Implements hook_preprocess_HOOK() for banner block.
  */
-function odpl_admin_preprocess_block(&$variables) {
-  if ($variables['plugin_id'] == 'banner_content_block') {
-    // Dynamic banner title.
-    $current_path = \Drupal::service('path.current')->getPath();
-    $referer = \Drupal::request()->headers->get('referer');
+function odpl_admin_preprocess_block__banner_content_block(&$variables) {
+  $current_path = \Drupal::service('path.current')->getPath();
+  $referer = \Drupal::request()->headers->get('referer');
+  $route_name = \Drupal::routeMatch()->getRouteName();
+  $action = get_current_action_by_path($current_path);
 
-    $current_route = \Drupal::routeMatch();
-    $route_name = $current_route->getRouteName();
+  if ($route_name == 'entity.user.canonical') {
+    $variables['content'][OdplAdminInterface::BANNER_DATA]['title'][OdplAdminInterface::MARKUP_INDEX] = 'Account Settings';
+  }
 
-    if ($route_name == 'entity.user.canonical') {
-      $variables['content'][OdplAdminInterface::BANNER_DATA]['title'][OdplAdminInterface::MARKUP_INDEX] = 'Account Settings';
+  if ($route_name == 'entity.user.edit_form') {
+    $variables['content'][OdplAdminInterface::BANNER_DATA]['title'][OdplAdminInterface::MARKUP_INDEX] = 'Edit Account Settings';
+  }
+
+  $variables['content'][OdplAdminInterface::BANNER_DATA]['title'][OdplAdminInterface::MARKUP_INDEX] = get_banner_title_by_path($current_path);
+
+  if ($action == 'Add') {
+    if (str_contains($referer, OdplAdminInterface::API_LIST_PATH)) {
+      $variables['content'][OdplAdminInterface::BANNER_DATA]['title'][OdplAdminInterface::MARKUP_INDEX] = 'APIs - Add New';
     }
-
-    if ($route_name == 'entity.user.edit_form') {
-      $variables['content'][OdplAdminInterface::BANNER_DATA]['title'][OdplAdminInterface::MARKUP_INDEX] = 'Edit Account Settings';
+    if (str_contains($referer, 'content-management')) {
+      $variables['content'][OdplAdminInterface::BANNER_DATA]['title'][OdplAdminInterface::MARKUP_INDEX] = 'Content Management - Add New';
     }
-
-    if (str_contains($current_path, 'content-management')) {
-      $variables['content'][OdplAdminInterface::BANNER_DATA]['title'][OdplAdminInterface::MARKUP_INDEX] = 'Content Management';
+    if (str_contains($referer, 'forum-list')) {
+      $variables['content'][OdplAdminInterface::BANNER_DATA]['title'][OdplAdminInterface::MARKUP_INDEX] = 'Forum - Add New';
     }
-    elseif (str_contains($current_path, '/admin/structure/menu')) {
-      $variables['content'][OdplAdminInterface::BANNER_DATA]['title'][OdplAdminInterface::MARKUP_INDEX] = 'Menu Management';
+    if (str_contains($referer, 'admin/structure/taxonomy')) {
+      $variables['content'][OdplAdminInterface::BANNER_DATA]['title'][OdplAdminInterface::MARKUP_INDEX] = 'Categories Management - Add New';
     }
-    elseif (str_contains($current_path, '/admin/structure/webform')) {
-      $variables['content'][OdplAdminInterface::BANNER_DATA]['title'][OdplAdminInterface::MARKUP_INDEX] = 'Queries And Subscriptions';
-    }
-    elseif (str_contains($current_path, '/admin/structure/taxonomy')) {
-      $variables['content'][OdplAdminInterface::BANNER_DATA]['title'][OdplAdminInterface::MARKUP_INDEX] = 'Categories Management';
-    }
-
-    if (str_contains($current_path, '/add')) {
-      if (str_contains($referer, OdplAdminInterface::API_LIST_PATH)) {
-        $variables['content'][OdplAdminInterface::BANNER_DATA]['title'][OdplAdminInterface::MARKUP_INDEX] = 'APIs - Add New';
-      }
-      if (str_contains($referer, 'content-management')) {
-        $variables['content'][OdplAdminInterface::BANNER_DATA]['title'][OdplAdminInterface::MARKUP_INDEX] = 'Content Management - Add New';
-      }
-      if (str_contains($referer, 'forum-list')) {
-        $variables['content'][OdplAdminInterface::BANNER_DATA]['title'][OdplAdminInterface::MARKUP_INDEX] = 'Forum - Add New';
-      }
-      if (str_contains($referer, 'admin/structure/taxonomy')) {
-        $variables['content'][OdplAdminInterface::BANNER_DATA]['title'][OdplAdminInterface::MARKUP_INDEX] = 'Categories Management - Add New';
-      }
-      if (str_contains($referer, 'admin/structure/menu')) {
-        $variables['content'][OdplAdminInterface::BANNER_DATA]['title'][OdplAdminInterface::MARKUP_INDEX] = 'Menu Management - Add New';
-      }
-    }
-    if (str_contains($current_path, '/edit') || str_contains($current_path, '/delete') || str_contains($current_path, '/layout')) {
-      preg_match('!\d+!', $current_path, $matches);
-      if (str_contains($current_path, '/node')) {
-        $node = Node::load($matches[0]);
-      }
-      elseif (str_contains($current_path, '/user')) {
-        $node = User::load($matches[0]);
-      }
-      if (str_contains($current_path, '/edit')) {
-        $action = 'Edit';
-      }
-      elseif (str_contains($current_path, '/delete')) {
-        $action = 'Delete';
-      }
-      elseif (str_contains($current_path, '/layout')) {
-        $action = 'Layout';
-      }
-      if (str_contains($referer, OdplAdminInterface::API_LIST_PATH)) {
-        $variables['content'][OdplAdminInterface::BANNER_DATA]['title'][OdplAdminInterface::MARKUP_INDEX] = 'APIs - ' . $action . ' ' . $node->getTitle();
-      }
-      if (str_contains($referer, 'content-management')) {
-        $variables['content'][OdplAdminInterface::BANNER_DATA]['title'][OdplAdminInterface::MARKUP_INDEX] = 'Content Management - ' . $action . ' ' . $node->getTitle();
-      }
-      if (str_contains($referer, 'forum-list')) {
-        $variables['content'][OdplAdminInterface::BANNER_DATA]['title'][OdplAdminInterface::MARKUP_INDEX] = 'Forum - ' . $action . ' ' . $node->getTitle();
-      }
-      if (str_contains($referer, 'user-list')) {
-        $variables['content'][OdplAdminInterface::BANNER_DATA]['title'][OdplAdminInterface::MARKUP_INDEX] = 'Manage Users - ' . $action . ' ' . $node->getAccountName();
-      }
-      if (str_contains($current_path, 'admin/structure/menu/item')) {
-        $variables['content'][OdplAdminInterface::BANNER_DATA]['title'][OdplAdminInterface::MARKUP_INDEX] = 'Menu Management - Edit Menu Link';
-      }
-      if (str_contains($current_path, 'taxonomy/term')) {
-        $variables['content'][OdplAdminInterface::BANNER_DATA]['title'][OdplAdminInterface::MARKUP_INDEX] = 'Categories Management - Edit Term';
-      }
-
-    }
-    switch ($current_path) {
-      case OdplAdminInterface::API_LIST_PATH:
-        $variables['content'][OdplAdminInterface::BANNER_DATA]['title'][OdplAdminInterface::MARKUP_INDEX] = 'APIs';
-        break;
-
-      case '/user-list':
-        $variables['content'][OdplAdminInterface::BANNER_DATA]['title'][OdplAdminInterface::MARKUP_INDEX] = 'Manage Users';
-        break;
-
-      case '/forum-list':
-        $variables['content'][OdplAdminInterface::BANNER_DATA]['title'][OdplAdminInterface::MARKUP_INDEX] = 'Forum';
-        break;
-
-      case '/webform-submission':
-        $variables['content'][OdplAdminInterface::BANNER_DATA]['title'][OdplAdminInterface::MARKUP_INDEX] = 'Queries And Subscriptions';
-        break;
-
-      case '/admin/reports/google-analytics-reports/summary':
-        $variables['content'][OdplAdminInterface::BANNER_DATA]['title'][OdplAdminInterface::MARKUP_INDEX] = 'Google Analytics';
-        break;
-
-      case '/google-analytics-reports':
-        $variables['content'][OdplAdminInterface::BANNER_DATA]['title'][OdplAdminInterface::MARKUP_INDEX] = 'Google Analytics';
-        break;
+    if (str_contains($referer, 'admin/structure/menu')) {
+      $variables['content'][OdplAdminInterface::BANNER_DATA]['title'][OdplAdminInterface::MARKUP_INDEX] = 'Menu Management - Add New';
     }
   }
+
+  if (in_array($action, ['Edit', 'Delete', 'Layout'])) {
+    preg_match('!\d+!', $current_path, $matches);
+    if (str_contains($current_path, '/node')) {
+      $node = Node::load($matches[0]);
+    }
+    elseif (str_contains($current_path, '/user')) {
+      $node = User::load($matches[0]);
+    }
+    if (str_contains($referer, OdplAdminInterface::API_LIST_PATH)) {
+      $variables['content'][OdplAdminInterface::BANNER_DATA]['title'][OdplAdminInterface::MARKUP_INDEX] = 'APIs - ' . $action . ' ' . $node->getTitle();
+    }
+    if (str_contains($referer, 'content-management')) {
+      $variables['content'][OdplAdminInterface::BANNER_DATA]['title'][OdplAdminInterface::MARKUP_INDEX] = 'Content Management - ' . $action . ' ' . $node->getTitle();
+    }
+    if (str_contains($referer, 'forum-list')) {
+      $variables['content'][OdplAdminInterface::BANNER_DATA]['title'][OdplAdminInterface::MARKUP_INDEX] = 'Forum - ' . $action . ' ' . $node->getTitle();
+    }
+    if (str_contains($referer, 'user-list')) {
+      $variables['content'][OdplAdminInterface::BANNER_DATA]['title'][OdplAdminInterface::MARKUP_INDEX] = 'Manage Users - ' . $action . ' ' . $node->getAccountName();
+    }
+    if (str_contains($current_path, 'admin/structure/menu/item')) {
+      $variables['content'][OdplAdminInterface::BANNER_DATA]['title'][OdplAdminInterface::MARKUP_INDEX] = 'Menu Management - Edit Menu Link';
+    }
+    if (str_contains($current_path, 'taxonomy/term')) {
+      $variables['content'][OdplAdminInterface::BANNER_DATA]['title'][OdplAdminInterface::MARKUP_INDEX] = 'Categories Management - Edit Term';
+    }
+  }
+}
+
+/**
+ *
+ */
+function get_banner_title_by_path($current_path) {
+  $banner_title = '';
+
+  if (str_contains($current_path, 'content-management')) {
+    $banner_title = 'Content Management';
+  }
+  elseif (str_contains($current_path, '/admin/structure/menu')) {
+    $banner_title = 'Menu Management';
+  }
+  elseif (str_contains($current_path, '/admin/structure/webform')) {
+    $banner_title = 'Queries And Subscriptions';
+  }
+  elseif (str_contains($current_path, '/admin/structure/taxonomy')) {
+    $banner_title = 'Categories Management';
+  }
+  elseif ($current_path == OdplAdminInterface::API_LIST_PATH) {
+    $banner_title = 'APIs';
+  }
+  elseif ($current_path == '/user-list') {
+    $banner_title = 'Manage Users';
+  }
+  elseif ($current_path == '/forum-list') {
+    $banner_title = 'Forum';
+  }
+  elseif ($current_path == '/webform-submission') {
+    $banner_title = 'Queries And Subscriptions';
+  }
+  elseif ($current_path == '/admin/reports/google-analytics-reports/summary') {
+    $banner_title = 'Google Analytics';
+  }
+  elseif ($current_path == '/google-analytics-reports') {
+    $banner_title = 'Google Analytics';
+  }
+
+  return $banner_title;
+}
+
+/**
+ *
+ */
+function get_current_action_by_path($current_path) {
+  if (str_contains($current_path, '/add')) {
+    $action = 'Add';
+  }
+  elseif (str_contains($current_path, '/edit')) {
+    $action = 'Edit';
+  }
+  elseif (str_contains($current_path, '/delete')) {
+    $action = 'Delete';
+  }
+  elseif (str_contains($current_path, '/layout')) {
+    $action = 'Layout';
+  }
+
+  return $action;
 }
