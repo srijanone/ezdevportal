@@ -11,19 +11,4 @@ interface OdplAdminInterface {
    */
   const FORM_ACCESS = '#access';
 
-  /**
-   * Constant for banner block preprocess.
-   */
-  const BANNER_DATA = '#bannerdata';
-
-  /**
-   * The Form api markup index.
-   */
-  const MARKUP_INDEX = '#markup';
-
-  /**
-   * Constant for Siteadmin api list page path.
-   */
-  const API_LIST_PATH = '/api-list';
-
 }

@@ -74,10 +74,10 @@ function odpl_admin_preprocess_menu__account(&$variables) {
       $user = Drupal::CurrentUser();
       $roles = $user->getRoles();
       foreach ($item['below'] as $k => $child) {
-        if (in_array('site_admin', $roles) && $child['title'] == 'Dashboard') {
+        if (!empty(array_intersect(['site_admin', 'editor'], $roles)) && $child['title'] == 'Dashboard') {
           unset($variables['items'][$key]['below'][$k]);
         }
-        elseif (in_array('site_admin', $roles) && $child['title'] == 'Admin dashboard') {
+        elseif (!empty(array_intersect(['site_admin', 'editor'], $roles)) && $child['title'] == 'Admin dashboard') {
           $variables['items'][$key]['below'][$k]['title'] = "Dashboard";
         }
         elseif ($child['title'] == 'Admin dashboard') {
@@ -93,69 +93,121 @@ function odpl_admin_preprocess_menu__account(&$variables) {
  */
 function odpl_admin_preprocess_block__banner_content_block(&$variables) {
   $current_path = \Drupal::service('path.current')->getPath();
-  $referer = \Drupal::request()->headers->get('referer');
   $route_name = \Drupal::routeMatch()->getRouteName();
+  $referer = \Drupal::request()->headers->get('referer');
   $action = get_current_action_by_path($current_path);
 
-  if ($route_name == 'entity.user.canonical') {
-    $variables['content'][OdplAdminInterface::BANNER_DATA]['title'][OdplAdminInterface::MARKUP_INDEX] = 'Account Settings';
+  if (empty($referer)) {
+    $referer = \Drupal::request()->get('destination');
   }
 
-  if ($route_name == 'entity.user.edit_form') {
-    $variables['content'][OdplAdminInterface::BANNER_DATA]['title'][OdplAdminInterface::MARKUP_INDEX] = 'Edit Account Settings';
-  }
-
-  $variables['content'][OdplAdminInterface::BANNER_DATA]['title'][OdplAdminInterface::MARKUP_INDEX] = get_banner_title_by_path($current_path);
-
-  if ($action == 'Add') {
-    if (str_contains($referer, OdplAdminInterface::API_LIST_PATH)) {
-      $variables['content'][OdplAdminInterface::BANNER_DATA]['title'][OdplAdminInterface::MARKUP_INDEX] = 'APIs - Add New';
-    }
-    if (str_contains($referer, 'content-management')) {
-      $variables['content'][OdplAdminInterface::BANNER_DATA]['title'][OdplAdminInterface::MARKUP_INDEX] = 'Content Management - Add New';
-    }
-    if (str_contains($referer, 'forum-list')) {
-      $variables['content'][OdplAdminInterface::BANNER_DATA]['title'][OdplAdminInterface::MARKUP_INDEX] = 'Forum - Add New';
-    }
-    if (str_contains($referer, 'admin/structure/taxonomy')) {
-      $variables['content'][OdplAdminInterface::BANNER_DATA]['title'][OdplAdminInterface::MARKUP_INDEX] = 'Categories Management - Add New';
-    }
-    if (str_contains($referer, 'admin/structure/menu')) {
-      $variables['content'][OdplAdminInterface::BANNER_DATA]['title'][OdplAdminInterface::MARKUP_INDEX] = 'Menu Management - Add New';
+  $banner_title = get_banner_title_by_route($route_name);
+  if (empty($banner_title)) {
+    $banner_title = get_banner_title_by_path($current_path);
+    if (!empty($action)) {
+      $banner_title = get_banner_title_by_referer_action($current_path, $referer, $action);
     }
   }
 
-  if (in_array($action, ['Edit', 'Delete', 'Layout'])) {
-    preg_match('!\d+!', $current_path, $matches);
-    if (str_contains($current_path, '/node')) {
-      $node = Node::load($matches[0]);
-    }
-    elseif (str_contains($current_path, '/user')) {
-      $node = User::load($matches[0]);
-    }
-    if (str_contains($referer, OdplAdminInterface::API_LIST_PATH)) {
-      $variables['content'][OdplAdminInterface::BANNER_DATA]['title'][OdplAdminInterface::MARKUP_INDEX] = 'APIs - ' . $action . ' ' . $node->getTitle();
-    }
-    if (str_contains($referer, 'content-management')) {
-      $variables['content'][OdplAdminInterface::BANNER_DATA]['title'][OdplAdminInterface::MARKUP_INDEX] = 'Content Management - ' . $action . ' ' . $node->getTitle();
-    }
-    if (str_contains($referer, 'forum-list')) {
-      $variables['content'][OdplAdminInterface::BANNER_DATA]['title'][OdplAdminInterface::MARKUP_INDEX] = 'Forum - ' . $action . ' ' . $node->getTitle();
-    }
-    if (str_contains($referer, 'user-list')) {
-      $variables['content'][OdplAdminInterface::BANNER_DATA]['title'][OdplAdminInterface::MARKUP_INDEX] = 'Manage Users - ' . $action . ' ' . $node->getAccountName();
-    }
-    if (str_contains($current_path, 'admin/structure/menu/item')) {
-      $variables['content'][OdplAdminInterface::BANNER_DATA]['title'][OdplAdminInterface::MARKUP_INDEX] = 'Menu Management - Edit Menu Link';
-    }
-    if (str_contains($current_path, 'taxonomy/term')) {
-      $variables['content'][OdplAdminInterface::BANNER_DATA]['title'][OdplAdminInterface::MARKUP_INDEX] = 'Categories Management - Edit Term';
-    }
-  }
+  $variables['content']['#bannerdata']['title']['#markup'] = $banner_title;
 }
 
 /**
+ * Gets the node information based on current path.
  *
+ * @param string $current_path
+ *   Current page path.
+ *
+ * @return string
+ *   Returns the node title based on the current path.
+ */
+function get_node_data($current_path) {
+  preg_match('!\d+!', $current_path, $matches);
+  if (str_contains($current_path, '/node')) {
+    $node = Node::load($matches[0]);
+    if (!empty($node)) {
+      $title = $node->getTitle();
+    }
+  }
+  elseif (str_contains($current_path, '/user')) {
+    $node = User::load($matches[0]);
+    if (!empty($node)) {
+      $title = $node->getAccountName();
+    }
+  }
+  return $title;
+}
+
+/**
+ * Gets the banner title based on the referer and action.
+ *
+ * @param string $current_path
+ *   Current page path.
+ * @param string $referer
+ *   Referer.
+ * @param string $action
+ *   Current action.
+ *
+ * @return string
+ *   Returns the banner title.
+ */
+function get_banner_title_by_referer_action($current_path, $referer, $action) {
+  $banner_title = '';
+  $title = '';
+  if ($action == 'Edit') {
+    $title = get_node_data($current_path);
+  }
+  else {
+    $title = 'New';
+  }
+
+  if (str_contains($referer, '/api-list')) {
+    $banner_title = 'APIs - ' . $action . ' ' . $title;
+  }
+  elseif (str_contains($referer, 'content-management')) {
+    $banner_title = 'Content Management - ' . $action . ' ' . $title;
+  }
+  elseif (str_contains($referer, 'forum-list')) {
+    $banner_title = 'Forum - ' . $action . ' ' . $title;
+  }
+  elseif (str_contains($referer, 'admin/structure/taxonomy')) {
+    $banner_title = 'Categories Management - ' . $action . ' ' . $title;
+  }
+  elseif (str_contains($referer, 'admin/structure/menu')) {
+    $banner_title = 'Menu Management - ' . $action . ' ' . $title;
+  }
+  elseif (str_contains($referer, 'user-list')) {
+    $banner_title = 'Manage Users - ' . $action . ' ' . $title;
+  }
+  elseif (str_contains($current_path, 'admin/structure/menu/item')) {
+    $banner_title = 'Menu Management - ' . $action . ' ' . $title;
+  }
+  elseif (str_contains($current_path, 'taxonomy/term')) {
+    $banner_title = 'Categories Management - Edit Term';
+  }
+
+  return $banner_title;
+}
+
+/**
+ * Returns the banner title based on the page route.
+ */
+function get_banner_title_by_route($current_route) {
+  $banner_title = '';
+
+  if ($current_route == 'entity.user.canonical') {
+    $banner_title = 'Account Settings';
+  }
+
+  if ($current_route == 'entity.user.edit_form') {
+    $banner_title = 'Edit Account Settings';
+  }
+
+  return $banner_title;
+}
+
+/**
+ * Returns the banner title based on the current page path.
  */
 function get_banner_title_by_path($current_path) {
   $banner_title = '';
@@ -172,7 +224,7 @@ function get_banner_title_by_path($current_path) {
   elseif (str_contains($current_path, '/admin/structure/taxonomy')) {
     $banner_title = 'Categories Management';
   }
-  elseif ($current_path == OdplAdminInterface::API_LIST_PATH) {
+  elseif ($current_path == '/api-list') {
     $banner_title = 'APIs';
   }
   elseif ($current_path == '/user-list') {
@@ -195,7 +247,7 @@ function get_banner_title_by_path($current_path) {
 }
 
 /**
- *
+ * Returns the action based on page path.
  */
 function get_current_action_by_path($current_path) {
   if (str_contains($current_path, '/add')) {
@@ -211,5 +263,5 @@ function get_current_action_by_path($current_path) {
     $action = 'Layout';
   }
 
-  return $action;
+  return (!empty($action)) ? $action : '';
 }
