@@ -95,17 +95,17 @@ function odpl_admin_preprocess_block__banner_content_block(&$variables) {
   $current_path = \Drupal::service('path.current')->getPath();
   $route_name = \Drupal::routeMatch()->getRouteName();
   $referer = \Drupal::request()->headers->get('referer');
-  $action = get_current_action_by_path($current_path);
+  $action = odpl_admin_get_current_action_by_path($current_path);
 
   if (empty($referer)) {
     $referer = \Drupal::request()->get('destination');
   }
 
-  $banner_title = get_banner_title_by_route($route_name);
+  $banner_title = odpl_admin_get_banner_title_by_route($route_name);
   if (empty($banner_title)) {
-    $banner_title = get_banner_title_by_path($current_path);
+    $banner_title = odpl_admin_get_banner_title_by_path($current_path);
     if (!empty($action)) {
-      $banner_title = get_banner_title_by_referer_action($current_path, $referer, $action);
+      $banner_title = odpl_admin_get_banner_title_by_referer_action($current_path, $referer, $action);
     }
   }
 
@@ -121,7 +121,7 @@ function odpl_admin_preprocess_block__banner_content_block(&$variables) {
  * @return string
  *   Returns the node title based on the current path.
  */
-function get_node_data($current_path) {
+function odpl_admin_get_node_data($current_path) {
   preg_match('!\d+!', $current_path, $matches);
   if (str_contains($current_path, '/node')) {
     $node = Node::load($matches[0]);
@@ -151,11 +151,11 @@ function get_node_data($current_path) {
  * @return string
  *   Returns the banner title.
  */
-function get_banner_title_by_referer_action($current_path, $referer, $action) {
+function odpl_admin_get_banner_title_by_referer_action($current_path, $referer, $action) {
   $banner_title = '';
   $title = '';
   if ($action == 'Edit') {
-    $title = get_node_data($current_path);
+    $title = odpl_admin_get_node_data($current_path);
   }
   else {
     $title = 'New';
@@ -192,7 +192,7 @@ function get_banner_title_by_referer_action($current_path, $referer, $action) {
 /**
  * Returns the banner title based on the page route.
  */
-function get_banner_title_by_route($current_route) {
+function odpl_admin_get_banner_title_by_route($current_route) {
   $banner_title = '';
 
   if ($current_route == 'entity.user.canonical') {
@@ -209,7 +209,7 @@ function get_banner_title_by_route($current_route) {
 /**
  * Returns the banner title based on the current page path.
  */
-function get_banner_title_by_path($current_path) {
+function odpl_admin_get_banner_title_by_path($current_path) {
   $banner_title = '';
 
   if (str_contains($current_path, 'content-management')) {
@@ -249,7 +249,7 @@ function get_banner_title_by_path($current_path) {
 /**
  * Returns the action based on page path.
  */
-function get_current_action_by_path($current_path) {
+function odpl_admin_get_current_action_by_path($current_path) {
   if (str_contains($current_path, '/add')) {
     $action = 'Add';
   }

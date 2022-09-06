@@ -74,12 +74,6 @@ function odpl_base_form_alter(&$form, &$form_state, $form_id) {
 
 /**
  * Returns the simple popup block settings.
- *
- * @param array $configs
- *   Simple popup blocks config array.
- *
- * @return array
- *   array of popup settings and cache tags.
  */
 function odpl_base_get_simplepopupblock_settings($configs) {
   $configFactory = \Drupal::service('config.factory');
