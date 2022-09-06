@@ -34,11 +34,9 @@ class PublishNodeAction extends ViewsBulkOperationsActionBase {
       );
     }
 
-    switch ($state) {
-      case 'review':
-        $entity->set('moderation_state', 'published');
-        $entity->save();
-        break;
+    if ($state == 'review') {
+      $entity->set('moderation_state', 'published');
+      $entity->save();
     }
 
     return $this->t(':title state changed to :state',

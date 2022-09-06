@@ -34,11 +34,9 @@ class ReviewNodeAction extends ViewsBulkOperationsActionBase {
       );
     }
 
-    switch ($state) {
-      case 'draft':
-        $entity->set('moderation_state', 'review');
-        $entity->save();
-        break;
+    if ($state == 'draft') {
+      $entity->set('moderation_state', 'review');
+      $entity->save();
     }
 
     return $this->t(':title state changed to :state',

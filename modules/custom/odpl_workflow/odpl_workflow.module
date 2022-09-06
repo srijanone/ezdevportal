@@ -21,7 +21,7 @@ function odpl_workflow_form_alter(&$form, FormStateInterface $form_state, $form_
   ];
   if (in_array($form_id, $form_id_list)) {
 
-    $remove_title_text = array_map("override_title", $form['views_bulk_operations_bulk_form']);
+    $remove_title_text = array_map("odpl_workflow_override_title", $form['views_bulk_operations_bulk_form']);
     $form['views_bulk_operations_bulk_form'] = $remove_title_text;
 
   }
@@ -30,7 +30,7 @@ function odpl_workflow_form_alter(&$form, FormStateInterface $form_state, $form_
 /**
  * Sets title to empty.
  */
-function override_title($data) {
+function odpl_workflow_override_title($data) {
   $data['#title'] = '';
   return $data;
 }

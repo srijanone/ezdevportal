@@ -72,7 +72,7 @@ function odpl_user_form_alter(&$form, FormStateInterface $form_state, $form_id) 
   elseif ($form_id == "user_pass") {
     $form['mail']['#prefix'] = "<p class='user-pass-text'>";
     $form['mail']['#suffix'] = "</p>";
-    $form['mail']['#markup'] = "Enter the email address associated with your account, and we'll send 
+    $form['mail']['#markup'] = "Enter the email address associated with your account, and we'll send
     you a link to reset your password.";
     $form['mail']['#weight'] = '-1';
     $form['actions']['cancel'] = [
@@ -80,7 +80,7 @@ function odpl_user_form_alter(&$form, FormStateInterface $form_state, $form_id) 
       '#weight' => 999,
       '#limit_validation_errors' => [],
       '#submit' => [
-        'cancel_reset_form__submission',
+        'odpl_user_cancel_reset_form__submission',
       ] ,
       '#value' => t('CANCEL') ,
     ];
@@ -98,7 +98,7 @@ function odpl_user_form_alter(&$form, FormStateInterface $form_state, $form_id) 
 /**
  * Submission of user reset password form.
  */
-function cancel_reset_form__submission(&$form, FormStateInterface $form_state) {
+function odpl_user_cancel_reset_form__submission(&$form, FormStateInterface $form_state) {
   $form_state->setRedirect('user.login');
 }
 

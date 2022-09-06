@@ -226,11 +226,9 @@ class BannerContentBlock extends BlockBase implements ContainerFactoryPluginInte
   public function blockSubmit($form, FormStateInterface $form_state) {
 
     $banner_image = $form_state->getValue('banner_image');
-    if ($banner_image != $this->configuration['banner_image']) {
-      if (!empty($banner_image[0])) {
-        $file = $this->fileStorage->load($banner_image[0]);
-        $file->setPermanent()->save();
-      }
+    if ($banner_image != $this->configuration['banner_image'] && !empty($banner_image[0])) {
+      $file = $this->fileStorage->load($banner_image[0]);
+      $file->setPermanent()->save();
     }
 
     $this->configuration['banner_title'] = $form_state->getValue('banner_title');
