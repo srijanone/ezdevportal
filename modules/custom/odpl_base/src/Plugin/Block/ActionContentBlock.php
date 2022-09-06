@@ -143,13 +143,11 @@ class ActionContentBlock extends BlockBase implements ContainerFactoryPluginInte
     ];
 
     $action_image = $this->configuration['action_image'];
-    if (!empty($action_image[0])) {
-      if ($file = $this->fileStorage->load($action_image[0])) {
-        $uri = Url::fromUri($this->fileUrlGenerator->generateAbsoluteString($file->getFileUri()))->toString();
-        $build['actionimg'] = [
-          '#markup' => $uri,
-        ];
-      }
+    if (!empty($action_image[0]) && $file = $this->fileStorage->load($action_image[0])) {
+      $uri = Url::fromUri($this->fileUrlGenerator->generateAbsoluteString($file->getFileUri()))->toString();
+      $build['actionimg'] = [
+        '#markup' => $uri,
+      ];
     }
 
     if ($this->configuration['action_link']) {
@@ -261,13 +259,9 @@ class ActionContentBlock extends BlockBase implements ContainerFactoryPluginInte
 
     $action_image = $form_state->getValue('action_image');
 
-    if ($action_image != $this->configuration['action_image']) {
-
-      if (!empty($action_image[0])) {
-        $file = $this->fileStorage->load($action_image[0]);
-        $file->setPermanent()->save();
-      }
-
+    if ($action_image != $this->configuration['action_image'] && !empty($action_image[0])) {
+      $file = $this->fileStorage->load($action_image[0]);
+      $file->setPermanent()->save();
     }
 
     $this->configuration['action_title'] = $form_state->getValue('action_title');

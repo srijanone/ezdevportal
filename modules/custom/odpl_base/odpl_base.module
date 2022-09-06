@@ -51,48 +51,68 @@ function odpl_base_form_alter(&$form, &$form_state, $form_id) {
   $user = \Drupal::currentUser();
   $roles = $user->getRoles();
 
-  if ($form_id == 'webform_submission_subscribe_add_form' || strpos($form_id, 'webform_submission_subscribe_node_') !== FALSE) {
-    if (in_array('anonymous', $roles)) {
-      unset($form['actions']['submit']);
-    }
+  if (($form_id == 'webform_submission_subscribe_add_form' || strpos($form_id, 'webform_submission_subscribe_node_') !== FALSE) && in_array('anonymous', $roles)) {
+    unset($form['actions']['submit']);
   }
 
   $form_id = ['taxonomy_term_forums_form', 'user_form', 'node_edit_form', 'taxonomy_overview_terms', 'taxonomy_overview_vocabularies', 'taxonomy_vocabulary_form', 'apigee_edge_authentication_form', 'views_exposed_form__search_page__search_block',
   ];
 
-  if (in_array($form['#theme'][0], $form_id) &&(in_array('developer', $roles) ||  in_array('site_admin', $roles) ||  in_array('editor', $roles))) {
-    $cacheTags = [];
-    $popup_settings = [];
+  if (in_array($form['#theme'][0], $form_id) && !empty(array_intersect([
+    'developer',
+    'site_admin',
+    'editor',
+  ], $roles))) {
     $form['#attached']['library'][] = 'ezdevportal_theme/simple-popup-blocks';
     $configFactory = \Drupal::service('config.factory');
     $configs = $configFactory->listAll('simple_popup_blocks.popup_');
-    foreach ($configs as $config) {
-      $data = $configFactory->get($config)->get();
-      $configCacheTags = $configFactory->get($config)->getCacheTags();
-      if (is_array($configCacheTags) && count($configCacheTags)) {
-        $cacheTags = array_merge($cacheTags, $configCacheTags);
-      }
-      if ($data['status'] == 1) {
-        if ($data['type'] == 0) {
-          $identifier = preg_replace('/[_]+/', '-', $data['identifier']);
-          $data['identifier'] = 'block-' . $identifier;
-        }
-        $visit_counts = unserialize($data['visit_counts'], ['allowed_classes' => FALSE]);
-        $data['visit_counts'] = implode(",", $visit_counts);
-        // Sanitize each entry.
-        $settings_to_add = [];
-        foreach ($data as $key => $val) {
-          if (!is_array($val)) {
-            $settings_to_add[$key] = Html::escape($val);
-          }
-        }
-        $popup_settings[] = $settings_to_add;
-      }
-    }
-    $form['#attached']['drupalSettings']['simple_popup_blocks']['settings'] = $popup_settings;
-    $form['#cache']['tags'] = $cacheTags;
-
+    $form_settings = odpl_base_get_simplepopupblock_settings($configs);
+    $form['#attached']['drupalSettings']['simple_popup_blocks']['settings'] = $form_settings['popup_settings'];
+    $form['#cache']['tags'] = $form_settings['cacheTags'];
   }
+}
+
+/**
+ * Returns the simple popup block settings.
+ *
+ * @param array $configs
+ *   Simple popup blocks config array.
+ *
+ * @return array
+ *   array of popup settings and cache tags.
+ */
+function odpl_base_get_simplepopupblock_settings($configs) {
+  $configFactory = \Drupal::service('config.factory');
+  $cacheTags = [];
+  $popup_settings = [];
+  foreach ($configs as $config) {
+    $data = $configFactory->get($config)->get();
+    $configCacheTags = $configFactory->get($config)->getCacheTags();
+    if (is_array($configCacheTags) && count($configCacheTags)) {
+      $cacheTags = array_merge($cacheTags, $configCacheTags);
+    }
+    if ($data['status'] == 1) {
+      if ($data['type'] == 0) {
+        $identifier = preg_replace('/[_]+/', '-', $data['identifier']);
+        $data['identifier'] = 'block-' . $identifier;
+      }
+      $visit_counts = unserialize($data['visit_counts'], ['allowed_classes' => FALSE]);
+      $data['visit_counts'] = implode(",", $visit_counts);
+      // Sanitize each entry.
+      $settings_to_add = [];
+      foreach ($data as $key => $val) {
+        if (!is_array($val)) {
+          $settings_to_add[$key] = Html::escape($val);
+        }
+      }
+      $popup_settings[] = $settings_to_add;
+    }
+  }
+
+  return [
+    'popup_settings' => $popup_settings,
+    'cacheTags' => $cacheTags,
+  ];
 }
 
 /**
@@ -121,90 +141,98 @@ function odpl_base_cleanup_textarea_field($form_element, FormStateInterface $for
 /**
  * Implements template_preprocess_block().
  */
-function odpl_base_preprocess_block(&$variables) {
-
-  $content = $variables['elements']['content'];
-  if (!empty($content['#block_content'])) {
-
-    if ($content['#block_content']->bundle() == 'slider_block') {
-      $content_slides = [];
-      $block_content = $content['#block_content']->field_slide->referencedEntities();
-      foreach ($block_content as $key => $value) {
-        $content_slides[$key]['heading_1'] = $value->field_slide_main_heading->value;
-        $content_slides[$key]['heading_2'] = $value->field_slide_sub_heading->value;
-        $content_slides[$key]['description'] = $value->field_slide_description->value;
-        $content_slides[$key]['cta_link'] = Url::fromUri($value->field_slider_cta_link->getValue()[0]['uri'])->toString();
-        $content_slides[$key]['cta_link_title'] = $value->field_slider_cta_link->getValue()[0]['title'];
-        $content_slides[$key]['image_url'] = file_create_url($value->field_slide_image->entity->field_media_image->entity->getFileUri());
-      }
-      $variables['content_slides'] = $content_slides;
-    }
-    elseif ($content['#block_content']->bundle() == 'content_cards_block') {
-      $cards = [];
-      $card_block['block_header'] = $content['#block_content']->field_title->value;
-      $card_block['block_width_type'] = $content['#block_content']->field_block_position->value;
-      preg_match_all('/\d+/', $content['#block_content']->field_cards_layout->value, $matches);
-      $card_block['block_column_count'] = $matches[0][0];
-      if (!$content['#block_content']->field_read_more_link->isEmpty()) {
-        $card_block['more_link'] = Url::fromUri($content['#block_content']->field_read_more_link[0]->uri)->toString();
-        $card_block['more_link_title'] = $content['#block_content']->field_read_more_link[0]->title;
-      }
-      if (!$content['#block_content']->field_block_background_color->isEmpty()) {
-        $card_block['background_color'] = $content['#block_content']->field_block_background_color->getValue()[0]['color'];
-      }
-      else {
-        $card_block['background_color'] = '#FFFFFF';
-      }
-      $referenced_nodes = $content['#block_content']->field_referenced_nodes->getValue();
-      foreach ($referenced_nodes as $key => $referenced_node) {
-        $cards[] = odpl_base_get_node_card($referenced_node['target_id']);
-      }
-      $card_block['cards'] = $cards;
-      $variables['card_block'] = $card_block;
-    }
-    elseif ($content['#block_content']->bundle() == 'content_list_block') {
-      $banner_content['title'] = $content['#block_content']->field_title->value;
-      $banner_content['link'] = Url::fromUri($content['#block_content']->field_read_more_link->getValue()[0]['uri'])->toString();
-      $banner_content['link_title'] = $content['#block_content']->field_read_more_link->getValue()[0]['title'];
-
-      if (!$content['#block_content']->field_block_image->isEmpty()) {
-        $banner_content['image'] = file_create_url($content['#block_content']->field_block_image->entity->field_media_image->entity->getFileUri());
-      }
-      $banner_content['banner_image'] = $content['#block_content']->field_title->value;
-      $referenced_nodes = $content['#block_content']->field_referenced_nodes->getValue();
-      foreach ($referenced_nodes as $key => $referenced_node) {
-        $banner[] = odpl_base_get_node_card($referenced_node['target_id']);
-      }
-      $banner_content['content'] = $banner;
-      $variables['banner_content'] = $banner_content;
-    }
-    elseif ($content['#block_content']->bundle() == 'media_cards_block') {
-      $cards = [];
-      $card_block['block_header'] = $content['#block_content']->field_title->value;
-      preg_match_all('/\d+/', $content['#block_content']->field_cards_layout->value, $matches);
-      $card_block['block_column_count'] = $matches[0][0];
-      if (!$content['#block_content']->field_read_more_link->isEmpty()) {
-        $card_block['more_link'] = Url::fromUri($content['#block_content']->field_read_more_link[0]->uri)->toString();
-        $card_block['more_link_title'] = $content['#block_content']->field_read_more_link[0]->title;
-      }
-
-      $referenced_medias = $content['#block_content']->field_referenced_media->referencedEntities();
-      foreach ($referenced_medias as $referenced_media) {
-        $cards[] = \Drupal::entityTypeManager()->getViewBuilder('media')->view($referenced_media);
-      }
-      $card_block['cards'] = $cards;
-      $variables['card_block'] = $card_block;
-    }
-    elseif ($content['#block_content']->bundle() == 'video_collection_block') {
-      $cards = [];
-      $referenced_videos = $content['#block_content']->field_video_items->referencedEntities();
-      foreach ($referenced_videos as $referenced_video) {
-        $cards[] = \Drupal::entityTypeManager()->getViewBuilder('paragraph')->view($referenced_video);
-      }
-      $card_block['cards'] = $cards;
-      $variables['card_block'] = $card_block;
-    }
+function odpl_base_preprocess_block__content_cards_block(&$variables) {
+  $block_data = $variables['elements']['content']['#block_content'];
+  $card_block['block_header'] = $block_data->field_title->value;
+  $card_block['block_width_type'] = $block_data->field_block_position->value;
+  preg_match_all('/\d+/', $block_data->field_cards_layout->value, $matches);
+  $card_block['block_column_count'] = $matches[0][0];
+  if (!$block_data->field_read_more_link->isEmpty()) {
+    $card_block['more_link'] = Url::fromUri($block_data->field_read_more_link[0]->uri)->toString();
+    $card_block['more_link_title'] = $block_data->field_read_more_link[0]->title;
   }
+  if (!$block_data->field_block_background_color->isEmpty()) {
+    $card_block['background_color'] = $block_data->field_block_background_color->getValue()[0]['color'];
+  }
+  else {
+    $card_block['background_color'] = '#FFFFFF';
+  }
+  $referenced_nodes = $block_data->field_referenced_nodes->getValue();
+  foreach ($referenced_nodes as $referenced_node) {
+    $card_block['cards'][] = odpl_base_get_node_card($referenced_node['target_id']);
+  }
+  $variables['card_block'] = $card_block;
+}
+
+/**
+ * Implements template_preprocess_block().
+ */
+function odpl_base_preprocess_block__content_list_block(&$variables) {
+  $block_data = $variables['elements']['content']['#block_content'];
+  $banner_content['title'] = $block_data->field_title->value;
+  $banner_content['link'] = Url::fromUri($block_data->field_read_more_link->getValue()[0]['uri'])->toString();
+  $banner_content['link_title'] = $block_data->field_read_more_link->getValue()[0]['title'];
+
+  if (!$block_data->field_block_image->isEmpty()) {
+    $banner_content['image'] = file_create_url($block_data->field_block_image->entity->field_media_image->entity->getFileUri());
+  }
+  $banner_content['banner_image'] = $block_data->field_title->value;
+  $referenced_nodes = $block_data->field_referenced_nodes->getValue();
+  foreach ($referenced_nodes as $referenced_node) {
+    $banner[] = odpl_base_get_node_card($referenced_node['target_id']);
+  }
+  $banner_content['content'] = $banner;
+  $variables['banner_content'] = $banner_content;
+}
+
+/**
+ * Implements template_preprocess_block().
+ */
+function odpl_base_preprocess_block__media_cards_block(&$variables) {
+  $block_data = $variables['elements']['content']['#block_content'];
+  $card_block['block_header'] = $block_data->field_title->value;
+  preg_match_all('/\d+/', $block_data->field_cards_layout->value, $matches);
+  $card_block['block_column_count'] = $matches[0][0];
+  if (!$block_data->field_read_more_link->isEmpty()) {
+    $card_block['more_link'] = Url::fromUri($block_data->field_read_more_link[0]->uri)->toString();
+    $card_block['more_link_title'] = $block_data->field_read_more_link[0]->title;
+  }
+
+  $referenced_medias = $block_data->field_referenced_media->referencedEntities();
+  foreach ($referenced_medias as $referenced_media) {
+    $card_block['cards'][] = \Drupal::entityTypeManager()->getViewBuilder('media')->view($referenced_media);
+  }
+  $variables['card_block'] = $card_block;
+}
+
+/**
+ * Implements template_preprocess_block().
+ */
+function odpl_base_preprocess_block__video_collection_block(&$variables) {
+  $block_data = $variables['elements']['content']['#block_content'];
+  $referenced_videos = $block_data->field_video_items->referencedEntities();
+  foreach ($referenced_videos as $referenced_video) {
+    $card_block['cards'][] = \Drupal::entityTypeManager()->getViewBuilder('paragraph')->view($referenced_video);
+  }
+  $variables['card_block'] = $card_block;
+}
+
+/**
+ * Implements template_preprocess_block().
+ */
+function odpl_base_preprocess_block__slider_block(&$variables) {
+  $block_data = $variables['elements']['content']['#block_content'];
+  $block_content = $block_data->field_slide->referencedEntities();
+  $content_slides = [];
+  foreach ($block_content as $key => $value) {
+    $content_slides[$key]['heading_1'] = $value->field_slide_main_heading->value;
+    $content_slides[$key]['heading_2'] = $value->field_slide_sub_heading->value;
+    $content_slides[$key]['description'] = $value->field_slide_description->value;
+    $content_slides[$key]['cta_link'] = Url::fromUri($value->field_slider_cta_link->getValue()[0]['uri'])->toString();
+    $content_slides[$key]['cta_link_title'] = $value->field_slider_cta_link->getValue()[0]['title'];
+    $content_slides[$key]['image_url'] = file_create_url($value->field_slide_image->entity->field_media_image->entity->getFileUri());
+  }
+  $variables['content_slides'] = $content_slides;
 }
 
 /**
@@ -213,38 +241,27 @@ function odpl_base_preprocess_block(&$variables) {
 function odpl_base_get_node_card($nid) {
   $card_data = [];
   $node = Node::load($nid);
+  $path_alias_manager = \Drupal::service('path_alias.manager');
 
   if ($node instanceof NodeInterface) {
     $card_data['title'] = $node->title->value;
     if (in_array($node->bundle(), ['api_product', 'use_case'])) {
-      $card_data['url'] = \Drupal::service('path_alias.manager')->getAliasByPath('/node/' . $nid);
-      if (!$node->field_listing_image->isEmpty()) {
-        $card_data['icon'] = file_create_url($node->field_listing_image->entity->field_media_image->entity->getFileUri());
-      }
-      if ($node->bundle() == 'use_case') {
-        $card_data['content'] = $node->get('body')->summary;
-      }
-      elseif ($node->bundle() == 'api_product') {
-        $card_data['content'] = $node->field_summary->value;
-      }
+      $card_data['url'] = $path_alias_manager->getAliasByPath('/node/' . $nid);
+      $card_data['icon'] = odpl_base_get_node_card_image($node);
+      $card_data['content'] = ($node->bundle() == 'use_case') ? $node->get('body')->summary : $node->field_summary->value;
       $card_data['text'] = 'Explore';
     }
     elseif ($node->bundle() == 'landing_page') {
-      if (!$node->field_icon->isEmpty()) {
-        $card_data['icon'] = file_create_url($node->field_icon->entity->field_media_image->entity->getFileUri());
-      }
+      $card_data['icon'] = odpl_base_get_node_card_image($node);
       $card_data['content'] = $node->field_short_description->value;
-      $card_data['landing_page_url'] = \Drupal::service('path_alias.manager')->getAliasByPath('/node/' . $nid);
+      $card_data['landing_page_url'] = $path_alias_manager->getAliasByPath('/node/' . $nid);
     }
     elseif ($node->bundle() == 'blog_post') {
-      $card_data['url'] = \Drupal::service('path_alias.manager')->getAliasByPath('/node/' . $nid);
-      if (!$node->field_listing_image->isEmpty()) {
-        $card_data['icon'] = file_create_url($node->field_listing_image->entity->field_media_image->entity->getFileUri());
-      }
+      $card_data['url'] = $path_alias_manager->getAliasByPath('/node/' . $nid);
+      $card_data['icon'] = odpl_base_get_node_card_image($node);
       $card_data['content'] = $node->body->value;
-      $date = $node->getCreatedTime();
-      $card_data['date'] = \Drupal::service('date.formatter')->format($date, 'custom', 'M d,Y');
-      $card_data['bottom_date'] = \Drupal::service('date.formatter')->format($date, 'custom', 'Y');
+      $card_data['date'] = \Drupal::service('date.formatter')->format($node->getCreatedTime(), 'custom', 'M d,Y');
+      $card_data['bottom_date'] = \Drupal::service('date.formatter')->format($node->getCreatedTime(), 'custom', 'Y');
       $uid = $node->getOwnerId();
       $user = User::load($uid);
       if (!is_null($user)) {
@@ -254,7 +271,22 @@ function odpl_base_get_node_card($nid) {
     }
   }
   return $card_data;
+}
 
+/**
+ * Function to get the node card image.
+ */
+function odpl_base_get_node_card_image($node) {
+  if (in_array($node->bundle(), ['api_product', 'use_case'])) {
+    $image_url = (!$node->field_listing_image->isEmpty()) ? file_create_url($node->field_listing_image->entity->field_media_image->entity->getFileUri()) : '';
+  }
+  elseif ($node->bundle() == 'landing_page') {
+    $image_url = (!$node->field_icon->isEmpty()) ? file_create_url($node->field_icon->entity->field_media_image->entity->getFileUri()) : '';
+  }
+  elseif ($node->bundle() == 'blog_post') {
+    $image_url = (!$node->field_listing_image->isEmpty()) ? file_create_url($node->field_listing_image->entity->field_media_image->entity->getFileUri()) : '';
+  }
+  return $image_url;
 }
 
 /**
