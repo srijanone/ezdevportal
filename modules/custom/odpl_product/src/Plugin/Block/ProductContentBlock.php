@@ -24,11 +24,4 @@ class ProductContentBlock extends BlockBase {
     ];
   }
 
-  /**
-   * {@inheritdoc}
-   */
-  public function getCacheMaxAge() {
-    return 0;
-  }
-
 }

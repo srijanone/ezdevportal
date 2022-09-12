@@ -197,11 +197,4 @@ class ProductNavigationBlock extends BlockBase implements ContainerFactoryPlugin
     ];
   }
 
-  /**
-   * {@inheritdoc}
-   */
-  public function getCacheMaxAge() {
-    return 0;
-  }
-
 }

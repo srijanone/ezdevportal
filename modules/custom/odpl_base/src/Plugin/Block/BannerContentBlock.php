@@ -235,15 +235,6 @@ class BannerContentBlock extends BlockBase implements ContainerFactoryPluginInte
     $this->configuration['banner_text'] = $form_state->getValue('banner_text');
     $this->configuration['banner_height'] = $form_state->getValue('banner_height');
     $this->configuration['banner_image'] = $form_state->getValue('banner_image');
-
-  }
-
-  /**
-   * {@inheritdoc}
-   */
-  public function getCacheMaxAge() {
-    return 0;
-
   }
 
 }

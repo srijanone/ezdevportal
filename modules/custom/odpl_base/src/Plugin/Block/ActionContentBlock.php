@@ -272,12 +272,4 @@ class ActionContentBlock extends BlockBase implements ContainerFactoryPluginInte
     $this->configuration['webform'] = $form_state->getValue('webform');
   }
 
-  /**
-   * {@inheritdoc}
-   */
-  public function getCacheMaxAge() {
-    return 0;
-
-  }
-
 }
