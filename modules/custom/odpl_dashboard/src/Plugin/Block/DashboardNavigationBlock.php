@@ -144,7 +144,6 @@ class DashboardNavigationBlock extends BlockBase implements ContainerFactoryPlug
         '#size' => 30,
         '#type' => 'textfield',
         '#default_value' => $value['type'],
-        '#disabled' => TRUE,
       ];
       $form['dashboard_sidebar_navigation'][$key]['text'] = [
         '#size' => 30,
