@@ -113,6 +113,7 @@ class BannerContentBlock extends BlockBase implements ContainerFactoryPluginInte
   public function build() {
     $config = $this->getConfiguration();
     $build = [];
+    $banner_image = [];
 
     $current_path = \Drupal::service('path.current')->getPath();
     $array_node = explode('/', $current_path);

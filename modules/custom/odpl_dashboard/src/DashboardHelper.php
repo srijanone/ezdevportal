@@ -94,8 +94,7 @@ class DashboardHelper {
         $id = $current_user->id();
         $moduleHandler = \Drupal::service('module_handler');
         if ($moduleHandler->moduleExists('odpl_apigee_connector')) {
-          $data = Url::fromRoute('entity.developer_app.add_form_for_developer', ['user' => $id])->toString();
-          return $data;
+          return Url::fromRoute('entity.developer_app.add_form_for_developer', ['user' => $id])->toString();
         }
       }
       else {

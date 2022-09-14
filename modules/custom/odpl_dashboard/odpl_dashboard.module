@@ -45,95 +45,103 @@ function odpl_dashboard_entity_form_mode_alter(&$form_mode, EntityInterface $ent
 }
 
 /**
- * Implements template_preprocess_block().
+ * Implements hook_preprocess_HOOK() for dashboard content block.
  */
-function odpl_dashboard_preprocess_block(&$variables) {
-  // Populate the Dashboard Content details in Dashboard content block.
-  if ($variables['plugin_id'] == 'dashboard_content_block') {
+function odpl_dashboard_preprocess_block__dashboard_content_block(&$variables) {
+  $parameters = \Drupal::request()->query->all();
+  if (!empty($parameters['view'])) {
+    $page = $parameters['view'];
+    switch ($page) {
+      case 'support':
+        $display = 'issue_block';
+        $view_name = 'issue';
+        break;
 
-    $parameters = \Drupal::request()->query->all();
-    if (!empty($parameters['view'])) {
-      $page = $parameters['view'];
-      switch ($page) {
-        case 'support':
-          $display = 'issue_block';
-          $view_name = 'issue';
-          break;
+      case 'forum':
+        $display = 'all_forum_block';
+        $view_name = 'forum';
+        break;
 
-        case 'forum':
-          $display = 'all_forum_block';
-          $view_name = 'forum';
-          break;
-      }
-      if (!empty($view_name) && !empty($display)) {
-        $view = Views::getView($view_name);
-        $view->setDisplay($display);
-        $view->execute();
-        $content = $view->buildRenderable($display);
-        $variables['content'] = $content;
-      }
-      else {
-        $variables['content'] = '';
+      default:
+        break;
+    }
+    if (!empty($view_name) && !empty($display)) {
+      $view = Views::getView($view_name);
+      $view->setDisplay($display);
+      $view->execute();
+      $content = $view->buildRenderable($display);
+      $variables['content'] = $content;
+    }
+    else {
+      $variables['content'] = '';
+    }
+  }
+  else {
+    $moduleHandler = \Drupal::service('module_handler');
+    if ($moduleHandler->moduleExists('odpl_apigee_connector')) {
+      $machine_name = 'appcontentblock';
+      $block = \Drupal::entityTypeManager()->getStorage('block')->load($machine_name);
+      if (!empty($block)) {
+        $block_content = \Drupal::entityTypeManager()->getViewBuilder('block')->view($block);
+        $variables['content'] = $block_content;
       }
     }
     else {
-      $moduleHandler = \Drupal::service('module_handler');
-      if ($moduleHandler->moduleExists('odpl_apigee_connector')) {
-        $machine_name = 'appcontentblock';
-        $block = \Drupal::entityTypeManager()->getStorage('block')->load($machine_name);
-        if (!empty($block)) {
-          $block_content = \Drupal::entityTypeManager()->getViewBuilder('block')->view($block);
-          $variables['content'] = $block_content;
-        }
-      }
-      else {
-        $variables['content'] = 'No content';
-      }
+      $variables['content'] = 'No content';
     }
   }
-  // Dynamic dashboard banner title.
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for banner content block.
+ */
+function odpl_dashboard_preprocess_block__banner_content_block(&$variables) {
   $current_path = \Drupal::service('path.current')->getPath();
   $path_alias = \Drupal::service('path_alias.manager')->getAliasByPath($current_path);
-  if ($variables['plugin_id'] == 'banner_content_block') {
-    $parameters = \Drupal::request()->query->all();
-    if ($path_alias == '/dashboard') {
-      if (empty($parameters['view'])) {
-        $page = 'app';
-      }
-      else {
-        $page = $parameters['view'];
-      }
-      switch ($page) {
-        case 'app':
-          $variables['content']['#bannerdata']['title']['#markup'] = 'Dashboard - Apps';
-          break;
+  $parameters = \Drupal::request()->query->all();
+  if ($path_alias == '/dashboard') {
+    if (empty($parameters['view'])) {
+      $page = 'app';
+    }
+    else {
+      $page = $parameters['view'];
+    }
+    switch ($page) {
+      case 'app':
+        $variables['content']['#bannerdata']['title']['#markup'] = 'Dashboard - Apps';
+        break;
 
-        case 'support':
-          $variables['content']['#bannerdata']['title']['#markup'] = 'Dashboard - Support';
-          break;
+      case 'support':
+        $variables['content']['#bannerdata']['title']['#markup'] = 'Dashboard - Support';
+        break;
 
-        case 'forum':
-          $variables['content']['#bannerdata']['title']['#markup'] = 'Dashboard - Forum';
-          break;
-      }
-    }
-    if (strpos($current_path, '/node/add/issue') !== FALSE) {
-      $variables['content']['#bannerdata']['title']['#markup'] = 'Support - Create Issue';
-    }
-    if (strpos($current_path, '/node/add/forum') !== FALSE) {
-      $variables['content']['#bannerdata']['title']['#markup'] = 'Forum - Create Topic';
-    }
-    if (strpos($current_path, '/comment/reply') !== FALSE) {
-      $variables['content']['#bannerdata']['title']['#markup'] = 'Forum - Comments';
-    }
+      case 'forum':
+        $variables['content']['#bannerdata']['title']['#markup'] = 'Dashboard - Forum';
+        break;
 
+      default:
+        break;
+    }
   }
-  // Dynamic Change Text and Url for add Issue form.
-  if ($variables['plugin_id'] == 'developer_navigation_block') {
-    if (strpos($current_path, '/node/add/issue') !== FALSE) {
-      $variables['content']['#navigationData'][0]['text'] = 'Go to Issue';
-      $variables['content']['#navigationData'][0]['path'] = '/dashboard?view=support';
-    }
+  if (strpos($current_path, '/node/add/issue') !== FALSE) {
+    $variables['content']['#bannerdata']['title']['#markup'] = 'Support - Create Issue';
+  }
+  if (strpos($current_path, '/node/add/forum') !== FALSE) {
+    $variables['content']['#bannerdata']['title']['#markup'] = 'Forum - Create Topic';
+  }
+  if (strpos($current_path, '/comment/reply') !== FALSE) {
+    $variables['content']['#bannerdata']['title']['#markup'] = 'Forum - Comments';
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for developer navigation block.
+ */
+function odpl_dashboard_preprocess_block__developer_navigation_block(&$variables) {
+  $current_path = \Drupal::service('path.current')->getPath();
+  if (strpos($current_path, '/node/add/issue') !== FALSE) {
+    $variables['content']['#navigationData'][0]['text'] = 'Go to Issue';
+    $variables['content']['#navigationData'][0]['path'] = '/dashboard?view=support';
   }
 }
 
@@ -156,12 +164,10 @@ function odpl_dashboard_form_alter(&$form, FormStateInterface $form_state, $form
     ];
     $form['actions']['submit']['#value'] = 'Create';
     foreach ($form as $key => $value) {
-      if (isset($form[$key]['#type'])) {
-        if ($form[$key]['#type'] == 'container') {
-          unset($form[$key]['#type']);
-        }
+      if (isset($form[$key]['#type']) && $form[$key]['#type'] == 'container') {
+        unset($form[$key]['#type']);
       }
-    };
+    }
   }
   if ($form_id == "node_issue_form"  && in_array('developer', $user->getRoles())) {
     $form['field_issue_image']['widget']['#title'] = '';
@@ -194,7 +200,6 @@ function odpl_dashboard_preprocess_form_element(&$variables) {
     if (in_array($variables['element']['#attributes']['id'], $element_id)) {
       $variables['attributes'] = new Attribute($variables['attributes']);
       $variables['attributes']->addClass('col-md-6')->removeClass('mb-3');
-      ;
     }
   }
 
@@ -203,7 +208,6 @@ function odpl_dashboard_preprocess_form_element(&$variables) {
     if (in_array($variables['element']['#attributes']['id'], $element_id)) {
       $variables['attributes'] = new Attribute($variables['attributes']);
       $variables['attributes']->addClass('col-md-6')->removeClass('mb-3');
-      ;
     }
   }
 
