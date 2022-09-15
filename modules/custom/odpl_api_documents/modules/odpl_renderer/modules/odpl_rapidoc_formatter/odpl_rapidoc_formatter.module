@@ -8,7 +8,7 @@
 /**
  * Implements hook_theme().
  */
-function odpl_rapidoc_formatter_theme($existing, $type, $theme, $path) {
+function odpl_rapidoc_formatter_theme() {
   return [
     'rapidoc_ui_field_item' => [
       'variables' => [

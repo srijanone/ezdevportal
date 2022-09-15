@@ -30,25 +30,10 @@ class RapiDocUIFormatter extends FileFormatterBase {
   /**
    * {@inheritdoc}
    */
-  public function settingsForm(array $form, FormStateInterface $form_state) {
-    return parent::settingsForm($form, $form_state);
-  }
-
-  /**
-   * {@inheritdoc}
-   */
-  public function settingsSummary() {
-    return parent::settingsSummary();
-  }
-
-  /**
-   * {@inheritdoc}
-   */
   public function view(FieldItemListInterface $items, $langcode = NULL) {
-    $elements = parent::view($items, $langcode);
+    return parent::view($items, $langcode);
     // Library cannot be attached here. Need to be added inline in twig.
     // $elements['#attached']['library'][] = 'odpl_rapidoc_formatter/rapidoc';.
-    return $elements;
   }
 
   /**

@@ -59,8 +59,7 @@ class OdplUserChangepwd extends BlockBase implements ContainerFactoryPluginInter
    * {@inheritdoc}
    */
   public function build() {
-    $form = $this->formBuilder->getForm('Drupal\odpl_user\Form\ChangePasswordForm');
-    return $form;
+    return $this->formBuilder->getForm('Drupal\odpl_user\Form\ChangePasswordForm');
   }
 
   /**

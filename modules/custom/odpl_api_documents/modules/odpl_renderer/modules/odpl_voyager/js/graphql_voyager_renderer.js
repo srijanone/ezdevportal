@@ -6,7 +6,7 @@
 (function ($, Drupal, drupalSettings) {
   Drupal.behaviors.nodeFieldDocument = {
     attach: function attach(context, settings) {
-      var file_url = drupalSettings.odpl_voyager.document;
+      let file_url = drupalSettings.odpl_voyager.document;
       $.getJSON(file_url, function (data) {
         GraphQLVoyager.init(document.getElementById('voyager'), {
           introspection: data

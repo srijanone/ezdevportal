@@ -137,9 +137,6 @@ class ApiDocumentHelperFunctionTest extends UnitTestCase {
    */
   public function testgetApiSpecFromNode() {
 
-    $field_storage = $this->createMock('Drupal\field\FieldStorageConfigInterface');
-    $file_entiy = $this->createMock('Drupal\file\Entity\File');
-
     $field_definition = $this->createMock(FieldDefinitionInterface::class);
     /** @var \Drupal\Core\Field\FieldItemList|\PHPUnit\Framework\MockObject\MockObject $field_list */
     $field_list = $this->getMockBuilder(FieldItemList::class)
@@ -213,8 +210,6 @@ class ApiDocumentHelperFunctionTest extends UnitTestCase {
    * Test for Sdk Languages.
    */
   public function testgetSdkLanguages() {
-
-    $field_storage = $this->createMock('Drupal\field\FieldStorageConfigInterface');
 
     $field_definition = $this->createMock(FieldDefinitionInterface::class);
     /** @var \Drupal\Core\Field\FieldItemList|\PHPUnit\Framework\MockObject\MockObject $field_list */
