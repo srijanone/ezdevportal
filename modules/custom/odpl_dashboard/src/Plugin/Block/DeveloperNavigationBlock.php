@@ -114,7 +114,6 @@ class DeveloperNavigationBlock extends BlockBase implements ContainerFactoryPlug
   public function blockForm($form, FormStateInterface $form_state) {
     $form = parent::blockForm($form, $form_state);
     $config = $this->getConfiguration();
-    $role = $this->currentUser->getRoles();
 
     // Get  Navigation Default Data.
     $navigation = $this->navData->developerNavigationDefaultData();
@@ -188,17 +187,12 @@ class DeveloperNavigationBlock extends BlockBase implements ContainerFactoryPlug
     if (!empty($this->configuration['dashboard_sidebar_navigation'])) {
       $navigation = $this->configuration['dashboard_sidebar_navigation'];
 
-      $list = [];
       $role = $this->currentUser->getRoles();
       foreach ($navigation as $key => $value) {
         // Set class-name of navigation link.
         $navigation[$key]['class'] = $this->navData->getNavigationClass($value['text']);
 
-        if ($value['visibility']['developer'] == '0' && in_array('developer', $role)) {
-          $navigation[$key]['text'] = !empty($value['text']) ? $value['text'] : '';
-          unset($navigation[$key]);
-        }
-        elseif ($value['visibility']['siteadmin'] == '0' && in_array('site_admin', $role)) {
+        if (($value['visibility']['developer'] == '0' && in_array('developer', $role)) || ($value['visibility']['siteadmin'] == '0' && in_array('site_admin', $role))) {
           $navigation[$key]['text'] = !empty($value['text']) ? $value['text'] : '';
           unset($navigation[$key]);
         }

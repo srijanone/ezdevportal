@@ -30,20 +30,6 @@ class VoyagerUIFormatter extends FileFormatterBase {
   /**
    * {@inheritdoc}
    */
-  public function settingsForm(array $form, FormStateInterface $form_state) {
-    return parent::settingsForm($form, $form_state);
-  }
-
-  /**
-   * {@inheritdoc}
-   */
-  public function settingsSummary() {
-    return parent::settingsSummary();
-  }
-
-  /**
-   * {@inheritdoc}
-   */
   public function view(FieldItemListInterface $items, $langcode = NULL) {
     $elements = parent::view($items, $langcode);
     $elements['#attached']['library'][] = 'odpl_voyager/graphQL_voyager';

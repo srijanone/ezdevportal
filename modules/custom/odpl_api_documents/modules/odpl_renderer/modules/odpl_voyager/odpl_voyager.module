@@ -29,7 +29,7 @@ function odpl_voyager_views_pre_render(ViewExecutable $view) {
 /**
  * Implements hook_theme().
  */
-function odpl_voyager_theme($existing, $type, $theme, $path) {
+function odpl_voyager_theme() {
   return [
     'voyager_ui_field_item' => [
       'variables' => [],

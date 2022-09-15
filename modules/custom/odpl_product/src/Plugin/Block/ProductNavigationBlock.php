@@ -171,7 +171,6 @@ class ProductNavigationBlock extends BlockBase implements ContainerFactoryPlugin
 
     if (!empty($this->configuration['product_sidebar_navigation'])) {
       $navigation = $this->configuration['product_sidebar_navigation'];
-      $list = [];
       $parameters = \Drupal::request()->query->all();
       foreach ($navigation as $key => $value) {
 

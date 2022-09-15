@@ -15,9 +15,7 @@ class ApiDocumentHelper {
     $current_path = \Drupal::service('path.current')->getPath();
 
     $current_path_array = explode('/', $current_path);
-    $nid = end($current_path_array);
-
-    return $nid;
+    return end($current_path_array);
 
   }
 

@@ -83,7 +83,7 @@ class GenerateSdk {
       $node = $this->entityTypeManager->getStorage('node')->load($nid);
       if ($node instanceof NodeInterface) {
         $taxonomy_term = $node->get('field_sdk_language')->getValue();
-        foreach ($taxonomy_term as $key => $value) {
+        foreach ($taxonomy_term as $value) {
           $termId = $value['target_id'];
           $term_name = strtolower($this->entityTypeManager->getStorage('taxonomy_term')->load($termId)->getName());
           $result[$term_name] = $this->entityTypeManager->getStorage('taxonomy_term')->load($termId)->getName();

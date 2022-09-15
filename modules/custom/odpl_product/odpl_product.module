@@ -57,8 +57,6 @@ function odpl_product_preprocess_block(&$variables) {
         break;
 
       default:
-        $display = 'product_apidocs_block';
-        $title_name = 'APIs';
         break;
     }
 

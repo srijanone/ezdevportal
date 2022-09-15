@@ -184,10 +184,8 @@ class DashboardNavigationBlock extends BlockBase implements ContainerFactoryPlug
 
     if (!empty($this->configuration['dashboard_sidebar_navigation'])) {
       $navigation = $this->configuration['dashboard_sidebar_navigation'];
-      $list = [];
 
       $parameters = \Drupal::request()->query->all();
-      $currentuser_id = $this->currentUser->id();
 
       foreach ($navigation as $key => $value) {
         $navigation[$key]['class'] = $this->navDashboardData->getNavigationClass($value['type']);
