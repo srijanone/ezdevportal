@@ -1,0 +1,47 @@
+
+  #header {
+   background:#055a8e;
+  }  
+  
+  .menu--account ul a.nav-link{
+    color: #ff0000;
+  }
+
+  .menu--account ul a.nav-link:hover{
+    color: #ffffff;
+  }
+
+  .featured-bottom{
+    background: #cccccc;
+  }
+  .card{
+    border:1px solid #fff000;
+  }
+  .card .card-footer{
+    border-top:1px solid #fff000 ;
+  }
+
+  body .h2.title{
+    color: #dddddd;
+  }
+  .block-banner-content-block h2{
+    color: #eeeeee;
+  }
+  .block-banner-content-block .banner-img .container p{
+    color: #aaaaaa;
+  }
+  a{
+    color:#bbbbbb ;
+  }
+  /*login etc having button class*/
+  .button {
+    background:#adadad !important;
+    border: 1px solid #adadad;
+  }
+  .region-featured-bottom-first .block .btn-subscribe{
+    background: #acacac;
+  }
+  .block-system-menu-blockfooter .nav li a:hover,
+  .block-system-menu-blockfooter .nav li a{
+    color: #aeaeae;
+  }
