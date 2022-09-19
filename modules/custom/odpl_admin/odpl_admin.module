@@ -109,7 +109,9 @@ function odpl_admin_preprocess_block__banner_content_block(&$variables) {
     }
   }
 
-  $variables['content']['#bannerdata']['title']['#markup'] = $banner_title;
+  if (!empty($banner_title)) {
+    $variables['content']['#bannerdata']['title']['#markup'] = $banner_title;
+  }
 }
 
 /**
