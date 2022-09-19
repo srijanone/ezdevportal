@@ -173,6 +173,9 @@ class BannerContentBlock extends BlockBase implements ContainerFactoryPluginInte
     return [
       '#theme' => 'banner_content',
       '#bannerdata' => $build,
+      '#cache' => [
+        'contexts' => ['url'],
+      ]
     ];
   }
 
