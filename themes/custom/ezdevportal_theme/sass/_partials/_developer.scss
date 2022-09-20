@@ -466,3 +466,6 @@
     margin-left: 25px;
   }
 }
+summary::marker {
+  content: '';
+}
