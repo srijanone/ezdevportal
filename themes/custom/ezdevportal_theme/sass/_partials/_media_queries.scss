@@ -294,6 +294,31 @@
 
 
 @media screen and (min-width: 768px) {
+  .view-products-listing-page {
+    .form-select,
+    .form-control {
+      width: 160px;
+    }
+  }
+
+  [id ^="views-form-products-listing-page-page-"] {
+    .form-item-action {
+      select {
+        width: 270px;
+      }
+    }
+  }
+  .page-view-media-library .page-view-products-listing-page {
+    .button--small {
+      margin-top: -40px;
+    }
+  }
+  [id ^="views-exposed-form-products-listing-page-page-"] {
+    .row {
+      flex-wrap: nowrap;
+      width: 33%;
+    }
+  }
 
   .profile-style {
     float: left;
