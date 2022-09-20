@@ -1,47 +1,47 @@
 
   #header {
-   background:#055a8e;
+   background:#ffffff;
   }  
   
   .menu--account ul a.nav-link{
-    color: #ff0000;
+    color: #333333;
   }
 
   .menu--account ul a.nav-link:hover{
-    color: #ffffff;
+    color: #333333;
   }
 
   .featured-bottom{
-    background: #cccccc;
+    background: #eeeeee;
   }
   .card{
-    border:1px solid #fff000;
+    border:1px solid #b7b7b7;
   }
   .card .card-footer{
-    border-top:1px solid #fff000 ;
+    border-top:1px solid #b7b7b7 ;
   }
 
-  body .h2.title{
-    color: #dddddd;
+  body h2.title{
+    color: #333333;
   }
-  .block-banner-content-block h2{
-    color: #eeeeee;
+  .banner-img .container h2{
+    color: #352f2f;
   }
   .block-banner-content-block .banner-img .container p{
-    color: #aaaaaa;
+    color: #352f2f;
   }
   a{
-    color:#bbbbbb ;
+    color:#333333 ;
   }
   /*login etc having button class*/
   .button {
-    background:#adadad !important;
-    border: 1px solid #adadad;
+    background:#333333 !important;
+    border: 1px solid #333333;
   }
   .region-featured-bottom-first .block .btn-subscribe{
-    background: #acacac;
+    background: #ffffff;
   }
   .block-system-menu-blockfooter .nav li a:hover,
   .block-system-menu-blockfooter .nav li a{
-    color: #aeaeae;
+    color: #352f2f;
   }
