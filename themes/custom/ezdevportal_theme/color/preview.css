@@ -22,23 +22,23 @@
   display: flex;
   justify-content: space-between;
 }
-.color-preview-header-top  img{
+.color-preview-header-top  img {
   margin-top: 5px;
   margin-left: 5px;
 }
-.color-preview-banner-img{
+.color-preview-banner-img {
   background: url(/profiles/custom/themes/custom/ezdevportal_theme/images/banner_image.png ) no-repeat;
-  background-size:cover; 
+  background-size: cover;
   min-height: 150px;
   position: relative;
 }
-.color-preview-banner-img .color-preview-banner-container{
+.color-preview-banner-img .color-preview-banner-container {
   position: absolute;
   left: 5%;
   top: 5%;
 }
-.color-preview-banner-img .color-preview-banner-container p{
-  width:95% ;
+.color-preview-banner-img .color-preview-banner-container p {
+  width: 95%;
 }
 .color-preview-header {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -83,21 +83,13 @@
   padding: 0;
 }
 
-.color-preview-main-menu-links a {
-  
- 
-  
-}
-
 .color-preview-main-menu-links a:hover,
 .color-preview-main-menu-links a:focus {
-  
   text-decoration: none;
   cursor: pointer;
 }
 
 .color-preview-main-menu-links li a.is-active {
-  
   border-bottom: none;
 }
 
@@ -119,7 +111,7 @@
   text-align: center;
   display: block;
 }
-.preview-button2{
+.preview-button2 {
   line-height: 18px;
   padding: 24px;
   width: 86%;
@@ -169,11 +161,11 @@
 .color-preview-sidebar .preview-block {
   border: 1px solid;
   margin: 20px 0;
-  border-radius:10px ;
+  border-radius: 10px;
 }
 
 .color-preview-sidebar h2 {
-  border-bottom: 1px solid ;
+  border-bottom: 1px solid;
   font-weight: normal;
   margin-top: 0;
   margin-right: 0;
@@ -182,7 +174,7 @@
   text-shadow: 0 1px 0 #fff;
   text-align: center;
 }
-.color-preview-card-footer{
+.color-preview-card-footer {
   padding: 0.5rem 1rem;
   text-align: center;
   border-top: 1px solid;
@@ -236,7 +228,6 @@
   /* LTR */
   padding: 0 10px;
   position: relative;
-  
 }
 
 [dir="rtl"] .color-preview-footer-wrapper .preview-footer-column {
@@ -288,12 +279,10 @@
 }
 
 .color-preview-footer-columns .preview-content li a {
- 
   display: block;
   line-height: 1.2;
   padding: 0.8em 2px 0.8em 20px;
   /* LTR */
- 
 }
 
 [dir="rtl"] .color-preview-footer-columns .preview-content li a {
@@ -303,6 +292,5 @@
 
 .color-preview-footer-columns .preview-content li a:hover,
 .color-preview-footer-columns .preview-content li a:focus {
-  
   text-decoration: none;
 }
