@@ -20,7 +20,7 @@ display:
     display_plugin: default
     position: 0
     display_options:
-      title: Users
+      title: 'User Management'
       fields:
         user_bulk_form:
           id: user_bulk_form

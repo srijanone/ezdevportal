@@ -1,7 +1,12 @@
 langcode: en
 status: true
 dependencies:
+  config:
+    - user.role.administrator
+    - user.role.editor
+    - user.role.site_admin
   module:
+    - user
     - views_bootstrap
     - webform
 id: webform_submission
@@ -18,7 +23,7 @@ display:
     display_plugin: default
     position: 0
     display_options:
-      title: 'Webform Submission'
+      title: 'Queries and Submissions'
       fields:
         webform_submission_bulk_form:
           id: webform_submission_bulk_form
@@ -482,8 +487,12 @@ display:
           sort_asc_label: Asc
           sort_desc_label: Desc
       access:
-        type: none
-        options: {  }
+        type: role
+        options:
+          role:
+            administrator: administrator
+            site_admin: site_admin
+            editor: editor
       cache:
         type: tag
         options: {  }
@@ -601,6 +610,7 @@ display:
         - 'languages:language_interface'
         - url.query_args
         - user
+        - user.roles
       tags: {  }
   page_1:
     id: page_1
@@ -617,4 +627,5 @@ display:
         - 'languages:language_interface'
         - url.query_args
         - user
+        - user.roles
       tags: {  }

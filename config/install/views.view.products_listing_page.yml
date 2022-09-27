@@ -569,7 +569,7 @@ display:
       access:
         type: perm
         options:
-          perm: 'access content'
+          perm: 'access content overview'
       cache:
         type: tag
         options: {  }
@@ -808,6 +808,7 @@ display:
     display_plugin: page
     position: 1
     display_options:
+      title: 'Content Management - Products'
       fields:
         views_bulk_operations_bulk_form:
           id: views_bulk_operations_bulk_form
@@ -1507,6 +1508,7 @@ display:
         groups:
           1: AND
       defaults:
+        title: false
         fields: false
         filters: false
         filter_groups: false
@@ -1561,6 +1563,7 @@ display:
     display_plugin: page
     position: 2
     display_options:
+      title: 'Content Management - Blogs'
       fields:
         views_bulk_operations_bulk_form:
           id: views_bulk_operations_bulk_form
@@ -2342,6 +2345,7 @@ display:
         groups:
           1: AND
       defaults:
+        title: false
         fields: false
         filters: false
         filter_groups: false
@@ -2391,6 +2395,7 @@ display:
     display_plugin: page
     position: 3
     display_options:
+      title: 'Content Management - Use Cases'
       fields:
         views_bulk_operations_bulk_form:
           id: views_bulk_operations_bulk_form
@@ -3116,6 +3121,7 @@ display:
         groups:
           1: AND
       defaults:
+        title: false
         fields: false
         filters: false
         filter_groups: false
@@ -3165,6 +3171,7 @@ display:
     display_plugin: page
     position: 4
     display_options:
+      title: 'Content Management - Pages'
       fields:
         views_bulk_operations_bulk_form:
           id: views_bulk_operations_bulk_form
@@ -3825,6 +3832,7 @@ display:
         groups:
           1: AND
       defaults:
+        title: false
         fields: false
         filters: false
         filter_groups: false
@@ -3873,6 +3881,7 @@ display:
     display_plugin: page
     position: 5
     display_options:
+      title: 'Content Management - APIs'
       fields:
         views_bulk_operations_bulk_form:
           id: views_bulk_operations_bulk_form
@@ -4601,6 +4610,7 @@ display:
         groups:
           1: AND
       defaults:
+        title: false
         fields: false
         filters: false
         filter_groups: false
@@ -4641,6 +4651,7 @@ display:
     display_plugin: page
     position: 1
     display_options:
+      title: 'Content Management - FAQs'
       fields:
         views_bulk_operations_bulk_form:
           id: views_bulk_operations_bulk_form
@@ -5369,6 +5380,7 @@ display:
         groups:
           1: AND
       defaults:
+        title: false
         fields: false
         filters: false
         filter_groups: false

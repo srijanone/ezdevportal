@@ -5,6 +5,9 @@ dependencies:
     - field.storage.node.field_forum_tags
     - node.type.forum
     - taxonomy.vocabulary.forums
+    - user.role.administrator
+    - user.role.editor
+    - user.role.site_admin
   module:
     - better_exposed_filters
     - like_and_dislike
@@ -1160,6 +1163,7 @@ display:
     display_plugin: page
     position: 3
     display_options:
+      title: 'Manage Forum Topics'
       fields:
         field_forum_tags:
           id: field_forum_tags
@@ -1502,6 +1506,13 @@ display:
             delete_node: delete_node
             title: '0'
             field_forum_tags: '0'
+      access:
+        type: role
+        options:
+          role:
+            administrator: administrator
+            site_admin: site_admin
+            editor: editor
       sorts:
         timestamp:
           id: timestamp
@@ -1697,6 +1708,8 @@ display:
         type: fields
         options: {  }
       defaults:
+        access: false
+        title: false
         style: false
         row: false
         relationships: false
@@ -1727,6 +1740,6 @@ display:
         - url.query_args
         - 'url.query_args:sort_by'
         - 'user.node_grants:view'
-        - user.permissions
+        - user.roles
       tags:
         - 'config:field.storage.node.field_forum_tags'

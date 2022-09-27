@@ -7,8 +7,6 @@ dependencies:
     - node.type.article
     - node.type.blog_post
     - node.type.faq
-    - node.type.forum
-    - node.type.issue
     - node.type.landing_page
     - node.type.page
     - node.type.use_case
@@ -63,8 +61,6 @@ type_settings:
       - article
       - blog_post
       - faq
-      - forum
-      - issue
       - landing_page
       - page
       - use_case
