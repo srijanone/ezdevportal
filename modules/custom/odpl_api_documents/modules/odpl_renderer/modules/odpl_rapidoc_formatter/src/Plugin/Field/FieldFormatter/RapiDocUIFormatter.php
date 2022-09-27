@@ -3,7 +3,6 @@
 namespace Drupal\odpl_rapidoc_formatter\Plugin\Field\FieldFormatter;
 
 use Drupal\Core\Field\FieldItemListInterface;
-use Drupal\Core\Form\FormStateInterface;
 use Drupal\file\Plugin\Field\FieldFormatter\FileFormatterBase;
 
 /**

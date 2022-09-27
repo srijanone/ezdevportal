@@ -81,6 +81,7 @@ permissions:
   - 'delete any audio media'
   - 'delete any document media'
   - 'delete any image media'
+  - 'delete own issue content'
   - 'delete any media'
   - 'delete any remote_video media'
   - 'delete any video media'

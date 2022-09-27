@@ -56,6 +56,7 @@ label: 'Site Admin'
 weight: 4
 is_admin: null
 permissions:
+  - 'access content overview'
   - 'access google analytics reports'
   - 'access media overview'
   - 'access taxonomy overview'
@@ -161,6 +162,7 @@ permissions:
   - 'edit any faq content'
   - 'edit any forum content'
   - 'edit any image media'
+  - 'edit any issue content'
   - 'edit any landing_page content'
   - 'edit any remote_video media'
   - 'edit any use_case content'

@@ -1,7 +1,7 @@
 {
     "_links": {
         "self": {
-            "href": "http:\/\/default\/node\/65?_format=hal_json"
+            "href": "http:\/\/default\/forum\/general-discussion-of-rest-api?_format=hal_json"
         },
         "type": {
             "href": "http:\/\/drupal.org\/rest\/type\/node\/forum"
@@ -74,7 +74,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "1267684c-4fd4-47da-b72e-c0aa18e7a733"
+                        "value": "2572ff7d-99e2-4fa5-ad40-c746f8b4dfb4"
                     }
                 ]
             }
@@ -91,7 +91,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "1267684c-4fd4-47da-b72e-c0aa18e7a733"
+                        "value": "2572ff7d-99e2-4fa5-ad40-c746f8b4dfb4"
                     }
                 ],
                 "lang": "en"
@@ -126,7 +126,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "4bb449c9-1b32-4fc7-bcc8-38cbb5fda543"
+                        "value": "61db5114-572e-4609-9f97-ad6b06717e43"
                     }
                 ],
                 "lang": "en"
@@ -154,7 +154,7 @@
     ],
     "changed": [
         {
-            "value": "2022-06-08T09:35:16+00:00",
+            "value": "2022-09-26T17:17:11+00:00",
             "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
         }
@@ -183,26 +183,20 @@
             "lang": "en"
         }
     ],
-    "moderation_state": [
-        {
-            "value": "published",
-            "lang": "en"
-        }
-    ],
     "metatag": [
         {
             "value": {
-                "canonical_url": "http:\/\/default\/node\/65",
-                "title": "General discussion of rest api | ODP",
+                "canonical_url": "http:\/\/default\/forum\/general-discussion-of-rest-api",
+                "title": "General discussion of rest api | EzDevPortal",
                 "description": "This forum is a general discussion of rest api"
             }
         }
     ],
     "path": [
         {
-            "alias": null,
-            "pid": null,
-            "langcode": "en",
+            "alias": "\/forum\/general-discussion-of-rest-api",
+            "pid": 78,
+            "langcode": "und",
             "lang": "en"
         }
     ],
@@ -219,7 +213,7 @@
         {
             "status": 2,
             "cid": 0,
-            "last_comment_timestamp": 1645779920,
+            "last_comment_timestamp": 1654680916,
             "last_comment_name": null,
             "last_comment_uid": 1,
             "comment_count": 0,
