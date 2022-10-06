@@ -58,7 +58,7 @@ elements: |-
     '#type': webform_actions
     '#title': 'Submit button(s)'
     '#submit__label': Send
-css: ''
+css: ".webform-submission-information {display: none}\r\n#block-ezdevportal-theme-help {display: none}"
 javascript: ''
 settings:
   ajax: false
