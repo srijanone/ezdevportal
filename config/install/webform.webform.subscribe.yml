@@ -1,9 +1,9 @@
 langcode: en
 status: open
 dependencies: {  }
+weight: 0
 open: null
 close: null
-weight: 0
 uid: 1
 template: false
 archive: false
@@ -28,7 +28,7 @@ elements: |-
     '#submit__attributes':
       class:
         - btn-subscribe
-css: ''
+css: ".webform-submission-information {display: none}\r\n#block-ezdevportal-theme-help {display: none}"
 javascript: ''
 settings:
   ajax: false
