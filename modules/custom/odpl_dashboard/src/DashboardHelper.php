@@ -2,8 +2,6 @@
 
 namespace Drupal\odpl_dashboard;
 
-use Drupal\Core\Url;
-
 /**
  * File for general function usage.
  */
@@ -80,28 +78,6 @@ class DashboardHelper {
     if (!empty($classdata)) {
       return 'dashboard-' . str_replace(" ", "-", strtolower($classdata)) . '-link';
     }
-  }
-
-  /**
-   * Function for set icon path.
-   */
-  public function getIconPath($data) {
-
-    if (!empty($data)) {
-
-      if ($data == '/user/apps') {
-        $current_user = \Drupal::currentUser();
-        $id = $current_user->id();
-        $moduleHandler = \Drupal::service('module_handler');
-        if ($moduleHandler->moduleExists('odpl_apigee_connector')) {
-          return Url::fromRoute('entity.developer_app.add_form_for_developer', ['user' => $id])->toString();
-        }
-      }
-      else {
-        return $data;
-      }
-    }
-
   }
 
 }

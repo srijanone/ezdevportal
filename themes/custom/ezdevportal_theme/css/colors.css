@@ -1,48 +1,46 @@
+#header {
+  background: #ffffff;
+}
+.menu--account ul a.nav-link {
+  color: #333333;
+}
 
-  #header {
-   background:#ffffff;
-  }  
-  
-  .menu--account ul a.nav-link{
-    color: #333333;
-  }
+.menu--account ul a.nav-link:hover {
+  color: #333333;
+}
 
-  .menu--account ul a.nav-link:hover{
-    color: #333333;
-  }
+.featured-bottom {
+  background: #eeeeee;
+}
+.card {
+  border: 1px solid #b7b7b7;
+}
+.card .card-footer {
+  border-top: 1px solid #b7b7b7;
+}
 
-  .featured-bottom{
-    background: #eeeeee;
-  }
-  .card{
-    border:1px solid #b7b7b7;
-  }
-  .card .card-footer{
-    border-top:1px solid #b7b7b7 ;
-  }
-
-  body h2.title{
-    color: #333333;
-  }
-  .banner-img .container h2{
-    color: #352f2f;
-  }
-  .block-banner-content-block .banner-img .container p{
-    color: #352f2f;
-  }
-  a{
-    color:#333333 ;
-  }
-  /*login etc having button class*/
-  .button:hover, 
-  .button {
-    background:#333333 !important;
-    border: 1px solid #333333;
-  }
-  .region-featured-bottom-first .block .btn-subscribe{
-    background: #ffffff;
-  }
-  .block-system-menu-blockfooter .nav li a:hover,
-  .block-system-menu-blockfooter .nav li a{
-    color: #352f2f;
-  }
+body h2.title {
+  color: #333333;
+}
+.banner-img .container h2 {
+  color: #352f2f;
+}
+.block-banner-content-block .banner-img .container p {
+  color: #352f2f;
+}
+a {
+  color: #333333;
+}
+/*login etc having button class*/
+.button:hover,
+.button {
+  background: #333333 !important;
+  border: 1px solid #333333;
+}
+.region-featured-bottom-first .block .btn-subscribe {
+  background: #ffffff;
+}
+.block-system-menu-blockfooter .nav li a:hover,
+.block-system-menu-blockfooter .nav li a {
+  color: #352f2f;
+}

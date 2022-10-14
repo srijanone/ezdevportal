@@ -192,7 +192,7 @@ class DashboardNavigationBlock extends BlockBase implements ContainerFactoryPlug
 
         $navigation[$key]['text'] = !empty($value['text']) ? $value['text'] : $value['type'];
 
-        $navigation[$key]['add_icon_path'] = $this->navDashboardData->getIconPath($value['add_icon_path']);
+        $navigation[$key]['add_icon_path'] = $value['add_icon_path'];
         // Set active link based on current path.
         if (empty($parameters['view'])) {
           if (strpos($value['path'], 'app') !== FALSE) {

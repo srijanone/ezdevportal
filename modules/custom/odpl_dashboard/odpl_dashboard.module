@@ -77,20 +77,6 @@ function odpl_dashboard_preprocess_block__dashboard_content_block(&$variables) {
       $variables['content'] = '';
     }
   }
-  else {
-    $moduleHandler = \Drupal::service('module_handler');
-    if ($moduleHandler->moduleExists('odpl_apigee_connector')) {
-      $machine_name = 'appcontentblock';
-      $block = \Drupal::entityTypeManager()->getStorage('block')->load($machine_name);
-      if (!empty($block)) {
-        $block_content = \Drupal::entityTypeManager()->getViewBuilder('block')->view($block);
-        $variables['content'] = $block_content;
-      }
-    }
-    else {
-      $variables['content'] = 'No content';
-    }
-  }
 }
 
 /**
