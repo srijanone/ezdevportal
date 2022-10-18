@@ -868,9 +868,13 @@ display:
           force_selection_info: false
           selected_actions:
             6:
-              action_id: odpl_workflows_publish_node_action
+              action_id: odpl_workflows_draft_node_action
             7:
+              action_id: odpl_workflows_publish_node_action
+            8:
               action_id: odpl_workflows_review_node_action
+            9:
+              action_id: odpl_workflows_unpublish_node_action
         field_listing_image:
           id: field_listing_image
           table: node__field_listing_image
@@ -1623,9 +1627,13 @@ display:
           force_selection_info: false
           selected_actions:
             6:
-              action_id: odpl_workflows_publish_node_action
+              action_id: odpl_workflows_draft_node_action
             7:
+              action_id: odpl_workflows_publish_node_action
+            8:
               action_id: odpl_workflows_review_node_action
+            9:
+              action_id: odpl_workflows_unpublish_node_action
         field_listing_image:
           id: field_listing_image
           table: node__field_listing_image
@@ -2455,9 +2463,13 @@ display:
           force_selection_info: false
           selected_actions:
             6:
-              action_id: odpl_workflows_publish_node_action
+              action_id: odpl_workflows_draft_node_action
             7:
+              action_id: odpl_workflows_publish_node_action
+            8:
               action_id: odpl_workflows_review_node_action
+            9:
+              action_id: odpl_workflows_unpublish_node_action
         field_listing_image:
           id: field_listing_image
           table: node__field_listing_image
@@ -3231,9 +3243,13 @@ display:
           force_selection_info: false
           selected_actions:
             6:
-              action_id: odpl_workflows_publish_node_action
+              action_id: odpl_workflows_draft_node_action
             7:
+              action_id: odpl_workflows_publish_node_action
+            8:
               action_id: odpl_workflows_review_node_action
+            9:
+              action_id: odpl_workflows_unpublish_node_action
         title:
           id: title
           table: node_field_data
@@ -3941,9 +3957,13 @@ display:
           force_selection_info: false
           selected_actions:
             6:
-              action_id: odpl_workflows_publish_node_action
+              action_id: odpl_workflows_draft_node_action
             7:
+              action_id: odpl_workflows_publish_node_action
+            8:
               action_id: odpl_workflows_review_node_action
+            9:
+              action_id: odpl_workflows_unpublish_node_action
         field_listing_image:
           id: field_listing_image
           table: node__field_listing_image
@@ -4711,9 +4731,13 @@ display:
           force_selection_info: false
           selected_actions:
             6:
-              action_id: odpl_workflows_publish_node_action
+              action_id: odpl_workflows_draft_node_action
             7:
+              action_id: odpl_workflows_publish_node_action
+            8:
               action_id: odpl_workflows_review_node_action
+            9:
+              action_id: odpl_workflows_unpublish_node_action
         field_listing_image:
           id: field_listing_image
           table: node__field_listing_image

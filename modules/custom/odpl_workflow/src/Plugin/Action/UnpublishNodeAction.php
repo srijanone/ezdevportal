@@ -35,7 +35,7 @@ class UnpublishNodeAction extends ViewsBulkOperationsActionBase {
     }
 
     if ($state == 'published') {
-      $entity->set('moderation_state', 'draft');
+      $entity->set('moderation_state', 'unpublished');
       $entity->save();
     }
 
@@ -51,7 +51,7 @@ class UnpublishNodeAction extends ViewsBulkOperationsActionBase {
    * {@inheritdoc}
    */
   public function access($object, AccountInterface $account = NULL, $return_as_object = FALSE) {
-    if ($account->hasPermission('use content transition create_new_draft')) {
+    if ($account->hasPermission('use content transition unpublish')) {
       return $return_as_object ? AccessResult::allowed() : TRUE;
     }
     return $return_as_object ? AccessResult::forbidden() : FALSE;

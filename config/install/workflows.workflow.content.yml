@@ -32,12 +32,18 @@ type_settings:
       weight: -1
       published: false
       default_revision: false
+    unpublished:
+      label: Unpublished
+      weight: 1
+      published: false
+      default_revision: true
   transitions:
     create_new_draft:
       label: 'Create New Draft'
       from:
         - draft
         - published
+        - unpublished
       to: draft
       weight: -2
     publish:
@@ -54,6 +60,12 @@ type_settings:
         - review
       to: review
       weight: -1
+    unpublish:
+      label: Unpublish
+      from:
+        - published
+      to: unpublished
+      weight: 1
   entity_types:
     node:
       - api_document

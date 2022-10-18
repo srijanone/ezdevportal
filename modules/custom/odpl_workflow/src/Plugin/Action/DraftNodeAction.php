@@ -9,16 +9,16 @@ use Drupal\Core\Entity\ContentEntityInterface;
 use Drupal\Core\Access\AccessResult;
 
 /**
- * Content moderation publish node.
+ * Content moderation draft node.
  *
  * @Action(
- *   id = "odpl_workflows_review_node_action",
- *   label = @Translation("Review Node"),
+ *   id = "odpl_workflows_draft_node_action",
+ *   label = @Translation("Draft Node"),
  *   type = "node",
  *   confirm = TRUE
  * )
  */
-class ReviewNodeAction extends ViewsBulkOperationsActionBase {
+class DraftNodeAction extends ViewsBulkOperationsActionBase {
 
   use StringTranslationTrait;
 
@@ -34,8 +34,8 @@ class ReviewNodeAction extends ViewsBulkOperationsActionBase {
       );
     }
 
-    if ($state == 'draft') {
-      $entity->set('moderation_state', 'review');
+    if ($state == 'unpublished' || $state == 'review') {
+      $entity->set('moderation_state', 'draft');
       $entity->save();
     }
 
@@ -51,7 +51,7 @@ class ReviewNodeAction extends ViewsBulkOperationsActionBase {
    * {@inheritdoc}
    */
   public function access($object, AccountInterface $account = NULL, $return_as_object = FALSE) {
-    if ($account->hasPermission('use content transition review')) {
+    if ($account->hasPermission('use content transition create_new_draft')) {
       return $return_as_object ? AccessResult::allowed() : TRUE;
     }
     return $return_as_object ? AccessResult::forbidden() : FALSE;
