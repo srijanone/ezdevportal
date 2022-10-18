@@ -9,16 +9,16 @@ use Drupal\Core\Entity\ContentEntityInterface;
 use Drupal\Core\Access\AccessResult;
 
 /**
- * Content moderation publish node.
+ * Content moderation unpublish node.
  *
  * @Action(
- *   id = "odpl_workflows_review_node_action",
- *   label = @Translation("Review Node"),
+ *   id = "odpl_workflows_unpublish_node_action",
+ *   label = @Translation("Unpublish Node"),
  *   type = "node",
  *   confirm = TRUE
  * )
  */
-class ReviewNodeAction extends ViewsBulkOperationsActionBase {
+class UnpublishNodeAction extends ViewsBulkOperationsActionBase {
 
   use StringTranslationTrait;
 
@@ -34,8 +34,8 @@ class ReviewNodeAction extends ViewsBulkOperationsActionBase {
       );
     }
 
-    if ($state == 'draft') {
-      $entity->set('moderation_state', 'review');
+    if ($state == 'published') {
+      $entity->set('moderation_state', 'draft');
       $entity->save();
     }
 

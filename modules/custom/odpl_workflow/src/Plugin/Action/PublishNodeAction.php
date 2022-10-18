@@ -13,7 +13,7 @@ use Drupal\Core\Access\AccessResult;
  *
  * @Action(
  *   id = "odpl_workflows_publish_node_action",
- *   label = @Translation("Publish node (moderation_state)"),
+ *   label = @Translation("Publish Node"),
  *   type = "node",
  *   confirm = TRUE
  * )
