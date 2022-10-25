@@ -1400,6 +1400,20 @@ display:
             title: '0'
             changed: '0'
             nothing: '0'
+      empty:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text
+          empty: true
+          content:
+            value: '<div>No Products available.</div>'
+            format: basic_html
+          tokenize: false
       filters:
         title:
           id: title
@@ -1512,6 +1526,7 @@ display:
         groups:
           1: AND
       defaults:
+        empty: false
         title: false
         fields: false
         filters: false
@@ -2215,6 +2230,20 @@ display:
             changed: '0'
             contextual_links: '0'
             nothing: '0'
+      empty:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text
+          empty: true
+          content:
+            value: '<div>No Blogs available.</div>'
+            format: basic_html
+          tokenize: false
       filters:
         title:
           id: title
@@ -2353,6 +2382,7 @@ display:
         groups:
           1: AND
       defaults:
+        empty: false
         title: false
         fields: false
         filters: false
@@ -2995,6 +3025,20 @@ display:
             title: '0'
             changed: '0'
             nothing: '0'
+      empty:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text
+          empty: true
+          content:
+            value: '<div>No Use Cases available.</div>'
+            format: basic_html
+          tokenize: false
       filters:
         title:
           id: title
@@ -3133,6 +3177,7 @@ display:
         groups:
           1: AND
       defaults:
+        empty: false
         title: false
         fields: false
         filters: false
@@ -3710,6 +3755,20 @@ display:
             title: '0'
             changed: '0'
             contextual_links: '0'
+      empty:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text
+          empty: true
+          content:
+            value: '<div>No Pages available.</div>'
+            format: basic_html
+          tokenize: false
       filters:
         title:
           id: title
@@ -3848,6 +3907,7 @@ display:
         groups:
           1: AND
       defaults:
+        empty: false
         title: false
         fields: false
         filters: false
@@ -4489,6 +4549,20 @@ display:
             title: '0'
             changed: '0'
             nothing: '0'
+      empty:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text
+          empty: true
+          content:
+            value: '<div>No APIs available.</div>'
+            format: basic_html
+          tokenize: false
       filters:
         title:
           id: title
@@ -4630,6 +4704,7 @@ display:
         groups:
           1: AND
       defaults:
+        empty: false
         title: false
         fields: false
         filters: false
@@ -5263,6 +5338,20 @@ display:
             title: '0'
             changed: '0'
             nothing: '0'
+      empty:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text
+          empty: true
+          content:
+            value: '<div>No FAQs available.</div>'
+            format: basic_html
+          tokenize: false
       filters:
         title:
           id: title
@@ -5404,6 +5493,7 @@ display:
         groups:
           1: AND
       defaults:
+        empty: false
         title: false
         fields: false
         filters: false

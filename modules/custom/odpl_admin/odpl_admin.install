@@ -1,0 +1,74 @@
+<?php
+
+/**
+ * @file
+ * Provides all the hooks for handling the installation of the module.
+ */
+
+use Drupal\menu_link_content\Entity\MenuLinkContent;
+
+/**
+ * @file
+ * Contains install functionality for odpl admin.
+ */
+
+/**
+ * Implements hook_install().
+ */
+function odpl_admin_install() {
+  MenuLinkContent::create([
+    'title' => 'CONTENT MANAGEMENT',
+    'link' => ['uri' => 'internal:/content-management'],
+    'menu_name' => 'admin-sidebar',
+    'weight' => 0,
+  ])->save();
+
+  MenuLinkContent::create([
+    'title' => 'APIS',
+    'link' => ['uri' => 'internal:/api-list'],
+    'menu_name' => 'admin-sidebar',
+    'weight' => 1,
+  ])->save();
+
+  MenuLinkContent::create([
+    'title' => 'MANAGE USERS',
+    'link' => ['uri' => 'internal:/user-list'],
+    'menu_name' => 'admin-sidebar',
+    'weight' => 2,
+  ])->save();
+
+  MenuLinkContent::create([
+    'title' => 'MANAGE CATEGORIES',
+    'link' => ['uri' => 'internal:/admin/structure/taxonomy'],
+    'menu_name' => 'admin-sidebar',
+    'weight' => 3,
+  ])->save();
+
+  MenuLinkContent::create([
+    'title' => 'MANAGE MENUS',
+    'link' => ['uri' => 'internal:/admin/structure/menu'],
+    'menu_name' => 'admin-sidebar',
+    'weight' => 4,
+  ])->save();
+
+  MenuLinkContent::create([
+    'title' => 'ANALYTICS',
+    'link' => ['uri' => 'internal:/google-analytics-reports'],
+    'menu_name' => 'admin-sidebar',
+    'weight' => 5,
+  ])->save();
+
+  MenuLinkContent::create([
+    'title' => 'QUERIES AND SUBSCRIPTIONS',
+    'link' => ['uri' => 'internal:/webform-submission'],
+    'menu_name' => 'admin-sidebar',
+    'weight' => 6,
+  ])->save();
+
+  MenuLinkContent::create([
+    'title' => 'FORUM',
+    'link' => ['uri' => 'internal:/forum-list'],
+    'menu_name' => 'admin-sidebar',
+    'weight' => 7,
+  ])->save();
+}
