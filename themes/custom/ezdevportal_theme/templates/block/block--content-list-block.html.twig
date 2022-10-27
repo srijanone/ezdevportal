@@ -39,7 +39,7 @@
         {% for item in banner_content.content %}
         <span class="blog-date">{{ item.date }}</span>
         {% if item.title  %}
-          <a href="{{ item.url }}"><h2 class='blog-title'>{{ item.title }}</h2></a>
+          <a href="{{ item.url }}"><div class='blog-title'>{{ item.title }}</div></a>
         {% endif %}
         <span class="author">By {{ item.username }}</span>
         {% if item.content %}

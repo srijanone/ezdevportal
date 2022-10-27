@@ -49,7 +49,9 @@
 
   .card-title {
     padding: 0.5rem 1rem;
-
+    @include card-title;
+    
+    margin-bottom: 0;
     h3 {
       @include card-title;
       margin-top: 20px;

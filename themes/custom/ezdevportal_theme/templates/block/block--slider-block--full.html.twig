@@ -32,10 +32,10 @@
 				<div class="row">
 					<div class="col-lg-6 text-banner-left">
 						{% if item.heading_1 %}
-							<h2 class="slidehead1">{{ item.heading_1 }}</h2>
+							<h1 class="slidehead1">{{ item.heading_1 }}</h1>
 						{% endif %}
 						{% if item.heading_2 %}
-							<h3 class="slidehead2">{{ item.heading_2 }}</h3>
+							<p class="slidehead2">{{ item.heading_2 }}</p>
 						{% endif %}
 						{% if item.description %}
 							<p class="slidedesc">{{ item.description|raw|striptags }}</p>

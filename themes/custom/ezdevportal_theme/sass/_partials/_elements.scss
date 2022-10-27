@@ -66,16 +66,15 @@ body {
     }
   }
 }
-h1 {
-  &.title {
+h1{
     @include heading;
   }
-}
 h2{
-  &.title {
-    @include heading;
+    @include heading-h2;
+    line-height: 35px;
+    margin-top: 100px;
+    margin-bottom: 40px;
   }
-}
 
 .accordion-button {
   @include card-title;

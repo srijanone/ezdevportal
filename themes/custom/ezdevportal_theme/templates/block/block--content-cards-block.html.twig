@@ -50,7 +50,7 @@
                                             {% if item.icon %}
                                             <img src="{{ item.icon }}" class="card-img-top" width="60" height="60" alt="{{ item.icon }}">
                                             {% endif %}  
-                                            <h5 class="card-title">{{ item.title }}</h5>
+                                            <h3 class="card-title">{{ item.title }}</h3>
                                             {% set text = item.content|raw|split('.') %}
                                             <p> {{  text['0']|raw }}.</p>
                                         </div>
@@ -69,7 +69,7 @@
             </div>
             {% if card_block.more_link %}
             <div class="view"><div class="view-footer">
-                 <h4 class="text-end explore-all-domain"><a href="{{ card_block.more_link }}">{{card_block.more_link_title}}</a></h4>
+                 <div class="text-end explore-all-domain"><a href="{{ card_block.more_link }}">{{card_block.more_link_title}}</a></div>
              </div>
              </div>
             {% endif %}     
