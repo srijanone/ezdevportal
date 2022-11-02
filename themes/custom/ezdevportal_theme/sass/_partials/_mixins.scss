@@ -20,6 +20,11 @@
     line-height: $line-height-50;
     color:$primary;
 }
+@mixin heading-h2 {
+    font-size: $basic-font-size-26;
+    text-align: center;
+    font-weight: $font-weight-600;
+}
 @mixin banner-heading-bottom {
     font-weight: $font-weight-300;
     font-size: $basic-font-size-48;
@@ -64,7 +69,7 @@
 }
 @mixin  card-title{
     font-weight: $font-weight-600;
-    font-size: $basic-font-size;
+    font-size: $basic-font-size-20;
     line-height: $line-height-22;
 }
 @mixin  card-text{
@@ -85,9 +90,9 @@
     text-transform:uppercase;
 }
 @mixin heading {
-    font-size: $basic-font-size-26;
+    font-size: $basic-font-size-48;
     text-align: center;
-    font-weight: $font-weight-600;
+    font-weight: $font-weight-500;
     line-height:$line-height-35;
     margin-top: 100px;
     margin-bottom: 40px;

@@ -10,9 +10,9 @@
   border: 1px solid $lightgray;
  
   .container {
-    h2 {
-      @include banner-heading;
-      padding-top: 99px;
+    h1 {
+      
+     text-align: left;
       margin-bottom: 9px;
     }
 
@@ -24,7 +24,7 @@
 
 .view-product-banner {
     min-height: 447px;
-    h2{
+    h1{
         margin-top: 125px;
     }
   .prod-attr {

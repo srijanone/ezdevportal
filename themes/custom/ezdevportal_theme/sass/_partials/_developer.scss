@@ -285,8 +285,8 @@
 
 }
 
-.block-odpl-apigee-connector {
-  h2 {
+
+  .card-with-text {
     @include banner-para;
     margin-bottom: 20px;
   }
@@ -299,7 +299,7 @@
   .appcreated {
     @include card-text;
   }
-}
+
 
 .approval-pending-apps {
   margin-top: 88px;

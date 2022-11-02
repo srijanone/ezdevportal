@@ -34,7 +34,7 @@
         content: "";
         width: 39px;
         height: 16px;
-        background: url(../images/right-arrow.png) no-repeat 3px 14px;
+        background: url(../images/right-arrow.png) no-repeat 3px 7px;
         background-size: 24px;
         padding: 0px 14px;
         margin-left: 12px;
@@ -93,11 +93,12 @@
 
 .layout--twocol-section--25-75 {
   .layout__region--first {
-    h2 {
+    .filter {
       border-bottom: none;
       @include filters-heading;
       text-transform: uppercase;
       margin-bottom: 40px;
+      text-align: left;
     }
   }
   

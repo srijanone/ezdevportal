@@ -25,9 +25,9 @@
   }
 
   h2 {
-    &.title {
-      margin-top: 42px;
-    }
+    @include heading-h2 ;
+    margin-top: 42px;
+   
   }
 }
 
@@ -47,8 +47,9 @@
 }
 
 .slidehead1 {
-  font-size: 48px;
   line-height: 50px;
+  text-align: left;
+  margin-top: 0;
 }
 
 .slidehead2 {
