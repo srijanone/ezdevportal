@@ -53,13 +53,44 @@ third_party_settings:
               banner_image: {  }
             weight: -10
             additional: {  }
+          45d3617a-e08f-495b-a57b-3d876df6d763:
+            uuid: 45d3617a-e08f-495b-a57b-3d876df6d763
+            region: content
+            configuration:
+              id: 'extra_field_block:node:api_document:content_moderation_control'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+            weight: -9
+            additional: {  }
         third_party_settings: {  }
       -
         layout_id: layout_twocol_section
         layout_settings:
           label: ''
-          column_widths: 75-25
           context_mapping: {  }
+          column_widths: 75-25
+          custom_id: ''
+          custom_classes: ''
+          custom_class_choose:
+            container: container
+          custom_styles: ''
+          custom_data_attributes: ''
+          regions:
+            first:
+              region_id: ''
+              region_class_choose:
+                container: 0
+              region_classes: ''
+              region_styles: ''
+              region_data: ''
+            second:
+              region_id: ''
+              region_class_choose:
+                container: 0
+              region_classes: ''
+              region_styles: ''
+              region_data: ''
         components:
           0544500b-43bf-4a08-9225-855c4383c477:
             uuid: 0544500b-43bf-4a08-9225-855c4383c477
@@ -87,7 +118,22 @@ third_party_settings:
       -
         layout_id: layout_onecol
         layout_settings:
-          label: ''
+          label: 'Main Content'
+          context_mapping: {  }
+          custom_id: ''
+          custom_classes: ''
+          custom_class_choose:
+            container: container
+          custom_styles: ''
+          custom_data_attributes: ''
+          regions:
+            content:
+              region_id: ''
+              region_class_choose:
+                container: 0
+              region_classes: ''
+              region_styles: ''
+              region_data: ''
         components:
           62a582fa-a547-4865-972f-08d0f7dbf7f3:
             uuid: 62a582fa-a547-4865-972f-08d0f7dbf7f3
@@ -162,6 +208,11 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 101
+    region: content
+  content_moderation_control:
+    settings: {  }
+    third_party_settings: {  }
+    weight: -20
     region: content
   field_api_display:
     type: list_default
