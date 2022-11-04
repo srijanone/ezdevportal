@@ -42,21 +42,11 @@ third_party_settings:
               banner_image: {  }
             weight: 0
             additional: {  }
-          faa44c44-85ce-4759-93bb-56074073e45b:
-            uuid: faa44c44-85ce-4759-93bb-56074073e45b
-            region: content
-            configuration:
-              id: 'extra_field_block:node:use_case:content_moderation_control'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-            weight: 1
-            additional: {  }
         third_party_settings: {  }
       -
         layout_id: layout_onecol
         layout_settings:
-          label: 'Main Section'
+          label: ''
           context_mapping: {  }
           custom_id: ''
           custom_classes: ''

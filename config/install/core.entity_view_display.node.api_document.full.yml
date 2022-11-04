@@ -53,16 +53,6 @@ third_party_settings:
               banner_image: {  }
             weight: -10
             additional: {  }
-          45d3617a-e08f-495b-a57b-3d876df6d763:
-            uuid: 45d3617a-e08f-495b-a57b-3d876df6d763
-            region: content
-            configuration:
-              id: 'extra_field_block:node:api_document:content_moderation_control'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-            weight: -9
-            additional: {  }
         third_party_settings: {  }
       -
         layout_id: layout_twocol_section
@@ -118,7 +108,7 @@ third_party_settings:
       -
         layout_id: layout_onecol
         layout_settings:
-          label: 'Main Content'
+          label: ''
           context_mapping: {  }
           custom_id: ''
           custom_classes: ''

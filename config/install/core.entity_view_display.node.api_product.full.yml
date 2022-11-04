@@ -51,23 +51,13 @@ third_party_settings:
               items_per_page: '1'
             weight: 0
             additional: {  }
-          1449e113-1cb3-4474-abd3-9c36fb9ffddf:
-            uuid: 1449e113-1cb3-4474-abd3-9c36fb9ffddf
-            region: content
-            configuration:
-              id: 'extra_field_block:node:api_product:content_moderation_control'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-            weight: 1
-            additional: {  }
         third_party_settings: {  }
       -
         layout_id: layout_twocol_section
         layout_settings:
           label: ''
-          context_mapping: {  }
           column_widths: 25-75
+          context_mapping: {  }
           custom_id: ''
           custom_classes: ''
           custom_class_choose:

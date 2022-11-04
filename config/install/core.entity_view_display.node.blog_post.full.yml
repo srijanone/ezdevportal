@@ -48,16 +48,6 @@ third_party_settings:
               banner_height: 307px
             weight: -10
             additional: {  }
-          96ffd276-ae6d-4f2a-acd5-4bf7a9d32886:
-            uuid: 96ffd276-ae6d-4f2a-acd5-4bf7a9d32886
-            region: content
-            configuration:
-              id: 'extra_field_block:node:blog_post:content_moderation_control'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-            weight: -8
-            additional: {  }
         third_party_settings: {  }
       -
         layout_id: layout_onecol
@@ -98,7 +88,7 @@ third_party_settings:
       -
         layout_id: layout_twocol_section
         layout_settings:
-          label: 'Main Section'
+          label: ''
           context_mapping: {  }
           column_widths: 67-33
           custom_id: ''
