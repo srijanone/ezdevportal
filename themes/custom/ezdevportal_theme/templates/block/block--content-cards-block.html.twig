@@ -38,7 +38,7 @@
     %}
     <div class="container-fluid {{ card_block.block_header|replace({' ': '-'}) |lower }}" style="background-color:{{ card_block.background_color }};">
         <div class="container">
-            <h2 class="title">{{ card_block.block_header }}</h2>
+            <h2 class="title text-center">{{ card_block.block_header }}</h2>
             <div class="row row-cols-1 row-cols-md-{{ card_block.block_column_count }} {{ card_block.block_width_type }}">
                     {% for item in card_block.cards %}
                         <div class="col mb-4 align-items-stretch d-flex">
