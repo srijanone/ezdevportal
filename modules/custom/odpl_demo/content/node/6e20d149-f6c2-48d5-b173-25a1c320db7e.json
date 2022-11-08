@@ -35,7 +35,7 @@
     ],
     "vid": [
         {
-            "value": 223
+            "value": 374
         }
     ],
     "langcode": [
@@ -51,7 +51,7 @@
     ],
     "revision_timestamp": [
         {
-            "value": "2022-06-07T08:53:16+00:00",
+            "value": "2022-11-08T05:18:04+00:00",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
@@ -68,7 +68,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "1267684c-4fd4-47da-b72e-c0aa18e7a733"
+                        "value": "a186c597-af26-4d66-9fa9-f1ec3dc1ed6d"
                     }
                 ]
             }
@@ -85,7 +85,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "1267684c-4fd4-47da-b72e-c0aa18e7a733"
+                        "value": "a186c597-af26-4d66-9fa9-f1ec3dc1ed6d"
                     }
                 ],
                 "lang": "en"
@@ -130,7 +130,7 @@
     ],
     "changed": [
         {
-            "value": "2022-06-07T08:53:16+00:00",
+            "value": "2022-11-08T05:18:04+00:00",
             "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
         }
@@ -176,7 +176,7 @@
     "path": [
         {
             "alias": "\/products",
-            "pid": 30,
+            "pid": 29,
             "langcode": "en",
             "lang": "en"
         }
@@ -217,7 +217,34 @@
                 "layout_settings": {
                     "label": "Main Section",
                     "column_widths": "25-75",
-                    "context_mapping": []
+                    "context_mapping": [],
+                    "custom_id": "",
+                    "custom_classes": "",
+                    "custom_class_choose": {
+                        "container": "container"
+                    },
+                    "custom_styles": "",
+                    "custom_data_attributes": "",
+                    "regions": {
+                        "first": {
+                            "region_id": "",
+                            "region_class_choose": {
+                                "container": 0
+                            },
+                            "region_classes": "",
+                            "region_styles": "",
+                            "region_data": ""
+                        },
+                        "second": {
+                            "region_id": "",
+                            "region_class_choose": {
+                                "container": 0
+                            },
+                            "region_classes": "",
+                            "region_styles": "",
+                            "region_data": ""
+                        }
+                    }
                 },
                 "components": {
                     "0cbf331d-5dd5-4960-99f5-a20f80566ddd": {

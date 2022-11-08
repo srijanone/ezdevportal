@@ -55,7 +55,7 @@
     ],
     "vid": [
         {
-            "value": 303
+            "value": 378
         }
     ],
     "langcode": [
@@ -71,7 +71,7 @@
     ],
     "revision_timestamp": [
         {
-            "value": "2022-06-08T09:34:25+00:00",
+            "value": "2022-11-08T05:23:07+00:00",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
@@ -88,7 +88,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "1267684c-4fd4-47da-b72e-c0aa18e7a733"
+                        "value": "a186c597-af26-4d66-9fa9-f1ec3dc1ed6d"
                     }
                 ]
             }
@@ -105,7 +105,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "1267684c-4fd4-47da-b72e-c0aa18e7a733"
+                        "value": "a186c597-af26-4d66-9fa9-f1ec3dc1ed6d"
                     }
                 ],
                 "lang": "en"
@@ -232,7 +232,7 @@
     ],
     "changed": [
         {
-            "value": "2022-06-08T09:34:25+00:00",
+            "value": "2022-11-08T05:23:07+00:00",
             "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
         }
@@ -350,7 +350,34 @@
                 "layout_settings": {
                     "label": "",
                     "column_widths": "75-25",
-                    "context_mapping": []
+                    "context_mapping": [],
+                    "custom_id": "",
+                    "custom_classes": "",
+                    "custom_class_choose": {
+                        "container": "container"
+                    },
+                    "custom_styles": "",
+                    "custom_data_attributes": "",
+                    "regions": {
+                        "first": {
+                            "region_id": "",
+                            "region_class_choose": {
+                                "container": 0
+                            },
+                            "region_classes": "",
+                            "region_styles": "",
+                            "region_data": ""
+                        },
+                        "second": {
+                            "region_id": "",
+                            "region_class_choose": {
+                                "container": 0
+                            },
+                            "region_classes": "",
+                            "region_styles": "",
+                            "region_data": ""
+                        }
+                    }
                 },
                 "components": {
                     "0544500b-43bf-4a08-9225-855c4383c477": {
@@ -387,7 +414,26 @@
             "section": {
                 "layout_id": "layout_onecol",
                 "layout_settings": {
-                    "label": ""
+                    "label": "",
+                    "context_mapping": [],
+                    "custom_id": "",
+                    "custom_classes": "",
+                    "custom_class_choose": {
+                        "container": "container"
+                    },
+                    "custom_styles": "",
+                    "custom_data_attributes": "",
+                    "regions": {
+                        "content": {
+                            "region_id": "",
+                            "region_class_choose": {
+                                "container": 0
+                            },
+                            "region_classes": "",
+                            "region_styles": "",
+                            "region_data": ""
+                        }
+                    }
                 },
                 "components": {
                     "62a582fa-a547-4865-972f-08d0f7dbf7f3": {
@@ -440,6 +486,28 @@
                             }
                         },
                         "weight": -10,
+                        "additional": []
+                    },
+                    "442a2675-f37f-4649-a4c3-3adf6b5ee358": {
+                        "uuid": "442a2675-f37f-4649-a4c3-3adf6b5ee358",
+                        "region": "content",
+                        "configuration": {
+                            "id": "field_block:node:api_document:body",
+                            "label": "API Description",
+                            "label_display": "0",
+                            "provider": "layout_builder",
+                            "context_mapping": {
+                                "entity": "layout_builder.entity",
+                                "view_mode": "view_mode"
+                            },
+                            "formatter": {
+                                "type": "text_default",
+                                "label": "hidden",
+                                "settings": [],
+                                "third_party_settings": []
+                            }
+                        },
+                        "weight": -9,
                         "additional": []
                     }
                 },
