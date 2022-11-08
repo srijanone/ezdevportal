@@ -294,6 +294,10 @@
 
 
 @media screen and (min-width: 768px) {
+  .layout--twocol-section{
+    flex-wrap: nowrap;
+    gap:20px;
+  }
   .view-products-listing-page {
     .form-select,
     .form-control {
