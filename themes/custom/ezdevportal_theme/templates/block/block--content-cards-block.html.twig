@@ -37,13 +37,24 @@
       ]
     %}
     <div class="container-fluid {{ card_block.block_header|replace({' ': '-'}) |lower }}" style="background-color:{{ card_block.background_color }};">
-        <h2 class="title">{{ card_block.block_header }}</h2>
-        <div class="row row-cols-1 row-cols-md-{{ card_block.block_column_count }} {{ card_block.block_width_type }}">
-                {% for item in card_block.cards %}
-                    <div class="col mb-4 align-items-stretch d-flex">
-                        <div class="card box-shadow text-center">
-                            {% if item.landing_page_url %}
-                                <a href ="{{ item.landing_page_url }}">
+          <h2 class="title text-center">{{ card_block.block_header }}</h2>
+            <div class="row row-cols-1 row-cols-md-{{ card_block.block_column_count }} {{ card_block.block_width_type }}">
+                    {% for item in card_block.cards %}
+                        <div class="col mb-4 align-items-stretch d-flex">
+                            <div class="card box-shadow text-center">
+                                {% if item.landing_page_url %}
+                                    <a href ="{{ item.landing_page_url }}">
+                                    {% endif %}
+                                        <div class="card-body">
+                                            {% if item.icon %}
+                                            <img src="{{ item.icon }}" class="card-img-top" width="60" height="60" alt="{{ item.icon }}">
+                                            {% endif %}  
+                                            <h3 class="card-title">{{ item.title }}</h3>
+                                            {% set text = item.content|raw|split('.') %}
+                                            <p> {{  text['0']|raw }}.</p>
+                                        </div>
+                                {% if item.landing_page_url %}
+                                    </a>
                                 {% endif %}
                                     <div class="card-body">
                                         {% if item.icon %}
@@ -65,7 +76,6 @@
                         </div>
                     </div>
                 {% endfor %}
-        </div>
         {% if card_block.more_link %}
         <div class="view"><div class="view-footer">
                 <div class="text-end explore-all-domain"><a href="{{ card_block.more_link }}">{{card_block.more_link_title}}</a></div>
