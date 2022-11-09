@@ -27,14 +27,14 @@
   #}
   <h2 class="title text-center">{{ banner_content.title }}</h2>
   <div class="container-fluid" style="background-color:#EAF1FF;">
-  <div class="container blog-container">
-    
+  <div class="container content-list">
+
     <div class="row align-items-center">
       <div class="col-lg-4 text-banner-left text-center  mt-lg-0 image-banner-left">
         <div class="banner-image-right">
                 <img src={{ banner_content.image }} class="card-img-top" alt="'">
         </div>
-      </div>     
+      </div>
       <div class="col-lg-8  text-lg-right">
         {% for item in banner_content.content %}
         <span class="blog-date">{{ item.date }}</span>
@@ -45,19 +45,18 @@
         {% if item.content %}
         {% set text = item.content|raw|split('.') %}
        <div class="blog-text"> {{ text['0']|raw }}. </div>
-          
+
         {% endif %}
         <p class="top-trend">Top tranding blog in {{ item.bottom_date }} </p>
-        {% endfor %}  
-       
+        {% endfor %}
+
       </div>
     </div>
   </div>
   </div>
-  <div class="container blog-footer"> 
+  <div class="container blog-footer">
   <div class="row">
   <div class="col-sm-12"><a class="pull-right" href="{{ banner_content.link }}">{{ banner_content.link_title }}</a></div></div>
   </div>
-     
-    
-  
+
+

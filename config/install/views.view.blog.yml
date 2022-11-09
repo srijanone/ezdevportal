@@ -524,8 +524,7 @@ display:
           admin_label: ''
           plugin_id: taxonomy_index_tid
           operator: or
-          value:
-            22: 22
+          value: {  }
           group: 1
           exposed: true
           expose:
@@ -546,6 +545,7 @@ display:
               administrator: '0'
               developer: '0'
               site_admin: '0'
+              editor: '0'
             reduce: false
           is_grouped: false
           group_info:
@@ -949,7 +949,7 @@ display:
     display_plugin: block
     position: 9
     display_options:
-      title: 'Discovery More'
+      title: 'Discover More'
       fields:
         field_blog_tags:
           id: field_blog_tags

@@ -37,7 +37,7 @@
       ]
     %}
     <div class="container-fluid {{ card_block.block_header|replace({' ': '-'}) |lower }}">
-        <div class="container media-card">
+        <div class="media-card">
             <h2 class="title">{{ card_block.block_header }}</h2>
             <div class="row row-cols-1 row-cols-md-{{ card_block.block_column_count }}">
                     {% for item in card_block.cards %}
@@ -53,6 +53,6 @@
                  <div class="text-end explore-all-domain"><a href="{{ card_block.more_link }}">{{card_block.more_link_title}}</a></div>
              </div>
              </div>
-            {% endif %}     
+            {% endif %}
         </div>
     </div>
