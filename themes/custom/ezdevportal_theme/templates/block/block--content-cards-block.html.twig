@@ -36,10 +36,10 @@
         'block-' ~ plugin_id|clean_class,
       ]
     %}
-    <div class="container-fluid {{ card_block.block_header|replace({' ': '-'}) |lower }}" style="background-color:{{ card_block.background_color }};">
-        <div class="container">
+    <div class="{{ card_block.block_header|replace({' ': '-'}) |lower }}" style="background-color:{{ card_block.background_color }};">
+        <div class="content-cards-{{ card_block.block_width_type }}">
             <h2 class="title text-center">{{ card_block.block_header }}</h2>
-            <div class="row row-cols-1 row-cols-md-{{ card_block.block_column_count }} {{ card_block.block_width_type }}">
+            <div class="row row-cols-1 row-cols-md-{{ card_block.block_column_count }}">
                     {% for item in card_block.cards %}
                         <div class="col mb-4 align-items-stretch d-flex">
                             <div class="card box-shadow text-center">
@@ -49,7 +49,7 @@
                                         <div class="card-body">
                                             {% if item.icon %}
                                             <img src="{{ item.icon }}" class="card-img-top" width="60" height="60" alt="{{ item.icon }}">
-                                            {% endif %}  
+                                            {% endif %}
                                             <h3 class="card-title">{{ item.title }}</h3>
                                             {% set text = item.content|raw|split('.') %}
                                             <p> {{  text['0']|raw }}.</p>
@@ -58,20 +58,20 @@
                                     </a>
                                 {% endif %}
                                 {% if item.url %}
-                                <div class="card-footer"> 
-                                 <span  class="btn btn-sm explore">
+                                <div class="card-footer">
+                                    <span  class="btn btn-sm explore">
                                     <a href="{{ item.url }}" >EXPLORE</a>
                                 </span></div>
-                                {% endif %} 
+                                {% endif %}
                             </div>
                         </div>
                     {% endfor %}
             </div>
             {% if card_block.more_link %}
             <div class="view"><div class="view-footer">
-                 <div class="text-end explore-all-domain"><a href="{{ card_block.more_link }}">{{card_block.more_link_title}}</a></div>
-             </div>
-             </div>
-            {% endif %}     
+                    <div class="text-end explore-all-domain"><a href="{{ card_block.more_link }}">{{card_block.more_link_title}}</a></div>
+                </div>
+                </div>
+            {% endif %}
         </div>
     </div>

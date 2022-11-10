@@ -35,7 +35,7 @@
     ],
     "vid": [
         {
-            "value": 260
+            "value": 385
         }
     ],
     "langcode": [
@@ -68,7 +68,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "1267684c-4fd4-47da-b72e-c0aa18e7a733"
+                        "value": "a186c597-af26-4d66-9fa9-f1ec3dc1ed6d"
                     }
                 ]
             }
@@ -85,7 +85,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "1267684c-4fd4-47da-b72e-c0aa18e7a733"
+                        "value": "a186c597-af26-4d66-9fa9-f1ec3dc1ed6d"
                     }
                 ],
                 "lang": "en"
@@ -153,12 +153,6 @@
             "lang": "en"
         }
     ],
-    "revision_translation_affected": [
-        {
-            "value": true,
-            "lang": "en"
-        }
-    ],
     "moderation_state": [
         {
             "value": "published",
@@ -186,7 +180,7 @@
         {
             "value": "<h2>Highlights<\/h2>\r\n\r\n<p>We helped our client reduce their time-to-market for their APIs by setting up a standard workflow for publishing APIs.<\/p>\r\n\r\n<h2>The Requirement<\/h2>\r\n\r\n<ul>\r\n\t<li>The client wanted to migrate all their monetized APIs from a home-grown API gateway to an industry standard solution. Such solutions have built-in features that can reduce the time-to-market for APIs.<\/li>\r\n\t<li>They wanted to expedite the time taken to productize their API endpoints, thus requiring workflow automation.<\/li>\r\n\t<li>The client needed documentation templates to drastically reduce the API documentation publishing cycle.<\/li>\r\n<\/ul>\r\n\r\n<h2>The Challenges&nbsp;<\/h2>\r\n\r\n<ul>\r\n\t<li>Publishing the documentation for new APIs was a time-consuming process.&nbsp;<\/li>\r\n\t<li>Lack of brand consistency in API documentation due to the absence of a standardized documentation template.<\/li>\r\n<\/ul>\r\n\r\n<h2>The Solution<\/h2>\r\n\r\n<ul>\r\n\t<li>We designed reusable components (shared flows) in the API gateways. We identified the scope of building shared flows and accomplished it through adherence to industry-standard practices.&nbsp;<\/li>\r\n\t<li>We built microservices to onboard new APIs automatically. The WSDL(Web Services Description Language) file contains the signature of how an API can be consumed. This automates the entire process of finding the APIs that can be exposed to customers in a shorter period of time.&nbsp;<\/li>\r\n\t<li>We built templates for faster and standard API documentation, which is needed to expose API endpoints to the portal\u2019s API producers.<\/li>\r\n<\/ul>\r\n\r\n<h2>Overall Approach<\/h2>\r\n\r\n<p>The following diagram illustrates a reusable Apigee shared flow to quickly expose the client APIs<\/p>\r\n\r\n<p><img alt=\"Overall approach\" data-entity-type=\"file\" data-entity-uuid=\"86a38013-29bc-4d22-b526-868282057652\" src=\"\/sites\/default\/files\/inline-images\/Shared%20flows.png\" \/><\/p>\r\n\r\n<h2>Tech Stack<\/h2>\r\n\r\n<p><img alt=\"Time to market\" data-entity-type=\"file\" data-entity-uuid=\"e0661b6c-9b13-458c-a1bb-947edbbddf0b\" src=\"\/sites\/default\/files\/inline-images\/API-Time-to-market-1.png\" \/><\/p>\r\n\r\n<h2>Business Benefit<\/h2>\r\n\r\n<ul>\r\n\t<li>Reduced the time to market for APIs by 3X.<\/li>\r\n\t<li>Helped the client ensure consistency, shorten the development time, and manage the code more efficiently using reusable components.<\/li>\r\n\t<li>Standardized and catalyzed the API documentation process with consistent brand elements. The change in brand element is reflected across the entire set of API documentation.<\/li>\r\n<\/ul>\r\n",
             "format": "full_html",
-            "processed": "<h2>Highlights<\/h2>\n\n<p>We helped our client reduce their time-to-market for their APIs by setting up a standard workflow for publishing APIs.<\/p>\n\n<h2>The Requirement<\/h2>\n\n<ul>\n\t<li>The client wanted to migrate all their monetized APIs from a home-grown API gateway to an industry standard solution. Such solutions have built-in features that can reduce the time-to-market for APIs.<\/li>\n\t<li>They wanted to expedite the time taken to productize their API endpoints, thus requiring workflow automation.<\/li>\n\t<li>The client needed documentation templates to drastically reduce the API documentation publishing cycle.<\/li>\n<\/ul>\n\n<h2>The Challenges\u00a0<\/h2>\n\n<ul>\n\t<li>Publishing the documentation for new APIs was a time-consuming process.\u00a0<\/li>\n\t<li>Lack of brand consistency in API documentation due to the absence of a standardized documentation template.<\/li>\n<\/ul>\n\n<h2>The Solution<\/h2>\n\n<ul>\n\t<li>We designed reusable components (shared flows) in the API gateways. We identified the scope of building shared flows and accomplished it through adherence to industry-standard practices.\u00a0<\/li>\n\t<li>We built microservices to onboard new APIs automatically. The WSDL(Web Services Description Language) file contains the signature of how an API can be consumed. This automates the entire process of finding the APIs that can be exposed to customers in a shorter period of time.\u00a0<\/li>\n\t<li>We built templates for faster and standard API documentation, which is needed to expose API endpoints to the portal\u2019s API producers.<\/li>\n<\/ul>\n\n<h2>Overall Approach<\/h2>\n\n<p>The following diagram illustrates a reusable Apigee shared flow to quickly expose the client APIs<\/p>\n\n<p><img alt=\"Overall approach\" data-entity-type=\"file\" data-entity-uuid=\"86a38013-29bc-4d22-b526-868282057652\" src=\"\/sites\/default\/files\/inline-images\/Shared%20flows.png\" width=\"512\" height=\"467\" loading=\"lazy\" \/><\/p>\n\n<h2>Tech Stack<\/h2>\n\n<p><img alt=\"Time to market\" data-entity-type=\"file\" data-entity-uuid=\"e0661b6c-9b13-458c-a1bb-947edbbddf0b\" src=\"\/sites\/default\/files\/inline-images\/API-Time-to-market-1.png\" width=\"1106\" height=\"422\" loading=\"lazy\" \/><\/p>\n\n<h2>Business Benefit<\/h2>\n\n<ul>\n\t<li>Reduced the time to market for APIs by 3X.<\/li>\n\t<li>Helped the client ensure consistency, shorten the development time, and manage the code more efficiently using reusable components.<\/li>\n\t<li>Standardized and catalyzed the API documentation process with consistent brand elements. The change in brand element is reflected across the entire set of API documentation.<\/li>\n<\/ul>\n",
+            "processed": "<h2>Highlights<\/h2>\n\n<p>We helped our client reduce their time-to-market for their APIs by setting up a standard workflow for publishing APIs.<\/p>\n\n<h2>The Requirement<\/h2>\n\n<ul><li>The client wanted to migrate all their monetized APIs from a home-grown API gateway to an industry standard solution. Such solutions have built-in features that can reduce the time-to-market for APIs.<\/li>\n\t<li>They wanted to expedite the time taken to productize their API endpoints, thus requiring workflow automation.<\/li>\n\t<li>The client needed documentation templates to drastically reduce the API documentation publishing cycle.<\/li>\n<\/ul><h2>The Challenges\u00a0<\/h2>\n\n<ul><li>Publishing the documentation for new APIs was a time-consuming process.\u00a0<\/li>\n\t<li>Lack of brand consistency in API documentation due to the absence of a standardized documentation template.<\/li>\n<\/ul><h2>The Solution<\/h2>\n\n<ul><li>We designed reusable components (shared flows) in the API gateways. We identified the scope of building shared flows and accomplished it through adherence to industry-standard practices.\u00a0<\/li>\n\t<li>We built microservices to onboard new APIs automatically. The WSDL(Web Services Description Language) file contains the signature of how an API can be consumed. This automates the entire process of finding the APIs that can be exposed to customers in a shorter period of time.\u00a0<\/li>\n\t<li>We built templates for faster and standard API documentation, which is needed to expose API endpoints to the portal\u2019s API producers.<\/li>\n<\/ul><h2>Overall Approach<\/h2>\n\n<p>The following diagram illustrates a reusable Apigee shared flow to quickly expose the client APIs<\/p>\n\n<p><img alt=\"Overall approach\" data-entity-type=\"file\" data-entity-uuid=\"86a38013-29bc-4d22-b526-868282057652\" src=\"\/sites\/default\/files\/inline-images\/Shared%20flows.png\" width=\"512\" height=\"467\" loading=\"lazy\" \/><\/p>\n\n<h2>Tech Stack<\/h2>\n\n<p><img alt=\"Time to market\" data-entity-type=\"file\" data-entity-uuid=\"e0661b6c-9b13-458c-a1bb-947edbbddf0b\" src=\"\/sites\/default\/files\/inline-images\/API-Time-to-market-1.png\" width=\"1106\" height=\"422\" loading=\"lazy\" \/><\/p>\n\n<h2>Business Benefit<\/h2>\n\n<ul><li>Reduced the time to market for APIs by 3X.<\/li>\n\t<li>Helped the client ensure consistency, shorten the development time, and manage the code more efficiently using reusable components.<\/li>\n\t<li>Standardized and catalyzed the API documentation process with consistent brand elements. The change in brand element is reflected across the entire set of API documentation.<\/li>\n<\/ul>",
             "summary": "3X Reduction in time-to-market for APIs",
             "lang": "en"
         }

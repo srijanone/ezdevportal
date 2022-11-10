@@ -30,7 +30,7 @@
     ],
     "vid": [
         {
-            "value": 233
+            "value": 366
         }
     ],
     "langcode": [
@@ -46,7 +46,7 @@
     ],
     "revision_timestamp": [
         {
-            "value": "2022-06-07T08:58:40+00:00",
+            "value": "2022-11-07T04:51:41+00:00",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
@@ -63,7 +63,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "1267684c-4fd4-47da-b72e-c0aa18e7a733"
+                        "value": "afbe7dac-2273-4a0a-bc47-aa82768141ed"
                     }
                 ]
             }
@@ -80,7 +80,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "1267684c-4fd4-47da-b72e-c0aa18e7a733"
+                        "value": "afbe7dac-2273-4a0a-bc47-aa82768141ed"
                     }
                 ],
                 "lang": "en"
@@ -108,7 +108,7 @@
     ],
     "changed": [
         {
-            "value": "2022-06-07T08:58:40+00:00",
+            "value": "2022-11-07T04:51:41+00:00",
             "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
         }
@@ -154,7 +154,7 @@
     "path": [
         {
             "alias": "\/all-blogs",
-            "pid": 27,
+            "pid": 25,
             "langcode": "en",
             "lang": "en"
         }
@@ -195,7 +195,34 @@
                 "layout_settings": {
                     "label": "Main Section",
                     "column_widths": "67-33",
-                    "context_mapping": []
+                    "context_mapping": [],
+                    "custom_id": "",
+                    "custom_classes": "",
+                    "custom_class_choose": {
+                        "container": "container"
+                    },
+                    "custom_styles": "",
+                    "custom_data_attributes": "",
+                    "regions": {
+                        "first": {
+                            "region_id": "",
+                            "region_class_choose": {
+                                "container": 0
+                            },
+                            "region_classes": "",
+                            "region_styles": "",
+                            "region_data": ""
+                        },
+                        "second": {
+                            "region_id": "",
+                            "region_class_choose": {
+                                "container": 0
+                            },
+                            "region_classes": "",
+                            "region_styles": "",
+                            "region_data": ""
+                        }
+                    }
                 },
                 "components": {
                     "14c69c04-bb67-47be-b87a-e67dfc60e89c": {

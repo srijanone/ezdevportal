@@ -35,7 +35,7 @@
     ],
     "vid": [
         {
-            "value": 357
+            "value": 368
         }
     ],
     "langcode": [
@@ -51,7 +51,7 @@
     ],
     "revision_timestamp": [
         {
-            "value": "2022-07-18T10:18:40+00:00",
+            "value": "2022-11-07T04:55:37+00:00",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
@@ -68,7 +68,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "309a091f-b162-49c3-8378-bab2d0d9e032"
+                        "value": "afbe7dac-2273-4a0a-bc47-aa82768141ed"
                     }
                 ]
             }
@@ -85,7 +85,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "309a091f-b162-49c3-8378-bab2d0d9e032"
+                        "value": "afbe7dac-2273-4a0a-bc47-aa82768141ed"
                     }
                 ],
                 "lang": "en"
@@ -130,7 +130,7 @@
     ],
     "changed": [
         {
-            "value": "2022-07-18T10:18:40+00:00",
+            "value": "2022-11-07T04:55:37+00:00",
             "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
         }
@@ -222,7 +222,34 @@
                 "layout_settings": {
                     "label": "Top Section",
                     "column_widths": "67-33",
-                    "context_mapping": []
+                    "context_mapping": [],
+                    "custom_id": "",
+                    "custom_classes": "",
+                    "custom_class_choose": {
+                        "container": "container"
+                    },
+                    "custom_styles": "",
+                    "custom_data_attributes": "",
+                    "regions": {
+                        "first": {
+                            "region_id": "",
+                            "region_class_choose": {
+                                "container": 0
+                            },
+                            "region_classes": "",
+                            "region_styles": "",
+                            "region_data": ""
+                        },
+                        "second": {
+                            "region_id": "",
+                            "region_class_choose": {
+                                "container": 0
+                            },
+                            "region_classes": "",
+                            "region_styles": "",
+                            "region_data": ""
+                        }
+                    }
                 },
                 "components": {
                     "f47e3c79-1cca-4a55-b9ce-f3939756a380": {
@@ -268,7 +295,25 @@
                 "layout_id": "layout_onecol",
                 "layout_settings": {
                     "label": "Main Section",
-                    "context_mapping": []
+                    "context_mapping": [],
+                    "custom_id": "",
+                    "custom_classes": "",
+                    "custom_class_choose": {
+                        "container": "container"
+                    },
+                    "custom_styles": "",
+                    "custom_data_attributes": "",
+                    "regions": {
+                        "content": {
+                            "region_id": "",
+                            "region_class_choose": {
+                                "container": 0
+                            },
+                            "region_classes": "",
+                            "region_styles": "",
+                            "region_data": ""
+                        }
+                    }
                 },
                 "components": {
                     "cc734840-09ff-4494-ad10-5387cecc5253": {

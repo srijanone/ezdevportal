@@ -35,7 +35,7 @@
     ],
     "vid": [
         {
-            "value": 227
+            "value": 364
         }
     ],
     "langcode": [
@@ -51,7 +51,7 @@
     ],
     "revision_timestamp": [
         {
-            "value": "2022-06-07T08:55:45+00:00",
+            "value": "2022-11-07T04:44:28+00:00",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
@@ -68,7 +68,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "1267684c-4fd4-47da-b72e-c0aa18e7a733"
+                        "value": "afbe7dac-2273-4a0a-bc47-aa82768141ed"
                     }
                 ]
             }
@@ -85,7 +85,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "1267684c-4fd4-47da-b72e-c0aa18e7a733"
+                        "value": "afbe7dac-2273-4a0a-bc47-aa82768141ed"
                     }
                 ],
                 "lang": "en"
@@ -130,7 +130,7 @@
     ],
     "changed": [
         {
-            "value": "2022-06-07T08:55:45+00:00",
+            "value": "2022-11-07T04:44:28+00:00",
             "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
         }
@@ -176,7 +176,7 @@
     "path": [
         {
             "alias": "\/quick-guide",
-            "pid": 29,
+            "pid": 31,
             "langcode": "en",
             "lang": "en"
         }
@@ -221,7 +221,34 @@
                 "layout_settings": {
                     "label": "Top Section",
                     "column_widths": "67-33",
-                    "context_mapping": []
+                    "context_mapping": [],
+                    "custom_id": "",
+                    "custom_classes": "",
+                    "custom_class_choose": {
+                        "container": "container"
+                    },
+                    "custom_styles": "",
+                    "custom_data_attributes": "",
+                    "regions": {
+                        "first": {
+                            "region_id": "",
+                            "region_class_choose": {
+                                "container": 0
+                            },
+                            "region_classes": "",
+                            "region_styles": "",
+                            "region_data": ""
+                        },
+                        "second": {
+                            "region_id": "",
+                            "region_class_choose": {
+                                "container": 0
+                            },
+                            "region_classes": "",
+                            "region_styles": "",
+                            "region_data": ""
+                        }
+                    }
                 },
                 "components": {
                     "5f1fe3fb-d533-4231-92e2-cc640b1b711f": {
@@ -267,7 +294,25 @@
                 "layout_id": "layout_onecol",
                 "layout_settings": {
                     "label": "Main Section",
-                    "context_mapping": []
+                    "context_mapping": [],
+                    "custom_id": "",
+                    "custom_classes": "",
+                    "custom_class_choose": {
+                        "container": "container"
+                    },
+                    "custom_styles": "",
+                    "custom_data_attributes": "",
+                    "regions": {
+                        "content": {
+                            "region_id": "",
+                            "region_class_choose": {
+                                "container": 0
+                            },
+                            "region_classes": "",
+                            "region_styles": "",
+                            "region_data": ""
+                        }
+                    }
                 },
                 "components": {
                     "5a1d7097-4b04-4aac-9a13-c70dead92f51": {

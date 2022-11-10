@@ -46,8 +46,22 @@ third_party_settings:
       -
         layout_id: layout_onecol
         layout_settings:
-          label: 'Main Section'
+          label: ''
           context_mapping: {  }
+          custom_id: ''
+          custom_classes: ''
+          custom_class_choose:
+            container: container
+          custom_styles: ''
+          custom_data_attributes: ''
+          regions:
+            content:
+              region_id: ''
+              region_class_choose:
+                container: 0
+              region_classes: ''
+              region_styles: ''
+              region_data: ''
         components:
           73beb4c5-be85-4fe8-9a3e-6b132e1ff6e3:
             uuid: 73beb4c5-be85-4fe8-9a3e-6b132e1ff6e3
@@ -86,6 +100,11 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 101
+    region: content
+  content_moderation_control:
+    settings: {  }
+    third_party_settings: {  }
+    weight: -20
     region: content
   field_banner_image:
     type: entity_reference_label

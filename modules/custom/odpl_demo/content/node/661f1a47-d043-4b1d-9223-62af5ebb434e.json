@@ -30,7 +30,7 @@
     ],
     "vid": [
         {
-            "value": 219
+            "value": 403
         }
     ],
     "langcode": [
@@ -46,7 +46,7 @@
     ],
     "revision_timestamp": [
         {
-            "value": "2022-06-07T08:51:38+00:00",
+            "value": "2022-11-09T04:54:57+00:00",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
@@ -63,7 +63,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "1267684c-4fd4-47da-b72e-c0aa18e7a733"
+                        "value": "a186c597-af26-4d66-9fa9-f1ec3dc1ed6d"
                     }
                 ]
             }
@@ -80,7 +80,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "1267684c-4fd4-47da-b72e-c0aa18e7a733"
+                        "value": "a186c597-af26-4d66-9fa9-f1ec3dc1ed6d"
                     }
                 ],
                 "lang": "en"
@@ -108,7 +108,7 @@
     ],
     "changed": [
         {
-            "value": "2022-06-07T08:51:38+00:00",
+            "value": "2022-11-09T04:54:57+00:00",
             "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
         }
@@ -154,7 +154,7 @@
     "path": [
         {
             "alias": "\/home",
-            "pid": 26,
+            "pid": 27,
             "langcode": "en",
             "lang": "en"
         }
@@ -164,18 +164,36 @@
             "section": {
                 "layout_id": "layout_onecol",
                 "layout_settings": {
-                    "label": "Main Section",
+                    "label": "",
+                    "custom_id": "",
+                    "custom_classes": "",
+                    "custom_class_choose": {
+                        "container": 0
+                    },
+                    "custom_styles": "",
+                    "custom_data_attributes": "",
+                    "regions": {
+                        "content": {
+                            "region_id": "",
+                            "region_class_choose": {
+                                "container": 0
+                            },
+                            "region_classes": "",
+                            "region_styles": "",
+                            "region_data": ""
+                        }
+                    },
                     "context_mapping": []
                 },
                 "components": {
-                    "3f722d85-3f50-427d-b86f-feba702d02e9": {
-                        "uuid": "3f722d85-3f50-427d-b86f-feba702d02e9",
+                    "16ae2cf2-6ca6-4bae-be2e-def95df94c26": {
+                        "uuid": "16ae2cf2-6ca6-4bae-be2e-def95df94c26",
                         "region": "content",
                         "configuration": {
                             "id": "block_content:18a70559-1956-4b41-b702-d74e182ea4c6",
                             "label": "Homepage Slider",
-                            "provider": "block_content",
                             "label_display": 0,
+                            "provider": "block_content",
                             "status": true,
                             "info": "",
                             "view_mode": "full",
@@ -183,69 +201,189 @@
                         },
                         "weight": 0,
                         "additional": []
+                    }
+                },
+                "third_party_settings": []
+            }
+        },
+        {
+            "section": {
+                "layout_id": "layout_onecol",
+                "layout_settings": {
+                    "label": "",
+                    "custom_id": "",
+                    "custom_classes": "",
+                    "custom_class_choose": {
+                        "container": "container"
                     },
-                    "e1969f1f-f566-4935-b567-d767001ca8ce": {
-                        "uuid": "e1969f1f-f566-4935-b567-d767001ca8ce",
+                    "custom_styles": "",
+                    "custom_data_attributes": "",
+                    "regions": {
+                        "content": {
+                            "region_id": "",
+                            "region_class_choose": {
+                                "container": 0
+                            },
+                            "region_classes": "",
+                            "region_styles": "",
+                            "region_data": ""
+                        }
+                    },
+                    "context_mapping": []
+                },
+                "components": {
+                    "d82875d9-d17a-4128-a8d3-dc05db46671b": {
+                        "uuid": "d82875d9-d17a-4128-a8d3-dc05db46671b",
                         "region": "content",
                         "configuration": {
                             "id": "block_content:b8da98e4-a78b-4c50-8b9f-05c00c41b4cf",
                             "label": "Featured Products",
-                            "provider": "block_content",
                             "label_display": 0,
+                            "provider": "block_content",
                             "status": true,
                             "info": "",
                             "view_mode": "full",
                             "context_mapping": []
                         },
-                        "weight": 1,
+                        "weight": 0,
                         "additional": []
+                    }
+                },
+                "third_party_settings": []
+            }
+        },
+        {
+            "section": {
+                "layout_id": "layout_onecol",
+                "layout_settings": {
+                    "label": "",
+                    "custom_id": "",
+                    "custom_classes": "",
+                    "custom_class_choose": {
+                        "container": 0
                     },
-                    "f1889dde-bc3a-454f-a288-b49daca92d07": {
-                        "uuid": "f1889dde-bc3a-454f-a288-b49daca92d07",
+                    "custom_styles": "",
+                    "custom_data_attributes": "",
+                    "regions": {
+                        "content": {
+                            "region_id": "",
+                            "region_class_choose": {
+                                "container": 0
+                            },
+                            "region_classes": "",
+                            "region_styles": "",
+                            "region_data": ""
+                        }
+                    },
+                    "context_mapping": []
+                },
+                "components": {
+                    "06e73d51-d88b-4359-afea-94b3d0a4e756": {
+                        "uuid": "06e73d51-d88b-4359-afea-94b3d0a4e756",
                         "region": "content",
                         "configuration": {
                             "id": "block_content:4cc2fd4e-d6cc-4bca-80fe-71998a8b713d",
                             "label": "Get Started",
-                            "provider": "block_content",
                             "label_display": 0,
+                            "provider": "block_content",
                             "status": true,
                             "info": "",
                             "view_mode": "full",
                             "context_mapping": []
                         },
-                        "weight": 2,
+                        "weight": 0,
                         "additional": []
+                    }
+                },
+                "third_party_settings": []
+            }
+        },
+        {
+            "section": {
+                "layout_id": "layout_onecol",
+                "layout_settings": {
+                    "label": "",
+                    "custom_id": "",
+                    "custom_classes": "",
+                    "custom_class_choose": {
+                        "container": "container"
                     },
-                    "1045e9fd-9b3a-4f07-a15e-3fb0b6b3c2b9": {
-                        "uuid": "1045e9fd-9b3a-4f07-a15e-3fb0b6b3c2b9",
+                    "custom_styles": "",
+                    "custom_data_attributes": "",
+                    "regions": {
+                        "content": {
+                            "region_id": "",
+                            "region_class_choose": {
+                                "container": 0
+                            },
+                            "region_classes": "",
+                            "region_styles": "",
+                            "region_data": ""
+                        }
+                    },
+                    "context_mapping": []
+                },
+                "components": {
+                    "f30b0be4-2f9c-4dff-8911-29213ad80d0e": {
+                        "uuid": "f30b0be4-2f9c-4dff-8911-29213ad80d0e",
                         "region": "content",
                         "configuration": {
                             "id": "block_content:a217f072-57e6-4cdc-a462-7069a5d23ac9",
                             "label": "Use Cases",
-                            "provider": "block_content",
                             "label_display": 0,
+                            "provider": "block_content",
                             "status": true,
                             "info": "",
                             "view_mode": "full",
                             "context_mapping": []
                         },
-                        "weight": 3,
+                        "weight": 0,
                         "additional": []
+                    }
+                },
+                "third_party_settings": []
+            }
+        },
+        {
+            "section": {
+                "layout_id": "layout_onecol",
+                "layout_settings": {
+                    "label": "",
+                    "custom_id": "",
+                    "custom_classes": "",
+                    "custom_class_choose": {
+                        "container": 0
                     },
-                    "120ce806-bc19-4895-8010-279929ea568b": {
-                        "uuid": "120ce806-bc19-4895-8010-279929ea568b",
+                    "custom_styles": "",
+                    "custom_data_attributes": "",
+                    "regions": {
+                        "content": {
+                            "region_id": "",
+                            "region_class_choose": {
+                                "container": 0
+                            },
+                            "region_classes": "",
+                            "region_styles": "",
+                            "region_data": ""
+                        }
+                    },
+                    "context_mapping": []
+                },
+                "components": {
+                    "051e27e1-a5c4-47cf-9579-3264a741c775": {
+                        "uuid": "051e27e1-a5c4-47cf-9579-3264a741c775",
                         "region": "content",
                         "configuration": {
                             "id": "block_content:10ddbb1c-50a6-46d9-9c54-f62f51f5ba72",
                             "label": "Trending Blogs List",
-                            "provider": "block_content",
                             "label_display": 0,
+                            "provider": "block_content",
                             "status": true,
                             "info": "",
                             "view_mode": "full",
                             "context_mapping": []
                         },
-                        "weight": 4,
+                        "weight": 0,
                         "additional": []
                     }
                 },

@@ -41,6 +41,8 @@
         "drupal/field_permissions": "^1.1",
         "drupal/icon_select": "^2.0",
         "drupal/jquery_ui_touch_punch": "^1.0",
+        "drupal/layout_builder_modal": "^1.1",
+        "drupal/layout_custom_section_classes": "^1.0",
         "drupal/like_and_dislike": "^1.0@beta",
         "drupal/markdown": "^3.0@RC",
         "drupal/menu_item_role_access": "^2.0",

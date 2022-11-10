@@ -19,7 +19,6 @@ dependencies:
     - layout_discovery
     - odpl_base
     - social_media
-    - system
     - text
     - user
     - views
@@ -49,24 +48,70 @@ third_party_settings:
               banner_height: 307px
             weight: -10
             additional: {  }
-          45c56825-cad8-4288-b25c-c7b57b1aa9e7:
-            uuid: 45c56825-cad8-4288-b25c-c7b57b1aa9e7
+        third_party_settings: {  }
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+          context_mapping: {  }
+          custom_id: ''
+          custom_classes: ''
+          custom_class_choose:
+            container: container
+          custom_styles: ''
+          custom_data_attributes: ''
+          regions:
+            content:
+              region_id: ''
+              region_class_choose:
+                container: 0
+              region_classes: ''
+              region_styles: ''
+              region_data: ''
+        components:
+          448b9130-7df1-4c30-a639-87b6fb2b5aa5:
+            uuid: 448b9130-7df1-4c30-a639-87b6fb2b5aa5
             region: content
             configuration:
-              id: system_breadcrumb_block
+              id: 'extra_field_block:node:blog_post:breadcrumbs'
               label: Breadcrumbs
               label_display: '0'
-              provider: system
-              context_mapping: {  }
-            weight: -9
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                settings: {  }
+                third_party_settings: {  }
+            weight: 0
             additional: {  }
         third_party_settings: {  }
       -
         layout_id: layout_twocol_section
         layout_settings:
-          label: 'Main Section'
+          label: ''
           context_mapping: {  }
           column_widths: 67-33
+          custom_id: ''
+          custom_classes: ''
+          custom_class_choose:
+            container: container
+          custom_styles: ''
+          custom_data_attributes: ''
+          regions:
+            first:
+              region_id: ''
+              region_class_choose:
+                container: 0
+              region_classes: ''
+              region_styles: ''
+              region_data: ''
+            second:
+              region_id: ''
+              region_class_choose:
+                container: 0
+              region_classes: ''
+              region_styles: ''
+              region_data: ''
         components:
           ede39950-ad8e-467b-b766-b1fb7612bb6b:
             uuid: ede39950-ad8e-467b-b766-b1fb7612bb6b
@@ -154,6 +199,11 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 101
+    region: content
+  content_moderation_control:
+    settings: {  }
+    third_party_settings: {  }
+    weight: -20
     region: content
   field_blog_comments:
     type: comment_default

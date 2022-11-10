@@ -138,6 +138,8 @@ install:
   - user_menu_avatar
   - content_moderation
   - workflows
+  - layout_builder_modal
+  - layout_custom_section_classes
 themes:
   - bartik
   - seven

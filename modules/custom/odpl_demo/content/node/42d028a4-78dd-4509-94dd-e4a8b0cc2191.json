@@ -50,7 +50,7 @@
     ],
     "vid": [
         {
-            "value": 291
+            "value": 390
         }
     ],
     "langcode": [
@@ -83,7 +83,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "1267684c-4fd4-47da-b72e-c0aa18e7a733"
+                        "value": "a186c597-af26-4d66-9fa9-f1ec3dc1ed6d"
                     }
                 ]
             }
@@ -100,7 +100,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "1267684c-4fd4-47da-b72e-c0aa18e7a733"
+                        "value": "a186c597-af26-4d66-9fa9-f1ec3dc1ed6d"
                     }
                 ],
                 "lang": "en"
@@ -231,12 +231,6 @@
             "lang": "en"
         }
     ],
-    "revision_translation_affected": [
-        {
-            "value": true,
-            "lang": "en"
-        }
-    ],
     "moderation_state": [
         {
             "value": "published",
@@ -273,7 +267,7 @@
         {
             "status": 2,
             "cid": 0,
-            "last_comment_timestamp": 1646656720,
+            "last_comment_timestamp": 1654680546,
             "last_comment_name": null,
             "last_comment_uid": 1,
             "comment_count": 0
