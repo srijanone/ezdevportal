@@ -26,7 +26,7 @@
    */
   #}
   <h2 class="title text-center">{{ banner_content.title }}</h2>
-  <div class="container-fluid" style="background-color:#EAF1FF;">
+  <div style="background-color:#EAF1FF;">
   <div class="container content-list">
 
     <div class="row align-items-center">
@@ -37,14 +37,14 @@
       </div>
       <div class="col-lg-8  text-lg-right">
         {% for item in banner_content.content %}
-        <span class="blog-date">{{ item.date }}</span>
+        <span class="content-list-date">{{ item.date }}</span>
         {% if item.title  %}
-          <a href="{{ item.url }}"><div class='blog-title'>{{ item.title }}</div></a>
+          <a href="{{ item.url }}"><div class='content-list-title'>{{ item.title }}</div></a>
         {% endif %}
         <span class="author">By {{ item.username }}</span>
         {% if item.content %}
         {% set text = item.content|raw|split('.') %}
-       <div class="blog-text"> {{ text['0']|raw }}. </div>
+       <div class="content-list-text"> {{ text['0']|raw }}. </div>
 
         {% endif %}
         <p class="top-trend">Top tranding blog in {{ item.bottom_date }} </p>

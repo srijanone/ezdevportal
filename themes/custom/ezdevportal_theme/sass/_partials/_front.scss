@@ -1,4 +1,4 @@
-.get-started {
+.content-cards-centered {
   padding-top: 1px;
 
   .card {
@@ -116,7 +116,7 @@
   }
 }
 
-.blog-container {
+.content-list {
   .text-lg-right {
     padding-left: 10%;
   }
@@ -129,15 +129,15 @@
 
   }
 
-  .blog-date {
+  .content-list-date {
     @include card-text;
   }
 
-  .blog-title {
+  .content-list-title {
     @include blog-title;
   }
 
-  .blog-text {
+  .content-list-text {
     @include filters-service-heading;
     margin-top: 14px;
   }
