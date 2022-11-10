@@ -29,7 +29,7 @@ function odpl_user_preprocess_odpl_login_with(&$variables) {
   $variables['current_path'] = $request->getPathInfo();
   $variables['destination'] = $request->get('destination', $variables['destination']);
   $variables['base_path'] = base_path();
-  $variables['#cache'] = ['contexts' => ['url.query_args:destination']];
+  $variables['#cache']['contexts'][] = 'url.path';
 }
 
 /**
