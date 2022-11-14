@@ -256,6 +256,7 @@ function odpl_base_get_node_card($nid) {
       $card_data['content'] = $node->body->value;
       $card_data['date'] = \Drupal::service('date.formatter')->format($node->getCreatedTime(), 'custom', 'M d,Y');
       $card_data['bottom_date'] = \Drupal::service('date.formatter')->format($node->getCreatedTime(), 'custom', 'Y');
+      $card_data['node_type'] = $node->getType();
       $uid = $node->getOwnerId();
       $user = User::load($uid);
       if (!is_null($user)) {
