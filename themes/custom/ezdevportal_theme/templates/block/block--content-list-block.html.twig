@@ -41,18 +41,16 @@
         <div class="col-lg-12">
       {% endif %}
       {% for item in banner_content.content %}
-        {% if item.node_type == 'blog_post' %}
-          <span class="content-list-date">{{ item.value|date("M d, Y") }}</span>
-          {% if item.title  %}
-            <a href="{{ item.url }}"><div class='content-list-title'>{{ item.title }}</div></a>
-          {% endif %}
-          <span class="author">By {{ item.username }}</span>
-          {% if item.content %}
-            {% set text = item.content|raw|split('.') %}
-            <div class="content-list-text"> {{ text['0']|raw }}. </div>
-          {% endif %}
-          <p class="top-trend">Top tranding blog in {{ "now"|date("Y") }} </p>
+        <span class="content-list-date">{{ item.value|date("M d, Y") }}</span>
+        {% if item.title  %}
+          <a href="{{ item.url }}"><div class='content-list-title'>{{ item.title }}</div></a>
         {% endif %}
+        <span class="author">By {{ item.username }}</span>
+        {% if item.content %}
+          {% set text = item.content|raw|split('.') %}
+          <div class="content-list-text"> {{ text['0']|raw }}. </div>
+        {% endif %}
+        <p class="top-trend">Top trending {{ item.node_type }} in {{ "now"|date("Y") }} </p>
       {% endfor %}
 
       </div>

@@ -239,10 +239,17 @@ function odpl_base_get_node_card($nid) {
 
   if ($node instanceof NodeInterface) {
     $card_data['title'] = $node->title->value;
-    if (in_array($node->bundle(), ['api_product', 'use_case'])) {
+    $card_data['node_type'] = str_replace("_", " ", $node->getType());
+    $uid = $node->getOwnerId();
+    $user = User::load($uid);
+    if (!is_null($user)) {
+      $username = $user->getDisplayName();
+      $card_data['username'] = $username;
+    }
+    if (in_array($node->bundle(), ['api_product', 'use_case', 'api_document'])) {
       $card_data['url'] = $path_alias_manager->getAliasByPath('/node/' . $nid);
       $card_data['icon'] = odpl_base_get_node_card_image($node);
-      $card_data['content'] = ($node->bundle() == 'use_case') ? $node->get('body')->summary : $node->field_summary->value;
+      $card_data['content'] = $node->body->value;
       $card_data['text'] = 'Explore';
     }
     elseif ($node->bundle() == 'landing_page') {
@@ -256,13 +263,6 @@ function odpl_base_get_node_card($nid) {
       $card_data['content'] = $node->body->value;
       $card_data['date'] = \Drupal::service('date.formatter')->format($node->getCreatedTime(), 'custom', 'M d,Y');
       $card_data['bottom_date'] = \Drupal::service('date.formatter')->format($node->getCreatedTime(), 'custom', 'Y');
-      $card_data['node_type'] = $node->getType();
-      $uid = $node->getOwnerId();
-      $user = User::load($uid);
-      if (!is_null($user)) {
-        $username = $user->getDisplayName();
-        $card_data['username'] = $username;
-      }
     }
   }
   return $card_data;
