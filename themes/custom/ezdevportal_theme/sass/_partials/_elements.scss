@@ -43,7 +43,11 @@ label{
     border-color: $lightgrayhover;
   }
 }
-
+.btn-outline-secondary {
+  &:hover {
+    background: none;
+  }
+}
 body {
   .button {
     a {
@@ -101,3 +105,31 @@ h2{
 .pull-right{
   float: right;
 }
+.ui-dialog {
+  z-index: 1000 !important;
+}
+.node {
+  
+  .field--type-image{
+   float: none;
+   margin: 0;
+   }
+ 
+}
+.button--small {
+  float: right;
+  margin-bottom: 28px;
+  margin-right: 0;
+}
+.btn-subscribe{
+  @include subscribe-btn;
+  padding: 24px;
+  width: 100%;
+  border: 1px solid $lightgray;
+  border-radius:10px;
+  text-align: center;
+  display: inline-block;
+  background: $white;
+  color: $black;
+  margin-top: 50px;
+  }

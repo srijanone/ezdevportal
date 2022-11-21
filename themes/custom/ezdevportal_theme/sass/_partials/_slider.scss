@@ -1,0 +1,70 @@
+.slick-slider {
+    margin: 0 7%;
+  }
+  
+  .slick-slide {
+    img {
+      margin-top: 65px;
+      height: 422px;
+    }
+  }
+  
+  .text-banner-left {
+    margin-top: 115px;
+  }
+  
+  .slidehead1 {
+    line-height: 50px;
+    text-align: left;
+    margin-top: 0;
+  }
+  
+  .slidehead2 {
+    font-size: 24px;
+    line-height: 29px;
+    margin-top: 50px;
+  }
+  
+  .slidedesc {
+    @include banner-para;
+  }
+  
+  .slidecta {
+    @include banner-link;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding-left: 50px;
+    padding-top: 10px;
+    background: url('../images/banner-arrow.png') left no-repeat;
+    display: block;
+    height: 44px;
+  
+  }
+  
+  .slick-dots {
+    list-style: none;
+    margin: 30px 0 60px 0;
+    display: inline-block;
+  
+    li {
+      display: inline-block;
+      margin-right: 10px;
+  
+      button {
+        border: none;
+        font-size: 0;
+        padding: 7px;
+        background: #A69D9D;
+        border-radius: 50%;
+  
+      }
+  
+      &.slick-active {
+        button {
+          background: #333;
+          padding: 10px;
+        }
+      }
+    }
+  }
+  

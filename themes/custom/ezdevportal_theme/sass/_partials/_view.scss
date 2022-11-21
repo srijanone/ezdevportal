@@ -1,24 +1,7 @@
 .view {
-  &.view-services-document-list {
-    ul {
-      padding-left: 0rem;
-
-      li {
-        cursor: default;
-        margin: 0.2rem .1em;
-      }
-    }
-
-    &.view-taxonomy-term {
-      .container {
-        padding-left: 0px;
-      }
-    }
-  }
-
   /* View Footer */
   .view-footer {
-    .explore-all-domain {
+    .explore-all {
       a {
         @include explore-all-link;
 
@@ -91,8 +74,8 @@
   }
 }
 
-.layout--twocol-section--25-75 {
-  .layout__region--first {
+
+  .block-views-exposed-filter-blockapi-product-api-products-block{
     .filter {
       border-bottom: none;
       @include filters-heading;
@@ -147,7 +130,7 @@
       }
     }
   }
-}
+
 
 
 .view-manage-access {

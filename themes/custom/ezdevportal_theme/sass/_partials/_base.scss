@@ -7,39 +7,7 @@ body {
   }
 }
 
-.breadcrumb {
-  margin-top: 60px;
-}
-
-.breadcrumb-item {
-  font-size: $basic-font-size;
-
-  &.active {
-    color: $black;
-    font-weight: $font-weight-700;
-  }
-
-  &+.breadcrumb-item {
-    padding-left: 0;
-
-    &::before {
-      content: "";
-      background: url('../images/right-arrow-breadcrumb.png') no-repeat;
-      width: 8px;
-      height: 12px;
-      margin-left: 14px;
-      margin-top: 7px;
-      padding-left: 14px;
-    }
-  }
-}
-
-.page-vocabulary-services {
-  .field--name-name {
-    @include heading;
-    text-align: left;
-  }
-}
 .node__content{
   margin-top: 0;
 }
+

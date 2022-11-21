@@ -31,15 +31,7 @@
     }
   }
 
-  .button--small {
-    float: right;
-    background: $black;
-    color: $white;
-    text-transform: uppercase;
-    margin-bottom: 28px;
-    text-align: center;
-    margin-right: 0;
-  }
+
 }
 
 .view-products-listing-page {
@@ -119,11 +111,7 @@
   }
 }
 
-.node--type-api-product {
-  .tabs {
-    margin-top: 90px;
-  }
-}
+
 
 .node-form {
   .vertical-tabs {
@@ -171,11 +159,6 @@
   }
 }
 
-.sidebar {
-  .block {
-    border: none;
-  }
-}
 
 .view-user-list {
   td {

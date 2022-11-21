@@ -41,12 +41,6 @@
 
   }
 
-  .btn-outline-secondary {
-    &:hover {
-      background: none;
-    }
-  }
-
   .card-title {
     padding: 0.5rem 1rem;
     @include card-title;
@@ -72,21 +66,8 @@
         text-decoration: none;
       }
     }
-
-    background: none;
-
-    .frontend-service {
-      cursor: default;
-      background-color: $card_frontend_color;
-      border: 1px solid $card_frontend_border_color;
-    }
-
-    .backend-service {
-      cursor: default;
-      background-color: $card_backend_color;
-      border: 1px solid $card_backend_border_color;
-    }
-
+     background: none;
+    
     .explore {
       a {
         @include explore-link;
@@ -96,7 +77,7 @@
     }
   }
 }
-
-.service-btn {
-  @include card-text;
+.card-with-text {
+  @include banner-para;
+  margin-bottom: 20px;
 }

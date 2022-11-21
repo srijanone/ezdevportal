@@ -1,0 +1,266 @@
+.node--type-landing-page {
+
+    .view-display-id-issue_block {
+      .bef-exposed-form {
+        margin-top: 0;
+      }
+    }
+  
+
+  .form-item-field-status-target-id {
+    width: auto;
+    float: right;
+
+    .form-select {
+      border: 1px solid $vilot;
+      border-radius: 10px;
+      padding: 9px 24px;
+    }
+  }
+
+
+
+  .view-issue {
+    .views-row {
+      border-bottom: 1px solid rgba(127, 39, 196, 0.55);
+      padding-top: 20px;
+      padding-bottom: 22px;
+
+      .views-field-field-status {
+
+        position: relative;
+
+        .field-content {
+          position: absolute;
+          right: 10px;
+          top: -72px;
+        }
+
+      }
+    }
+
+    .views-field-title {
+      a {
+        @include request-form-label;
+        margin-bottom: 15px;
+        display: block;
+      }
+    }
+
+    .views-field-body {
+      .field-content {
+        @include card-title;
+        margin-bottom: 25px;
+      }
+    }
+
+    .views-field-created {
+      span {
+        @include card-text;
+      }
+    }
+
+    .views-field-field-status {
+      .field-content {
+        @include request-form-label;
+        text-transform: uppercase;
+      }
+
+    }
+  }
+}
+.view-id-forum {
+    .view-content {
+      clear: both;
+    }
+  
+    .form-item-taxonomy-forums-target-id {
+      width: auto;
+      float: right;
+  
+      .form-select {
+        border: 1px solid $black;
+        border-radius: 10px;
+        padding: 9px 24px;
+      }
+  
+    }
+  }
+  .view-forum {
+    .views-field-nothing {
+      border-bottom: 1px solid #b7b7b7;
+  
+      .title_fourm {
+        a {
+          @include filters-heading;
+          margin-bottom: 4px;
+        }
+      }
+  
+      .user_fourm {
+        @include filter-label;
+        margin-bottom: 34px;
+      }
+  
+      .tags {
+        margin-bottom: 8px;
+  
+        ul {
+          padding-left: 0;
+  
+          li {
+            @include tags;
+            text-transform: uppercase;
+            border: 1px solid #000;
+            display: inline-block;
+            padding: 1px 20px;
+            border-radius: 5px;
+            margin-right: 5px;
+          }
+        }
+      }
+  
+      .add-icon-dashboards {
+        float: right;
+      }
+  
+      .like_dislike {
+        a {
+          @include border-box;
+        }
+  
+        .count {
+          @include request-form-label;
+          color: #6a6a6a;
+  
+          &::after {
+            content: " Likes";
+          }
+        }
+      }
+  
+      .title_fourm {
+        margin-top: 24px;
+      }
+  
+      .flex-like {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 30px;
+  
+        .vote-like {
+          a {
+            background: url(../images/like.png) no-repeat 12px 12px;
+  
+            &.voted {
+              background: url(../images/like.png) no-repeat 12px 12px !important;
+            }
+          }
+  
+          .count {
+            margin-top: 30px;
+            display: block;
+          }
+  
+        }
+  
+        .comment-count {
+          .img2 {
+            @include border-box;
+            margin-top: 0;
+            margin-left: 14px;
+            background: url(../images/answers.png) no-repeat 13px 14px;
+          }
+  
+          img {
+            @include border-box;
+            margin-left: 15px;
+          }
+  
+          span {
+            @include request-form-label;
+            color: #6a6a6a;
+            margin-top: 30px;
+            display: block;
+          }
+        }
+  
+        .total-count {
+          .img3 {
+            @include border-box;
+            margin-top: 0;
+            background: url(../images/views.png) no-repeat 9px 13px;
+          }
+  
+          img {
+            @include border-box;
+          }
+  
+          span {
+            @include request-form-label;
+            color: #6a6a6a;
+            margin-top: 30px;
+            display: block;
+          }
+        }
+      }
+    }
+  }
+  .block-views-blockforum-forum-topic-list {
+    h2 {
+      @include card-title;
+      text-transform: inherit;
+    }
+  }
+
+
+.view-id-forum {
+.views-field-title {
+  a {
+    @include card-text;
+  }
+}
+}
+
+.block-field-blocknodeforumbody {
+.field--name-body {
+  p {
+    @include request-form-label;
+  }
+}
+}
+
+.field--name-field-forum-tags {
+margin-top: 20px;
+margin-bottom: 10px;
+
+.field__item {
+  display: inline-block;
+
+  a {
+    @include tags;
+    text-transform: uppercase;
+    border: 1px solid #000;
+    display: inline-block;
+    padding: 1px 20px;
+    border-radius: 5px;
+    margin-right: 5px;
+  }
+}
+}
+
+.block-extra-field-blocknodeforumlike-and-dislike {
+margin-top: 20px;
+}
+
+.block-extra-field-blocknodeforumlinks {
+.comment-add {
+  margin-right: 20px;
+
+}
+
+.statistics-counter {
+  margin-top: 10px;
+}
+}
+  

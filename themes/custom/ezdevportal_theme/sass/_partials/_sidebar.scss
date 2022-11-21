@@ -1,0 +1,139 @@
+.sidebar_first {
+    ul {
+      list-style: none;
+    }
+}
+.sidebar{
+    .block{
+        border:none;
+    }
+}
+
+details[open] {
+    summary {
+      &:after {
+        content: "";
+        background: url(../images/down-arrow.png) no-repeat 0px 3px;
+      }
+    }
+  }
+  
+  details {
+    summary {
+      &:after {
+        content: "";
+        background: url(../images/right-arrow-breadcrumb.png) no-repeat 0px 0px;
+        width: 14px;
+        height: 11px;
+        display: inline-block;
+        margin-left: 35px;
+      }
+    }
+  
+  }
+  .menu--admin-sidebar {
+  
+    .nav {
+      flex-direction: column;
+      margin-top: 60px!important;
+
+      li {
+        a {
+          color: $lightgray;
+          &.active{
+              color: $black;
+              @include explore-all-link ;
+          }
+        }
+        span{
+            color: $lightgray;
+            @include explore-all-link ;
+        }
+      }
+    }
+  
+}
+.product-dashboard-navigation-main{
+ 
+  ul {
+    padding-left: 0;
+    li {
+      margin-bottom: 32px;
+      list-style: none;
+      a{
+        display: block;
+        color: $lightgrayhover;
+        height: 27px;
+
+        &.product-detail-link{
+          background: url('../images/details.png') no-repeat;
+          padding-left: 38px;
+          &.active{
+            color: $black;
+            background: url('../images/details-active.png') no-repeat;
+          }
+        }
+        &.product-use-case-link{
+          background: url('../images/use-case.png') no-repeat;
+          padding-left: 38px;
+          &.active{
+            color: $black;
+            background: url('../images/use-case-active.png') no-repeat;
+          }
+        }
+        &.product-blog-link{
+          background: url('../images/blog.png') no-repeat;
+          padding-left: 38px;
+          &.active{
+            color: $black;
+            background: url('../images/blog-active.png') no-repeat;
+          }
+        }
+        &.product-faq-link{
+          background: url('../images/faq.png') no-repeat;
+          padding-left: 38px;
+          &.active{
+            color: $black;
+            background: url('../images/faq-active.png') no-repeat;
+          }
+        }
+      }
+    }
+  }
+}
+#block-developernavigationblock {
+  ul {
+    li {
+      margin-bottom: 27px;
+
+      a {
+        border-bottom: 1px solid $black;
+      }
+    }
+  }
+}
+.node--type-issue,
+.node--type-landing-page {
+  .dashboard-children {
+    padding-left: 0;
+    list-style: none;
+
+    li {
+      margin-bottom: 45px;
+
+      a {
+        @include request-form-label;
+        color: $lightgray;
+
+        &.active {
+          color: $black;
+        }
+      }
+    }
+  }
+}
+.sidebar_first {
+  ul {
+    list-style: none;
+  }
+}
