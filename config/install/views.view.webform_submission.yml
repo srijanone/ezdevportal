@@ -13,7 +13,7 @@ dependencies:
 id: webform_submission
 label: 'Webform Submission'
 module: views
-description: ''
+description: 'Display and manage list of all the submitted webforms on the portal.'
 tag: ''
 base_table: webform_submission
 base_field: sid

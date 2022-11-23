@@ -9,7 +9,7 @@ dependencies:
 id: user_list
 label: 'User List'
 module: user
-description: 'Find and manage people interacting with your site.'
+description: 'Provides a list of people on the portal.'
 tag: default
 base_table: users_field_data
 base_field: uid

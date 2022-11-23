@@ -13,7 +13,7 @@ dependencies:
 id: api_documents
 label: 'API Documents'
 module: views
-description: ''
+description: 'Provides a block of all API documents on the portal.'
 tag: ''
 base_table: node_field_data
 base_field: nid

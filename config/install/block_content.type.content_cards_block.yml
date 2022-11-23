@@ -4,4 +4,4 @@ dependencies: {  }
 id: content_cards_block
 label: 'Content Cards Block'
 revision: 0
-description: 'Use this block type to add card list of any content type.'
+description: 'Use this block type to create card block of API, API Product, Blog Post, Landing Page and Use Case content.'
