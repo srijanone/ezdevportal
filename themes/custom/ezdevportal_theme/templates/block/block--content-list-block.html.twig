@@ -50,7 +50,9 @@
           {% set text = item.content|raw|split('.') %}
           <div class="content-list-text"> {{ text['0']|raw }}. </div>
         {% endif %}
-        <p class="top-trend">Top trending {{ item.node_type }} in {{ "now"|date("Y") }} </p>
+        {% if item.node_type == 'blog_post' %}
+          <p class="top-trend">Top trending blog in {{ "now"|date("Y") }} </p>
+        {% endif %}
       {% endfor %}
 
       </div>

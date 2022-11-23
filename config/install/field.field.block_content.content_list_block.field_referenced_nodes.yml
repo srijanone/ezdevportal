@@ -7,7 +7,6 @@ dependencies:
     - node.type.api_document
     - node.type.api_product
     - node.type.blog_post
-    - node.type.faq
     - node.type.landing_page
     - node.type.use_case
 id: block_content.content_list_block.field_referenced_nodes
@@ -27,7 +26,6 @@ settings:
       api_document: api_document
       api_product: api_product
       blog_post: blog_post
-      faq: faq
       landing_page: landing_page
       use_case: use_case
     sort:

@@ -14,7 +14,7 @@ dependencies:
 id: search_page
 label: 'Search page'
 module: views
-description: ''
+description: 'Provides the views for the search functionality.'
 tag: ''
 base_table: node_field_data
 base_field: nid
