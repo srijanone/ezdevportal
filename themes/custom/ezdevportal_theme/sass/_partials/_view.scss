@@ -1,5 +1,4 @@
 .view {
-  /* View Footer */
   .view-footer {
     .explore-all {
       a {
@@ -25,7 +24,6 @@
     }
   }
 
-  /* View exposed form */
   .bef-exposed-form {
     .form-select {
       &:after {
@@ -53,7 +51,7 @@
 .view-use-cases {
   .view-header {
     h3 {
-      @include heading;
+      @include heading-h1;
     }
   }
 
@@ -74,76 +72,59 @@
   }
 }
 
-
-  .block-views-exposed-filter-blockapi-product-api-products-block{
-    .filter {
-      border-bottom: none;
-      @include filters-heading;
-      text-transform: uppercase;
-      margin-bottom: 40px;  
-    }
+.block-views-exposed-filter-blockapi-product-api-products-block {
+  .filter {
+    border-bottom: none;
+    @include filters-heading;
+    text-transform: uppercase;
+    margin-bottom: 40px;
   }
-  
-  .bef-exposed-form {
-    
-    #edit-sort-bef-combine--2--wrapper {
-      legend {
-        span {
-          &:before {
-            content: "";
-            width: 24px;
-            height: 18px;
-            background: url(../images/sort-icon.png) no-repeat 0px 4px;
-            padding: 0rem 20px;
-          }
+}
 
-          border-bottom: none;
-          @include filters-heading;
-          text-transform: uppercase;
-          margin-bottom: 40px;
-        }
-      }
-    }
-
-   
-
-    .row {
-      details {
-        summary {
-          @include filters-service-heading;
-          margin-bottom: 25px;
-          display: block;
-        }
-      }
-
-      .form-check {
-        padding-left: 0;
-        margin-bottom: 14px;
-
-        .form-check-input {
-          float: right;
+.bef-exposed-form {
+  #edit-sort-bef-combine--2--wrapper {
+    legend {
+      span {
+        &:before {
+          content: "";
+          width: 24px;
+          height: 18px;
+          background: url(../images/sort-icon.png) no-repeat 0px 4px;
+          padding: 0rem 20px;
         }
 
-        label {
-          @include filter-label;
-        }
+        border-bottom: none;
+        @include filters-heading;
+        text-transform: uppercase;
+        margin-bottom: 40px;
       }
     }
   }
 
+  .row {
+    details {
+      summary {
+        @include content-list-text-heading;
+        margin-bottom: 25px;
+        display: block;
+      }
+    }
 
+    .form-check {
+      padding-left: 0;
+      margin-bottom: 14px;
 
-.view-manage-access {
-  .js-form-wrapper {
-    display: none;
-  }
+      .form-check-input {
+        float: right;
+      }
 
-  .js-form-type-checkbox {
-    .form-check-label {
-      display: none;
+      label {
+        @include filter-label;
+      }
     }
   }
 }
-.block-views-blockapi-document-formatter-block-1{
+
+.block-views-blockapi-document-formatter-block-1 {
   clear: both;
 }

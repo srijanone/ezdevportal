@@ -32,20 +32,14 @@
 
     p {
       @include card-text;
-
-      &.service-para-card {
-        font-size: $basic-font-small-size;
-        line-height: $line-height-20;
-      }
     }
-
   }
 
   .card-title {
     padding: 0.5rem 1rem;
     @include card-title;
-    
     margin-bottom: 0;
+
     h3 {
       @include card-title;
       margin-top: 20px;
@@ -55,9 +49,10 @@
 
   .card-footer {
     border-top: 1px solid $lightgray;
-    .explore{
-      a{
-      text-transform: uppercase;
+
+    .explore {
+      a {
+        text-transform: uppercase;
       }
     }
 
@@ -66,17 +61,17 @@
         text-decoration: none;
       }
     }
-     background: none;
-    
+
+    background: none;
+
     .explore {
       a {
         @include explore-link;
       }
-
-    
     }
   }
 }
+
 .card-with-text {
   @include banner-para;
   margin-bottom: 20px;

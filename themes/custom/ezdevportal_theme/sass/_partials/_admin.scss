@@ -1,5 +1,9 @@
 .page-view-media-library,
 .page-view-products-listing-page {
+  .dropbutton-widget {
+    border: none;
+  }
+
   .tabs {
     margin-top: 80px;
 
@@ -30,8 +34,6 @@
       }
     }
   }
-
-
 }
 
 .view-products-listing-page {
@@ -41,57 +43,13 @@
     margin-top: 12px;
   }
 
-
-
   .view-content {
     clear: both;
   }
-
-  .vbo-view-form {
-    >.container {
-      padding-left: 15px;
-    }
-
-    .views-form {
-      padding-left: 0 !important;
-
-      .form-wrapper {
-        .container {
-          padding-left: 0 !important;
-        }
-      }
-    }
-
-    .form-item-action {
-      margin-left: 0;
-      padding-left: 0;
-    }
-  }
-
 }
 
-.js {
-  .page-view-products-listing-page {
-
-    .dropbutton-widget {
-      border: none;
-
-
-    }
-  }
-}
-
-#views-form-media-library-page-1 {
-  #edit-media-bulk-form--2 {
-    fieldset {
-      padding-left: 0;
-      width: 150px;
-    }
-  }
-}
 
 #views-exposed-form-media-library-page-1 {
-
   ul {
     padding-left: 0;
     border-bottom: 1px solid $black;
@@ -110,8 +68,6 @@
     }
   }
 }
-
-
 
 .node-form {
   .vertical-tabs {
@@ -159,17 +115,10 @@
   }
 }
 
-
 .view-user-list {
   td {
     &.views-field-name {
       line-height: 27px;
-    }
-
-    label {
-      margin-bottom: 0;
-      line-height: 27px;
-      padding-left: 5px;
     }
 
     .list-group-item {
@@ -177,8 +126,6 @@
     }
   }
 }
-
-
 
 .js-media-library-item-preview {
   .field--type-image {
@@ -227,8 +174,6 @@ a {
   .vbo-multipage-selector {
     display: none;
   }
-
-
 
   div[data-drupal-selector="edit-actions"] {
     clear: both;

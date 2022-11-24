@@ -23,25 +23,15 @@
       margin-bottom: 12px;
     }
   }
-
-  h2 {
-    @include heading-h2 ;
-    margin-top: 42px;
-   
-  }
 }
 
-
-
 .use-case {
-
-    img {
-      height: 82px;
-      width: 82px;
-      margin-top: 50px;
-      margin-bottom: 34px;
-    }
-  
+  img {
+    height: 82px;
+    width: 82px;
+    margin-top: 50px;
+    margin-bottom: 34px;
+  }
 }
 
 .content-list {
@@ -66,7 +56,7 @@
   }
 
   .content-list-text {
-    @include filters-service-heading;
+    @include content-list-text-heading;
     margin-top: 14px;
   }
 
@@ -96,7 +86,3 @@
     }
   }
 }
-
-
-
-

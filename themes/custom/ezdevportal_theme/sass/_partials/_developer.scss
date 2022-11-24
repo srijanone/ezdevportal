@@ -5,13 +5,6 @@
   }
 }
 
-
-.block-block-content,
-.block-inline-blockbasic {
-  margin-top: 97px;
-
-}
-
 .field--name-field-filter-options {
   select {
     border: 1px solid $black;
@@ -24,12 +17,7 @@
     background-size: 1em;
     min-width: 250px;
   }
-
 }
-
-
-
-
 
 .in-progress {
   color: $inprogress-green;
@@ -43,32 +31,26 @@
 .node-issue-form,
 .developer-app-add-for-developer-form,
 .node-forum-form {
-
   input[type=reset] {
     order: 2;
   }
 
   button[type="submit"] {
     order: 1;
-    /*margin-left: 15px;*/
     background: $black;
     color: $white;
+    margin-top: -4px;
   }
-
 }
 
+.appname {
+  @include banner-para;
+  margin-top: 14px;
+}
 
-  
-
-  .appname {
-    @include banner-para;
-    margin-top: 14px;
-  }
-
-  .appcreated {
-    @include card-text;
-  }
-
+.appcreated {
+  @include card-text;
+}
 
 .approval-pending-apps {
   margin-top: 88px;
@@ -84,12 +66,8 @@
   }
 }
 
-
-
-
-
 .field--name-title {
-  @include filters-service-heading;
+  @include content-list-text-heading;
   margin-bottom: 14px;
 }
 
@@ -116,12 +94,9 @@
     .form-check-label {
       padding-left: 3px;
     }
-
   }
 }
 
-
-   
 .notification-icon {
   &:after {
     background: $black;
@@ -136,13 +111,13 @@
   }
 }
 
-
 .node-forum-form,
 .node-issue-form {
   .layout-region-node-footer {
     margin-left: 25px;
   }
 }
+
 summary::marker {
   content: '';
 }

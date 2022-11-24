@@ -1,9 +1,7 @@
 .login-right-bg {
   background: url('../images/login-bg.png') repeat;
   background-size: 100%;
-
 }
-
 .page-user-login,
 .page-user-register,
 .page-user-password {
@@ -34,7 +32,6 @@
     top: -15px;
     @include explore-all-link;
     color: $lighest-grey;
-
   }
 
   h1 {
@@ -97,7 +94,6 @@
           margin-right: 0;
         }
       }
-
     }
   }
 
@@ -121,7 +117,6 @@
     }
   }
 }
-
 
 .back-to-home {
   position: fixed;
@@ -164,3 +159,5 @@
     }
   }
 }
+
+  

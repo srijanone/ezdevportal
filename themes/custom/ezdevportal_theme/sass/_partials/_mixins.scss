@@ -5,14 +5,11 @@
     line-height: $line-height-22;
 }
 @mixin button-default{  
-   
     font-weight: $font-weight-600;
     font-size: $basic-font-size;
     line-height: $line-height-20;
     background: $black;
     color: $white;
-
- 
 }
 @mixin banner-heading {
     font-weight: $font-weight-400;
@@ -22,14 +19,14 @@
 }
 @mixin heading-h2 {
     font-size: $basic-font-size-26;
-    
     font-weight: $font-weight-600;
+    margin: 12px 0;
+    line-height: 35px;
 }
 @mixin banner-heading-bottom {
     font-weight: $font-weight-300;
     font-size: $basic-font-size-48;
     line-height: $line-height-66;
-    
 }
 @mixin banner-para {
     font-weight: $font-weight-400;
@@ -38,7 +35,6 @@
     color:$primary;
 }
 @mixin banner-link {
-    
     font-size: $basic-font-size-18;
     line-height: $line-height-25;
     color:$primary;
@@ -47,7 +43,6 @@
     font-weight: $font-weight-400;
     font-size: $basic-font-small-size;
     line-height: $line-height-19;
-    
 }
 @mixin banner-heading-responsive {
     font-weight: $font-weight-400;
@@ -89,19 +84,19 @@
     line-height: $line-height-20;
     text-transform:uppercase;
 }
-@mixin heading {
+@mixin heading-h1 {
     font-size: $basic-font-size-48;
     font-weight: $font-weight-500;
     line-height:$line-height-50;
-    margin-top: 100px;
-    margin-bottom: 40px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 @mixin filters-heading {
     font-weight: $font-weight-400;
     font-size: $basic-font-size-18;
     line-height: $line-height-21;
 }
-@mixin filters-service-heading {
+@mixin content-list-text-heading {
     font-weight: $font-weight-600;
     font-size: $basic-font-size;
     line-height: $line-height-22;
@@ -140,7 +135,6 @@
     font-weight: $font-weight-600;
     font-size: $basic-font-size-30;
     line-height: $line-height-40;
-    
 }
 @mixin search-left-text{
     font-weight: $font-weight-400;
@@ -159,7 +153,6 @@
    font-size:  $basic-font-size-10;
    line-height: $line-height-22;
     font-weight: $font-weight-500;
-    
 }
 @mixin head-inner{
     font-size:  $basic-font-size-24;

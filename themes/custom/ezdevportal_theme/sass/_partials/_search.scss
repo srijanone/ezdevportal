@@ -12,11 +12,10 @@
         font-size: $basic-font-size-30;
         font-weight: $font-weight-300;
       }
-
     }
   }
 
-  #edit-combine {
+  input[type="text"] {
     &::placeholder {
       color: $searchcolor;
     }
@@ -31,6 +30,7 @@
     padding-bottom: 18px;
     padding-left: 70px;
     width:64%;
+
     &:focus {
       box-shadow: none;
     }
@@ -121,5 +121,3 @@
     }
   }
 }
-
-

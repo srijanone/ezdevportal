@@ -1,9 +1,9 @@
 .block-field-blocknodeblog-posttitle {
-  margin-top: 85px;
-  margin-bottom: 35px;
-
-  .field--name-title {
+ .field--name-title {
     @include prod-title;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    display: block;
   }
 }
 
@@ -18,32 +18,34 @@
   margin-top: 100px;
 }
 
-.form-item-tag{
-  label{
+.form-item-tag {
+  label {
     @include banner-link;
-    margin-top: 85px;
-    margin-bottom: 28px;
+    margin-top: 27px;
+    margin-bottom: 0px;
     font-weight: $font-weight-500;
   }
 }
 
 .block-views-blockblog-block-latest-blogs,
 .block-views-blockblog-discovery-tag-blog {
-
-  .blog-title  {
+  .blog-title {
     @include banner-link;
     margin-top: 85px;
     margin-bottom: 28px;
-    
   }
 }
 
-.views-field-field-blog-tags {
-  ul {
-    li {
-      margin: 10px 10px 0px 0px;
-      padding: 7px 37px;
-    }
+.block-views-blockblog-discovery-tag-blog {
+  margin-top: 34px;
+  .views-field-field-blog-tags{
+    margin-top: 13px;
+  }
+}
+.block-views-blockblog-block-latest-blogs{
+  margin-top: 25px;
+  .view-display-id-block_latest_blogs{
+    margin-top: 25px;
   }
 }
 
@@ -64,38 +66,6 @@
   }
 }
 
-#views-exposed-form-blog-block-all-blogs {
-  fieldset {
-    label {
-      @include banner-link;
-      margin-top: 85px;
-      margin-bottom: 28px;
-      margin-left: 23px;
-    }
-  }
 
-  .form-select {
-    border: none;
-    background-image:none;
-    padding-left: 0;
 
-    ul {
-      li {
-        margin: 10px 10px 0px 0px;
-        padding: 7px 37px;
-      }
-    }
-  }
-}
-.block-views-blockblog-block-all-blogs{
-    h2{
-        margin-top: 70px;
-        margin-bottom:35px; 
-    }
-}
 
-.block-views-exposed-filter-blockblog-block-all-blogs{
-  ul{
-    padding-left: 0;
-  }
-}

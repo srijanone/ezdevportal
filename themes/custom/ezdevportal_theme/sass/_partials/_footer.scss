@@ -1,98 +1,33 @@
 .featured-bottom {
   padding: 45px 0px;
   background: #eee;
- 
-    .social-media-links--platforms {
-      li {
-        a {
-          span {
-            font-family: "Font Awesome 5 Brands";
-            font-weight: $font-weight-normal;
-            font-size: $basic-font-size-22;
-            width: 25px;
-            height: 25px;
-            padding: 5px;
-          }
-        }
-      }
-    }
-     .navbar-nav {
-      flex-direction: row;
-      float: right;
 
-      li {
-        a {
-          @include footer-link;
-          
-          padding: 0px 20px 0px 40px;
-          color: $primary;
-        }
-      }
-    }
+  .navbar-nav {
+    flex-direction: row;
+    float: right;
 
-    .field--name-body {
-      p {
+    li {
+      a {
         @include footer-link;
-        padding-left: 0;
-        color: $lightgray;   
+
+        padding: 0px 20px 0px 40px;
+        color: $primary;
       }
     }
-  
+  }
+
+  .field--name-body {
+    p {
+      @include footer-link;
+      padding-left: 0;
+      color: $lightgray;
+    }
+  }
+
 }
-.site-footer{
+
+.site-footer {
   padding: 0;
 }
 
- 
-    #block-actioncontentblock-2{
-      p{
-        margin-bottom: 118px;
-      }
-    }
-    .block-action-content-block{
-     
-      .heading-img{
-        text-align: center;
-        .subscribe-title{
-          @include subscribe-title;
-          margin-top: 15px;
-          margin-bottom: 35px;
-          text-transform: uppercase;
-        }
-      }
-      p{
-        @include filter-label ;
-        
-      }
-      label{
-      @include explore-all-link ;
-      }
-     
-      .form-control{
-        border-top: 0;
-    border-radius: 0;
-    border-left: 0;
-    border-right: 0;
-&:focus{
-  box-shadow:none;
-  border-color: inherit;
-}
-      }
-    }
 
-#block-actioncontentblock{
-  .image-holder{
-    background: url('../images/envelopeicon.png');
-    width:78px;
-    height: 53px;
-    display: inline-block ;
-  }
-}
-#block-actioncontentblock-2{
-  .image-holder{
-    background: url('../images/supporticon.png');
-    width:58px;
-    height: 54px;
-    display: inline-block ;
-  }
-}

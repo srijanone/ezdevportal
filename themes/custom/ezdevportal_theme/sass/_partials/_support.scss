@@ -1,0 +1,58 @@
+.view-issue {
+    .views-row {
+      border-bottom: 1px solid rgba(127, 39, 196, 0.55);
+      padding-top: 20px;
+      padding-bottom: 22px;
+
+      .views-field-field-status {
+
+        position: relative;
+
+        .field-content {
+          position: absolute;
+          right: 10px;
+          top: -72px;
+        }
+
+      }
+    }
+
+    .views-field-title {
+      a {
+        @include request-form-label;
+        margin-bottom: 15px;
+        display: block;
+      }
+    }
+
+    .views-field-body {
+      .field-content {
+        @include card-title;
+        margin-bottom: 25px;
+      }
+    }
+
+    .views-field-created {
+      span {
+        @include card-text;
+      }
+    }
+
+    .views-field-field-status {
+      .field-content {
+        @include request-form-label;
+        text-transform: uppercase;
+      }
+
+    }
+  }
+  .form-item-field-status-target-id {
+    width: auto;
+    float: right;
+
+    .form-select {
+      border: 1px solid $vilot;
+      border-radius: 10px;
+      padding: 9px 24px;
+    }
+  }

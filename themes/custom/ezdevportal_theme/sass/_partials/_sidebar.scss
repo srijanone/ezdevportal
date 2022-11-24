@@ -1,98 +1,88 @@
 .sidebar_first {
-    ul {
-      list-style: none;
-    }
-}
-.sidebar{
-    .block{
-        border:none;
-    }
+  ul {
+    list-style: none;
+  }
 }
 
-details[open] {
-    summary {
-      &:after {
-        content: "";
-        background: url(../images/down-arrow.png) no-repeat 0px 3px;
+.sidebar {
+  .block {
+    border: none;
+  }
+}
+
+
+
+.menu--admin-sidebar {
+  .nav {
+    flex-direction: column;
+    margin-top: 60px !important;
+
+    li {
+      a {
+        color: $lightgray;
+
+        &.active {
+          color: $black;
+          @include explore-all-link;
+        }
+      }
+
+      span {
+        color: $lightgray;
+        @include explore-all-link;
       }
     }
   }
-  
-  details {
-    summary {
-      &:after {
-        content: "";
-        background: url(../images/right-arrow-breadcrumb.png) no-repeat 0px 0px;
-        width: 14px;
-        height: 11px;
-        display: inline-block;
-        margin-left: 35px;
-      }
-    }
-  
-  }
-  .menu--admin-sidebar {
-  
-    .nav {
-      flex-direction: column;
-      margin-top: 60px!important;
-
-      li {
-        a {
-          color: $lightgray;
-          &.active{
-              color: $black;
-              @include explore-all-link ;
-          }
-        }
-        span{
-            color: $lightgray;
-            @include explore-all-link ;
-        }
-      }
-    }
-  
 }
-.product-dashboard-navigation-main{
- 
+
+.product-dashboard-navigation-main {
   ul {
     padding-left: 0;
+
     li {
       margin-bottom: 32px;
       list-style: none;
-      a{
+
+      a {
         display: block;
         color: $lightgrayhover;
         height: 27px;
 
-        &.product-detail-link{
+        &.product-detail-link {
           background: url('../images/details.png') no-repeat;
           padding-left: 38px;
-          &.active{
+
+          &.active {
             color: $black;
             background: url('../images/details-active.png') no-repeat;
           }
         }
-        &.product-use-case-link{
+
+        &.product-use-case-link {
           background: url('../images/use-case.png') no-repeat;
           padding-left: 38px;
-          &.active{
+
+          &.active {
             color: $black;
             background: url('../images/use-case-active.png') no-repeat;
           }
         }
-        &.product-blog-link{
+
+        &.product-blog-link {
           background: url('../images/blog.png') no-repeat;
           padding-left: 38px;
-          &.active{
+
+          &.active {
             color: $black;
             background: url('../images/blog-active.png') no-repeat;
           }
         }
-        &.product-faq-link{
+
+        &.product-faq-link {
           background: url('../images/faq.png') no-repeat;
           padding-left: 38px;
-          &.active{
+
+          &.active {
             color: $black;
             background: url('../images/faq-active.png') no-repeat;
           }
@@ -101,6 +91,7 @@ details[open] {
     }
   }
 }
+
 #block-developernavigationblock {
   ul {
     li {
@@ -112,8 +103,8 @@ details[open] {
     }
   }
 }
-.node--type-issue,
-.node--type-landing-page {
+
+.block-dashboard-navigation-block {
   .dashboard-children {
     padding-left: 0;
     list-style: none;
@@ -132,8 +123,5 @@ details[open] {
     }
   }
 }
-.sidebar_first {
-  ul {
-    list-style: none;
-  }
-}
+
+
