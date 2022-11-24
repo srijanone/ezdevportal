@@ -12,7 +12,7 @@ dependencies:
 id: product_banner
 label: 'Product Banner'
 module: views
-description: ''
+description: 'Provides the block view for product banner.'
 tag: ''
 base_table: node_field_data
 base_field: nid

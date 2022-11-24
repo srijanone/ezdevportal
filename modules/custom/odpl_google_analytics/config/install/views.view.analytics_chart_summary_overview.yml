@@ -8,7 +8,7 @@ dependencies:
 id: analytics_chart_summary_overview
 label: 'Google Analytics Reports'
 module: views
-description: ''
+description: 'Display various statistic information about the portal from Google Analytics.'
 tag: ''
 base_table: google_analytics
 base_field: ''

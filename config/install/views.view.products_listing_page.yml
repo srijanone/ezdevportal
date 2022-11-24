@@ -21,7 +21,7 @@ dependencies:
 id: products_listing_page
 label: 'Products Listing Page'
 module: views
-description: ''
+description: 'Display and manage the list of all the Products, FAQs, Blogs, Use Cases, Landing Pages and APIs on the portal.'
 tag: ''
 base_table: node_field_data
 base_field: nid

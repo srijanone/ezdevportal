@@ -17,7 +17,7 @@ dependencies:
 id: issue
 label: Issue
 module: views
-description: ''
+description: 'Provides different types of views related to issue(support) content type.'
 tag: ''
 base_table: node_field_data
 base_field: nid

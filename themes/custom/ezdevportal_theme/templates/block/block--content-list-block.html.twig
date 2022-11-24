@@ -1,75 +1,66 @@
 {#
-								  /**
-								   * @file
-								   * Theme override to display a block.
-								   *
-								   * Available variables:
-								   * - plugin_id: The ID of the block implementation.
-								   * - label: The configured label of the block if visible.
-								   * - configuration: A list of the block's configuration values.
-								   *   - label: The configured label for the block.
-								   *   - label_display: The display settings for the label.
-								   *   - provider: The module or other provider that provided this block plugin.
-								   *   - Block plugin specific settings will also be stored here.
-								   * - content: The content of this block.
-								   * - attributes: array of HTML attributes populated by modules, intended to
-								   *   be added to the main container tag of this template.
-								   *   - id: A valid HTML ID and guaranteed unique.
-								   * - title_attributes: Same as attributes, except applied to the main title
-								   *   tag that appears in the template.
-								   * - title_prefix: Additional output populated by modules, intended to be
-								   *   displayed in front of the main title tag that appears in the template.
-								   * - title_suffix: Additional output populated by modules, intended to be
-								   *   displayed after the main title tag that appears in the template.
-								   *
-								   * @see template_preprocess_block()
-								   */
-								  #}
-		<div class="content-list">
-			<h2 class="title text-center">{{ banner_content.title }}</h2>
-			<div style="background-color:#EAF1FF;">
-				<div class="container">
-					<div class="row align-items-center">
-						{% if banner_content.image %}
-							<div class="col-lg-4 text-banner-left text-center  mt-lg-0 image-banner-left">
-								<div class="banner-image-right">
-									<img src={{ banner_content.image }} class="card-img-top" alt="'">
-								</div>
-							</div>
-							<div class="col-lg-8 text-lg-right">
-							{% else %}
-								<div class="col-lg-12">
-								{% endif %}
-								{% for item in banner_content.content %}
-									{% if item.node_type == 'blog_post' %}
-										<span class="content-list-date">{{ item.value|date("M d, Y") }}</span>
-										{% if item.title  %}
-											<a href="{{ item.url }}">
-												<div class='content-list-title'>{{ item.title }}</div>
-											</a>
-										{% endif %}
-										<span class="author">By
-											{{ item.username }}</span>
-										{% if item.content %}
-											{% set text = item.content|raw|split('.') %}
-											<div class="content-list-text">
-												{{ text['0']|raw }}.
-											</div>
-										{% endif %}
-										<p class="top-trend">Top tranding blog in
-											{{ "now"|date("Y") }}
-										</p>
-									{% endif %}
-								{% endfor %}
-							</div>
-						</div>
-					</div>
+  /**
+   * @file
+   * Theme override to display a block.
+   *
+   * Available variables:
+   * - plugin_id: The ID of the block implementation.
+   * - label: The configured label of the block if visible.
+   * - configuration: A list of the block's configuration values.
+   *   - label: The configured label for the block.
+   *   - label_display: The display settings for the label.
+   *   - provider: The module or other provider that provided this block plugin.
+   *   - Block plugin specific settings will also be stored here.
+   * - content: The content of this block.
+   * - attributes: array of HTML attributes populated by modules, intended to
+   *   be added to the main container tag of this template.
+   *   - id: A valid HTML ID and guaranteed unique.
+   * - title_attributes: Same as attributes, except applied to the main title
+   *   tag that appears in the template.
+   * - title_prefix: Additional output populated by modules, intended to be
+   *   displayed in front of the main title tag that appears in the template.
+   * - title_suffix: Additional output populated by modules, intended to be
+   *   displayed after the main title tag that appears in the template.
+   *
+   * @see template_preprocess_block()
+   */
+  #}
+  <div class="content-list">
+    <h2 class="title text-center">{{ banner_content.title }}</h2>
+    <div style="background-color:#EAF1FF;">
+      <div class="container">
+        <div class="row align-items-center">
+			{% if banner_content.image %}
+				<div class="col-lg-4 text-banner-left text-center  mt-lg-0 image-banner-left">
+				<div class="banner-image-right">
+						<img src={{ banner_content.image }} class="card-img-top" alt="'">
 				</div>
-				<div class="container content-list-footer">
-					<div class="row">
-						<div class="col-sm-12">
-							<a class="pull-right" href="{{ banner_content.link }}">{{ banner_content.link_title }}</a>
-						</div>
-					</div>
 				</div>
-			</div>
+				<div class="col-lg-8 text-lg-right">
+			{% else %}
+				<div class="col-lg-12">
+			{% endif %}
+			{% for item in banner_content.content %}
+				<span class="content-list-date">{{ item.value|date("M d, Y") }}</span>
+				{% if item.title  %}
+				<a href="{{ item.url }}"><div class='content-list-title'>{{ item.title }}</div></a>
+				{% endif %}
+				<span class="author">By {{ item.username }}</span>
+				{% if item.content %}
+				{% set text = item.content|raw|split('.') %}
+				<div class="content-list-text"> {{ text['0']|raw }}. </div>
+				{% endif %}
+				{% if item.node_type == 'blog_post' %}
+				<p class="top-trend">Top trending blog in {{ "now"|date("Y") }} </p>
+				{% endif %}
+			{% endfor %}
+      </div>
+    </div>
+  </div>
+  </div>
+  <div class="container content-list-footer">
+    <div class="row">
+      <div class="col-sm-12"><a class="pull-right" href="{{ banner_content.link }}">{{ banner_content.link_title }}</a></div>
+	</div>
+  </div>
+</div>

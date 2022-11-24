@@ -18,7 +18,7 @@ dependencies:
 id: product_content_listing
 label: 'Product Content Listing'
 module: views
-description: ''
+description: 'Provides block views for API Document, Use Cases, FAQs and Blogs for a particular product.'
 tag: ''
 base_table: node_field_data
 base_field: nid
