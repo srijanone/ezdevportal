@@ -15,7 +15,7 @@
   }
 
   .field--name-body {
-    @include request-form-label;
+    @include form-label;
   }
 }
 
@@ -48,13 +48,16 @@
 
 .block-field-blocknodeapi-documentbody {
   p {
-    @include banner-para;
+    @include body-para;
   }
 }
 
 .content-cards-centered {
   padding-top: 1px;
-
+  .title {
+    margin-bottom: 40px;
+    margin-top: 42px;
+  }
   .card {
     width: 205px;
     height: 200px;
@@ -141,9 +144,4 @@
   }
 }
 
-.content-cards-centered {
-  .title {
-    margin-bottom: 40px;
-  }
-}
 

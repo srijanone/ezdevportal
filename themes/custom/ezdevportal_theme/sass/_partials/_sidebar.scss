@@ -10,8 +10,6 @@
   }
 }
 
-
-
 .menu--admin-sidebar {
   .nav {
     flex-direction: column;
@@ -92,7 +90,7 @@
   }
 }
 
-#block-developernavigationblock {
+.block-developer-navigation-block {
   ul {
     li {
       margin-bottom: 27px;
@@ -113,7 +111,7 @@
       margin-bottom: 45px;
 
       a {
-        @include request-form-label;
+        @include form-label;
         color: $lightgray;
 
         &.active {
@@ -123,5 +121,3 @@
     }
   }
 }
-
-

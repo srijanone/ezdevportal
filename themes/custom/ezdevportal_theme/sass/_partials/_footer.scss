@@ -1,5 +1,4 @@
 .featured-bottom {
-  padding: 45px 0px;
   background: #eee;
 
   .navbar-nav {
@@ -9,24 +8,13 @@
     li {
       a {
         @include footer-link;
-
         padding: 0px 20px 0px 40px;
         color: $primary;
       }
     }
   }
-
-  .field--name-body {
-    p {
-      @include footer-link;
-      padding-left: 0;
-      color: $lightgray;
-    }
-  }
-
 }
-
-.site-footer {
+.site-footer{
   padding: 0;
 }
 

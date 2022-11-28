@@ -1,161 +1,207 @@
-@mixin main-menu-font  {
-    text-transform: uppercase;
-    font-size: $basic-font-size;
-    font-weight: $font-weight-400;
-    line-height: $line-height-22;
+@mixin main-menu-font {
+  text-transform: uppercase;
+  font-size: $basic-font-size;
+  font-weight: $font-weight-400;
+  line-height: $line-height-22;
 }
-@mixin button-default{  
-    font-weight: $font-weight-600;
-    font-size: $basic-font-size;
-    line-height: $line-height-20;
-    background: $black;
-    color: $white;
+
+@mixin button-default {
+  font-weight: $font-weight-600;
+  font-size: $basic-font-size;
+  line-height: $line-height-20;
+  background: $black;
+  color: $white;
 }
-@mixin banner-heading {
-    font-weight: $font-weight-400;
-    font-size: $basic-font-size-48;
-    line-height: $line-height-50;
-    color:$primary;
-}
-@mixin heading-h2 {
-    font-size: $basic-font-size-26;
-    font-weight: $font-weight-600;
-    margin: 12px 0;
-    line-height: 35px;
-}
-@mixin banner-heading-bottom {
-    font-weight: $font-weight-300;
-    font-size: $basic-font-size-48;
-    line-height: $line-height-66;
-}
-@mixin banner-para {
-    font-weight: $font-weight-400;
-    font-size: $basic-font-size;
-    line-height: $line-height-22;
-    color:$primary;
-}
-@mixin banner-link {
-    font-size: $basic-font-size-18;
-    line-height: $line-height-25;
-    color:$primary;
-}
-@mixin footer-link {
-    font-weight: $font-weight-400;
-    font-size: $basic-font-small-size;
-    line-height: $line-height-19;
-}
-@mixin banner-heading-responsive {
-    font-weight: $font-weight-400;
-    font-size: $basic-font-size-20;
-    line-height: $line-height-28;
-    color:$primary;
-}
-@mixin banner-para-responsive {
-    font-weight: $font-weight-400;
-    font-size: $basic-font-size-10;
-    line-height: $line-height-13;
-    color:$primary;
-}
-@mixin  banner-link-responsive{
-    font-weight: $font-weight-600;
-    font-size: $basic-font-xtra-small-size;
-    line-height: $line-height-16;
-    color:$primary;
-}
-@mixin  card-title{
-    font-weight: $font-weight-600;
-    font-size: $basic-font-size-20;
-    line-height: $line-height-22;
-}
-@mixin  card-text{
-    font-weight: $font-weight-400;
-    font-size: $basic-font-xtra-small-size;
-    line-height: $line-height-16;
-    margin-bottom:1rem;
-}
-@mixin explore-link {
-    font-weight: $font-weight-500;
-    font-size: $basic-font-small-size;
-    line-height: $line-height-22;
-}
-@mixin explore-all-link {
-    font-weight: $font-weight-400;
-    font-size: $basic-font-small-size;
-    line-height: $line-height-20;
-    text-transform:uppercase;
-}
+
 @mixin heading-h1 {
-    font-size: $basic-font-size-48;
-    font-weight: $font-weight-500;
-    line-height:$line-height-50;
-    margin-top: 10px;
-    margin-bottom: 10px;
+  font-size: $basic-font-size-48;
+  font-weight: $font-weight-500;
+  line-height: $line-height-50;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
+
+@mixin heading-h2 {
+  font-size: $basic-font-size-26;
+  font-weight: $font-weight-600;
+  margin: 12px 0;
+  line-height: 35px;
+}
+
+@mixin heading-h3 {
+  font-size: $basic-font-size-24;
+  font-weight: $font-weight-500;
+  margin: 10px 0;
+  line-height: 35px;
+}
+
+@mixin heading-h4 {
+  font-size: $basic-font-size-22;
+  margin: 10px 0;
+  line-height: 35px;
+}
+
+@mixin heading-h5 {
+  font-size: $basic-font-size-20;
+  margin: 10px 0;
+  line-height: 35px;
+}
+
+@mixin heading-h6 {
+  font-size: $basic-font-size-18;
+  margin: 10px 0;
+  line-height: 35px;
+}
+
+@mixin body-para {
+  font-weight: $font-weight-400;
+  font-size: $basic-font-size;
+  line-height: $line-height-22;
+  color: $primary;
+}
+
+@mixin banner-link {
+  font-size: $basic-font-size-18;
+  line-height: $line-height-25;
+  color: $primary;
+}
+
+@mixin footer-link {
+  font-weight: $font-weight-400;
+  font-size: $basic-font-small-size;
+  line-height: $line-height-19;
+}
+
+@mixin banner-heading-responsive {
+  font-weight: $font-weight-400;
+  font-size: $basic-font-size-20;
+  line-height: $line-height-28;
+  color: $primary;
+}
+
+@mixin body-para-responsive {
+  font-weight: $font-weight-400;
+  font-size: $basic-font-size-10;
+  line-height: $line-height-13;
+  color: $primary;
+}
+
+@mixin banner-link-responsive {
+  font-weight: $font-weight-600;
+  font-size: $basic-font-xtra-small-size;
+  line-height: $line-height-16;
+  color: $primary;
+}
+
+@mixin card-title {
+  font-weight: $font-weight-600;
+  font-size: $basic-font-size-20;
+  line-height: $line-height-22;
+}
+
+@mixin card-text {
+  font-weight: $font-weight-400;
+  font-size: $basic-font-xtra-small-size;
+  line-height: $line-height-16;
+  margin-bottom: 1rem;
+}
+
+@mixin explore-link {
+  font-weight: $font-weight-500;
+  font-size: $basic-font-small-size;
+  line-height: $line-height-22;
+}
+
+@mixin explore-all-link {
+  font-weight: $font-weight-400;
+  font-size: $basic-font-small-size;
+  line-height: $line-height-20;
+  text-transform: uppercase;
+}
+
 @mixin filters-heading {
-    font-weight: $font-weight-400;
-    font-size: $basic-font-size-18;
-    line-height: $line-height-21;
+  font-weight: $font-weight-400;
+  font-size: $basic-font-size-18;
+  line-height: $line-height-21;
 }
+
 @mixin content-list-text-heading {
-    font-weight: $font-weight-600;
-    font-size: $basic-font-size;
-    line-height: $line-height-22;
+  font-weight: $font-weight-600;
+  font-size: $basic-font-size;
+  line-height: $line-height-22;
 }
+
 @mixin filter-label {
-    font-weight: $font-weight-400;
-    font-size: $basic-font-small-size;
-    line-height: $line-height-19;
+  font-weight: $font-weight-400;
+  font-size: $basic-font-small-size;
+  line-height: $line-height-19;
 }
-@mixin request-form-label {
-    font-weight: $font-weight-400;
-    font-size: $basic-font-size;
-    line-height: $line-height-22;
+
+@mixin form-label {
+  font-weight: $font-weight-400;
+  font-size: $basic-font-size;
+  line-height: $line-height-22;
 }
-@mixin blog-title{
-    font-size: $basic-font-size-22;
-    font-weight: $font-weight-400;
-    line-height: $line-height-22;
+
+@mixin blog-title {
+  font-size: $basic-font-size-22;
+  font-weight: $font-weight-400;
+  line-height: $line-height-22;
 }
-@mixin prod-title{
-    font-weight: $font-weight-600;
-    font-size: $basic-font-size-24;
-    line-height: $line-height-22;
+
+@mixin prod-title {
+  font-weight: $font-weight-600;
+  font-size: $basic-font-size-24;
+  line-height: $line-height-22;
 }
-@mixin subscribe-title{
-    font-weight: $font-weight-400;
-    font-size: $basic-font-size-24;
-    line-height: $line-height-32;
+
+@mixin subscribe-title {
+  font-weight: $font-weight-400;
+  font-size: $basic-font-size-24;
+  line-height: $line-height-32;
 }
-@mixin subscribe-btn{
-    font-weight: $font-weight-600;
-    font-size: $basic-font-size-13;
-    line-height: $line-height-18;
+
+@mixin subscribe-btn {
+  font-weight: $font-weight-600;
+  font-size: $basic-font-size-13;
+  line-height: $line-height-18;
 }
-@mixin  user-heading{
-    font-weight: $font-weight-600;
-    font-size: $basic-font-size-30;
-    line-height: $line-height-40;
+
+@mixin user-heading {
+  font-weight: $font-weight-600;
+  font-size: $basic-font-size-30;
+  line-height: $line-height-40;
 }
-@mixin search-left-text{
-    font-weight: $font-weight-400;
-    font-size: $basic-font-size-13;
-    line-height: $line-height-16;
+
+@mixin search-left-text {
+  font-weight: $font-weight-400;
+  font-size: $basic-font-size-13;
+  line-height: $line-height-16;
 }
+
 @mixin border-box {
-    border: 2px solid $black;
-    padding: 15px;
-    display: block;
-    border-radius: 5px;
-    width: 46px;
-    height: 46px;
+  border: 2px solid $black;
+  padding: 15px;
+  display: block;
+  border-radius: 5px;
+  width: 46px;
+  height: 46px;
 }
+
 @mixin tags {
-   font-size:  $basic-font-size-10;
-   line-height: $line-height-22;
-    font-weight: $font-weight-500;
+  font-size: $basic-font-size-10;
+  line-height: $line-height-22;
+  font-weight: $font-weight-500;
 }
-@mixin head-inner{
-    font-size:  $basic-font-size-24;
-    line-height: $line-height-22;
-     font-weight: $font-weight-400;
+
+@mixin head-inner {
+  font-size: $basic-font-size-24;
+  line-height: $line-height-22;
+  font-weight: $font-weight-400;
+}
+
+@mixin banner-heading-bottom {
+  font-weight: $font-weight-300;
+  font-size: $basic-font-size-48;
+  line-height: $line-height-66;
 }

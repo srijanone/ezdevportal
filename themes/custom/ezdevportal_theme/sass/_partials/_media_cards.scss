@@ -20,19 +20,22 @@
   .blk {
     box-shadow: $dropshadow-dd;
   }
+
   .field--name-field-media-oembed-video {
     position: relative;
-    padding-bottom: 56.25%; /* 16:9 */
+    padding-bottom: 56.25%;
+    /* 16:9 */
     height: 0;
-  
-  iframe {
-    position:absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+
+    iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
   }
-}
+
   .media-oembed-content {
     width: 100%;
   }
@@ -45,10 +48,12 @@
   }
 
   .field--name-field-video-description {
-    margin-left: 18px;
+    margin-left: 15px;
+    margin-right: 15px;
 
     p {
-      @include request-form-label;
+      @include form-label;
+      word-break: break-word; 
     }
 
     margin-bottom: 40px;

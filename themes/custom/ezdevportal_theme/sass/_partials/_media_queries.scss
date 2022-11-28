@@ -144,51 +144,6 @@
       text-align: center;
     }
 
-    .block-header-kb {
-
-      .row {
-        .image-banner-right {
-          order: 1;
-          margin-bottom: 10px;
-        }
-
-        .text-banner-left {
-          order: 2;
-          margin-bottom: 40px;
-        }
-
-        h2 {
-          @include banner-heading-responsive;
-        }
-
-        .field--name-body {
-          @include banner-para-responsive;
-          width: 85%;
-        }
-
-        .field--type-link {
-          a {
-            @include banner-link-responsive;
-            background-size: 20px;
-            padding-left: 28px;
-            padding-top: 15px;
-          }
-        }
-
-        .field--name-field-image {
-          margin-top: 40px;
-          margin-right: inherit;
-          float: left;
-
-          img {
-            width: 45px;
-            height: 40px;
-            margin: 0;
-          }
-        }
-      }
-    }
-
     .menu--account {
       ul {
         flex-direction: column;
@@ -360,24 +315,6 @@
   .region-featured-bottom-first {
     margin: 50px auto 136px;
     width: 750px;
-  }
-
-  .block-header-kb {
-    .row {
-      margin-bottom: 20px;
-
-      .text-banner-left {
-        padding-left: 50px;
-      }
-
-      h2 {
-        margin-top: 100px;
-      }
-
-      .field--name-field-image {
-        margin: 50px 0 30px;
-      }
-    }
   }
 
   .menu--account {

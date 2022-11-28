@@ -49,10 +49,12 @@
 
   .card-footer {
     border-top: 1px solid $lightgray;
+    background: none;
 
     .explore {
       a {
         text-transform: uppercase;
+        @include explore-link;
       }
     }
 
@@ -61,18 +63,10 @@
         text-decoration: none;
       }
     }
-
-    background: none;
-
-    .explore {
-      a {
-        @include explore-link;
-      }
-    }
   }
 }
 
 .card-with-text {
-  @include banner-para;
+  @include body-para;
   margin-bottom: 20px;
 }

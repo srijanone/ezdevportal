@@ -51,6 +51,7 @@ label {
     border-color: $lightgrayhover;
   }
 }
+
 body {
   .button {
     a {
@@ -80,23 +81,22 @@ h1 {
 
 h2 {
   @include heading-h2;
-  
 }
 
-.accordion-button {
-  @include card-title;
-  padding: 0;
+h3 {
+  @include heading-h3; 
 }
 
-.accordion-flush {
-  .accordion-item {
-    border: none;
-    margin-bottom: 30px;
-  }
+h4 {
+  @include heading-h4;
 }
 
-.accordion-body {
-  padding: 0rem;
+h5 {
+  @include heading-h5;
+}
+
+h6 {
+  @include heading-h6;
 }
 
 .page-link {

@@ -9,7 +9,7 @@
 
 .block-field-blocknodeblog-postbody {
   p {
-    @include request-form-label;
+    @include form-label;
   }
 }
 
@@ -27,8 +27,7 @@
   }
 }
 
-.block-views-blockblog-block-latest-blogs,
-.block-views-blockblog-discovery-tag-blog {
+.block-views-blockblog-block-latest-blogs{
   .blog-title {
     @include banner-link;
     margin-top: 85px;
@@ -37,15 +36,26 @@
 }
 
 .block-views-blockblog-discovery-tag-blog {
-  margin-top: 34px;
+  h2{
+    @include banner-link;
+  }
+  margin-top: 45px;
+  margin-bottom: 35px;
   .views-field-field-blog-tags{
     margin-top: 13px;
   }
 }
 .block-views-blockblog-block-latest-blogs{
-  margin-top: 25px;
+  h2{
+    @include banner-link;
+  }
   .view-display-id-block_latest_blogs{
     margin-top: 25px;
+  }
+}
+.block-views-exposed-filter-blockblog-block-all-blogs{
+  ul{
+    margin-bottom: 0;
   }
 }
 
@@ -60,7 +70,7 @@
 
   .views-field-body {
     .field-content {
-      @include request-form-label;
+      @include form-label;
       margin-bottom: 24px;
     }
   }

@@ -18,15 +18,6 @@
     min-width: 250px;
   }
 }
-
-.in-progress {
-  color: $inprogress-green;
-}
-
-.resolved {
-  color: $lightgray;
-}
-
 .node--type-forum,
 .node-issue-form,
 .developer-app-add-for-developer-form,
@@ -44,7 +35,7 @@
 }
 
 .appname {
-  @include banner-para;
+  @include body-para;
   margin-top: 14px;
 }
 
