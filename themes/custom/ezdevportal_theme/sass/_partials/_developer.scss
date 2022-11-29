@@ -18,6 +18,7 @@
     min-width: 250px;
   }
 }
+
 .node--type-forum,
 .node-issue-form,
 .developer-app-add-for-developer-form,
@@ -34,27 +35,19 @@
   }
 }
 
-.appname {
-  @include body-para;
-  margin-top: 14px;
+.card-with-text {
+  .cardname {
+    @include body-para;
+    margin-top: 14px;
+  }
+
+  .created {
+    @include card-text;
+  }
 }
 
-.appcreated {
-  @include card-text;
-}
-
-.approval-pending-apps {
+.approval-pending {
   margin-top: 88px;
-}
-
-.apigee-entity--app {
-  h2 {
-    @include head-inner;
-  }
-
-  .use-ajax {
-    float: right;
-  }
 }
 
 .field--name-title {

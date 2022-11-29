@@ -28,6 +28,7 @@ function odpl_admin_form_alter(&$form, FormStateInterface $form_state, $form_id)
         '#button_type' => 'primary',
         '#attributes' => [
           'onclick' => 'window.history.back();return false;',
+          'class' => ['back-btn']
         ],
       ];
     }

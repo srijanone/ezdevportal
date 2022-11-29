@@ -19,12 +19,11 @@ details[open] {
       }
     }
   }
+  
   .block-views-exposed-filter-blockblog-block-all-blogs {
     ul {
       padding-left: 0;
     }
-  }
-  .block-views-exposed-filter-blockblog-block-all-blogs {
     fieldset {
       label {
         @include banner-link;
