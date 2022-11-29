@@ -1,4 +1,29 @@
 .simple-popup-blocks-global {
+  input[type="text"] {
+    &::placeholder {
+      color: $searchcolor;
+    }
+
+    border-left: none;
+    border-top: none;
+    border-right:none;
+    border-bottom: 1px solid $lightgray;
+    border-radius: 0;
+    @include form-label;
+    background: url('../images/search-icon.png') no-repeat 1px 10px;
+    padding-bottom: 18px;
+    padding-left: 70px;
+    width:64%;
+
+    &:focus {
+      box-shadow: none;
+    }
+
+    &:-webkit-autofill {
+      background-color: url('../images/search-icon.png') no-repeat 1px 10px !important;
+    }
+  }
+
   .spb-popup-main-wrapper {
     left: 0;
     border: none;
@@ -12,33 +37,7 @@
         font-size: $basic-font-size-30;
         font-weight: $font-weight-300;
       }
-
     }
-  }
-
-  #edit-combine {
-    &::placeholder {
-      color: $searchcolor;
-    }
-
-    border-left: none;
-    border-top: none;
-    border-right:none;
-    border-bottom: 1px solid $lightgray;
-    border-radius: 0;
-    @include request-form-label;
-    background: url('../images/search-icon.png') no-repeat 1px 10px;
-    padding-bottom: 18px;
-    padding-left: 70px;
-    width:64%;
-    &:focus {
-      box-shadow: none;
-    }
-
-    &:-webkit-autofill {
-      background-color: url('../images/search-icon.png') no-repeat 1px 10px !important;
-    }
-
   }
 
   .form-submit {
@@ -55,7 +54,7 @@
     margin-top: 84px;
 
     .view-header {
-      @include request-form-label;
+      @include form-label;
       color: $lightgray;
 
       b {
@@ -120,8 +119,4 @@
       }
     }
   }
-}
-
-.ui-dialog {
-  z-index: 1000 !important;
 }

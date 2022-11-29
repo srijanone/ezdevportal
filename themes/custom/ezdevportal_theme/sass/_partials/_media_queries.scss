@@ -134,7 +134,6 @@
         height: 24px;
       }
     }
-
   }
 
   body {
@@ -145,56 +144,10 @@
       text-align: center;
     }
 
-    .block-header-kb {
-
-      .row {
-        .image-banner-right {
-          order: 1;
-          margin-bottom: 10px;
-        }
-
-        .text-banner-left {
-          order: 2;
-          margin-bottom: 40px;
-        }
-
-        h2 {
-          @include banner-heading-responsive;
-        }
-
-        .field--name-body {
-          @include banner-para-responsive;
-          width: 85%;
-        }
-
-        .field--type-link {
-          a {
-            @include banner-link-responsive;
-            background-size: 20px;
-            padding-left: 28px;
-            padding-top: 15px;
-          }
-        }
-
-        .field--name-field-image {
-          margin-top: 40px;
-          margin-right: inherit;
-          float: left;
-
-          img {
-            width: 45px;
-            height: 40px;
-            margin: 0;
-          }
-        }
-      }
-    }
-
     .menu--account {
       ul {
         flex-direction: column;
         border-top: 1px solid $lightgrayborder;
-
 
         li {
           .dropdown-menu {
@@ -242,7 +195,6 @@
               padding: 12px 0;
             }
           }
-
         }
       }
     }
@@ -289,16 +241,16 @@
       }
     }
   }
-
 }
 
-
 @media screen and (min-width: 768px) {
-  .layout--twocol-section{
+  .layout--twocol-section {
     flex-wrap: nowrap;
-    gap:20px;
+    gap: 20px;
   }
+
   .view-products-listing-page {
+
     .form-select,
     .form-control {
       width: 160px;
@@ -312,11 +264,13 @@
       }
     }
   }
+
   .page-view-media-library .page-view-products-listing-page {
     .button--small {
       margin-top: -40px;
     }
   }
+
   [id ^="views-exposed-form-products-listing-page-page-"] {
     .row {
       flex-wrap: nowrap;
@@ -352,7 +306,7 @@
       margin-right: 34px;
     }
   }
-  
+
   .content-cards-centered {
     width: 1140px;
     margin: 0 auto;
@@ -361,24 +315,6 @@
   .region-featured-bottom-first {
     margin: 50px auto 136px;
     width: 750px;
-  }
-
-  .block-header-kb {
-    .row {
-      margin-bottom: 20px;
-
-      .text-banner-left {
-        padding-left: 50px;
-      }
-
-      h2 {
-        margin-top: 100px;
-      }
-
-      .field--name-field-image {
-        margin: 50px 0 30px;
-      }
-    }
   }
 
   .menu--account {
@@ -427,7 +363,6 @@
         }
 
         a {
-
           &:before {
             content: " ";
             position: absolute;
@@ -448,9 +383,7 @@
           a::before {
             width: 125%;
           }
-
         }
-
 
         &.nav-link--user {
           padding-right: 65px;
@@ -464,7 +397,6 @@
             a::before {
               width: 90%;
             }
-
           }
 
           a:after {
@@ -474,24 +406,17 @@
             height: 8px;
             border: 0;
             vertical-align: 2px;
-
-
           }
         }
       }
     }
   }
 
-
-
   #hamburger {
     display: none;
   }
 
-
   .region-featured-bottom-first {
-
-
     .block-social-media-links-block {
       .content {
         float: left;

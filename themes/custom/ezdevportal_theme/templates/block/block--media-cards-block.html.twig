@@ -36,7 +36,7 @@
         'block-' ~ plugin_id|clean_class,
       ]
     %}
-    <div class="container-fluid {{ card_block.block_header|replace({' ': '-'}) |lower }}">
+    <div class="{{ card_block.block_header|replace({' ': '-'}) |lower }}">
         <div class="media-card">
             <h2 class="title">{{ card_block.block_header }}</h2>
             <div class="row row-cols-1 row-cols-md-{{ card_block.block_column_count }}">

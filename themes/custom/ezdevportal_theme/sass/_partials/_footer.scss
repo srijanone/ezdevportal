@@ -1,42 +1,15 @@
 .featured-bottom {
-  padding: 45px 0px;
   background: #eee;
-  .region-featured-bottom-first {
-    .social-media-links--platforms {
-      li {
-        padding: 0 20px;
 
-        a {
-          span {
-            font-family: "FontAwesome";
-            font-weight: $font-weight-normal;
-            font-size: $basic-font-size-20;
-          }
-        }
-      }
-    }
-  }
+  .navbar-nav {
+    flex-direction: row;
+    float: right;
 
-  .region-featured-bottom-third {
-    .navbar-nav {
-      flex-direction: row;
-      float: right;
-
-      li {
-        a {
-          @include footer-link;
-          
-          padding: 0px 20px 0px 40px;
-          color: $primary;
-        }
-      }
-    }
-
-    .field--name-body {
-      p {
+    li {
+      a {
         @include footer-link;
-        padding-left: 0;
-        color: $lightgray;   
+        padding: 0px 20px 0px 40px;
+        color: $primary;
       }
     }
   }
@@ -44,68 +17,5 @@
 .site-footer{
   padding: 0;
 }
-.region-featured-bottom-first{ 
- 
-    #block-actioncontentblock-2{
-      p{
-        margin-bottom: 118px;
-      }
-    }
-    .block{
-     
-      .heading-img{
-        text-align: center;
-        .subscribe-title{
-          @include subscribe-title;
-          margin-top: 15px;
-          margin-bottom: 35px;
-          text-transform: uppercase;
-        }
-      }
-      p{
-        @include filter-label ;
-        
-      }
-      label{
-      @include explore-all-link ;
-      }
-      .btn-subscribe{
-      @include subscribe-btn;
-      padding: 24px;
-      width: 100%;
-      border: 1px solid $lightgray;
-      border-radius:10px;
-      text-align: center;
-      display: inline-block;
-      background: $white;
-      color: $black;
-      margin-top: 50px;
-      }
-      .form-control{
-        border-top: 0;
-    border-radius: 0;
-    border-left: 0;
-    border-right: 0;
-&:focus{
-  box-shadow:none;
-  border-color: inherit;
-}
-      }
-    }
-}
-#block-actioncontentblock{
-  .image-holder{
-    background: url('../images/envelopeicon.png');
-    width:78px;
-    height: 53px;
-    display: inline-block ;
-  }
-}
-#block-actioncontentblock-2{
-  .image-holder{
-    background: url('../images/supporticon.png');
-    width:58px;
-    height: 54px;
-    display: inline-block ;
-  }
-}
+
+

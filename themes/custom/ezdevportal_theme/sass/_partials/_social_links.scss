@@ -1,0 +1,14 @@
+.social-media-links--platforms {
+    li {
+      a {
+        span {
+          font-family: "Font Awesome 5 Brands";
+          font-weight: $font-weight-normal;
+          font-size: $basic-font-size-22;
+          width: 25px;
+          height: 25px;
+          padding: 5px;
+        }
+      }
+    }
+  }

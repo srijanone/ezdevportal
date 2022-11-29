@@ -32,26 +32,14 @@
 
     p {
       @include card-text;
-
-      &.service-para-card {
-        font-size: $basic-font-small-size;
-        line-height: $line-height-20;
-      }
-    }
-
-  }
-
-  .btn-outline-secondary {
-    &:hover {
-      background: none;
     }
   }
 
   .card-title {
     padding: 0.5rem 1rem;
     @include card-title;
-    
     margin-bottom: 0;
+
     h3 {
       @include card-title;
       margin-top: 20px;
@@ -61,9 +49,12 @@
 
   .card-footer {
     border-top: 1px solid $lightgray;
-    .explore{
-      a{
-      text-transform: uppercase;
+    background: none;
+
+    .explore {
+      a {
+        text-transform: uppercase;
+        @include explore-link;
       }
     }
 
@@ -72,31 +63,10 @@
         text-decoration: none;
       }
     }
-
-    background: none;
-
-    .frontend-service {
-      cursor: default;
-      background-color: $card_frontend_color;
-      border: 1px solid $card_frontend_border_color;
-    }
-
-    .backend-service {
-      cursor: default;
-      background-color: $card_backend_color;
-      border: 1px solid $card_backend_border_color;
-    }
-
-    .explore {
-      a {
-        @include explore-link;
-      }
-
-    
-    }
   }
 }
 
-.service-btn {
-  @include card-text;
+.card-with-text {
+  @include body-para;
+  margin-bottom: 20px;
 }
