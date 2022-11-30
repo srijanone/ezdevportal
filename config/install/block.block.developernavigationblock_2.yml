@@ -19,12 +19,6 @@ settings:
   provider: odpl_dashboard
   dashboard_sidebar_navigation:
     -
-      text: 'Go to Forum'
-      path: '/dashboard?view=support'
-      visibility:
-        developer: developer
-        siteadmin: 0
-    -
       text: ''
       path: ''
       visibility:
@@ -40,14 +34,20 @@ settings:
       text: ''
       path: ''
       visibility:
-        siteadmin: siteadmin
-        developer: 0
+        developer: developer
+        siteadmin: 0
     -
       text: ''
       path: ''
       visibility:
-        siteadmin: siteadmin
-        developer: 0
+        developer: developer
+        siteadmin: 0
+    -
+      text: ''
+      path: ''
+      visibility:
+        developer: developer
+        siteadmin: 0
 visibility:
   request_path:
     id: request_path

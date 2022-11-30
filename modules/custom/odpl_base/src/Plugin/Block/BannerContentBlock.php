@@ -17,8 +17,8 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  *
  * @Block(
  *   id = "banner_content_block",
- *   admin_label = @Translation("Banner Content Block"),
- *   category = @Translation("Banner Content Block"),
+ *   admin_label = @Translation("Banner Block"),
+ *   category = @Translation("Ezdevportal Global"),
  * )
  */
 class BannerContentBlock extends BlockBase implements ContainerFactoryPluginInterface {

@@ -10,11 +10,11 @@
         <a href="{{ value.path }}" class=" {{ value.class}}">
           {{ value.text }}
         </a>
-             <a href="{{ value.add_icon_path }}" class="add-icon-dashboards">
+             <a href="{{ value.add_icon_path }}" class="add-icon-dashboards {{ value.class}}">
          +
         </a>
         </li>
-         
+
       {% endfor %}
     </ul>
 </div>

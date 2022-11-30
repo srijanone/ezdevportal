@@ -16,8 +16,8 @@ use Drupal\Core\Form\FormStateInterface;
  *
  * @Block(
  *   id = "odpl_notification_widget_block",
- *   admin_label = @Translation("ODPL Notification widget block"),
- *   category = @Translation("ODPL Notifications widget")
+ *   admin_label = @Translation("Ezdevportal Notification Block"),
+ *   category = @Translation("Ezdevportal Notifications")
  * )
  */
 class OdplNotificationBlock extends BlockBase implements ContainerFactoryPluginInterface, BlockPluginInterface {

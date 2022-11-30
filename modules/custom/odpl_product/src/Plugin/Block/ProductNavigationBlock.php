@@ -17,7 +17,7 @@ use Drupal\odpl_product\ProductHelper;
  * @Block(
  *   id = "product_navigation_block",
  *   admin_label = @Translation("Product Navigation Block"),
- *   category = @Translation("Product Navigation Block"),
+ *   category = @Translation("Ezdevportal API Product"),
  * )
  */
 class ProductNavigationBlock extends BlockBase implements ContainerFactoryPluginInterface {

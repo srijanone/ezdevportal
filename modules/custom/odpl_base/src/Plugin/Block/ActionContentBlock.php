@@ -18,8 +18,8 @@ use Drupal\Core\Path\PathValidatorInterface;
  *
  * @Block(
  *   id = "action_content_block",
- *   admin_label = @Translation("Action Content Block"),
- *   category = @Translation("Action Content Block"),
+ *   admin_label = @Translation("Action Block"),
+ *   category = @Translation("Ezdevportal Global"),
  * )
  */
 class ActionContentBlock extends BlockBase implements ContainerFactoryPluginInterface {

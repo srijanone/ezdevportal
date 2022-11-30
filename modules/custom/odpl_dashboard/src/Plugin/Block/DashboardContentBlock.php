@@ -9,8 +9,8 @@ use Drupal\Core\Block\BlockBase;
  *
  * @Block(
  *   id = "dashboard_content_block",
- *   admin_label = @Translation("Dashboard Content Block"),
- *   category = @Translation("Dashboard Content Block"),
+ *   admin_label = @Translation("Developer Dashboard Content Block"),
+ *   category = @Translation("Ezdevportal User"),
  * )
  */
 class DashboardContentBlock extends BlockBase {

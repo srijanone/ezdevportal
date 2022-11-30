@@ -19,7 +19,7 @@ use Drupal\odpl_dashboard\DashboardHelper;
  * @Block(
  *   id = "developer_navigation_block",
  *   admin_label = @Translation("Developer Navigation Block"),
- *   category = @Translation("Developer Navigation Block"),
+ *   category = @Translation("Ezdevportal User"),
  * )
  */
 class DeveloperNavigationBlock extends BlockBase implements ContainerFactoryPluginInterface {

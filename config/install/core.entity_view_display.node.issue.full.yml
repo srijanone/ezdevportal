@@ -47,36 +47,37 @@ third_party_settings:
         layout_id: layout_threecol_section
         layout_settings:
           label: ''
-          column_widths: 25-50-25
           context_mapping: {  }
+          column_widths: 25-50-25
+          custom_id: ''
+          custom_classes: ''
+          custom_class_choose:
+            container: container
+          custom_styles: ''
+          custom_data_attributes: ''
+          regions:
+            first:
+              region_id: ''
+              region_class_choose:
+                container: 0
+              region_classes: ''
+              region_styles: ''
+              region_data: ''
+            second:
+              region_id: ''
+              region_class_choose:
+                container: 0
+              region_classes: ''
+              region_styles: ''
+              region_data: ''
+            third:
+              region_id: ''
+              region_class_choose:
+                container: 0
+              region_classes: ''
+              region_styles: ''
+              region_data: ''
         components:
-          fd6eddeb-b556-439b-8686-cb3e020e66eb:
-            uuid: fd6eddeb-b556-439b-8686-cb3e020e66eb
-            region: first
-            configuration:
-              id: dashboard_navigation_block
-              label: 'Dashboard Navigation Block'
-              label_display: '0'
-              provider: odpl_dashboard
-              context_mapping: {  }
-              dashboard_sidebar_navigation:
-                -
-                  text: 'My Applications'
-                  path: '/dashboard?view=app'
-                  add_icon_path: /node/add/issue
-                  type: Applications
-                -
-                  text: Support
-                  path: '/dashboard?view=support'
-                  add_icon_path: /node/add/issue
-                  type: Support
-                -
-                  text: Forum
-                  path: '/dashboard?view=forum'
-                  add_icon_path: /node/add/forum
-                  type: Forum
-            weight: 0
-            additional: {  }
           bc234f20-d756-41c2-b327-2ac0d76f6b04:
             uuid: bc234f20-d756-41c2-b327-2ac0d76f6b04
             region: second
@@ -153,6 +154,48 @@ third_party_settings:
                 settings: {  }
                 third_party_settings: {  }
             weight: 1
+            additional: {  }
+          7b2d0862-1fa0-4bc2-b72a-dff329320dbf:
+            uuid: 7b2d0862-1fa0-4bc2-b72a-dff329320dbf
+            region: first
+            configuration:
+              id: developer_navigation_block
+              label: 'Developer Navigation Block'
+              label_display: '0'
+              provider: odpl_dashboard
+              context_mapping: {  }
+              dashboard_sidebar_navigation:
+                -
+                  text: Back
+                  path: '/dashboard?view=support'
+                  visibility:
+                    developer: developer
+                    siteadmin: 0
+                -
+                  text: ''
+                  path: ''
+                  visibility:
+                    developer: 0
+                    siteadmin: 0
+                -
+                  text: ''
+                  path: ''
+                  visibility:
+                    developer: 0
+                    siteadmin: 0
+                -
+                  text: ''
+                  path: ''
+                  visibility:
+                    developer: 0
+                    siteadmin: 0
+                -
+                  text: ''
+                  path: ''
+                  visibility:
+                    developer: 0
+                    siteadmin: 0
+            weight: 0
             additional: {  }
         third_party_settings: {  }
 id: node.issue.full
