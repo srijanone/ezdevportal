@@ -127,8 +127,12 @@ function odpl_dashboard_preprocess_block__banner_content_block(&$variables) {
 function odpl_dashboard_preprocess_block__developer_navigation_block(&$variables) {
   $current_path = \Drupal::service('path.current')->getPath();
   if (strpos($current_path, '/node/add/issue') !== FALSE) {
-    $variables['content']['#navigationData'][0]['text'] = 'Go to Issue';
+    $variables['content']['#navigationData'][0]['text'] = 'Go to Issues';
     $variables['content']['#navigationData'][0]['path'] = '/dashboard?view=support';
+  }
+  elseif (strpos($current_path, '/node/add/forum') !== FALSE) {
+    $variables['content']['#navigationData'][0]['text'] = 'Go to Forum';
+    $variables['content']['#navigationData'][0]['path'] = '/dashboard?view=forum';
   }
 }
 

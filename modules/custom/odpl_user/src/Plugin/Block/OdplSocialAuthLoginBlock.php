@@ -13,7 +13,8 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  *
  * @Block(
  *   id = "odpl_social_auth_login",
- *   admin_label = @Translation("Odpl Social Auth Login"),
+ *   admin_label = @Translation("Ezdevportal Social Auth Login Block"),
+ *   category = @Translation("Ezdevportal User"),
  * )
  */
 class OdplSocialAuthLoginBlock extends BlockBase implements ContainerFactoryPluginInterface {

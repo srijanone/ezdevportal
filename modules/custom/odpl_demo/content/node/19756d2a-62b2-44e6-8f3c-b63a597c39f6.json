@@ -30,7 +30,7 @@
     ],
     "vid": [
         {
-            "value": 369
+            "value": 404
         }
     ],
     "langcode": [
@@ -46,7 +46,7 @@
     ],
     "revision_timestamp": [
         {
-            "value": "2022-11-07T05:02:36+00:00",
+            "value": "2022-11-29T09:36:33+00:00",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
@@ -63,7 +63,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "afbe7dac-2273-4a0a-bc47-aa82768141ed"
+                        "value": "2d9779dd-b6db-462d-84a9-4f476a97eb7b"
                     }
                 ]
             }
@@ -80,7 +80,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "afbe7dac-2273-4a0a-bc47-aa82768141ed"
+                        "value": "2d9779dd-b6db-462d-84a9-4f476a97eb7b"
                     }
                 ],
                 "lang": "en"
@@ -108,7 +108,7 @@
     ],
     "changed": [
         {
-            "value": "2022-11-07T05:02:36+00:00",
+            "value": "2022-11-29T09:36:33+00:00",
             "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
         }
@@ -234,22 +234,22 @@
                             "provider": "odpl_dashboard",
                             "dashboard_sidebar_navigation": [
                                 {
+                                    "type": "My Applications",
                                     "text": "My Applications",
                                     "path": "\/dashboard",
-                                    "add_icon_path": "\/user\/apps",
-                                    "type": "My Applications"
+                                    "add_icon_path": ""
                                 },
                                 {
+                                    "type": "Support",
                                     "text": "Support",
                                     "path": "?view=support",
-                                    "add_icon_path": "\/node\/add\/issue",
-                                    "type": "Support"
+                                    "add_icon_path": "\/node\/add\/issue"
                                 },
                                 {
+                                    "type": "Forum",
                                     "text": "Forum",
                                     "path": "?view=forum",
-                                    "add_icon_path": "\/node\/add\/forum",
-                                    "type": "Forum"
+                                    "add_icon_path": "\/node\/add\/forum"
                                 }
                             ],
                             "context_mapping": []

@@ -52,6 +52,27 @@ third_party_settings:
           label: ''
           context_mapping: {  }
           column_widths: 25-75
+          custom_id: ''
+          custom_classes: ''
+          custom_class_choose:
+            container: container
+          custom_styles: ''
+          custom_data_attributes: ''
+          regions:
+            first:
+              region_id: ''
+              region_class_choose:
+                container: 0
+              region_classes: ''
+              region_styles: ''
+              region_data: ''
+            second:
+              region_id: ''
+              region_class_choose:
+                container: 0
+              region_classes: ''
+              region_styles: ''
+              region_data: ''
         components:
           a18083bc-d725-40ba-98ef-e2e29fa6cb40:
             uuid: a18083bc-d725-40ba-98ef-e2e29fa6cb40

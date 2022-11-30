@@ -17,8 +17,8 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  *
  * @Block(
  *   id = "download_sdk",
- *   admin_label = @Translation("Download SDK"),
- *   category = @Translation("Download SDK"),
+ *   admin_label = @Translation("Download SDK Block"),
+ *   category = @Translation("Ezdevportal API Document"),
  * )
  */
 class DownloadSdkBlock extends BlockBase implements ContainerFactoryPluginInterface {

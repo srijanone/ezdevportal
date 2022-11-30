@@ -12,8 +12,8 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  *
  * @Block(
  *   id = "api_formatter_option_block",
- *   admin_label = @Translation("API Formatter Option Block"),
- *   category = @Translation("API Formatter Block"),
+ *   admin_label = @Translation("API Formatter Options Block"),
+ *   category = @Translation("Ezdevportal API Document"),
  * )
  */
 class ApiFormatterOptionsBlock extends BlockBase implements ContainerFactoryPluginInterface {

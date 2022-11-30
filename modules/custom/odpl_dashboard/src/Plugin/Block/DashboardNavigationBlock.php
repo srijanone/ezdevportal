@@ -17,8 +17,8 @@ use Drupal\odpl_dashboard\DashboardHelper;
  *
  * @Block(
  *   id = "dashboard_navigation_block",
- *   admin_label = @Translation("Dashboard Navigation Block"),
- *   category = @Translation("Dashboard Navigation Block"),
+ *   admin_label = @Translation("Developer Dashboard Main Navigation Block"),
+ *   category = @Translation("Ezdevportal User"),
  * )
  */
 class DashboardNavigationBlock extends BlockBase implements ContainerFactoryPluginInterface {
@@ -195,7 +195,7 @@ class DashboardNavigationBlock extends BlockBase implements ContainerFactoryPlug
         $navigation[$key]['add_icon_path'] = $value['add_icon_path'];
         // Set active link based on current path.
         if (empty($parameters['view'])) {
-          if (strpos($value['path'], 'app') !== FALSE) {
+          if (strpos($value['path'], 'dashboard') !== FALSE) {
             $navigation[$key]['class'] .= ' active';
           }
         }

@@ -52,7 +52,7 @@ class DashboardHelper {
    */
   public function dashboardNavigationDefaultData() {
     $array = [
-        ['Applications', 'My Application', '/dashboard', '/user/apps'],
+        ['Applications', 'My Application', '/dashboard', ''],
         ['Support', 'Support', '?view=support', '/node/add/issue'],
         ['Forum', 'Forum', '?view=forum', '/node/add/forum'],
     ];
