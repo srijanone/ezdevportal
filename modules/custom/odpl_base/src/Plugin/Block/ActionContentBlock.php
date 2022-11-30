@@ -235,8 +235,7 @@ class ActionContentBlock extends BlockBase implements ContainerFactoryPluginInte
     // Gather the number of names in the form already.
     $num_actions = $form_state->get('num_actions') ? $form_state->get('num_actions') : $this->configuration['num_actions'];
     $form_state->set('num_actions', $num_actions);
-    // dump($num_actions); exit;
-    // We have to ensure that there is at least one name field.
+    // We have to ensure that there is at least one num_actions field.
     if ($num_actions === NULL) {
       $num_actions = 1;
     }
@@ -336,7 +335,7 @@ class ActionContentBlock extends BlockBase implements ContainerFactoryPluginInte
   }
 
   /**
-   * Submit handler for the "add-one-more" button.
+   * Submit handler for the "add-one" button.
    *
    * Increments the max counter and causes a rebuild.
    */
@@ -344,14 +343,11 @@ class ActionContentBlock extends BlockBase implements ContainerFactoryPluginInte
     $name_field = $form_state->get('num_actions');
     $add_button = $name_field + 1;
     $form_state->set('num_actions', $add_button);
-    // Since our buildForm() method relies on the value of 'num_actions' to
-    // generate 'name' form elements, we have to tell the form to rebuild. If we
-    // don't do this, the form builder will not call buildForm().
     $form_state->setRebuild();
   }
 
   /**
-   * Submit handler for the "remove one" button.
+   * Submit handler for the "remove" button.
    *
    * Decrements the max counter and causes a form rebuild.
    */
@@ -361,9 +357,6 @@ class ActionContentBlock extends BlockBase implements ContainerFactoryPluginInte
       $remove_button = $name_field - 1;
       $form_state->set('num_actions', $remove_button);
     }
-    // Since our buildForm() method relies on the value of 'num_actions' to
-    // generate 'name' form elements, we have to tell the form to rebuild. If we
-    // don't do this, the form builder will not call buildForm().
     $form_state->setRebuild();
   }
 
