@@ -14,8 +14,8 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  *
  * @Block(
  *   id = "odpl_user_change_pwd",
- *   admin_label = @Translation("Ezdevportal User Password Change Block")
- *   category = @Translation("Ezdevportal User")
+ *   admin_label = @Translation("Ezdevportal User Password Change Block"),
+ *   category = @Translation("Ezdevportal User"),
  * )
  */
 class OdplUserChangepwd extends BlockBase implements ContainerFactoryPluginInterface {
