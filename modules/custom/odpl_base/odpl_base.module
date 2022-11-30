@@ -248,7 +248,9 @@ function odpl_base_get_node_card($nid) {
     if (in_array($node->bundle(), ['api_product', 'use_case', 'api_document'])) {
       $card_data['url'] = $path_alias_manager->getAliasByPath('/node/' . $nid);
       $card_data['icon'] = odpl_base_get_node_card_image($node);
-      $card_data['content'] = $node->body->value;
+      $card_data['content'] = (in_array($node->bundle(),
+                              ['use_case', 'api_document', 'blog_post'])) ?
+                              $node->get('body')->summary : $node->field_summary->value;
       $card_data['text'] = 'Explore';
     }
     elseif ($node->bundle() == 'landing_page') {
