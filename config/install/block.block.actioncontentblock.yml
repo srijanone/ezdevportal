@@ -14,7 +14,7 @@ provider: null
 plugin: action_content_block
 settings:
   id: action_content_block
-  label: 'Subscribe ans Support'
+  label: 'Subscribe and Support'
   label_display: visible
   provider: odpl_base
   action_block: {  }
