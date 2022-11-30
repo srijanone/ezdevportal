@@ -29,41 +29,50 @@
 {%
   set classes = [
     'block',
-    'col-md-6',
+    'col',
+    'col-lg-12',
     'block-' ~ configuration.provider|clean_class,
     'block-' ~ plugin_id|clean_class,
   ]
 %}
-<div{{ attributes.addClass(classes) }}>
-  {% block content %}
-    <div class="heading-img">
-      <div class="image-holder"></div>
-    {% if content.actionimg %}
-        <img src ="{{content.actionimg}}">
-      {% endif %}
+{% block content %}
+{% for item in content %}
+  <div{{ attributes.addClass(classes) }}>
+      <div class="heading-img">
+        {% if item.action_image_path and item.actionimg %}
+          <img src ="{{item.actionimg}}">
+        {% elseif item.action_image_path %}
+          <img src ="{{item.action_image_path}}">
+        {% elseif item.actionimg %}
+          <img src ="{{item.actionimg}}">
+        {% endif %}
 
-      {% if content.title %}
-        <div class="subscribe-title">{{content.title }}</div>
-      {% else %} 
-        {{ title_prefix }}
-          {% if label %}
-            <h2{{ title_attributes }}>{{ label }}</h2>
-          {% endif %}
+        {% if item.title %}
+          <div class="subscribe-title">{{item.title }}</div>
+        {% else %}
+          {{ title_prefix }}
+        {% if label %}
+          <h2{{ title_attributes }}>{{ label }}</h2>
+        {% endif %}
         {{ title_suffix }}
-      {% endif %}
-      </div>
+        {% endif %}
+        </div>
 
-      {% if content.text %}
-        <p>{{content.text}}</p>
-      {% endif %}
-      
-      {% if content.webform %}
-        {{ content.webform }}
-      {% endif %}
+        {% if item.text %}
+          <p>{{item.text}}</p>
+        {% endif %}
 
-      
-      {% if content.link %}
-        {{ content.link }}
-      {% endif %}
-  {% endblock %}
-</div>
+        {% if item.webform %}
+          {% if not logged_in %}
+            {% if '/user/' in item.link|render|render %}
+              {{ item.link }}
+            {% endif %}
+          {% elseif logged_in %}
+            {{ item.webform }}
+          {% endif %}
+        {% elseif item.link %}
+          {{ item.link }}
+        {% endif %}
+  </div>
+{% endfor %}
+{% endblock %}
