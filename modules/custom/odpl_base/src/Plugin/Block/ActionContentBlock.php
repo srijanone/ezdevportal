@@ -364,6 +364,7 @@ class ActionContentBlock extends BlockBase implements ContainerFactoryPluginInte
    * {@inheritdoc}
    */
   public function blockSubmit($form, FormStateInterface $form_state) {
+    $this->configuration = [];
     $num_actions = $form_state->get('num_actions');
     $this->configuration['num_actions'] = $num_actions;
     for ($i = 0; $i < $num_actions; $i++) {

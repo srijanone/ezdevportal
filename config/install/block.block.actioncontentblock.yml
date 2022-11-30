@@ -17,21 +17,9 @@ settings:
   label: 'Subscribe and Support'
   label_display: visible
   provider: odpl_base
-  action_block: {  }
-  action_title: null
-  action_text: null
-  action_image: null
-  action_link: null
-  action_url_text: null
-  webform: null
-  names_fieldset:
-    -
-      action_title: title2
-    -
-      action_title: title3
+  num_actions: 2
   0:
     action_title: Subscribe
-    num_actions: ''
     action_text: 'Subscribe so that you do not miss out on any notifications.'
     action_image_path: /profiles/contrib/ezdevportal/theme/custom/ezdevportal_theme/images/envelopeicon.png
     action_image: {  }
@@ -40,27 +28,12 @@ settings:
     webform: subscribe
   1:
     action_title: Support
-    num_actions: ''
     action_text: 'Get your queries answered by submitting the form with your details.'
     action_image_path: /profiles/contrib/ezdevportal/theme/custom/ezdevportal_theme/images/supporticon.png
     action_image: {  }
     action_link: /
-    action_url_text: 'CONTACT'
+    action_url_text: CONTACT
     webform: _none
-  actions:
-    action_title: null
-  actions_fieldset: null
-  num_actions: 2
-  2:
-    action_title: fgfh3
-    action_text: desc3
-    action_image_path: /path3
-    action_image: {  }
-    action_link: /link3
-    action_url_text: Text3
-    webform: contact_us
-  3:
-    action_title: fghfg4
 visibility:
   request_path:
     id: request_path
