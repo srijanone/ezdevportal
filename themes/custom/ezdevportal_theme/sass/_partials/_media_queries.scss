@@ -201,6 +201,7 @@
 
     .region-featured-bottom-first {
       margin-top: 40px;
+      flex-direction: column;
 
       .block-social-media-links-block {
         margin-bottom: 24px;
@@ -302,8 +303,9 @@
 
   .region-featured-bottom-first {
     .block {
-      width: 340px;
-      margin-right: 34px;
+      display: flex;
+      flex-direction: column;
+
     }
   }
 

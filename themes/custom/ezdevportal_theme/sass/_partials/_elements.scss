@@ -130,19 +130,6 @@ h6 {
   margin-right: 0;
 }
 
-.btn-subscribe {
-  @include subscribe-btn;
-  padding: 24px;
-  width: 100%;
-  border: 1px solid $lightgray;
-  border-radius: 10px;
-  text-align: center;
-  display: inline-block;
-  background: $white;
-  color: $black;
-  margin-top: 50px;
-}
-
 .node__content {
   margin-top: 0;
 }
