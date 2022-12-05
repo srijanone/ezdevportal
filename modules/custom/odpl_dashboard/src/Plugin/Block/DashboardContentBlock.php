@@ -21,15 +21,10 @@ class DashboardContentBlock extends BlockBase {
   public function build() {
     return [
       '#markup' => '',
+      '#cache' => [
+        'contexts' => ['url'],
+      ],
     ];
-  }
-
-  /**
-   * {@inheritdoc}
-   */
-  public function getCacheMaxAge() {
-    return 0;
-
   }
 
 }

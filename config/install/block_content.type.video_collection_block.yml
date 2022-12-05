@@ -2,6 +2,6 @@ langcode: en
 status: true
 dependencies: {  }
 id: video_collection_block
-label: 'Video Collection Block'
+label: 'Video Block'
 revision: 0
-description: 'Used this block type to create a collection of videos along with caption and other additional details.'
+description: 'Use this block type to create a video along with caption and other additional details.'

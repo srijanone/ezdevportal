@@ -21,7 +21,7 @@ settings:
   0:
     action_title: Subscribe
     action_text: 'Subscribe so that you do not miss out on any notifications.'
-    action_image_path: /profiles/contrib/ezdevportal/theme/custom/ezdevportal_theme/images/envelopeicon.png
+    action_image_path: /profiles/contrib/ezdevportal/themes/custom/ezdevportal_theme/images/envelopeicon.png
     action_image: {  }
     action_link: /user/login
     action_url_text: 'LOGIN TO CHECKOUT UPDATES'
@@ -29,7 +29,7 @@ settings:
   1:
     action_title: Support
     action_text: 'Get your queries answered by submitting the form with your details.'
-    action_image_path: /profiles/contrib/ezdevportal/theme/custom/ezdevportal_theme/images/supporticon.png
+    action_image_path: /profiles/contrib/ezdevportal/themes/custom/ezdevportal_theme/images/supporticon.png
     action_image: {  }
     action_link: /
     action_url_text: CONTACT

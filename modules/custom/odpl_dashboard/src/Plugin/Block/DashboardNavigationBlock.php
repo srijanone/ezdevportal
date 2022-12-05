@@ -211,11 +211,4 @@ class DashboardNavigationBlock extends BlockBase implements ContainerFactoryPlug
     ];
   }
 
-  /**
-   * {@inheritdoc}
-   */
-  public function getCacheMaxAge() {
-    return 0;
-  }
-
 }
