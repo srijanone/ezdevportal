@@ -201,14 +201,10 @@ class DeveloperNavigationBlock extends BlockBase implements ContainerFactoryPlug
     return [
       '#theme' => 'developer_navigation',
       '#navigationData' => (!empty($navigation)) ? $navigation : [],
+      '#cache' => [
+        'contexts' => ['url'],
+      ],
     ];
-  }
-
-  /**
-   * {@inheritdoc}
-   */
-  public function getCacheMaxAge() {
-    return 0;
   }
 
   /**

@@ -60,17 +60,17 @@
           <p>{{item.text}}</p>
         {% endif %}
 
+        {{ item.webform }}
+
         {% if item.webform %}
           {% if not logged_in %}
             {% if '/user/' in item.link|render|render %}
               {{ item.link }}
             {% endif %}
-          {% elseif logged_in %}
-            {{ item.webform }}
           {% endif %}
         {% elseif item.link %}
           {{ item.link }}
         {% endif %}
   </div>
-{% endfor %}
+  {% endfor %}
 {% endblock %}
