@@ -2,7 +2,7 @@ langcode: en
 status: true
 dependencies:
   module:
-    - odpl_base
+    - ezdevportal_base
     - system
   theme:
     - ezdevportal_theme
@@ -16,7 +16,7 @@ settings:
   id: banner_content_block
   label: 'Contact Us Banner Content '
   label_display: '0'
-  provider: odpl_base
+  provider: ezdevportal_base
   banner_title: 'Contact Us'
   banner_text: 'Get in touch with our Support Team.'
   banner_image: {  }

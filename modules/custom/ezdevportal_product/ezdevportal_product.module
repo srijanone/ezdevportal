@@ -1,0 +1,79 @@
+<?php
+
+/**
+ * @file
+ * EzdDevPortal product module file.
+ */
+
+use Drupal\node\NodeInterface;
+use Drupal\views\Views;
+
+/**
+ * Implements hook_theme().
+ */
+function ezdevportal_product_theme() {
+  return [
+    'product_navigation' => [
+      'variables' => [
+        'navigationData' => NULL,
+      ],
+    ],
+  ];
+}
+
+/**
+ * Implements template_preprocess_block().
+ */
+function ezdevportal_product_preprocess_block(&$variables) {
+  // Populate the API Content details in product content block.
+  if ($variables['plugin_id'] == 'product_content_block') {
+    $parameters = \Drupal::request()->query->all();
+    if (empty($parameters['view'])) {
+      $page = 'docs';
+    }
+    else {
+      $page = $parameters['view'];
+    }
+
+    switch ($page) {
+      case 'docs':
+        $display = 'product_apidocs_block';
+        $title_name = 'APIs';
+        break;
+
+      case 'usecases':
+        $display = 'product_usecases_block';
+        $title_name = 'Use cases';
+        break;
+
+      case 'blogs':
+        $display = 'product_blogs_block';
+        $title_name = 'Blogs';
+        break;
+
+      case 'faqs':
+        $display = 'product_faqs_block';
+        $title_name = 'FAQs';
+        break;
+
+      default:
+        break;
+    }
+
+    $node = \Drupal::routeMatch()->getParameter('node');
+    if ($node instanceof NodeInterface) {
+      $nid = $node->id();
+    }
+
+    $view = Views::getView('product_content_listing');
+    $view->setDisplay($display);
+    if (!empty($nid)) {
+      $view->setArguments([$nid]);
+    }
+    $view->execute();
+    $content = $view->buildRenderable($display);
+    $variables['content'] = $content;
+    $variables['label'] = $title_name;
+  }
+
+}

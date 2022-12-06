@@ -11,7 +11,7 @@ field_name: field_document
 entity_type: node
 bundle: api_document
 label: 'Specification Document'
-description: 'Upload the file in the correct format. Please follow the below <br />\r\nRestAPI<br />\r\n      - Standard : OpenAPI<br />\r\n      - File Extension : .json, .yml<br />\r\nGraphQL<br />\r\n      - Standard : GraphQL schema (<a href = ''/modules/custom/odpl_api_documents/modules/odpl_renderer/modules/odpl_voyager/assets/schema.json'' target=''_blank''>schema.json</a>)<br />\r\n      - File Extension : .json<br />\r\nAsyncAPI<br />\r\n      - Standard: AsyncAPI 2.0 spec (<a href = ''/modules/custom/odpl_api_documents/modules/odpl_renderer/modules/odpl_asyncapi/assets/asyncapi.json'' target=''_blank''>asyncapi.json</a>)<br /> \r\n      - File Extension: .json, .yaml<br />'
+description: 'Upload the file in the correct format. Please follow the below <br />\r\nRestAPI<br />\r\n      - Standard : OpenAPI<br />\r\n      - File Extension : .json, .yml<br />\r\nGraphQL<br />\r\n      - Standard : GraphQL schema (<a href = ''/modules/custom/ezdevportal_api_documents/modules/ezdevportal_renderer/modules/ezdevportal_voyager/assets/schema.json'' target=''_blank''>schema.json</a>)<br />\r\n      - File Extension : .json<br />\r\nAsyncAPI<br />\r\n      - Standard: AsyncAPI 2.0 spec (<a href = ''/modules/custom/ezdevportal_api_documents/modules/ezdevportal_renderer/modules/ezdevportal_asyncapi/assets/asyncapi.json'' target=''_blank''>asyncapi.json</a>)<br /> \r\n      - File Extension: .json, .yaml<br />'
 required: false
 translatable: false
 default_value: {  }

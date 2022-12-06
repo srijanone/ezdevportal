@@ -2,7 +2,7 @@ langcode: en
 status: true
 dependencies:
   module:
-    - odpl_base
+    - ezdevportal_base
     - system
     - user
   theme:
@@ -17,7 +17,7 @@ settings:
   id: banner_content_block
   label: 'Banner Content Block'
   label_display: '0'
-  provider: odpl_base
+  provider: ezdevportal_base
   banner_title: Dashboard
   banner_text: ''
   banner_image: {  }

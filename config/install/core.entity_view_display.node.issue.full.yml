@@ -13,8 +13,8 @@ dependencies:
   module:
     - layout_builder
     - layout_discovery
-    - odpl_base
-    - odpl_dashboard
+    - ezdevportal_base
+    - ezdevportal_dashboard
     - text
     - user
 third_party_settings:
@@ -35,7 +35,7 @@ third_party_settings:
               id: banner_content_block
               label: 'Banner Content Block'
               label_display: '0'
-              provider: odpl_product
+              provider: ezdevportal_product
               context_mapping: {  }
               banner_title: ''
               banner_text: ''
@@ -162,7 +162,7 @@ third_party_settings:
               id: developer_navigation_block
               label: 'Developer Navigation Block'
               label_display: '0'
-              provider: odpl_dashboard
+              provider: ezdevportal_dashboard
               context_mapping: {  }
               dashboard_sidebar_navigation:
                 -

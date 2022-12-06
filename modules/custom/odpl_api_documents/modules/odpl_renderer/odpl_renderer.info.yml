@@ -1,9 +1,0 @@
-name: EzDevPortal API Documents Renderer
-description: Collection of API Specification renderer modules.
-type: module
-package: EzDevPortal
-core: 8.x
-core_version_requirement: ^8 || ^9
-
-dependencies:
-  - odpl_api_documents:odpl_api_documents

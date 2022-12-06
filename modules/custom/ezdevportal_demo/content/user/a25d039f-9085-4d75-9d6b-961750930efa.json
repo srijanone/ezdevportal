@@ -1,0 +1,124 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/user\/4?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+        }
+    },
+    "uid": [
+        {
+            "value": 4
+        }
+    ],
+    "uuid": [
+        {
+            "value": "a25d039f-9085-4d75-9d6b-961750930efa"
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "preferred_langcode": [
+        {
+            "value": "en"
+        }
+    ],
+    "preferred_admin_langcode": [
+        {
+            "value": "en"
+        }
+    ],
+    "name": [
+        {
+            "value": "editor"
+        }
+    ],
+    "mail": [
+        {
+            "value": "editor@example.com"
+        }
+    ],
+    "timezone": [
+        {
+            "value": "UTC"
+        }
+    ],
+    "status": [
+        {
+            "value": true
+        }
+    ],
+    "created": [
+        {
+            "value": "2022-06-07T08:49:46+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "changed": [
+        {
+            "value": "2022-06-07T08:49:46+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "access": [
+        {
+            "value": "2022-06-07T10:06:54+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "login": [
+        {
+            "value": "2022-06-07T10:06:54+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "init": [
+        {
+            "value": "editor@example.com"
+        }
+    ],
+    "roles": [
+        {
+            "target_id": "editor"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "metatag": [
+        {
+            "value": {
+                "canonical_url": "http:\/\/default\/user\/4",
+                "title": "editor | EzDevPortal",
+                "description": "EzDevPortal"
+            }
+        }
+    ],
+    "path": [
+        {
+            "alias": null,
+            "pid": null,
+            "langcode": "en",
+            "lang": "en"
+        }
+    ],
+    "field_user_first_name": [
+        {
+            "value": "Editor"
+        }
+    ],
+    "field_user_last_name": [
+        {
+            "value": "Editor"
+        }
+    ]
+}

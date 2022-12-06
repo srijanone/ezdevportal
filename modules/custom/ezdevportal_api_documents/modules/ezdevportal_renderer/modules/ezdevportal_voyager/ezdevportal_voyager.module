@@ -1,0 +1,38 @@
+<?php
+
+/**
+ * @file
+ * Voyager module file.
+ */
+
+use Drupal\views\ViewExecutable;
+use Drupal\ezdevportal_api_documents\ApiDocumentInterface;
+
+/**
+ * Implements hook_views_pre_render().
+ */
+function ezdevportal_voyager_views_pre_render(ViewExecutable $view) {
+  // Gets the api type of the node and passes the formatter type to the view.
+  // @todo move the code inside the condition incase it throws undefined warning
+  $api_type = isset($view->result[0]->_entity->field_api_type) ?
+    $view->result[0]->_entity->field_api_type->value : '';
+
+  if ($view->storage->id() == 'api_document_formatter' &&
+  isset($view->field['field_document']) &&
+  $api_type == ApiDocumentInterface::API_TYPE[1]) {
+    // @todo handle if user fails to select diplay type
+    $view->field['field_document']->options['type'] =
+    $view->result[0]->_entity->field_api_display->value;
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function ezdevportal_voyager_theme() {
+  return [
+    'voyager_ui_field_item' => [
+      'variables' => [],
+    ],
+  ];
+}
