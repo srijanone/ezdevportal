@@ -1,9 +1,0 @@
-name: OpenDevPortal Lite FAQ
-description: "Feature of FAQ in Open dev portal."
-type: module
-package: ODP
-core: 8.x
-core_version_requirement: ^8 || ^9
-
-dependencies:
-  - odpl_product:odpl_product

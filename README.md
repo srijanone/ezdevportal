@@ -59,14 +59,14 @@ Logo Image
 - Composer = 1.*
 ```
 
-EzDevPortal utilizes composer to manage its dependencies. 
-So, before using EzDevPortal, make sure you have 
+EzDevPortal utilizes composer to manage its dependencies.
+So, before using EzDevPortal, make sure you have
 Composer installed on your machine.
 
 ## Installation from source ##
 ```
-git clone git@github.com:srijanone/odplite-project.git
-cd odplite-project
+git clone git@github.com:srijanone/ezdevportal-project.git
+cd ezdevportal-project
 composer install
 ```
 
@@ -78,22 +78,22 @@ composer install
   EzDevPortal profile, and all other dependencies necessary for the project
 
 ```bash
-composer create-project srijanone/odplite-project MY_PROJECT --no-interaction
+composer create-project srijanone/ezdevportal-project MY_PROJECT --no-interaction
 ```
 
 In case you come across any memory issues, run this command -
 
 ```bash
 php -d memory_limit=-1 /path/to/composer.phar create-project
-srijanone/odplite-project:1.0 MY_PROJECT --no-interaction
+srijanone/ezdevportal-project:1.0 MY_PROJECT --no-interaction
 ```
 
 Installation using drush -
 
 ```bash
-time php -d memory_limit=-1 ./vendor/bin/drush si odplite  
---db-url='mysql://drupal_user:drupal_password@localhost/drupal_db' 
---site-name='EzDevPortal' --account-name='Srijan' 
+time php -d memory_limit=-1 ./vendor/bin/drush si ezdevportal
+--db-url='mysql://drupal_user:drupal_password@localhost/drupal_db'
+--site-name='EzDevPortal' --account-name='Srijan'
 --account-pass='Admin@123'  --account-mail='admin@example.com' -y
 ```
 

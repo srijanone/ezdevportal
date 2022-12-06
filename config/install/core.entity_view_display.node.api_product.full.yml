@@ -23,7 +23,7 @@ dependencies:
   module:
     - layout_builder
     - layout_discovery
-    - odpl_product
+    - ezdevportal_product
     - text
     - user
     - views
@@ -87,7 +87,7 @@ third_party_settings:
               id: product_navigation_block
               label: 'Product Navigation Block'
               label_display: '0'
-              provider: odpl_product
+              provider: ezdevportal_product
               context_mapping: {  }
               product_sidebar_navigation:
                 -
@@ -115,7 +115,7 @@ third_party_settings:
               id: product_content_block
               label: 'Product Content Block'
               label_display: '0'
-              provider: odpl_product
+              provider: ezdevportal_product
               context_mapping: {  }
             weight: -7
             additional: {  }

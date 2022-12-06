@@ -1,0 +1,11 @@
+name: EzDevPortal RapiDoc Field Formatter
+description: Provides a RapiDoc UI field formatter for file/link fields.
+type: module
+package: EzDevPortal
+core: '8.x'
+core_version_requirement: ^8 || ^9
+
+dependencies:
+  - drupal:file
+  - drupal:link
+  - ezdevportal_renderer:ezdevportal_renderer

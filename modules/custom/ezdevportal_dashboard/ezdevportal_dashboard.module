@@ -1,0 +1,235 @@
+<?php
+
+/**
+ * @file
+ * Module file for ezdevportal_dashboard module.
+ */
+
+use Drupal\Core\Url;
+use Drupal\views\Views;
+use Drupal\Core\Template\Attribute;
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_theme().
+ */
+function ezdevportal_dashboard_theme() {
+  return [
+    'dashboard_navigation' => [
+      'variables' => [
+        'navigationData' => NULL,
+      ],
+    ],
+    'developer_navigation' => [
+      'variables' => [
+        'navigationData' => NULL,
+      ],
+    ],
+
+  ];
+}
+
+/**
+ * Implements hook_entity_form_mode_alter().
+ */
+function ezdevportal_dashboard_entity_form_mode_alter(&$form_mode, EntityInterface $entity) {
+  $user = \Drupal::currentUser();
+
+  // Change the form mode for users with developer role.
+  if ($entity->getEntityTypeId() == 'node'  && $entity->bundle() == 'issue' && in_array('developer', $user->getRoles())) {
+    $form_mode = 'developer_view';
+  }
+  if ($entity->getEntityTypeId() == 'node'  && $entity->bundle() == 'forum' && in_array('developer', $user->getRoles())) {
+    $form_mode = 'developer_view';
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for dashboard content block.
+ */
+function ezdevportal_dashboard_preprocess_block__dashboard_content_block(&$variables) {
+  $parameters = \Drupal::request()->query->all();
+  if (!empty($parameters['view'])) {
+    $page = $parameters['view'];
+    switch ($page) {
+      case 'support':
+        $display = 'issue_block';
+        $view_name = 'issue';
+        break;
+
+      case 'forum':
+        $display = 'all_forum_block';
+        $view_name = 'forum';
+        break;
+
+      default:
+        break;
+    }
+    if (!empty($view_name) && !empty($display)) {
+      $view = Views::getView($view_name);
+      $view->setDisplay($display);
+      $view->execute();
+      $content = $view->buildRenderable($display);
+      $variables['content'] = $content;
+    }
+    else {
+      $variables['content'] = '';
+    }
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for banner content block.
+ */
+function ezdevportal_dashboard_preprocess_block__banner_content_block(&$variables) {
+  $current_path = \Drupal::service('path.current')->getPath();
+  $path_alias = \Drupal::service('path_alias.manager')->getAliasByPath($current_path);
+  $parameters = \Drupal::request()->query->all();
+  if ($path_alias == '/dashboard') {
+    if (empty($parameters['view'])) {
+      $page = 'app';
+    }
+    else {
+      $page = $parameters['view'];
+    }
+    switch ($page) {
+      case 'app':
+        $variables['content']['#bannerdata']['title']['#markup'] = 'Dashboard - Apps';
+        break;
+
+      case 'support':
+        $variables['content']['#bannerdata']['title']['#markup'] = 'Dashboard - Support';
+        break;
+
+      case 'forum':
+        $variables['content']['#bannerdata']['title']['#markup'] = 'Dashboard - Forum';
+        break;
+
+      default:
+        break;
+    }
+  }
+  if (strpos($current_path, '/node/add/issue') !== FALSE) {
+    $variables['content']['#bannerdata']['title']['#markup'] = 'Support - Create Issue';
+  }
+  if (strpos($current_path, '/node/add/forum') !== FALSE) {
+    $variables['content']['#bannerdata']['title']['#markup'] = 'Forum - Create Topic';
+  }
+  if (strpos($current_path, '/comment/reply') !== FALSE) {
+    $variables['content']['#bannerdata']['title']['#markup'] = 'Forum - Comments';
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for developer navigation block.
+ */
+function ezdevportal_dashboard_preprocess_block__developer_navigation_block(&$variables) {
+  $current_path = \Drupal::service('path.current')->getPath();
+  if (strpos($current_path, '/node/add/issue') !== FALSE) {
+    $variables['content']['#navigationData'][0]['text'] = 'Go to Issues';
+    $variables['content']['#navigationData'][0]['path'] = '/dashboard?view=support';
+  }
+  elseif (strpos($current_path, '/node/add/forum') !== FALSE) {
+    $variables['content']['#navigationData'][0]['text'] = 'Go to Forum';
+    $variables['content']['#navigationData'][0]['path'] = '/dashboard?view=forum';
+  }
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function ezdevportal_dashboard_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  $user = \Drupal::currentUser();
+
+  if (($form_id == "node_issue_form" ||  $form_id == "node_forum_form") && in_array('developer', $user->getRoles())) {
+    unset($form['actions']['preview']);
+    $form['actions']['reset'] = [
+      '#type' => 'html_tag',
+      '#tag' => 'input',
+      '#attributes' => [
+        'class' => 'button',
+        'type' => 'reset',
+        'value' => 'Cancel',
+      ],
+    ];
+    $form['actions']['submit']['#value'] = 'Create';
+    foreach ($form as $key => $value) {
+      if (isset($form[$key]['#type']) && $form[$key]['#type'] == 'container') {
+        unset($form[$key]['#type']);
+      }
+    }
+  }
+  if ($form_id == "node_issue_form"  && in_array('developer', $user->getRoles())) {
+    $form['field_issue_image']['widget']['#title'] = '';
+    foreach (array_keys($form['actions']) as $action) {
+      if ($action != 'preview' && isset($form['actions'][$action]['#type']) && $form['actions'][$action]['#type'] === 'submit') {
+        $form['actions'][$action]['#submit'][] = 'ezdevportal_dashboard_post_issue_save_redirect';
+      }
+    }
+  }
+}
+
+/**
+ * Redirect handler on issue creation by developer.
+ */
+function ezdevportal_dashboard_post_issue_save_redirect($form, FormStateInterface $form_state) {
+  $form_state->setRedirectUrl(Url::fromUri('internal:/dashboard?view=support'));
+}
+
+/**
+ * Implements hook_field_widget_form_alter().
+ */
+function ezdevportal_dashboard_field_widget_form_alter(&$element, FormStateInterface $form_state, $context) {
+  $user = \Drupal::currentUser();
+  $field_definition = $context['items']->getFieldDefinition();
+
+  if ($field_definition->getName() === 'field_issue_image' && in_array('developer', $user->getRoles())) {
+    unset($element['#field_prefix']);
+  }
+  if ($field_definition->getName() === 'body' && in_array('developer', $user->getRoles())) {
+    unset($element['summary']);
+  }
+}
+
+/**
+ * Implements hook_preprocess_form_element().
+ */
+function ezdevportal_dashboard_preprocess_form_element(&$variables) {
+  $user = \Drupal::currentUser();
+  $current_path = \Drupal::service('path.current')->getPath();
+  if (strpos($current_path, '/node/add/forum') !== FALSE && in_array('developer', $user->getRoles())) {
+    $element_id = ['edit-title-0-value', 'edit-field-forum-tags-target-id'];
+    if (in_array($variables['element']['#attributes']['id'], $element_id)) {
+      $variables['attributes'] = new Attribute($variables['attributes']);
+      $variables['attributes']->addClass('col-md-6')->removeClass('mb-3');
+    }
+  }
+
+  if (strpos($current_path, '/node/add/issue') !== FALSE && in_array('developer', $user->getRoles())) {
+    $element_id = ['edit-field-type', 'edit-title-0-value'];
+    if (in_array($variables['element']['#attributes']['id'], $element_id)) {
+      $variables['attributes'] = new Attribute($variables['attributes']);
+      $variables['attributes']->addClass('col-md-6')->removeClass('mb-3');
+    }
+  }
+
+}
+
+/**
+ * Implements hook_preprocess_html().
+ */
+function ezdevportal_dashboard_preprocess_html(&$variables) {
+  $current_path = \Drupal::service('path.current')->getPath();
+  $path_alias = \Drupal::service('path_alias.manager')->getAliasByPath($current_path);
+  $parameters = \Drupal::request()->query->all();
+  $site_config = \Drupal::config('system.site');
+  if ($path_alias == '/dashboard') {
+    if ($parameters['view'] === 'support') {
+      $variables['head_title']['title'] = 'Dashboard - Support | ' . $site_config->get('name');
+    }
+    elseif ($parameters['view'] === 'forum') {
+      $variables['head_title']['title'] = 'Dashboard - Forum | ' . $site_config->get('name');
+    }
+  }
+}

@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\opdplite\Installer\Form;
+namespace Drupal\ezdevportal\Installer\Form;
 
 use Drupal\Core\Form\ConfigFormBase;
 use Drupal\Core\Form\FormStateInterface;
@@ -14,7 +14,7 @@ class ModuleConfigureForm extends ConfigFormBase {
    * {@inheritdoc}
    */
   public function getFormId() {
-    return 'odplite_module_configure_form';
+    return 'ezdevportal_module_configure_form';
   }
 
   /**
@@ -31,8 +31,8 @@ class ModuleConfigureForm extends ConfigFormBase {
 
     $modules = [
       [
-        'id' => 'odpl_demo',
-        'label' => $this->t('OpenDevPortal Lite Demo Content'),
+        'id' => 'ezdevportal_demo',
+        'label' => $this->t('EzDevPortal Demo Content'),
         'description' => $this->t('Installs content which allows you to explore the features.'),
       ],
     ];
@@ -68,7 +68,7 @@ class ModuleConfigureForm extends ConfigFormBase {
     }
     $buildInfo = $form_state->getBuildInfo();
     $install_state = $buildInfo['args'];
-    $install_state[0]['odplite_additional_modules'] = $installModules;
+    $install_state[0]['ezdevportal_additional_modules'] = $installModules;
     $install_state[0]['form_state_values'] = $form_state->getValues();
     $buildInfo['args'] = $install_state;
     $form_state->setBuildInfo($buildInfo);

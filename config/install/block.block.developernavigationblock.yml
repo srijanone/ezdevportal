@@ -2,7 +2,7 @@ langcode: en
 status: true
 dependencies:
   module:
-    - odpl_dashboard
+    - ezdevportal_dashboard
     - system
   theme:
     - ezdevportal_theme
@@ -16,7 +16,7 @@ settings:
   id: developer_navigation_block
   label: 'Account sidebar menu'
   label_display: '0'
-  provider: odpl_dashboard
+  provider: ezdevportal_dashboard
   dashboard_sidebar_navigation:
     -
       text: 'Go to your Apps'

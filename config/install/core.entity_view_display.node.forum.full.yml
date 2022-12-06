@@ -16,7 +16,7 @@ dependencies:
     - comment
     - layout_builder
     - layout_discovery
-    - odpl_base
+    - ezdevportal_base
     - text
     - user
     - views
@@ -38,7 +38,7 @@ third_party_settings:
               id: banner_content_block
               label: 'Banner Content Block'
               label_display: '0'
-              provider: odpl_product
+              provider: ezdevportal_product
               context_mapping: {  }
               banner_title: ''
               banner_text: ''

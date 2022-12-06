@@ -1,0 +1,95 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/block\/16?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/block_content\/basic"
+        }
+    },
+    "id": [
+        {
+            "value": 16
+        }
+    ],
+    "uuid": [
+        {
+            "value": "4d949d9d-3759-4ced-aecc-869e09953289"
+        }
+    ],
+    "revision_id": [
+        {
+            "value": 37
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "basic"
+        }
+    ],
+    "revision_created": [
+        {
+            "value": "2021-11-23T12:09:13+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "status": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "info": [
+        {
+            "value": "Getting Started Content",
+            "lang": "en"
+        }
+    ],
+    "changed": [
+        {
+            "value": "2022-05-23T14:14:25+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "reusable": [
+        {
+            "value": false
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "revision_translation_affected": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "metatag": [
+        {
+            "value": {
+                "canonical_url": "http:\/\/default\/home",
+                "title": "| EzDevPortal"
+            }
+        }
+    ],
+    "body": [
+        {
+            "value": "<h2>Get up and running with our APIs in 5 minutes with our quick guide<\/h2>\r\n\r\n<p>Whether you are a researcher or developer you can easily try out our APIs without writing any code, just follow the steps below.<\/p>\r\n\r\n<h3>Quick Start Steps:<\/h3>\r\n\r\n<p>The subsequent pages will cover the following topics:<\/p>\r\n\r\n<ol>\r\n\t<li>Login or Create an Account<\/li>\r\n\t<li>Create an API key<\/li>\r\n\t<li>Learn about our API Docs<\/li>\r\n\t<li>Walkthrough an example API workflow<\/li>\r\n\t<li>See how to incorporate APIs in your applications<\/li>\r\n<\/ol>\r\n",
+            "format": "basic_html",
+            "processed": "<h2>Get up and running with our APIs in 5 minutes with our quick guide<\/h2>\n\n<p>Whether you are a researcher or developer you can easily try out our APIs without writing any code, just follow the steps below.<\/p>\n\n<h3>Quick Start Steps:<\/h3>\n\n<p>The subsequent pages will cover the following topics:<\/p>\n\n<ol>\n\t<li>Login or Create an Account<\/li>\n\t<li>Create an API key<\/li>\n\t<li>Learn about our API Docs<\/li>\n\t<li>Walkthrough an example API workflow<\/li>\n\t<li>See how to incorporate APIs in your applications<\/li>\n<\/ol>",
+            "summary": "",
+            "lang": "en"
+        }
+    ]
+}

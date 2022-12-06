@@ -2,7 +2,7 @@ langcode: en
 status: true
 dependencies:
   module:
-    - odpl_base
+    - ezdevportal_base
     - system
   theme:
     - ezdevportal_theme
@@ -16,7 +16,7 @@ settings:
   id: action_content_block
   label: 'Subscribe and Support'
   label_display: visible
-  provider: odpl_base
+  provider: ezdevportal_base
   num_actions: 2
   0:
     action_title: Subscribe

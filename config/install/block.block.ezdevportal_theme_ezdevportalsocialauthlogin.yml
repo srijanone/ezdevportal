@@ -1,0 +1,24 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - ezdevportal_user
+    - system
+  theme:
+    - ezdevportal_theme
+id: ezdevportal_theme_ezdevportalsocialauthlogin
+theme: ezdevportal_theme
+region: content
+weight: -7
+provider: null
+plugin: ezdevportal_social_auth_login
+settings:
+  id: ezdevportal_social_auth_login
+  label: 'EzDevPortal Social Auth Login'
+  label_display: '0'
+  provider: ezdevportal_user
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: "/user/login\r\n/user/register\r\n/user/password"

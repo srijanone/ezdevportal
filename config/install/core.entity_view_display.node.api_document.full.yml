@@ -19,10 +19,10 @@ dependencies:
   module:
     - layout_builder
     - layout_discovery
-    - odpl_api_documents
-    - odpl_asyncapi
-    - odpl_base
-    - odpl_sdk
+    - ezdevportal_api_documents
+    - ezdevportal_asyncapi
+    - ezdevportal_base
+    - ezdevportal_sdk
     - options
     - system
     - text
@@ -46,7 +46,7 @@ third_party_settings:
               id: banner_content_block
               label: 'Banner Content Block'
               label_display: '0'
-              provider: odpl_product
+              provider: ezdevportal_product
               context_mapping: {  }
               banner_title: ''
               banner_text: ''
@@ -100,7 +100,7 @@ third_party_settings:
               id: download_sdk
               label: 'Download SDK'
               label_display: '0'
-              provider: odpl_sdk
+              provider: ezdevportal_sdk
               context_mapping: {  }
             weight: -8
             additional: {  }
@@ -132,7 +132,7 @@ third_party_settings:
               id: api_formatter_option_block
               label: 'API Formatter Option Block'
               label_display: '0'
-              provider: odpl_api_documents
+              provider: ezdevportal_api_documents
               context_mapping: {  }
             weight: -7
             additional: {  }

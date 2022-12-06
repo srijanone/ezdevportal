@@ -16,7 +16,7 @@ dependencies:
   module:
     - layout_builder
     - layout_discovery
-    - odpl_asyncapi
+    - ezdevportal_asyncapi
     - options
     - text
     - user

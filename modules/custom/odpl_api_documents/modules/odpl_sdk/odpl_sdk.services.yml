@@ -1,4 +1,0 @@
-services:
-  odpl_sk.generateSdk_services:
-   class: Drupal\odpl_sdk\GenerateSdk
-   arguments: ['@entity_type.manager', '@http_client', '@messenger','@logger.factory','@file_url_generator']
