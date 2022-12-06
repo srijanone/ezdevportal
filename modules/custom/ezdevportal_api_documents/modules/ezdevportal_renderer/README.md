@@ -31,5 +31,5 @@ File fields:
     9. Click "Save".
     10. Add a new TYPE type content and upload a valid Swagger json,
      Voyager schema json and Async api json/yaml file.
-    11. A sample file available in ./assets folder of the ezdevportal_asyncapi and
-     ezdevportal_voyager modules.
+    11. A sample file available in ./assets folder of the ezdevportal_asyncapi
+     and ezdevportal_voyager modules.

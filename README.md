@@ -78,7 +78,8 @@ composer install
   EzDevPortal profile, and all other dependencies necessary for the project
 
 ```bash
-composer create-project srijanone/ezdevportal-project MY_PROJECT --no-interaction
+composer create-project srijanone/ezdevportal-project
+MY_PROJECT --no-interaction
 ```
 
 In case you come across any memory issues, run this command -
