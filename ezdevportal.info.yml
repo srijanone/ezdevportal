@@ -73,20 +73,6 @@ install:
   - metatag
   - node
   - notifications_widget
-  - ezdevportal_admin
-  - ezdevportal_api_documents
-  - ezdevportal_asyncapi
-  - ezdevportal_base
-  - ezdevportal_faq
-  - ezdevportal_google_analytics
-  - ezdevportal_product
-  - ezdevportal_rapidoc_formatter
-  - ezdevportal_renderer
-  - ezdevportal_user
-  - ezdevportal_voyager
-  - ezdevportal_dashboard
-  - ezdevportal_notification
-  - ezdevportal_workflow
   - options
   - page_cache
   - path
@@ -134,12 +120,26 @@ install:
   - simple_popup_blocks
   - views_bootstrap
   - custom_breadcrumbs
-  - ezdevportal_sdk
   - user_menu_avatar
   - content_moderation
   - workflows
   - layout_builder_modal
   - layout_custom_section_classes
+  - ezdevportal_admin
+  - ezdevportal_api_documents
+  - ezdevportal_asyncapi
+  - ezdevportal_base
+  - ezdevportal_faq
+  - ezdevportal_google_analytics
+  - ezdevportal_product
+  - ezdevportal_rapidoc_formatter
+  - ezdevportal_renderer
+  - ezdevportal_user
+  - ezdevportal_voyager
+  - ezdevportal_dashboard
+  - ezdevportal_notification
+  - ezdevportal_workflow
+  - ezdevportal_sdk
 themes:
   - bartik
   - seven
