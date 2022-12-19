@@ -7,11 +7,15 @@
 
 ## Introduction
 
-This module basically manages the customisation of faq features.
+This module basically provides the demo content for Ezdevportal that consists of
+various things like blocks, files, media, menu, nodes, paragraphs, taxonomies
+and users.
 
 ### Key Features:
 
-  * It provides customisations related to faq features.
+  * It provides the demo content for Ezdevportal.
+  * The demo content consists of various things like blocks, files, media, menu,
+  nodes, paragraphs, taxonomies and users.
 
 ## Requirements
 

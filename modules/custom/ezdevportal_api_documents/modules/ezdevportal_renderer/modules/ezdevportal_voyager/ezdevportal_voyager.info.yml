@@ -1,5 +1,5 @@
 name: EzDevPortal Graph QL Document formatter using Voyager
-description: Provides a graphQL voyager UI field formatter for file/link fields.
+description: Provides a graphQL voyager UI field formatter for file field.
 type: module
 package: EzDevPortal
 core: 8.x

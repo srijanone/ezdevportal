@@ -7,11 +7,14 @@
 
 ## Introduction
 
-This module basically manages the customisation of faq features.
+This module extends the functionality by providing common hooks and plugins. It
+also provides some common blocks like Action Content and Banner Content Blocks.
 
 ### Key Features:
 
-  * It provides customisations related to faq features.
+  * It provides various common hooks and plugins.
+  * It also provides some common blocks like Action Content and Banner Content
+  Blocks.
 
 ## Requirements
 

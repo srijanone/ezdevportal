@@ -7,11 +7,12 @@
 
 ## Introduction
 
-This module basically manages the customisation of faq features.
+This module provides a Async Api 2.0 Specification UI field formatter for file
+field.
 
 ### Key Features:
 
-  * It provides customisations related to faq features.
+  * It provides a Async Api 2.0 Specification UI field formatter for file field.
 
 ## Requirements
 

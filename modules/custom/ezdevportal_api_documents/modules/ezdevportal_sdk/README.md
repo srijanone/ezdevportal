@@ -7,11 +7,16 @@
 
 ## Introduction
 
-This module basically manages the customisation of faq features.
+This module extends the sdk functionality by providing a block that can be
+placed on any API document page for generating SDKs. It also provides
+functionality to download the SDKs based on the selected language.
 
 ### Key Features:
 
-  * It provides customisations related to faq features.
+  * It provides a block that can be placed on any API document page for
+  generating SDKs.
+  * It also provides functionality to download the SDKs based on the selected
+  language.
 
 ## Requirements
 

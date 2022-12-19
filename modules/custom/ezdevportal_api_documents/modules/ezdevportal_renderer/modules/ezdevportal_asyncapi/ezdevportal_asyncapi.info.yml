@@ -1,5 +1,5 @@
 name: EzDevPortal Async API Document Formatter
-description: Provides a Async Api 2.0 Specification UI field formatter for file/link fields.
+description: Provides a Async Api 2.0 Specification UI field formatter for file field.
 dependencies:
   - ezdevportal_renderer:ezdevportal_renderer
 type: module
