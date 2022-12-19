@@ -7,11 +7,15 @@
 
 ## Introduction
 
-This module basically manages the customisation of faq features.
+This module basically provides customisations related to the API Product. It
+also provides some common blocks for navigation items and blocks like Product
+Content and Product Navigation blocks.
 
 ### Key Features:
 
-  * It provides customisations related to faq features.
+  * It provides customisations related to the API Product.
+  * It also provides some common blocks like Product Content and Product
+  Navigation blocks.
 
 ## Requirements
 

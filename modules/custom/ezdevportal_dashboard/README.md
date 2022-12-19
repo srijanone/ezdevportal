@@ -7,11 +7,15 @@
 
 ## Introduction
 
-This module basically manages the customisation of faq features.
+This module provides the Dashboard functionality for developer role. It also
+provides some blocks like Dashboard Content, Dashboard Navigation and Developer
+Navigation Blocks.
 
 ### Key Features:
 
-  * It provides customisations related to faq features.
+  * It provides the Dashboard functionality for developer role.
+  * It also provides some blocks like Dashboard Content, Dashboard Navigation
+  and Developer Navigation Blocks.
 
 ## Requirements
 

@@ -7,11 +7,11 @@
 
 ## Introduction
 
-This module basically manages the customisation of faq features.
+This module provides a graphQL voyager UI field formatter for file field.
 
 ### Key Features:
 
-  * It provides customisations related to faq features.
+  * It provides a graphQL voyager UI field formatter for file field.
 
 ## Requirements
 

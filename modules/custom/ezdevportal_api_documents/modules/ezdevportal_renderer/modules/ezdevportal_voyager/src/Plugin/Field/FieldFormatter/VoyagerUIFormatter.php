@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\ezdevportal__voyager\Plugin\Field\FieldFormatter;
+namespace Drupal\ezdevportal_voyager\Plugin\Field\FieldFormatter;
 
 use Drupal\Core\Field\FieldItemListInterface;
 use Drupal\file\Plugin\Field\FieldFormatter\FileFormatterBase;
@@ -31,10 +31,10 @@ class VoyagerUIFormatter extends FileFormatterBase {
    */
   public function view(FieldItemListInterface $items, $langcode = NULL) {
     $elements = parent::view($items, $langcode);
-    $elements['#attached']['library'][] = 'ezdevportal__voyager/graphQL_voyager';
+    $elements['#attached']['library'][] = 'ezdevportal_voyager/graphQL_voyager';
     foreach ($this->getEntitiesToView($items, $langcode) as $file) {
       $voyager_file = \Drupal::service('file_url_generator')->generateAbsoluteString($file->getFileUri());
-      $elements['#attached']['drupalSettings']['ezdevportal__voyager']['document'] = $voyager_file;
+      $elements['#attached']['drupalSettings']['ezdevportal_voyager']['document'] = $voyager_file;
     }
 
     return $elements;

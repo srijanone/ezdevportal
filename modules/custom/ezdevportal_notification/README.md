@@ -7,11 +7,14 @@
 
 ## Introduction
 
-This module basically manages the customisation of faq features.
+This module basically extends the notifications functionality. It provides a
+block that consists of the list of notification items for Ezdevportal.
 
 ### Key Features:
 
-  * It provides customisations related to faq features.
+  * It extends the notifications functionality.
+  * It also provides a block that consists of the list of notification items for
+  Ezdevportal.
 
 ## Requirements
 

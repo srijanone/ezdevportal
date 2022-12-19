@@ -1,17 +1,30 @@
-CONTENTS OF THIS FILE
----------------------
+## Contents Of This File
 
- * Introduction
- * Configuration
+  * Introduction
+  * Requirements
+  * Installation
+  * Configuration
+  * Maintainers
 
-INTRODUCTION
-------------
+## Introduction
 
-This module provides a field formatter for File and Link fields which renders
-the referenced file using Async API UI, RapiDoc UI and GraphQL Voyager UI.
+This module provides a field formatter for File field which renders the
+referenced file using Async API UI, RapiDoc UI and GraphQL Voyager UI.
 
-CONFIGURATION
--------------
+### Key Features:
+
+  * It provides provides a field formatter for File field which renders the
+  referenced file using Async API UI, RapiDoc UI and GraphQL Voyager UI.
+
+## Requirements
+
+The required dependencies have been managed in installation of the profile.
+
+## Installation
+
+Like any other drupal module, Go to extend page and enable module.
+
+## Configuration
 
 File fields:
 
@@ -33,3 +46,7 @@ File fields:
      Voyager schema json and Async api json/yaml file.
     11. A sample file available in ./assets folder of the ezdevportal_asyncapi
      and ezdevportal_voyager modules.
+
+## Maintainers
+
+Srijan Technologies Pvt. Ltd. (https://www.drupal.org/srijan-technologies)
