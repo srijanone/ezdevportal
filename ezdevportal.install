@@ -1,11 +1,11 @@
 <?php
 
-use \Drupal\user\Entity\User;
-
 /**
  * @file
  * Install, update and uninstall hooks for the EzDevPortal Profile.
  */
+
+use Drupal\user\Entity\User;
 
 /**
  * Implements hook_install().
