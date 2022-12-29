@@ -31,7 +31,7 @@ settings:
     action_text: 'Get your queries answered by submitting the form with your details.'
     action_image_path: /profiles/contrib/ezdevportal/themes/custom/ezdevportal_theme/images/supporticon.png
     action_image: {  }
-    action_link: /
+    action_link: /form/contact-us
     action_url_text: CONTACT
     webform: _none
 visibility:
