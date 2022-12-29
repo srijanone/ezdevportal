@@ -5,6 +5,8 @@
  * Install, update and uninstall hooks for the EzDevPortal Profile.
  */
 
+use Drupal\user\Entity\User;
+
 /**
  * Implements hook_install().
  *
@@ -13,6 +15,9 @@
  * @see system_install()
  */
 function ezdevportal_install() {
-  include_once DRUPAL_ROOT . '/core/profiles/standard/standard.install';
-  standard_install();
+  // Assign user 1 the "administrator" role.
+  /** @var \Drupal\user\Entity\User $user */
+  $user = User::load(1);
+  $user->addRole('administrator');
+  $user->save();
 }
