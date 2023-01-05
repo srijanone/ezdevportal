@@ -145,12 +145,12 @@ function ezdevportal_base_preprocess_block__content_cards_block(&$variables) {
     $card_block['more_link'] = Url::fromUri($block_data->field_read_more_link[0]->uri)->toString();
     $card_block['more_link_title'] = $block_data->field_read_more_link[0]->title;
   }
-  if (!$block_data->field_block_background_color->isEmpty()) {
-    $card_block['background_color'] = $block_data->field_block_background_color->getValue()[0]['color'];
-  }
-  else {
-    $card_block['background_color'] = '#FFFFFF';
-  }
+  // if (!$block_data->field_block_background_color->isEmpty()) {
+  //   $card_block['background_color'] = $block_data->field_block_background_color->getValue()[0]['color'];
+  // }
+  // else {
+  //   $card_block['background_color'] = '#FFFFFF';
+  // }
   $referenced_nodes = $block_data->field_referenced_nodes->getValue();
   foreach ($referenced_nodes as $referenced_node) {
     $card_block['cards'][] = ezdevportal_base_get_node_card($referenced_node['target_id']);
