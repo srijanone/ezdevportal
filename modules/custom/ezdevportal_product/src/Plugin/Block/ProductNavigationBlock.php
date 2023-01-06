@@ -155,7 +155,7 @@ class ProductNavigationBlock extends BlockBase implements ContainerFactoryPlugin
         '#size' => 30,
         '#type' => 'textarea',
         '#default_value' => !empty($config['product_sidebar_navigation'][$key]['svg_icon']) ?
-        $config['product_sidebar_navigation'][$key]['svg_icon'] : '',
+        $config['product_sidebar_navigation'][$key]['svg_icon'] : $value['svg_icon'],
       ];
     }
 
