@@ -94,7 +94,6 @@ class DownloadSdkBlock extends BlockBase implements ContainerFactoryPluginInterf
   public function build() {
 
     $nid = $this->apiDocumentHelper->getNodeId();
-
     $build = [];
     if (!empty($nid)) {
       $build['download_sdk'] = [
