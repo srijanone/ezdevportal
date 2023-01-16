@@ -140,6 +140,14 @@ install:
   - ezdevportal_notification
   - ezdevportal_workflow
   - ezdevportal_sdk
+  - ezdevportal_taxonomy
+  - ezdevportal_paragraph
+  - ezdevportal_node
+  - ezdevportal_usecase
+  - ezdevportal_blog
+  - ezdevportal_block
+  - ezdevportal_support
+  - ezdevportal_forum
 themes:
   - bartik
   - seven

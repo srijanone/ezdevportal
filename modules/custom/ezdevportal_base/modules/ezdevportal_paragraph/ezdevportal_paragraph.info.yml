@@ -1,0 +1,9 @@
+name: EzDevPortal Paragraphs
+description : 'Provides some basic paragraphs for Ezdevportal'
+type: module
+package: EzDevPortal
+core_version_requirement: ^8 || ^9
+
+dependencies:
+  - paragraphs:paragraphs
+  - ezdevportal:ezdevportal_taxonomy

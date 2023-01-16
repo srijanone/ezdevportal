@@ -4,3 +4,9 @@ type: module
 package: EzDevPortal
 core: 8.x
 core_version_requirement: ^8 || ^9
+
+dependencies:
+  - ezdevportal:ezdevportal_user
+  - drupal:serialization
+  - drupal:rest
+  - notifications_widget:notifications_widget

@@ -31,8 +31,6 @@ function ezdevportal_workflow_form_alter(&$form, FormStateInterface $form_state,
  * Sets title to empty.
  */
 function ezdevportal_workflow_override_title($data) {
-  if (is_array($data)) {
-    $data['#title'] = '';
-  }
+  $data['#title'] = '';
   return $data;
 }
