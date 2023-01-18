@@ -21,18 +21,18 @@ $info = [
     'subscribebutton' => t('Subscribe Button Text'),
     'checkboxes' => t('Checkboxes'),
     'activelinksinproductpage' => t('Active Links In Product Page'),
-    'discovermoretagscolor' =>  t('Discover More Tags Text Color'),
-    'discovermoretagsborder' =>  t('Discover More Tags Background Color'),
-    'discovermoretagsbg' =>  t('Discover More Tags Background'),
-    'discovermoretagshover' =>  t('Discover More Tags Hover'),
-    'discovermoretagsbghover' =>  t('Discover More Tags Background Hover'),
+    'discovermoretagscolor' => t('Discover More Tags Text Color'),
+    'discovermoretagsborder' => t('Discover More Tags Background Color'),
+    'discovermoretagsbg' => t('Discover More Tags Background'),
+    'discovermoretagshover' => t('Discover More Tags Hover'),
+    'discovermoretagsbghover' => t('Discover More Tags Background Hover'),
     'tabs' => t('Tabs'),
     'forumtabs' => t('Forum Tabs'),
     'forumlikebtnborder' => t('Forum Like Button Border'),
     'blogtag' => t('Blog Tag'),
     'contentcardscenteredbg' => t('Content Cards Centered Background'),
     'contentcardscenteredtitle' => t('Content Cards Centered Title'),
-    'likebottomtext' => t('Like Bottom Text')
+    'likebottomtext' => t('Like Bottom Text'),
   ],
   // Pre-defined color schemes.
   'schemes' => [
@@ -61,10 +61,10 @@ $info = [
         'blogtag' => '#6c757d',
         'contentcardscenteredbg' => '#eaf1ff',
         'contentcardscenteredtitle' => '#333333',
-        'likebottomtext' => '#6a6a6a'
-        ],
+        'likebottomtext' => '#6a6a6a',
+      ],
     ],
-      'blue' => [
+    'blue' => [
       'title' => t('Blue'),
       'colors' => [
         'sliderarrow' => '#416AD9',
@@ -89,7 +89,7 @@ $info = [
         'blogtag' => '#416AD9',
         'contentcardscenteredbg' => '#F5F5F5',
         'contentcardscenteredtitle' => '#ffffff',
-        'likebottomtext' => '#416AD9'
+        'likebottomtext' => '#416AD9',
       ],
     ],
   ],
