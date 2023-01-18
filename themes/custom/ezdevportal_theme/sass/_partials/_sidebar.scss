@@ -48,44 +48,9 @@
         color: $lightgrayhover;
         height: 27px;
 
-        &.product-detail-link {
-          background: url('../images/details.png') no-repeat;
-          padding-left: 38px;
+        &.active {
+          color: $black;
 
-          &.active {
-            color: $black;
-            background: url('../images/details-active.png') no-repeat;
-          }
-        }
-
-        &.product-use-case-link {
-          background: url('../images/use-case.png') no-repeat;
-          padding-left: 38px;
-
-          &.active {
-            color: $black;
-            background: url('../images/use-case-active.png') no-repeat;
-          }
-        }
-
-        &.product-blog-link {
-          background: url('../images/blog.png') no-repeat;
-          padding-left: 38px;
-
-          &.active {
-            color: $black;
-            background: url('../images/blog-active.png') no-repeat;
-          }
-        }
-
-        &.product-faq-link {
-          background: url('../images/faq.png') no-repeat;
-          padding-left: 38px;
-
-          &.active {
-            color: $black;
-            background: url('../images/faq-active.png') no-repeat;
-          }
         }
       }
     }
@@ -95,7 +60,7 @@
 .block-developer-navigation-block {
   ul {
     li {
-      margin-bottom: 27px;
+      margin-bottom: 26px;
 
       a {
         border-bottom: 1px solid $black;
@@ -117,7 +82,9 @@
         color: $lightgray;
 
         &.active {
-          color: $black;
+          svg {
+            color: $black;
+          }
         }
       }
     }

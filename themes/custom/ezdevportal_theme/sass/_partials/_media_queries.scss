@@ -251,10 +251,12 @@
   }
 
   .view-products-listing-page {
-
     .form-select,
     .form-control {
       width: 160px;
+    }
+    .form-submit{
+      width:auto;
     }
   }
 

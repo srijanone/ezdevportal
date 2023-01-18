@@ -42,12 +42,18 @@
 
 						{% endif %}
 						{% if item.cta_link_title %}
-							<a class="slidecta" href={{ item.cta_link }}>{{ item.cta_link_title }}</a>
+							<a class="slidecta" href={{ item.cta_link }}>
+							<svg width="45" height="45" viewBox="0 0 45 45" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<circle cx="22.5" cy="22.5" r="22.5" fill="currentColor"/>
+								<circle cx="22.5" cy="22.5" r="22" stroke="white" stroke-opacity="0.67"/>
+									<path d="M33.7071 23.7071C34.0976 23.3166 34.0976 22.6834 33.7071 22.2929L27.3431 15.9289C26.9526 15.5384 26.3195 15.5384 25.9289 15.9289C25.5384 16.3195 25.5384 16.9526 25.9289 17.3431L31.5858 23L25.9289 28.6569C25.5384 29.0474 25.5384 29.6805 25.9289 30.0711C26.3195 30.4616 26.9526 30.4616 27.3431 30.0711L33.7071 23.7071ZM11 24H33V22H11V24Z" fill="white"/>
+							</svg>
+							<span class="cta-title">{{ item.cta_link_title }}</span></a>
 						{% endif %}
 					</div>
 					<div class="col-lg-6 text-lg-right text-center  mt-lg-0 image-banner-right">
 						<div class="banner-image-right">
-							<img src={{ item.image_url }} class="card-img-top" alt="'">
+							<img src={{ item.image_url }} class="card-img-top" alt="" />
 						</div>
 					</div>
 				</div>

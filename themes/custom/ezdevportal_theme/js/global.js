@@ -54,7 +54,6 @@
       jQuery('#views-exposed-form-media-library-page-1 .bef-links').removeClass('form-select');
       jQuery('.select-all .form-checkbox').addClass('form-check-input');
       jQuery('.apigee-entity--app  fieldset.app-credential').removeClass('items--inline');
-      jQuery('.btn-subscribe').removeClass('button');
       jQuery('.webform-submission-subscribe-form .form-actions').removeClass('mb-3');
     }
   };
