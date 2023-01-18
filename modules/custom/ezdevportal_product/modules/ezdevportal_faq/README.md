@@ -1,10 +1,26 @@
-CONTENTS OF THIS FILE
----------------------
+## Contents Of This File
 
- * Introduction
+  * Introduction
+  * Requirements
+  * Installation
+  * Maintainers
 
+## Introduction
 
-INTRODUCTION
-------------
+This module basically manages the customisation of faq features.
 
-FAQ module manages the customization of faq features.
+### Key Features:
+
+  * It provides customisations related to faq features.
+
+## Requirements
+
+The required dependencies have been managed in installation of the profile.
+
+## Installation
+
+Like any other drupal module, Go to extend page and enable module.
+
+## Maintainers
+
+Srijan Technologies Pvt. Ltd. (https://www.drupal.org/srijan-technologies)

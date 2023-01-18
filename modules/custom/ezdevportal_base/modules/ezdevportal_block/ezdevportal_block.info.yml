@@ -1,0 +1,12 @@
+name: EzDevPortal Blocks
+description : 'Extends the functionality by providing some common usefull block types'
+type: module
+package: EzDevPortal
+core_version_requirement: ^8 || ^9
+
+dependencies:
+  - color_field:color_field
+  - ezdevportal:ezdevportal_base
+  - ezdevportal:ezdevportal_node
+  - ezdevportal:ezdevportal_api_documents
+  - ezdevportal:ezdevportal_product

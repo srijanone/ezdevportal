@@ -94,22 +94,24 @@ class DownloadSdkBlock extends BlockBase implements ContainerFactoryPluginInterf
   public function build() {
 
     $nid = $this->apiDocumentHelper->getNodeId();
-
-    $build['download_sdk'] = [
-      '#type' => 'link',
-      '#title' => $this->t('Download SDK'),
-      '#url' => Url::fromRoute('ezdevportal_sdk.form', ['node' => $nid]),
-      '#attributes' => [
-        'class' => [
-          'use-ajax',
-          'button',
+    $build = [];
+    if (!empty($nid)) {
+      $build['download_sdk'] = [
+        '#type' => 'link',
+        '#title' => $this->t('Download SDK'),
+        '#url' => Url::fromRoute('ezdevportal_sdk.form', ['node' => $nid]),
+        '#attributes' => [
+          'class' => [
+            'use-ajax',
+            'button',
+          ],
+          'data-dialog-type' => 'modal',
+          'data-dialog-options' => Json::encode([
+            'width' => 700,
+          ]),
         ],
-        'data-dialog-type' => 'modal',
-        'data-dialog-options' => Json::encode([
-          'width' => 700,
-        ]),
-      ],
-    ];
+      ];
+    }
 
     // Attach the library for pop-up dialogs/modals.
     $bulid['#attached']['library'][] = 'core/drupal.dialog.ajax';

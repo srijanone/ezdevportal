@@ -1,0 +1,41 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - ezdevportal_base
+    - system
+  theme:
+    - ezdevportal_theme
+id: actioncontentblock
+theme: ezdevportal_theme
+region: featured_bottom_first
+weight: -11
+provider: null
+plugin: action_content_block
+settings:
+  id: action_content_block
+  label: 'Subscribe and Support'
+  label_display: visible
+  provider: ezdevportal_base
+  num_actions: 2
+  0:
+    action_title: Subscribe
+    action_text: 'Subscribe so that you do not miss out on any notifications.'
+    action_image_path: /profiles/contrib/ezdevportal/themes/custom/ezdevportal_theme/images/envelopeicon.png
+    action_image: {  }
+    action_link: /user/login
+    action_url_text: 'LOGIN TO CHECKOUT UPDATES'
+    webform: subscribe
+  1:
+    action_title: Support
+    action_text: 'Get your queries answered by submitting the form with your details.'
+    action_image_path: /profiles/contrib/ezdevportal/themes/custom/ezdevportal_theme/images/supporticon.png
+    action_image: {  }
+    action_link: /form/contact-us
+    action_url_text: CONTACT
+    webform: _none
+visibility:
+  request_path:
+    id: request_path
+    negate: true
+    pages: "/user/login\r\n/user/password\r\n/user/register"

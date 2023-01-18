@@ -249,7 +249,7 @@ function ezdevportal_base_get_node_card($nid) {
       $card_data['url'] = $path_alias_manager->getAliasByPath('/node/' . $nid);
       $card_data['icon'] = ezdevportal_base_get_node_card_image($node);
       $card_data['content'] = (in_array($node->bundle(),
-                              ['use_case', 'api_document', 'blog_post'])) ?
+                              ['use_case', 'api_document'])) ?
                               $node->get('body')->summary : $node->field_summary->value;
       $card_data['text'] = 'Explore';
     }
@@ -274,7 +274,7 @@ function ezdevportal_base_get_node_card($nid) {
  * Function to get the node card image.
  */
 function ezdevportal_base_get_node_card_image($node) {
-  if (in_array($node->bundle(), ['api_product', 'use_case'])) {
+  if (in_array($node->bundle(), ['api_product', 'use_case', 'api_document'])) {
     $image_url = (!$node->field_listing_image->isEmpty()) ? file_create_url($node->field_listing_image->entity->field_media_image->entity->getFileUri()) : '';
   }
   elseif ($node->bundle() == 'landing_page') {

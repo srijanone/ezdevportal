@@ -1,0 +1,10 @@
+name: EzDevPortal Support
+description: "Feature of Support in EzDevPortal."
+type: module
+package: EzDevPortal
+core: 8.x
+core_version_requirement: ^8 || ^9
+
+dependencies:
+  - ezdevportal:ezdevportal_node
+  - ezdevportal:ezdevportal_dashboard

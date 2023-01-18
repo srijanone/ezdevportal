@@ -3,3 +3,24 @@ description : 'Extends the functionality by providing common hooks and plugins'
 type: module
 package: EzDevPortal
 core_version_requirement: ^8 || ^9
+
+dependencies:
+  - drupal:path
+  - drupal:field
+  - drupal:text
+  - drupal:link
+  - drupal:filter
+  - drupal:comment
+  - drupal:media
+  - drupal:media_library
+  - field_permissions:field_permissions
+  - webform:webform
+  - svg_image:svg_image
+  - slick:slick
+  - views_infinite_scroll:views_infinite_scroll
+  - better_exposed_filters:better_exposed_filters
+  - entity_browser:entity_browser
+  - like_and_dislike:like_and_dislike
+  - votingapi:votingapi
+  - metatag:metatag
+  - pathauto:pathauto

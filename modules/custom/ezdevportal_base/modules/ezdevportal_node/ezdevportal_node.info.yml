@@ -1,0 +1,11 @@
+name: EzDevPortal Basic Content Types
+description : 'Provides the basic content types for Ezdevportal'
+type: module
+package: EzDevPortal
+core_version_requirement: ^8 || ^9
+
+dependencies:
+  - drupal:node
+  - field_group:field_group
+  - ezdevportal:ezdevportal_paragraph
+  - ezdevportal:ezdevportal_taxonomy

@@ -6,4 +6,5 @@ core: 8.x
 core_version_requirement: ^8 || ^9
 
 dependencies:
-  - ezdevportal_product:ezdevportal_product
+  - ezdevportal:ezdevportal_node
+  - views_bootstrap:views_bootstrap
