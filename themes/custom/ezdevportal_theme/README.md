@@ -45,3 +45,16 @@ We can setup the sub-theme using the ezdevportal_theme as the base theme.
 - Create a new theme and set the base theme as ezdevportal_theme.
 - Setup the regions as required.
 - Customize the sub theme by setting your own stylesheet and libraries.
+
+#### Recommendations:
+
+It is recommended to copy the base theme regions into your sub-theme's info.yml.
+It will handle the blocks placement into proper regions.
+
+Since the base theme is based on bootstrap barrio we need to save the theme
+settings after setting it as default.
+
+- Go to Appearance and Edit the theme settings.
+- For Layout, select Sidebar fist width and Sidebar second with as 3 cols.
+- For Components, Navbar Structure check Navbar width container and save the
+  theme settings.
