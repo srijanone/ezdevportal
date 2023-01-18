@@ -116,6 +116,7 @@ class ProductNavigationBlock extends BlockBase implements ContainerFactoryPlugin
         $this->t('Navigation Item'),
         $this->t('Override Title'),
         $this->t('Path'),
+        $this->t('SVG Icon'),
       ],
       '#tabledrag' => [
         [
@@ -149,6 +150,12 @@ class ProductNavigationBlock extends BlockBase implements ContainerFactoryPlugin
         '#type' => 'textfield',
         '#default_value' => !empty($config['product_sidebar_navigation'][$key]['path']) ?
         $config['product_sidebar_navigation'][$key]['path'] : $value['path'],
+      ];
+      $form['product_sidebar_navigation'][$key]['svg_icon'] = [
+        '#size' => 30,
+        '#type' => 'textarea',
+        '#default_value' => !empty($config['product_sidebar_navigation'][$key]['svg_icon']) ?
+        $config['product_sidebar_navigation'][$key]['svg_icon'] : $value['svg_icon'],
       ];
     }
 
