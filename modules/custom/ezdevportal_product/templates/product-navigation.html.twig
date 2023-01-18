@@ -7,6 +7,7 @@
     <ul class="product-dashboard-children">
       {% for key,value in navigationData %}
         <li class="dashboard-menu-item"><a href="{{ value.path }}" class=" {{ value.class}}">
+          {{ value.svg_icon | raw }}
           {{ value.text }}
         </a>
         </li>

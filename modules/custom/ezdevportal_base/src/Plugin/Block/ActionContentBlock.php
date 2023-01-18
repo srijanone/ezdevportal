@@ -201,7 +201,7 @@ class ActionContentBlock extends BlockBase implements ContainerFactoryPluginInte
         '#title' => $this->configuration[$i]['action_url_text'],
         "#weight" => 1,
         '#url' => $path,
-        '#attributes' => ['target' => '_blank', 'class' => 'btn-subscribe'],
+        '#attributes' => ['target' => '_blank', 'class' => 'btn-subscribe ' . $this->configuration[$i]['custom_class']],
       ];
 
       $webform = $this->configuration[$i]['webform'];
@@ -212,6 +212,8 @@ class ActionContentBlock extends BlockBase implements ContainerFactoryPluginInte
         $build[$i]['webform'] = [
           '#type' => 'webform',
           '#webform' => $webform,
+          '#prefix' => '<div class="' . $this->configuration[$i]['custom_class'] . '">',
+          '#suffix' => '</div>',
         ];
       }
     }
@@ -295,6 +297,12 @@ class ActionContentBlock extends BlockBase implements ContainerFactoryPluginInte
         '#options' => $webformtitle,
         '#default_value' => $this->configuration[$i]['webform'] ?? '_none',
       ];
+      $form['actions_fieldset'][$i]['custom_class'] = [
+        '#title' => $this->t('Custom Class'),
+        '#type' => 'textfield',
+        '#description' => $this->t('Add any custom class to this block.'),
+        '#default_value' => $this->configuration[$i]['custom_class'] ?? '',
+      ];
     }
 
     $form['actions_fieldset']['actions'] = [
@@ -376,6 +384,7 @@ class ActionContentBlock extends BlockBase implements ContainerFactoryPluginInte
       $this->configuration[$i]['action_link'] = $value[$i]['action_link'];
       $this->configuration[$i]['action_url_text'] = $value[$i]['action_url_text'];
       $this->configuration[$i]['webform'] = $value[$i]['webform'];
+      $this->configuration[$i]['custom_class'] = $value[$i]['custom_class'];
     }
   }
 
