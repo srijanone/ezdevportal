@@ -110,9 +110,10 @@
   .top-trend {
     @include card-text;
     text-align: right;
-    background: url('../images/trending_up.png') right no-repeat;
     padding-right: 35px;
-    margin-right: 25px;
+    svg{
+      margin-left: 5px;
+    }
   }
   .content-list-footer {
     a {

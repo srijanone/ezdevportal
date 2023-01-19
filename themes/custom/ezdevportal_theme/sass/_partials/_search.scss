@@ -72,14 +72,12 @@
     .views-field-title {
       margin-top: 32px;
       margin-bottom: 5px;
-      ;
       display: block;
 
       a {
         color: $blue;
         @include search-left-text;
       }
-
     }
   }
 

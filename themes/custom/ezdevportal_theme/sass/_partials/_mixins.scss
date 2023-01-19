@@ -163,8 +163,9 @@
 
 @mixin subscribe-btn {
   font-weight: $font-weight-600;
-  font-size: $basic-font-size-13;
+  font-size: $basic-font-small-size;
   line-height: $line-height-18;
+  background: $white;
 }
 
 @mixin user-heading {

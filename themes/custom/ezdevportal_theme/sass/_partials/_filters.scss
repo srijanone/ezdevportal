@@ -1,52 +1,44 @@
 details[open] {
-    summary {
-      &:after {
-        content: "";
-        background: url(../images/down-arrow.png) no-repeat 0px 3px;
-      }
+  summary {
+    &:after {
+      content: "";
+      background: url(../images/down-arrow.png) no-repeat 0px 3px;
     }
   }
-  
-  details {
-    summary {
-      &:after {
-        content: "";
-        background: url(../images/right-arrow-breadcrumb.png) no-repeat 0px 0px;
-        width: 14px;
-        height: 11px;
-        display: inline-block;
-        margin-left: 35px;
-      }
+}
+
+details {
+  summary {
+    &:after {
+      content: "";
+      background: url(../images/right-arrow-breadcrumb.png) no-repeat 0px 0px;
+      width: 14px;
+      height: 11px;
+      display: inline-block;
+      margin-left: 35px;
     }
   }
-  
-  .block-views-exposed-filter-blockblog-block-all-blogs {
-    ul {
-      padding-left: 0;
-    }
-    fieldset {
-      label {
-        @include banner-link;
-        margin-top: 85px;
-        margin-bottom: 28px;
-        margin-left: 23px;
-      }
-    }
-  
-    .form-select {
-      border: none;
-      background-image: none;
-      padding-left: 0;
-  
-      ul {
-        li {
-          margin: 10px 10px 0px 0px;
-          padding: 7px 37px;
-        }
-      }
+}
+
+.block-views-exposed-filter-blockblog-block-all-blogs {
+  ul {
+    padding-left: 0;
+  }
+
+  fieldset {
+    label {
+      @include banner-link;
+      margin-top: 85px;
+      margin-bottom: 28px;
+      margin-left: 23px;
     }
   }
-  .views-field-field-blog-tags {
+
+  .form-select {
+    border: none;
+    background-image: none;
+    padding-left: 0;
+
     ul {
       li {
         margin: 10px 10px 0px 0px;
@@ -54,3 +46,41 @@ details[open] {
       }
     }
   }
+}
+
+.views-field-field-blog-tags {
+  ul {
+    li {
+      margin: 10px 10px 0px 0px;
+      padding: 7px 37px;
+    }
+  }
+}
+
+.block-views-exposed-filter-blockblog-block-all-blogs {
+  .form-select {
+    ul {
+      li {
+        a {
+          &:hover {
+            color: $white;
+          }
+        }
+      }
+    }
+  }
+}
+
+.block-views-exposed-filter-blockblog-block-all-blogs {
+  .form-select {
+    ul {
+      li {
+        &:hover {
+          a {
+            color: $white;
+          }
+        }
+      }
+    }
+  }
+}

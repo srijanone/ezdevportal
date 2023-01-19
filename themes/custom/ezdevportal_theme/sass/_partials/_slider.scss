@@ -25,11 +25,11 @@
       @include banner-link;
       text-decoration: none;
       text-transform: uppercase;
-      padding-left: 50px;
-      padding-top: 10px;
-      background: url('../images/banner-arrow.png') left no-repeat;
       display: block;
       height: 44px;
+      svg{
+        margin-right: 5px;
+      }
     }
 
     .text-banner-left {
