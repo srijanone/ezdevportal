@@ -48,6 +48,11 @@
         color: $lightgrayhover;
         height: 27px;
 
+        svg {
+          margin-right: 10px;
+          margin-top: -9px;
+        }
+
         &.active {
           color: $black;
 
@@ -80,11 +85,8 @@
       a {
         @include form-label;
         color: $lightgray;
-
         &.active {
-          svg {
-            color: $black;
-          }
+         color: $black;
         }
       }
     }

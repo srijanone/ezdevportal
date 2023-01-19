@@ -27,13 +27,13 @@
   color: #333333;
 }
 
-.product-dashboard-navigation-main ul li a.product-detail-link.active {
+.product-dashboard-navigation-main ul li a.active {
   color: #333333;
 }
 
 /*login etc having button class*/
 .page-user-login .form-submit,
-.page-user-password .form-submit, 
+.page-user-password .form-submit,
 .page-user-register .form-submit,
 .button:hover,
 .button {
@@ -79,18 +79,20 @@
 .page-view-products-listing-page .tabs .nav-tabs .nav-item .nav-link:hover {
   border-bottom: 2px solid #333333;
 }
+
 .content-list-inner-wrap,
 .slider-background,
 .content-cards-centered-wrapper {
   background: #EAF1FF;
 }
+
 .dropdown-menu.notify-drop .drop-content li a,
 .d-notification i::before,
 .content-list .title,
 .content-cards-full .title,
 .region-featured-bottom-first .block-action-content-block .btn-subscribe,
 .content-cards-centered-wrapper .title {
-  color: #333333!important;
+  color: #333333 !important;
 }
 
 .views-field-field-blog-tags .btn-outline-secondary:hover {
@@ -105,20 +107,24 @@
   color: #6a6a6a;
 }
 
-.block-views-exposed-filter-blockblog-block-all-blogs .form-select ul li a{
+.block-views-exposed-filter-blockblog-block-all-blogs .form-select ul li a {
   color: #6c757d;
 }
+
 .block-views-exposed-filter-blockblog-block-all-blogs .form-select ul li:hover,
-.block-views-exposed-filter-blockblog-block-all-blogs .form-select ul li a:hover{
+.block-views-exposed-filter-blockblog-block-all-blogs .form-select ul li a:hover {
   background-color: #6c757d;
 }
-.notify-drop li.unread{
+
+.notify-drop li.unread {
   border-left: 4px solid #333333;
 }
-.nav-tabs li .nav-link{
+
+.nav-tabs li .nav-link {
   background: #eaf1ff;
   border-color: #eaf1ff;
 }
+
 .nav-tabs {
   border-bottom: 1px solid #eaf1ff;
 }
