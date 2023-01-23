@@ -79,7 +79,7 @@
 .page-view-products-listing-page .tabs .nav-tabs .nav-item .nav-link:hover {
   border-bottom: 2px solid #333333;
 }
-
+.featured-bottom,
 .content-list-inner-wrap,
 .slider-background,
 .content-cards-centered-wrapper {
@@ -88,19 +88,12 @@
 
 .dropdown-menu.notify-drop .drop-content li a,
 .d-notification i::before,
-.content-list .title,
-.content-cards-full .title,
-.region-featured-bottom-first .block-action-content-block .btn-subscribe,
-.content-cards-centered-wrapper .title {
+.region-featured-bottom-first .block-action-content-block .btn-subscribe{
   color: #333333 !important;
 }
 
 .views-field-field-blog-tags .btn-outline-secondary:hover {
   background: #6c757d;
-}
-
-.view-forum .views-field-nothing .like_dislike a {
-  border: 2px solid #333333;
 }
 
 .view-forum .views-field-nothing .like_dislike .count {
