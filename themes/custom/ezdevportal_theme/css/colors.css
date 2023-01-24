@@ -32,6 +32,10 @@
 }
 
 /*login etc having button class*/
+.developer-app-add-for-developer-form button[type=submit],
+.node--type-forum button[type=submit], 
+.node-forum-form button[type=submit], 
+.node-issue-form button[type=submit],
 .page-user-login .form-submit,
 .page-user-password .form-submit,
 .page-user-register .form-submit,
