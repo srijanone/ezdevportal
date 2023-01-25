@@ -195,13 +195,16 @@ class ActionContentBlock extends BlockBase implements ContainerFactoryPluginInte
       else {
         $path = Url::fromRoute('<front>');
       }
-
+      $cus_class = '';
+      if ($this->configuration[$i]['custom_class']) {
+        $cus_class = $this->configuration[$i]['custom_class'];
+      }
       $build[$i]['link'] = [
         '#type' => 'link',
         '#title' => $this->configuration[$i]['action_url_text'],
         "#weight" => 1,
         '#url' => $path,
-        '#attributes' => ['target' => '_blank', 'class' => 'btn-subscribe ' . $this->configuration[$i]['custom_class']],
+        '#attributes' => ['target' => '_blank', 'class' => 'btn-subscribe ' . $cus_class],
       ];
 
       $webform = $this->configuration[$i]['webform'];
@@ -212,7 +215,7 @@ class ActionContentBlock extends BlockBase implements ContainerFactoryPluginInte
         $build[$i]['webform'] = [
           '#type' => 'webform',
           '#webform' => $webform,
-          '#prefix' => '<div class="' . $this->configuration[$i]['custom_class'] . '">',
+          '#prefix' => '<div class="' . $cus_class . '">',
           '#suffix' => '</div>',
         ];
       }
