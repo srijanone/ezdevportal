@@ -10,7 +10,6 @@ $info = [
   // Available colors and color labels used in theme.
   'fields' => [
     'sliderarrow' => t('Slider Arrow'),
-    'explorebtnbg' => t('Explore Button Background'),
     'explorebtntext' => t('Explore Button Text'),
     'trendicon' => t('Trend Icon'),
     'contentlisttitle' => t('Content List Title'),
@@ -33,6 +32,7 @@ $info = [
     'contentcardscenteredbg' => t('Content Cards Centered Background'),
     'contentcardscenteredtitle' => t('Content Cards Centered Title'),
     'likebottomtext' => t('Like Bottom Text'),
+    'footerbg' => t('Footer Background'),
   ],
   // Pre-defined color schemes.
   'schemes' => [
@@ -40,14 +40,13 @@ $info = [
       'title' => t('Standard (default)'),
       'colors' => [
         'sliderarrow' => '#333333',
-        'explorebtnbg' => '#ffffff',
         'explorebtntext' => '#333333',
         'trendicon' => '#333333',
         'contentcardcenteredtitle' => '#352f2f',
         'contentcardcenteredtitlecardtitle' => '#333333',
         'menulinkhover' => '#333333',
         'button' => '#333333',
-        'subscribebutton' => '#ffffff',
+        'subscribebutton' => '#333333',
         'checkboxes' => '#333333',
         'activelinksinproductpage' => '#333333',
         'discovermoretagscolor' => '#6c757d',
@@ -62,14 +61,14 @@ $info = [
         'contentcardscenteredbg' => '#eaf1ff',
         'contentcardscenteredtitle' => '#333333',
         'likebottomtext' => '#6a6a6a',
+        'footerbg' => '#eaf1ff',
       ],
     ],
     'blue' => [
       'title' => t('Blue'),
       'colors' => [
         'sliderarrow' => '#416AD9',
-        'explorebtnbg' => '#416AD9',
-        'explorebtntext' => '#ffffff',
+        'explorebtntext' => '#416AD9',
         'trendicon' => '#416AD9',
         'contentcardcenteredtitle' => '#416AD9',
         'contentcardcenteredtitlecardtitle' => '#416AD9',
@@ -90,6 +89,7 @@ $info = [
         'contentcardscenteredbg' => '#F5F5F5',
         'contentcardscenteredtitle' => '#ffffff',
         'likebottomtext' => '#416AD9',
+        'footerbg' => '#f5f5f5',
       ],
     ],
   ],
