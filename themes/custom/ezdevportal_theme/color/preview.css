@@ -86,6 +86,7 @@ a {
   padding: 0.6em 1em 0.4em;
   position: relative;
 }
+
 .color-preview-main-menu-links a:hover {
   border-bottom: 3px solid #333;
 }
@@ -340,7 +341,8 @@ a {
   border-radius: 0.25rem;
   cursor: pointer;
 }
-.color-preview-tags li:hover{
- 
+
+.color-preview-tags li:hover {
+
   color: #fff;
 }
