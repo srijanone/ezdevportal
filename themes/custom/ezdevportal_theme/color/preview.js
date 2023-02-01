@@ -21,52 +21,40 @@
             var $colorPreview = $form.find('.color-preview');
             var $colorPalette = $form.find('.js-color-palette');
 
-            $colorPreview.css('backgroundColor', $colorPalette.find('input[name="palette[bg]"]').val());
-
-            $colorPreview.find('.color-preview-page-title, .color-preview-main h2, .color-preview .preview-content').css('color', $colorPalette.find('input[name="palette[text]"]').val());
-            $colorPreview.find('.color-preview-content a').css('color', $colorPalette.find('input[name="palette[link]"]').val());
-            $colorPreview.find('.preview-button').css('background-color', $colorPalette.find('input[name="palette[button]"]').val());
-            $colorPreview.find('.preview-button').css('border-color', $colorPalette.find('input[name="palette[button]"]').val());
-            $colorPreview.find('.preview-button').hover(function () {
-                    $(this).css('background-color', $colorPalette.find('input[name="palette[buttonhover]"]').val());
-                },
-                function () {
-                    $(this).css('background-color', $colorPalette.find('input[name="palette[button]"]').val());
-                });
-
-            var $colorPreviewBlock = $colorPreview.find('.color-preview-sidebar .color-preview-block');
-            $colorPreviewBlock.css('background-color', $colorPalette.find('input[name="palette[sidebar]"]').val());
-            $colorPreviewBlock.css('border-color', $colorPalette.find('input[name="palette[sidebarborders]"]').val());
-
-            $colorPreview.find('.color-preview-footer-wrapper').css('background-color', $colorPalette.find('input[name="palette[footer]"]').val());
-
-            var gradientStart = $colorPalette.find('input[name="palette[top]"]').val();
-            var gradientEnd = $colorPalette.find('input[name="palette[bottom]"]').val();
+            $colorPreview.find('.color-preview-tags li').hover(function (){
+                $(this).css('background-color', $colorPalette.find('input[name="palette[discovermoretagsbghover]"]').val());
+                $(this).css('color', $colorPalette.find('input[name="palette[discovermoretagshover]"]').val());
+            },
+            function (){
+                $(this).css('background-color', $colorPalette.find('input[name="palette[discovermoretagsbg]"]').val());
+                $(this).css('color', $colorPalette.find('input[name="palette[discovermoretagscolor]"]').val());
+            });
+            $colorPreview.find('.color-preview-main-menu-links a').hover(function (){
+                $(this).css('border-color', $colorPalette.find('input[name="palette[menulinkhover]"]').val());
+            },
+            function (){
+                $(this).css('border-color', $colorPalette.find('input[name="palette[menulinkhover]"]').val());
+            });
 
             $colorPreview.find('.color-preview-header-top').css('background-color', $colorPalette.find('input[name="palette[top]"]').val());
             $colorPreview.find('.color-preview-header').css('background-color', $colorPalette.find('input[name="palette[bottom]"]').val());
-
-            $colorPreview.find('.color-preview-site-name').css('color', $colorPalette.find('input[name="palette[titleslogan]"]').val());
-            var menulinkcolor = $colorPalette.find('input[name="palette[menulink]"]').val();
-            $colorPreview.find('.color-preview-main-menu-links li a').css('color', $colorPalette.find('input[name="palette[menulink]"]').val());
-            var cardborder = $colorPalette.find('input[name="palette[cardborder]"]').val();
-            $colorPreview.find('.color-preview-card .color-preview-block').css('border-color', $colorPalette.find('input[name="palette[cardborder]"]').val());
-            $colorPreview.find('.color-preview-card .color-preview-card-footer').css('border-color', $colorPalette.find('input[name="palette[cardborder]"]').val());
-            var blockheader = $colorPalette.find('input[name="palette[blockheadercolor]"]').val();
-            $colorPreview.find('.color-preview-page-title').css('color', $colorPalette.find('input[name="palette[blockheadercolor]"]').val());
-            var bannerheader = $colorPalette.find('input[name="palette[bannerheadercolor]"]').val();
-            $colorPreview.find('.color-preview-banner-container h2').css('color', $colorPalette.find('input[name="palette[bannerheadercolor]"]').val());
-            var bannerpara = $colorPalette.find('input[name="palette[bannersecondarycolor]"]').val();
-            $colorPreview.find('.color-preview-banner-container p').css('color', $colorPalette.find('input[name="palette[bannersecondarycolor]"]').val());
-            var globallinks = $colorPalette.find('input[name="palette[globallinks]"]').val();
-            $colorPreview.find('.preview-content a').css('color', $colorPalette.find('input[name="palette[globallinks]"]').val());
-            var button1 = $colorPalette.find('input[name="palette[button1]"]').val();
-            $colorPreview.find('.preview-button1').css('background', $colorPalette.find('input[name="palette[button1]"]').val());
-            var button2 = $colorPalette.find('input[name="palette[button2]"]').val();
-            $colorPreview.find('.preview-button2').css('background', $colorPalette.find('input[name="palette[button2]"]').val());
-            var footerlink = $colorPalette.find('input[name="palette[footermenulinks]"]').val();
-            $colorPreview.find('.footer li a').css('color', $colorPalette.find('input[name="palette[footermenulinks]"]').val());
-            
+            var headermenulinkhoverborder = $colorPalette.find('input[name="palette[menulinkhover]"]').val();
+            $colorPreview.find('.color-preview-main-menu-links a:before').css('border-color', $colorPalette.find('input[name="palette[menulinkhover]"]').val());
+            var cardexploretextcolor = $colorPalette.find('input[name="palette[explorebtntext]"]').val();
+            $colorPreview.find('.color-preview-card-footer .explore a').css('color', $colorPalette.find('input[name="palette[explorebtntext]"]').val());
+            var buttons = $colorPalette.find('input[name="palette[button]"]').val();
+            $colorPreview.find('.preview-button1').css('background', $colorPalette.find('input[name="palette[button]"]').val());
+            var subscribebuttons = $colorPalette.find('input[name="palette[subscribebutton]"]').val();
+            $colorPreview.find('.preview-button2').css('color', $colorPalette.find('input[name="palette[subscribebutton]"]').val());
+            var tagstext = $colorPalette.find('input[name="palette[discovermoretagscolor]"]').val();
+            $colorPreview.find('.color-preview-tags li').css('color', $colorPalette.find('input[name="palette[discovermoretagscolor]"]').val());
+            var tagsborder = $colorPalette.find('input[name="palette[discovermoretagsbg]"]').val();
+            $colorPreview.find('.color-preview-tags li').css('border-color', $colorPalette.find('input[name="palette[discovermoretagscolor]"]').val());
+            var tagsbg = $colorPalette.find('input[name="palette[discovermoretagsbghover]"]').val();
+            $colorPreview.find('.color-preview-tags li:hover').css('background', $colorPalette.find('input[name="palette[discovermoretagsbghover]"]').val());
+            var footerbg = $colorPalette.find('input[name="palette[footerbg]"]').val();
+            $colorPreview.find('.color-preview-footer-wrapper').css('background', $colorPalette.find('input[name="palette[footerbg]"]').val());
+          
         }
     };
 })(jQuery, Drupal, drupalSettings);
