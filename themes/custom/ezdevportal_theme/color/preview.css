@@ -86,23 +86,9 @@ a {
   padding: 0.6em 1em 0.4em;
   position: relative;
 }
-
-.color-preview-main-menu-links a:before {
-  border-bottom: 3px solid #333333;
+.color-preview-main-menu-links a:hover {
+  border-bottom: 3px solid #333;
 }
-
-.color-preview-main-menu-links li:hover a::before {
-  width: 100%;
-}
-
-.color-preview-main-menu-links a:before {
-  content: " ";
-  position: absolute;
-  top: 30px;
-  left: 0px;
-  height: auto;
-}
-
 
 .color-preview-main-menu-links {
   font-size: 0.929em;
