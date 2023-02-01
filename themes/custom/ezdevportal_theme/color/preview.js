@@ -21,22 +21,20 @@
             var $colorPreview = $form.find('.color-preview');
             var $colorPalette = $form.find('.js-color-palette');
 
-            $colorPreview.css('backgroundColor', $colorPalette.find('input[name="palette[bg]"]').val());
-
-            $colorPreview.find('.color-preview-page-title, .color-preview-main h2, .color-preview .preview-content').css('color', $colorPalette.find('input[name="palette[text]"]').val());
-            $colorPreview.find('.color-preview-content a').css('color', $colorPalette.find('input[name="palette[link]"]').val());
-            $colorPreview.find('.preview-button').css('background-color', $colorPalette.find('input[name="palette[button]"]').val());
-            $colorPreview.find('.preview-button').css('border-color', $colorPalette.find('input[name="palette[button]"]').val());
-            $colorPreview.find('.preview-button').hover(function () {
-                    $(this).css('background-color', $colorPalette.find('input[name="palette[buttonhover]"]').val());
-                },
-                function () {
-                    $(this).css('background-color', $colorPalette.find('input[name="palette[button]"]').val());
-                });
-
-            var $colorPreviewBlock = $colorPreview.find('.color-preview-sidebar .color-preview-block');
-            $colorPreviewBlock.css('background-color', $colorPalette.find('input[name="palette[sidebar]"]').val());
-            $colorPreviewBlock.css('border-color', $colorPalette.find('input[name="palette[sidebarborders]"]').val());
+            $colorPreview.find('.color-preview-tags li').hover(function (){
+                $(this).css('background-color', $colorPalette.find('input[name="palette[discovermoretagsbghover]"]').val());
+                $(this).css('color', $colorPalette.find('input[name="palette[discovermoretagshover]"]').val());
+            },
+            function (){
+                $(this).css('background-color', $colorPalette.find('input[name="palette[discovermoretagsbg]"]').val());
+                $(this).css('color', $colorPalette.find('input[name="palette[discovermoretagscolor]"]').val());
+            });
+            $colorPreview.find('.color-preview-main-menu-links a').hover(function (){
+                $(this).css('border-color', $colorPalette.find('input[name="palette[menulinkhover]"]').val());
+            },
+            function (){
+                $(this).css('border-color', $colorPalette.find('input[name="palette[menulinkhover]"]').val());
+            });
 
             $colorPreview.find('.color-preview-header-top').css('background-color', $colorPalette.find('input[name="palette[top]"]').val());
             $colorPreview.find('.color-preview-header').css('background-color', $colorPalette.find('input[name="palette[bottom]"]').val());
