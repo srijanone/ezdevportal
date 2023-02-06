@@ -20,7 +20,7 @@
         "drupal/admin_toolbar": "^3.0",
         "drupal/adminimal_theme": "^1.6",
         "drupal/google_analytics": "^4.0",
-        "drupal/google_analytics_reports": "^3.0",
+        "drupal/google_analytics_reports": "^4.0",
         "drupal/bootstrap_barrio": "^5.5",
         "drupal/advagg": "^6.0",
         "drupal/autologout": "^1.3",
