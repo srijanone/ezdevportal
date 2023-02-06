@@ -197,10 +197,6 @@ a {
   }
 }
 
-.table-responsive {
-  overflow-x: inherit;
-}
-
 .node-forum-edit-form {
   .form-check {
     margin-left: 12px;
@@ -212,6 +208,17 @@ a {
     display: none;
   }
 }
-.back-btn{
+
+.back-btn {
   margin-bottom: 10px;
+}
+
+.js {
+  td {
+    .dropbutton-multiple {
+      .dropbutton-widget {
+        position: relative;
+      }
+    }
+  }
 }
