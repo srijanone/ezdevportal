@@ -770,7 +770,7 @@ display:
           distinct: false
           replica: false
           query_tags: {  }
-      css_class: ''
+      css_class: container
       use_ajax: false
       group_by: false
       show_admin_links: true

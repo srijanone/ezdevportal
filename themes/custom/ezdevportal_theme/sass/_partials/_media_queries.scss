@@ -29,11 +29,20 @@
       height: auto;
     }
   }
-  .node-form{
-    .form-actions{
+
+  .node-form.node-forum-form,
+  .node-form.node-issue-form {
+    .form-actions {
+      margin: 0 20px 0 0;
+    }
+  }
+
+  .node-form {
+    .form-actions {
       margin: 0 20px;
     }
   }
+
   .button {
     width: 100% !important;
     margin-bottom: 15px;
@@ -66,6 +75,10 @@
   }
 
   body {
+    .ui-widget.ui-widget-content {
+      width: 100% !important;
+    }
+
     &.page-user-register {
       h1 {
         margin-top: 30px;
@@ -208,7 +221,8 @@
     .region-featured-bottom-first {
       margin-top: 40px;
       flex-direction: column;
-      margin:auto 10px;
+      margin: auto 10px;
+
       .block-social-media-links-block {
         margin-bottom: 24px;
         margin-top: 32px;
@@ -257,12 +271,14 @@
   }
 
   .view-products-listing-page {
+
     .form-select,
     .form-control {
       width: 160px;
     }
-    .form-submit{
-      width:auto;
+
+    .form-submit {
+      width: auto;
     }
   }
 
