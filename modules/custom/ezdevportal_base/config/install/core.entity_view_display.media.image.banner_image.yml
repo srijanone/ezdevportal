@@ -1,0 +1,40 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.banner_image
+    - field.field.media.image.field_media_image
+    - media.type.image
+  module:
+    - layout_builder
+    - svg_image
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: media.image.banner_image
+targetEntityType: media
+bundle: image
+mode: banner_image
+content:
+  field_media_image:
+    type: image
+    label: visually_hidden
+    settings:
+      image_link: ''
+      image_style: ''
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  breadcrumbs: true
+  created: true
+  name: true
+  thumbnail: true
+  uid: true

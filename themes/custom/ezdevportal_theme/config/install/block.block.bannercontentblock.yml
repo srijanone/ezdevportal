@@ -1,0 +1,28 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - ezdevportal_base
+    - system
+  theme:
+    - ezdevportal_theme
+id: bannercontentblock
+theme: ezdevportal_theme
+region: content
+weight: -10
+provider: null
+plugin: banner_content_block
+settings:
+  id: banner_content_block
+  label: 'Contact Us Banner Content '
+  label_display: '0'
+  provider: ezdevportal_base
+  banner_title: 'Contact Us'
+  banner_text: 'Get in touch with our Support Team.'
+  banner_image: {  }
+  banner_height: 307px
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: "/form/contact-us\r\n\r\n"

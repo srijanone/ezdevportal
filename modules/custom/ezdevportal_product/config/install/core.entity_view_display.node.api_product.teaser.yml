@@ -1,0 +1,138 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.base_field_override.node.api_product.title
+    - core.entity_view_mode.node.teaser
+    - field.field.node.api_product.body
+    - field.field.node.api_product.field_api_specifications
+    - field.field.node.api_product.field_banner_image
+    - field.field.node.api_product.field_blogs
+    - field.field.node.api_product.field_environment
+    - field.field.node.api_product.field_faqs
+    - field.field.node.api_product.field_listing_image
+    - field.field.node.api_product.field_product_attributes
+    - field.field.node.api_product.field_product_available_for
+    - field.field.node.api_product.field_product_category
+    - field.field.node.api_product.field_product_version
+    - field.field.node.api_product.field_summary
+    - field.field.node.api_product.field_use_cases
+    - field.field.node.api_product.layout_builder__layout
+    - node.type.api_product
+  module:
+    - layout_builder
+    - layout_discovery
+    - text
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: true
+    allow_custom: false
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components:
+          d795b804-f4e6-4ee8-a543-07a69ee4e099:
+            uuid: d795b804-f4e6-4ee8-a543-07a69ee4e099
+            region: content
+            configuration:
+              id: 'extra_field_block:node:api_product:links'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+            weight: 0
+            additional: {  }
+          d802149d-452d-4419-845a-feaf45c2c2f9:
+            uuid: d802149d-452d-4419-845a-feaf45c2c2f9
+            region: content
+            configuration:
+              id: 'field_block:node:api_product:field_listing_image'
+              label: 'Product Image'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: media_thumbnail
+                label: hidden
+                settings:
+                  image_link: ''
+                  image_style: ''
+                third_party_settings: {  }
+            weight: 1
+            additional: {  }
+          1bcfdddc-9fe6-419d-91a3-e11132ee05ec:
+            uuid: 1bcfdddc-9fe6-419d-91a3-e11132ee05ec
+            region: content
+            configuration:
+              id: 'field_block:node:api_product:title'
+              label: Title
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: string
+                label: hidden
+                settings:
+                  link_to_entity: false
+                third_party_settings: {  }
+            weight: 2
+            additional: {  }
+          1692632c-9fda-4292-9aaa-f85dbf5b435c:
+            uuid: 1692632c-9fda-4292-9aaa-f85dbf5b435c
+            region: content
+            configuration:
+              id: 'field_block:node:api_product:body'
+              label: Description
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: text_trimmed
+                label: hidden
+                settings:
+                  trim_length: 600
+                third_party_settings: {  }
+            weight: 3
+            additional: {  }
+        third_party_settings: {  }
+id: node.api_product.teaser
+targetEntityType: node
+bundle: api_product
+mode: teaser
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  breadcrumbs: true
+  field_api_specifications: true
+  field_banner_image: true
+  field_blogs: true
+  field_environment: true
+  field_faqs: true
+  field_listing_image: true
+  field_product_attributes: true
+  field_product_available_for: true
+  field_product_category: true
+  field_product_version: true
+  field_summary: true
+  field_use_cases: true
+  layout_builder__layout: true

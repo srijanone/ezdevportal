@@ -1,0 +1,214 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_display.node.api_document.full
+    - core.entity_view_display.node.api_product.full
+    - core.entity_view_display.node.blog_post.full
+    - core.entity_view_display.node.faq.default
+    - core.entity_view_display.node.forum.full
+    - core.entity_view_display.node.issue.full
+    - core.entity_view_display.node.landing_page.full
+    - core.entity_view_display.node.use_case.full
+    - filter.format.basic_html
+    - filter.format.full_html
+    - media.type.audio
+    - media.type.document
+    - media.type.image
+    - media.type.remote_video
+    - media.type.video
+    - node.type.api_document
+    - node.type.api_product
+    - node.type.blog_post
+    - node.type.faq
+    - node.type.forum
+    - node.type.issue
+    - node.type.landing_page
+    - node.type.use_case
+    - rest.resource.notifications_update_widget
+    - taxonomy.vocabulary.api_product_categories
+    - taxonomy.vocabulary.environments
+    - taxonomy.vocabulary.forums
+    - taxonomy.vocabulary.icons
+    - taxonomy.vocabulary.issue_status
+    - taxonomy.vocabulary.issue_type
+    - taxonomy.vocabulary.product_available_for
+    - taxonomy.vocabulary.tags
+    - taxonomy.vocabulary.units
+    - workflows.workflow.content
+  module:
+    - comment
+    - content_moderation
+    - field_permissions
+    - filter
+    - google_analytics_reports
+    - layout_builder
+    - media
+    - menu_item_role_access
+    - node
+    - path
+    - rest
+    - system
+    - taxonomy
+    - webform
+id: site_admin
+label: 'Site Admin'
+weight: 4
+is_admin: null
+permissions:
+  - 'access content overview'
+  - 'access google analytics reports'
+  - 'access media overview'
+  - 'access taxonomy overview'
+  - 'administer menu'
+  - 'administer menu_item_role_access'
+  - 'administer permissions'
+  - 'administer taxonomy'
+  - 'administer taxonomy'
+  - 'administer users'
+  - 'cancel account'
+  - 'change own username'
+  - 'configure all api_document node layout overrides'
+  - 'configure all api_product node layout overrides'
+  - 'configure all blog_post node layout overrides'
+  - 'configure all faq node layout overrides'
+  - 'configure all forum node layout overrides'
+  - 'configure all issue node layout overrides'
+  - 'configure all landing_page node layout overrides'
+  - 'configure all use_case node layout overrides'
+  - 'configure any layout'
+  - 'configure editable api_document node layout overrides'
+  - 'configure editable api_product node layout overrides'
+  - 'configure editable blog_post node layout overrides'
+  - 'configure editable faq node layout overrides'
+  - 'configure editable forum node layout overrides'
+  - 'configure editable issue node layout overrides'
+  - 'configure editable landing_page node layout overrides'
+  - 'configure editable use_case node layout overrides'
+  - 'create and edit custom blocks'
+  - 'create api_document content'
+  - 'create api_product content'
+  - 'create audio media'
+  - 'create blog_post content'
+  - 'create document media'
+  - 'create faq content'
+  - 'create field_user_contact_no'
+  - 'create field_user_country'
+  - 'create field_user_first_name'
+  - 'create field_user_job_title'
+  - 'create field_user_last_name'
+  - 'create field_user_organization'
+  - 'create field_user_website'
+  - 'create forum content'
+  - 'create image media'
+  - 'create issue content'
+  - 'create landing_page content'
+  - 'create media'
+  - 'create remote_video media'
+  - 'create terms in api_product_categories'
+  - 'create terms in environments'
+  - 'create terms in forums'
+  - 'create terms in icons'
+  - 'create terms in issue_status'
+  - 'create terms in issue_type'
+  - 'create terms in product_available_for'
+  - 'create terms in tags'
+  - 'create terms in units'
+  - 'create url aliases'
+  - 'create use_case content'
+  - 'create video media'
+  - 'delete any api_document content'
+  - 'delete any api_product content'
+  - 'delete any audio media'
+  - 'delete any blog_post content'
+  - 'delete any document media'
+  - 'delete any faq content'
+  - 'delete any forum content'
+  - 'delete any image media'
+  - 'delete any issue content'
+  - 'delete any landing_page content'
+  - 'delete any media'
+  - 'delete any remote_video media'
+  - 'delete any use_case content'
+  - 'delete any video media'
+  - 'delete media'
+  - 'delete own api_document content'
+  - 'delete own api_product content'
+  - 'delete own audio media'
+  - 'delete own blog_post content'
+  - 'delete own document media'
+  - 'delete own faq content'
+  - 'delete own forum content'
+  - 'delete own image media'
+  - 'delete own issue content'
+  - 'delete own landing_page content'
+  - 'delete own remote_video media'
+  - 'delete own use_case content'
+  - 'delete own video media'
+  - 'delete terms in api_product_categories'
+  - 'delete terms in environments'
+  - 'delete terms in forums'
+  - 'delete terms in icons'
+  - 'delete terms in issue_status'
+  - 'delete terms in issue_type'
+  - 'delete terms in product_available_for'
+  - 'delete terms in tags'
+  - 'delete terms in units'
+  - 'edit any api_document content'
+  - 'edit any api_product content'
+  - 'edit any audio media'
+  - 'edit any blog_post content'
+  - 'edit any document media'
+  - 'edit any faq content'
+  - 'edit any forum content'
+  - 'edit any image media'
+  - 'edit any issue content'
+  - 'edit any landing_page content'
+  - 'edit any remote_video media'
+  - 'edit any use_case content'
+  - 'edit any video media'
+  - 'edit menu_item_role_access'
+  - 'edit own api_document content'
+  - 'edit own api_product content'
+  - 'edit own audio media'
+  - 'edit own blog_post content'
+  - 'edit own comments'
+  - 'edit own document media'
+  - 'edit own faq content'
+  - 'edit own field_user_contact_no'
+  - 'edit own field_user_country'
+  - 'edit own field_user_first_name'
+  - 'edit own field_user_job_title'
+  - 'edit own field_user_last_name'
+  - 'edit own field_user_organization'
+  - 'edit own field_user_website'
+  - 'edit own forum content'
+  - 'edit own image media'
+  - 'edit own issue content'
+  - 'edit own landing_page content'
+  - 'edit own remote_video media'
+  - 'edit own use_case content'
+  - 'edit own video media'
+  - 'edit terms in api_product_categories'
+  - 'edit terms in environments'
+  - 'edit terms in forums'
+  - 'edit terms in icons'
+  - 'edit terms in issue_status'
+  - 'edit terms in issue_type'
+  - 'edit terms in product_available_for'
+  - 'edit terms in tags'
+  - 'edit terms in units'
+  - 'post comments'
+  - 'restful post notifications_update_widget'
+  - 'select account cancellation method'
+  - 'update any media'
+  - 'update media'
+  - 'use content transition create_new_draft'
+  - 'use content transition publish'
+  - 'use content transition review'
+  - 'use content transition unpublish'
+  - 'use text format basic_html'
+  - 'use text format full_html'
+  - 'view any unpublished content'
+  - 'view any webform submission'
+  - 'view own unpublished media'

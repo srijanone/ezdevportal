@@ -1,0 +1,92 @@
+{
+    "_links": {
+        "self": {
+            "href": ""
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/file\/file\/uid": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json"
+            }
+        ]
+    },
+    "fid": [
+        {
+            "value": 45
+        }
+    ],
+    "uuid": [
+        {
+            "value": "a204712e-b05e-4113-8fc4-452014ff8754"
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/file\/file\/uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "3f6114f4-7508-4d03-a8d9-d921300515a8"
+                    }
+                ]
+            }
+        ]
+    },
+    "filename": [
+        {
+            "value": "Usecases-page-icon.png"
+        }
+    ],
+    "uri": [
+        {
+            "value": "public:\/\/2021-11\/Usecases-page-icon_1_0.png",
+            "url": "\/sites\/default\/files\/2021-11\/Usecases-page-icon_1_0.png"
+        }
+    ],
+    "filemime": [
+        {
+            "value": "image\/png"
+        }
+    ],
+    "filesize": [
+        {
+            "value": 1587
+        }
+    ],
+    "status": [
+        {
+            "value": true
+        }
+    ],
+    "created": [
+        {
+            "value": "2021-11-23T09:18:17+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "changed": [
+        {
+            "value": "2021-11-23T09:18:33+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "data": [
+        {
+            "value": "iVBORw0KGgoAAAANSUhEUgAAACsAAAArCAYAAADhXXHAAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAXISURBVHgBvVlbUuJMFG4QfbL8s4OJKzDeqnz7wwqEFYgrUFYgrkBmBeAKBlcA82aVl2FWMO0KhnmzvDHfF06nmpiQDjCcqpjQ16\/P\/bQlNYP29vYu8GqUSiVf\/WMaj8car+7j4+Nl1phSVgeAXgHkORfAQt\/VvyUPewV4n2CvNgA3nWcGQeDt7++PDw4OWmqFBAa1uC\/3T+uvZMzjKSmaL1xArYiwnw8Oq0qlwv0Hyf5Kznzqq1oV5e1VyZlcvb+\/H6gVEcTvr62t\/crqz+OsOjw8DN7f32tQ+hZ0OPz4+Ajw3YZu1SA2D99d2Sgsl8thcj7G94YgtQTKBYvNfLwaeFoEincNTxtPKC6tS+B4f8MzwgH+mLno\/w+cukB\/\/eHhocc2fPft9XHA5t3dndNhcsHKJtFG5KgAZfu5NewMzxBtu8n5Aq5h1gA9qTkpC+yQ+rq5uekqvoib1DlIXJtGuiBauA0QB2qoOSmTs29vb2o0GikXwsHaANWncYCTaUNiJw9XOGVAmFNfVA0CLNKHYW3jOxcxPcbR0dH2y8sLjS6AHp6oSeT7ubGx0bu9vdXW8OsEWDeOKAedNSRRZSqy2CIXQG1wjrrMsPkkOj5F9CpqTnIGq4TbibbYi4uP7OAzJEehGvQCO5BO0z7UIlQEbGR0aR3kJvqu8Knx1MG9HtoY\/S5Ej+kJYnHTvWHMuSpI5SKDaXT2kySAUOCk5jd8sjYA0b5tHvwMcIgzSkIVpKWoAXUT0Y0W3cGYH+AkvxlANKUBdzUwE4TjHTUHOYOF3kUWn9UvOcQ2gNKozgDoEm0ttUQqwlmVcEExQaTkokkrfzN7ghp4aG7IkOEy8oMirotqcGa3QbynfKOdxhXafdRLtEffUmmEakEqxFkxkCy6WV9f\/2Thr6+vVAtPLYGK6CzFGM4Y8jtNTaDD9AirBStqcGW3QQ1sv+tluKMpoFAPppFzZV5F1IAcmrVJDYepZfTF1bGdchalImqg1SQv\/URMoBEMAvkZOX1wj\/U\/59AAY0\/AigK\/mTv8gcdoFwnFn8BS3Ni8kNOWFG9ogaHXGEkUoxuLxpmAILnDDsb9j+Zd133KCaA+gPaXcQPDXIERjw\/WbEsbU8chIl4geUbAGs91zUoKUBpAc96QaIhrYL2I23jbOWvUhtxC0w+z6HRdMwYLcC08Hnzl7vPzs28cOvNYqgX6mFhz03bafZTku6xwd6TJJyA18XpauRHXvybDMsFKGX2CQU36SssFeQDNqpU3JQTIdpbk3+37BJHKDx7WOjwjGA1NQ9ROpQsORZCNrP4ILMtlvDQATGX2AECg5GzVbMaEGgCoewMzDvM5b8RxdpkCD+HBuDp4WmpSwn8i9sPwlKyn1eQWiKpIDh9LwTnAuMuKcJHZ\/WlyIXLKBipjAy6Usq9O4x4O91M2TCW5MqIfbkhTV00kyQA0wpt7HYMJlF455AgUdgMB5EmkGiWB0gAJikWgvSHAcG7IOwKoyFSUgw3QFtozwJ5KeX5NlWFyBInUZd1L3k8Ic8IyDQcfQxPXJcH204CSC9i8mswBmHyLZJ7wLtFXAziT8DEqXrourRzIGJboLmnK0KizX5S4E5lwg6fnCtQC3FUTEcZ3AzwA6zDoWx9GVjXBQQBpXisZQ6UE4D18a8n61tbWIAnWx6I3psHO7sVt5QK1iZ6FQcWUM\/jdo7QImK4P7fEa5v6LJGun9hliBMt0yhQHF2ch6ALUTOMfgDs2a0AHGa30opExt7qlf+UmvO5UDkRwEgHP+X8JNQ14OG96SDIRTGcNoE4xgeZdVsY91hSxhIH+hvSddD+YExKoGI1z0jILbF58pmh5I\/g1Z1xs0XLhrPHZYXSD7lYXvZlxBUsamltuV6KRwAto6O83GuqigF2Tb6Zx3jz\/uYEKMOBUUTjS3\/axhol+qbWZyYETtOMEVrIpLhzIP9YKEzxJCxckBMxc42LWWJPtpZD+C5ivNW2G9NNpAAAAAElFTkSuQmCC"
+        }
+    ]
+}

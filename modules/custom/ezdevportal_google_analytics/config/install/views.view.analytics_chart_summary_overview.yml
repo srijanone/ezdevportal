@@ -1,0 +1,1705 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - charts
+    - google_analytics_reports
+    - user
+id: analytics_chart_summary_overview
+label: 'Google Analytics Reports'
+module: views
+description: 'Display various statistic information about the portal from Google Analytics.'
+tag: ''
+base_table: google_analytics
+base_field: ''
+display:
+  default:
+    id: default
+    display_title: Default
+    display_plugin: default
+    position: 0
+    display_options:
+      title: 'Google Analytics Reports'
+      fields:
+        sessions:
+          id: sessions
+          table: google_analytics
+          field: sessions
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: standard
+          label: Sessions
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+        totalUsers:
+          id: totalUsers
+          table: google_analytics
+          field: totalUsers
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: standard
+          label: 'Total users'
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+        screenPageViews:
+          id: screenPageViews
+          table: google_analytics
+          field: screenPageViews
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: standard
+          label: Views
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+        sessionsPerUser:
+          id: sessionsPerUser
+          table: google_analytics
+          field: sessionsPerUser
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: standard
+          label: 'Sessions per user'
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+        userEngagementDuration:
+          id: userEngagementDuration
+          table: google_analytics
+          field: userEngagementDuration
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: standard
+          label: 'User engagement'
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+        engagementRate:
+          id: engagementRate
+          table: google_analytics
+          field: engagementRate
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: standard
+          label: 'Engagement rate'
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+        newUsers:
+          id: newUsers
+          table: google_analytics
+          field: newUsers
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: standard
+          label: 'New users'
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+      pager:
+        type: mini
+        options:
+          offset: 0
+          items_per_page: 10
+          total_pages: null
+          id: 0
+          tags:
+            next: ››
+            previous: ‹‹
+          expose:
+            items_per_page: false
+            items_per_page_label: 'Items per page'
+            items_per_page_options: '5, 10, 25, 50'
+            items_per_page_options_all: false
+            items_per_page_options_all_label: '- All -'
+            offset: false
+            offset_label: Offset
+      exposed_form:
+        type: basic
+        options:
+          submit_button: Apply
+          reset_button: false
+          reset_button_label: Reset
+          exposed_sorts_label: 'Sort by'
+          expose_sort_order: true
+          sort_asc_label: Asc
+          sort_desc_label: Desc
+      access:
+        type: perm
+        options:
+          perm: 'access google analytics reports'
+      cache:
+        type: tag
+        options: {  }
+      empty: {  }
+      sorts: {  }
+      arguments: {  }
+      filters:
+        start_date:
+          value:
+            type: offset
+            value: '-31 day'
+            min: ''
+            max: ''
+          id: start_date
+          table: google_analytics
+          field: start_date
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: '='
+          group: '1'
+          exposed: false
+          expose:
+            operator_id: false
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            placeholder: ''
+            min_placeholder: ''
+            max_placeholder: ''
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: 0
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          plugin_id: google_analytics_date
+        end_date:
+          value:
+            type: offset
+            value: '-1 day'
+            min: ''
+            max: ''
+          id: end_date
+          table: google_analytics
+          field: end_date
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: '='
+          group: '1'
+          exposed: false
+          expose:
+            operator_id: false
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            placeholder: ''
+            min_placeholder: ''
+            max_placeholder: ''
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: 0
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          plugin_id: google_analytics_date
+      style:
+        type: chart
+        options:
+          grouping: {  }
+          chart_settings:
+            library: chartjs
+            type: bar
+            fields:
+              label: pageTitle
+              stacking: false
+              data_providers:
+                screenPageViews:
+                  enabled: true
+                  color: '#006fb0'
+                  weight: 3
+                fullPageUrl:
+                  enabled: false
+                  color: '#f07c33'
+                  weight: 3
+                pageTitle:
+                  enabled: false
+                  color: '#342e9c'
+                  weight: 3
+            display:
+              title: ''
+              title_position: out
+              data_labels: false
+              data_markers: false
+              legend_position: right
+              background: ''
+              three_dimensional: 0
+              polar: 0
+              tooltips: true
+              dimensions:
+                width: ''
+                width_units: '%'
+                height: ''
+                height_units: ''
+              gauge:
+                max: '100'
+                min: '0'
+                green_from: '85'
+                green_to: '100'
+                yellow_from: '50'
+                yellow_to: '85'
+                red_from: '0'
+                red_to: '50'
+            xaxis:
+              title: ''
+              labels_rotation: '0'
+            yaxis:
+              title: ''
+              min: ''
+              max: ''
+              prefix: ''
+              suffix: ''
+              decimal_count: ''
+              labels_rotation: '0'
+      row:
+        type: fields
+      query:
+        type: views_query
+        options: {  }
+      relationships: {  }
+      header:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text
+          empty: false
+          content:
+            value: ''
+            format: full_html
+          tokenize: false
+      footer: {  }
+      display_extenders: {  }
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_interface'
+        - url.query_args
+        - user.permissions
+      tags: {  }
+  attachment_1:
+    id: attachment_1
+    display_title: 'Top pages'
+    display_plugin: attachment
+    position: 2
+    display_options:
+      fields:
+        screenPageViews:
+          id: screenPageViews
+          table: google_analytics
+          field: screenPageViews
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: standard
+          label: Views
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+        fullPageUrl:
+          id: fullPageUrl
+          table: google_analytics
+          field: fullPageUrl
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: standard
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+        pageTitle:
+          id: pageTitle
+          table: google_analytics
+          field: pageTitle
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: standard
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+      pager:
+        type: some
+        options:
+          offset: 0
+          items_per_page: 5
+      sorts:
+        screenPageViews:
+          id: screenPageViews
+          table: google_analytics
+          field: screenPageViews
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: standard
+          order: DESC
+          expose:
+            label: ''
+            field_identifier: ''
+          exposed: false
+      style:
+        type: chart
+        options:
+          grouping: {  }
+          chart_settings:
+            library: highcharts
+            type: bar
+            fields:
+              label: pageTitle
+              stacking: false
+              data_providers:
+                screenPageViews:
+                  enabled: true
+                  color: '#006fb0'
+                  weight: 3
+                fullPageUrl:
+                  enabled: false
+                  color: '#f07c33'
+                  weight: 3
+                pageTitle:
+                  enabled: false
+                  color: '#342e9c'
+                  weight: 3
+            display:
+              title: ''
+              title_position: out
+              data_labels: false
+              data_markers: false
+              legend_position: right
+              background: ''
+              three_dimensional: 0
+              polar: 0
+              tooltips: true
+              dimensions:
+                width: ''
+                width_units: '%'
+                height: ''
+                height_units: ''
+              gauge:
+                max: '100'
+                min: '0'
+                green_from: '85'
+                green_to: '100'
+                yellow_from: '50'
+                yellow_to: '85'
+                red_from: '0'
+                red_to: '50'
+            xaxis:
+              title: ''
+              labels_rotation: '0'
+            yaxis:
+              title: ''
+              min: ''
+              max: ''
+              prefix: ''
+              suffix: ''
+              decimal_count: ''
+              labels_rotation: '0'
+      row:
+        type: fields
+        options: {  }
+      defaults:
+        style: false
+        row: false
+        fields: false
+        sorts: false
+        header: false
+      display_description: ''
+      header:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text
+          empty: false
+          content:
+            value: '<h2>Top pages</h2>'
+            format: full_html
+          tokenize: false
+      display_extenders: {  }
+      displays:
+        page_1: page_1
+      attachment_position: after
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_interface'
+        - user.permissions
+      tags: {  }
+  attachment_2:
+    id: attachment_2
+    display_title: 'Demographic Overview '
+    display_plugin: attachment
+    position: 2
+    display_options:
+      fields:
+        country:
+          id: country
+          table: google_analytics
+          field: country
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: standard
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+        countryId:
+          id: countryId
+          table: google_analytics
+          field: countryId
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: standard
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+        screenPageViews:
+          id: screenPageViews
+          table: google_analytics
+          field: screenPageViews
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: standard
+          label: 'Page Views'
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+        totalUsers:
+          id: totalUsers
+          table: google_analytics
+          field: totalUsers
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: standard
+          label: 'Total Users'
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+      pager:
+        type: some
+        options:
+          offset: 0
+          items_per_page: 5
+      style:
+        type: chart
+        options:
+          grouping: {  }
+          chart_settings:
+            library: highcharts
+            type: bar
+            fields:
+              label: country
+              stacking: false
+              data_providers:
+                country:
+                  enabled: false
+                  color: '#006fb0'
+                  weight: 4
+                countryId:
+                  enabled: false
+                  color: '#f07c33'
+                  weight: 4
+                screenPageViews:
+                  enabled: true
+                  color: '#006fb0'
+                  weight: 3
+                totalUsers:
+                  enabled: true
+                  color: '#579b17'
+                  weight: 4
+            display:
+              title: ''
+              title_position: out
+              data_labels: false
+              data_markers: false
+              legend_position: right
+              background: ''
+              three_dimensional: 0
+              polar: 0
+              tooltips: true
+              dimensions:
+                width: ''
+                width_units: '%'
+                height: ''
+                height_units: ''
+              gauge:
+                max: '100'
+                min: '0'
+                green_from: '85'
+                green_to: '100'
+                yellow_from: '50'
+                yellow_to: '85'
+                red_from: '0'
+                red_to: '50'
+            xaxis:
+              title: ''
+              labels_rotation: '0'
+            yaxis:
+              title: ''
+              min: ''
+              max: ''
+              prefix: ''
+              suffix: ''
+              decimal_count: ''
+              labels_rotation: '0'
+      row:
+        type: fields
+        options: {  }
+      defaults:
+        style: false
+        row: false
+        fields: false
+        header: false
+      display_description: ''
+      header:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text
+          empty: false
+          content:
+            value: '<h2>Demographics overview</h2>'
+            format: full_html
+          tokenize: false
+      display_extenders: {  }
+      displays:
+        page_1: page_1
+      attachment_position: after
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_interface'
+        - user.permissions
+      tags: {  }
+  attachment_3:
+    id: attachment_3
+    display_title: 'Operating system '
+    display_plugin: attachment
+    position: 2
+    display_options:
+      fields:
+        totalUsers:
+          id: totalUsers
+          table: google_analytics
+          field: totalUsers
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: standard
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+        screenPageViews:
+          id: screenPageViews
+          table: google_analytics
+          field: screenPageViews
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: standard
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+        operatingSystem:
+          id: operatingSystem
+          table: google_analytics
+          field: operatingSystem
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: standard
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+      pager:
+        type: some
+        options:
+          offset: 0
+          items_per_page: 5
+      style:
+        type: chart
+        options:
+          grouping: {  }
+          chart_settings:
+            library: highcharts
+            type: pie
+            fields:
+              label: operatingSystem
+              stacking: false
+              data_providers:
+                totalUsers:
+                  enabled: true
+                  color: '#579b17'
+                  weight: 4
+                screenPageViews:
+                  enabled: false
+                  color: '#006fb0'
+                  weight: 3
+                operatingSystem:
+                  enabled: false
+                  color: '#342e9c'
+                  weight: 3
+            display:
+              title: ''
+              title_position: out
+              data_labels: false
+              data_markers: false
+              legend_position: right
+              background: ''
+              three_dimensional: 0
+              polar: 0
+              tooltips: true
+              dimensions:
+                width: ''
+                width_units: '%'
+                height: ''
+                height_units: ''
+              gauge:
+                max: '100'
+                min: '0'
+                green_from: '85'
+                green_to: '100'
+                yellow_from: '50'
+                yellow_to: '85'
+                red_from: '0'
+                red_to: '50'
+            xaxis:
+              title: ''
+              labels_rotation: '0'
+            yaxis:
+              title: ''
+              min: ''
+              max: ''
+              prefix: ''
+              suffix: ''
+              decimal_count: ''
+              labels_rotation: '0'
+      row:
+        type: fields
+        options: {  }
+      defaults:
+        style: false
+        row: false
+        fields: false
+        header: false
+      display_description: ''
+      header:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text
+          empty: false
+          content:
+            value: '<h2>Users by operating system</h2>'
+            format: full_html
+          tokenize: false
+      display_extenders: {  }
+      displays:
+        page_1: page_1
+      attachment_position: after
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_interface'
+        - user.permissions
+      tags: {  }
+  attachment_4:
+    id: attachment_4
+    display_title: 'Browser page'
+    display_plugin: attachment
+    position: 2
+    display_options:
+      fields:
+        totalUsers:
+          id: totalUsers
+          table: google_analytics
+          field: totalUsers
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: standard
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+        browser:
+          id: browser
+          table: google_analytics
+          field: browser
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: standard
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+      pager:
+        type: some
+        options:
+          offset: 0
+          items_per_page: 5
+      style:
+        type: chart
+        options:
+          grouping: {  }
+          chart_settings:
+            library: highcharts
+            type: pie
+            fields:
+              label: browser
+              stacking: false
+              data_providers:
+                totalUsers:
+                  enabled: true
+                  color: '#579b17'
+                  weight: 4
+                browser:
+                  enabled: false
+                  color: '#f07c33'
+                  weight: 2
+            display:
+              title: ''
+              title_position: out
+              data_labels: false
+              data_markers: false
+              legend_position: right
+              background: ''
+              three_dimensional: 0
+              polar: 0
+              tooltips: true
+              dimensions:
+                width: ''
+                width_units: '%'
+                height: ''
+                height_units: ''
+              gauge:
+                max: '100'
+                min: '0'
+                green_from: '85'
+                green_to: '100'
+                yellow_from: '50'
+                yellow_to: '85'
+                red_from: '0'
+                red_to: '50'
+            xaxis:
+              title: ''
+              labels_rotation: '0'
+            yaxis:
+              title: ''
+              min: ''
+              max: ''
+              prefix: ''
+              suffix: ''
+              decimal_count: ''
+              labels_rotation: '0'
+      row:
+        type: fields
+        options: {  }
+      defaults:
+        style: false
+        row: false
+        fields: false
+        header: false
+      display_description: ''
+      header:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text
+          empty: false
+          content:
+            value: '<h2>Users by browser<h2>'
+            format: full_html
+          tokenize: false
+      display_extenders: {  }
+      displays:
+        page_1: page_1
+      attachment_position: after
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_interface'
+        - user.permissions
+      tags: {  }
+  page_1:
+    id: page_1
+    display_title: 'Sessions Summary'
+    display_plugin: page
+    position: 1
+    display_options:
+      style:
+        type: table
+        options:
+          grouping: {  }
+          row_class: ''
+          default_row_class: true
+          columns:
+            sessions: sessions
+            totalUsers: totalUsers
+            screenPageViews: screenPageViews
+            sessionsPerUser: sessionsPerUser
+            userEngagementDuration: userEngagementDuration
+            engagementRate: engagementRate
+            newUsers: newUsers
+          default: '-1'
+          info:
+            sessions:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            totalUsers:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            screenPageViews:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            sessionsPerUser:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            userEngagementDuration:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            engagementRate:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            newUsers:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+          override: true
+          sticky: false
+          summary: ''
+          empty_table: false
+          caption: ''
+          description: ''
+      row:
+        type: fields
+        options: {  }
+      defaults:
+        style: false
+        row: false
+        header: false
+      display_description: ''
+      header:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text
+          empty: false
+          content:
+            value: ''
+            format: full_html
+          tokenize: false
+      display_extenders: {  }
+      path: google-analytics-reports
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_interface'
+        - url.query_args
+        - user.permissions
+      tags: {  }

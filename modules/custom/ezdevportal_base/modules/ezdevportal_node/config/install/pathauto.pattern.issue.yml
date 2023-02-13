@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: issue
+label: Issue
+type: 'canonical_entities:node'
+pattern: 'issue/[node:title]'
+selection_criteria:
+  5c2125df-5fa5-4a24-b45d-948c00564f9f:
+    id: node_type
+    negate: false
+    uuid: 5c2125df-5fa5-4a24-b45d-948c00564f9f
+    context_mapping:
+      node: node
+    bundles:
+      issue: issue
+selection_logic: and
+weight: -5
+relationships: {  }

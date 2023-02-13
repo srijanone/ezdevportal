@@ -1,0 +1,270 @@
+<?php
+
+/**
+ * @file
+ * Module file for ezdevportal_admin module.
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\views\ViewExecutable;
+use Drupal\node\Entity\Node;
+use Drupal\user\Entity\User;
+use Drupal\ezdevportal_admin\EzdevportalAdminInterface;
+
+/**
+ * Implements hook_form_alter().
+ */
+function ezdevportal_admin_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  $user = Drupal::CurrentUser();
+  $roles = $user->getRoles();
+  if ($form_id == "user_form") {
+    if (in_array('site_admin', $roles)) {
+      $form['account']['current_pass'][EzdevportalAdminInterface::FORM_ACCESS] = FALSE;
+      $form['account']['name'][EzdevportalAdminInterface::FORM_ACCESS] = TRUE;
+      $form['account']['pass'][EzdevportalAdminInterface::FORM_ACCESS] = FALSE;
+      $form['actions']['back'] = [
+        '#type' => 'button',
+        '#value' => t('Back'),
+        '#button_type' => 'primary',
+        '#attributes' => [
+          'onclick' => 'window.history.back();return false;',
+          'class' => ['back-btn'],
+        ],
+      ];
+    }
+  }
+  elseif ($form_id == 'node_api_product_edit_form' ||
+  $form_id == 'node_blog_post_edit_form' || $form_id == 'node_landing_page_edit_form' ||
+  $form_id == 'media_image_edit_form' || $form_id == 'node_use_case_edit_form' ||
+  $form_id == 'node_forum_edit_form') {
+    if (in_array('site_admin', $roles)) {
+      $form['revision_information'][EzdevportalAdminInterface::FORM_ACCESS] = FALSE;
+    }
+  }
+}
+
+/**
+ * Implements hook_views_pre_render().
+ */
+function ezdevportal_admin_views_pre_render(ViewExecutable $view) {
+  if ($view->storage->id() == 'media_library') {
+    $view->element['#attached']['library'][] = 'ezdevportal_admin/classy.media_library';
+  }
+}
+
+/**
+ * Implements hook_user_login() for site admin front page redirect.
+ */
+function ezdevportal_admin_user_login($account) {
+  $roles = $account->getRoles();
+  if (in_array('site_admin', $roles) || in_array('editor', $roles)) {
+    $url = '/content-management';
+    $current_request = \Drupal::service('request_stack')->getCurrentRequest();
+    $current_request->query->set(
+      'destination', $url
+    );
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for menu dashboard link.
+ */
+function ezdevportal_admin_preprocess_menu__account(&$variables) {
+  foreach ($variables['items'] as $key => $item) {
+    if ($item['title'] == 'My account' && count($item['below'])) {
+      $user = Drupal::CurrentUser();
+      $roles = $user->getRoles();
+      foreach ($item['below'] as $k => $child) {
+        if (!empty(array_intersect(['site_admin', 'editor'], $roles)) && $child['title'] == 'Dashboard') {
+          unset($variables['items'][$key]['below'][$k]);
+        }
+        elseif (!empty(array_intersect(['site_admin', 'editor'], $roles)) && $child['title'] == 'Admin dashboard') {
+          $variables['items'][$key]['below'][$k]['title'] = "Dashboard";
+        }
+        elseif ($child['title'] == 'Admin dashboard') {
+          unset($variables['items'][$key]['below'][$k]);
+        }
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for banner block.
+ */
+function ezdevportal_admin_preprocess_block__banner_content_block(&$variables) {
+  $current_path = \Drupal::service('path.current')->getPath();
+  $route_name = \Drupal::routeMatch()->getRouteName();
+  $referer = \Drupal::request()->headers->get('referer');
+  $action = ezdevportal_admin_get_current_action_by_path($current_path);
+
+  if (empty($referer)) {
+    $referer = \Drupal::request()->get('destination');
+  }
+
+  $banner_title = ezdevportal_admin_get_banner_title_by_route($route_name);
+  if (empty($banner_title)) {
+    $banner_title = ezdevportal_admin_get_banner_title_by_path($current_path);
+    if (!empty($action)) {
+      $banner_title = ezdevportal_admin_get_banner_title_by_referer_action($current_path, $referer, $action);
+    }
+  }
+
+  if (!empty($banner_title)) {
+    $variables['content']['#bannerdata']['title']['#markup'] = $banner_title;
+  }
+}
+
+/**
+ * Gets the node information based on current path.
+ *
+ * @param string $current_path
+ *   Current page path.
+ *
+ * @return string
+ *   Returns the node title based on the current path.
+ */
+function ezdevportal_admin_get_node_data($current_path) {
+  preg_match('!\d+!', $current_path, $matches);
+  if (str_contains($current_path, '/node')) {
+    $node = Node::load($matches[0]);
+    if (!empty($node)) {
+      $title = $node->getTitle();
+    }
+  }
+  elseif (str_contains($current_path, '/user')) {
+    $node = User::load($matches[0]);
+    if (!empty($node)) {
+      $title = $node->getAccountName();
+    }
+  }
+  return $title;
+}
+
+/**
+ * Gets the banner title based on the referer and action.
+ *
+ * @param string $current_path
+ *   Current page path.
+ * @param string $referer
+ *   Referer.
+ * @param string $action
+ *   Current action.
+ *
+ * @return string
+ *   Returns the banner title.
+ */
+function ezdevportal_admin_get_banner_title_by_referer_action($current_path, $referer, $action) {
+  $banner_title = '';
+  $title = '';
+  if ($action == 'Edit') {
+    $title = ezdevportal_admin_get_node_data($current_path);
+  }
+  else {
+    $title = 'New';
+  }
+
+  if (str_contains($referer, '/api-list')) {
+    $banner_title = 'APIs - ' . $action . ' ' . $title;
+  }
+  elseif (str_contains($referer, 'content-management')) {
+    $banner_title = 'Content Management - ' . $action . ' ' . $title;
+  }
+  elseif (str_contains($referer, 'forum-list')) {
+    $banner_title = 'Forum - ' . $action . ' ' . $title;
+  }
+  elseif (str_contains($referer, 'admin/structure/taxonomy')) {
+    $banner_title = 'Categories Management - ' . $action . ' ' . $title;
+  }
+  elseif (str_contains($referer, 'admin/structure/menu')) {
+    $banner_title = 'Menu Management - ' . $action . ' ' . $title;
+  }
+  elseif (str_contains($referer, 'user-list')) {
+    $banner_title = 'Manage Users - ' . $action . ' ' . $title;
+  }
+  elseif (str_contains($current_path, 'admin/structure/menu/item')) {
+    $banner_title = 'Menu Management - ' . $action . ' ' . $title;
+  }
+  elseif (str_contains($current_path, 'taxonomy/term')) {
+    $banner_title = 'Categories Management - Edit Term';
+  }
+
+  return $banner_title;
+}
+
+/**
+ * Returns the banner title based on the page route.
+ */
+function ezdevportal_admin_get_banner_title_by_route($current_route) {
+  $banner_title = '';
+
+  if ($current_route == 'entity.user.canonical') {
+    $banner_title = 'Account Settings';
+  }
+
+  if ($current_route == 'entity.user.edit_form') {
+    $banner_title = 'Edit Account Settings';
+  }
+
+  return $banner_title;
+}
+
+/**
+ * Returns the banner title based on the current page path.
+ */
+function ezdevportal_admin_get_banner_title_by_path($current_path) {
+  $banner_title = '';
+
+  if (str_contains($current_path, 'content-management')) {
+    $banner_title = 'Content Management';
+  }
+  elseif (str_contains($current_path, '/admin/structure/menu')) {
+    $banner_title = 'Menu Management';
+  }
+  elseif (str_contains($current_path, '/admin/structure/webform')) {
+    $banner_title = 'Queries And Subscriptions';
+  }
+  elseif (str_contains($current_path, '/admin/structure/taxonomy')) {
+    $banner_title = 'Categories Management';
+  }
+  elseif ($current_path == '/api-list') {
+    $banner_title = 'APIs';
+  }
+  elseif ($current_path == '/user-list') {
+    $banner_title = 'Manage Users';
+  }
+  elseif ($current_path == '/forum-list') {
+    $banner_title = 'Forum';
+  }
+  elseif ($current_path == '/webform-submission') {
+    $banner_title = 'Queries And Subscriptions';
+  }
+  elseif ($current_path == '/admin/reports/google-analytics-reports/summary') {
+    $banner_title = 'Google Analytics';
+  }
+  elseif ($current_path == '/google-analytics-reports') {
+    $banner_title = 'Google Analytics';
+  }
+
+  return $banner_title;
+}
+
+/**
+ * Returns the action based on page path.
+ */
+function ezdevportal_admin_get_current_action_by_path($current_path) {
+  if (str_contains($current_path, '/add')) {
+    $action = 'Add';
+  }
+  elseif (str_contains($current_path, '/edit')) {
+    $action = 'Edit';
+  }
+  elseif (str_contains($current_path, '/delete')) {
+    $action = 'Delete';
+  }
+  elseif (str_contains($current_path, '/layout')) {
+    $action = 'Layout';
+  }
+
+  return (!empty($action)) ? $action : '';
+}

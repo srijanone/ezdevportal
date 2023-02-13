@@ -1,0 +1,163 @@
+.login-right-bg {
+  background: url('../images/login-bg.png') repeat;
+  background-size: 100%;
+}
+
+.page-user-login,
+.page-user-register,
+.page-user-password {
+  .user-pass {
+    @include card-text;
+    color: $lighest-grey;
+
+    .user-pass-text {
+      width: 320px;
+    }
+  }
+
+  .row-offcanvas {
+    height: 100vh;
+  }
+
+  .orTag {
+    border-top: 1px solid $lighest-grey;
+    text-align: center;
+
+    span {
+      display: inline-block;
+      background: $white;
+      padding: 4px 8px;
+      position: relative;
+      top: -15px;
+      @include explore-all-link;
+      color: $lighest-grey;
+    }
+
+  }
+
+  .title {
+    @include user-heading;
+    margin-bottom: 27px;
+    margin-top: 0;
+    text-align: center;
+  }
+
+  .form-control {
+    &:focus {
+      box-shadow: none;
+    }
+
+    background: $textbox-bg;
+    @include card-text;
+    padding: 12px 21px;
+    border-radius: 10px;
+    margin-bottom: initial;
+    border:none;
+  }
+
+  .user-reset-password-link {
+    text-align: right;
+    @include card-text;
+    display: block;
+    margin-top: 8px;
+    margin-bottom: 35px;
+  }
+
+  .form-submit {
+    border-radius: 10px;
+    color: $white;
+    @include card-text;
+    padding: 10px 0;
+    text-transform: uppercase;
+    width: 100%;
+    background: $black;
+  }
+
+  .login-with {
+    .login-with-text {
+      @include card-text;
+      color: $lighest-grey;
+    }
+
+    .login-with-social {
+      display: flex;
+      justify-content: space-between;
+
+      a {
+        border: 1px solid #ccc;
+        display: inline-block;
+        padding: 9px 60px;
+        text-align: center;
+        border-radius: 10px;
+        margin-right: 18px;
+
+        img {
+          width: 24px;
+          margin-right: 0;
+        }
+      }
+    }
+  }
+
+  .srijan-logo-wrapper {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 35px;
+
+    .srijan-logo {
+      margin-left: -130px;
+    }
+
+    .dont-have-account {
+      @include card-text;
+      color: $lighest-grey;
+      margin-top: 8px;
+
+      a {
+        color: $black;
+      }
+    }
+  }
+}
+
+.back-to-home {
+  position: fixed;
+  top: 10px;
+  right: 50%;
+  padding: 10px;
+  @include card-text;
+}
+
+.user-register-form {
+  fieldset {
+    padding: 0 !important;
+  }
+}
+
+.user-login-form {
+  .container {
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+}
+
+.user-pass {
+  .container {
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+
+  .form-actions {
+    .button {
+      width: 46%;
+    }
+
+    [data-drupal-selector="edit-submit"] {
+      margin-right: 20px;
+    }
+
+    [data-drupal-selector="edit-cancel"] {
+      margin-right: 0px;
+    }
+  }
+}

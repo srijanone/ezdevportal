@@ -1,0 +1,12 @@
+name: EzDevPortal API Product Feature
+description: Provides the API Product customisations.
+type: module
+package: EzDevPortal
+core: 8.x
+core_version_requirement: ^8 || ^9
+
+dependencies:
+  - ezdevportal:ezdevportal_faq
+  - ezdevportal:ezdevportal_usecase
+  - ezdevportal:ezdevportal_blog
+  - ezdevportal:ezdevportal_api_documents

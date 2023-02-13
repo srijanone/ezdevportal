@@ -1,0 +1,918 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_display.comment.comment_forum.default
+    - field.field.node.forum.body
+    - field.field.node.forum.comment_forum
+    - field.field.node.forum.field_forum_tags
+    - field.field.node.forum.layout_builder__layout
+    - field.field.node.forum.taxonomy_forums
+    - node.type.forum
+  module:
+    - comment
+    - layout_builder
+    - layout_discovery
+    - text
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: true
+    allow_custom: true
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components:
+          eb5133bf-a698-4c1c-a60b-e5b8c8e56ad8:
+            uuid: eb5133bf-a698-4c1c-a60b-e5b8c8e56ad8
+            region: content
+            configuration:
+              id: 'field_block:node:forum:taxonomy_forums'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_label
+                label: above
+                settings:
+                  link: true
+                third_party_settings: {  }
+            weight: 0
+            additional: {  }
+          fa25f455-b82d-4ae6-812c-6e95a8d2eded:
+            uuid: fa25f455-b82d-4ae6-812c-6e95a8d2eded
+            region: content
+            configuration:
+              id: 'field_block:node:forum:body'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: text_default
+                label: hidden
+                settings: {  }
+                third_party_settings: {  }
+            weight: 1
+            additional: {  }
+          c0eae516-ca98-41da-86ba-fd562125c521:
+            uuid: c0eae516-ca98-41da-86ba-fd562125c521
+            region: content
+            configuration:
+              id: 'field_block:node:forum:comment_forum'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: comment_default
+                label: hidden
+                settings:
+                  view_mode: default
+                  pager_id: 0
+                third_party_settings: {  }
+            weight: 2
+            additional: {  }
+          1adbe046-aad4-490b-a5b8-bd098b545c60:
+            uuid: 1adbe046-aad4-490b-a5b8-bd098b545c60
+            region: content
+            configuration:
+              id: 'extra_field_block:node:forum:links'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+            weight: 3
+            additional: {  }
+          d38f9e70-6df8-4344-8813-5d900ca25529:
+            uuid: d38f9e70-6df8-4344-8813-5d900ca25529
+            region: content
+            configuration:
+              id: 'extra_field_block:node:forum:like_and_dislike'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+            weight: 4
+            additional: {  }
+          c8fc66fb-dea0-4b67-b21f-ac8f6d4db347:
+            uuid: c8fc66fb-dea0-4b67-b21f-ac8f6d4db347
+            region: content
+            configuration:
+              id: 'field_block:node:forum:field_forum_tags'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_label
+                label: above
+                settings:
+                  link: true
+                third_party_settings: {  }
+            weight: 5
+            additional: {  }
+          3a58b23e-05df-4095-a240-575f4dfc959d:
+            uuid: 3a58b23e-05df-4095-a240-575f4dfc959d
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:forum:taxonomy_forums'
+              formatter:
+                type: entity_reference_label
+                label: above
+                settings:
+                  link: true
+                third_party_settings: {  }
+            weight: 6
+            additional: {  }
+          aa6d3379-0d3f-4209-ac55-82d1ebbbdc27:
+            uuid: aa6d3379-0d3f-4209-ac55-82d1ebbbdc27
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:forum:body'
+              formatter:
+                type: text_default
+                label: hidden
+                settings: {  }
+                third_party_settings: {  }
+            weight: 7
+            additional: {  }
+          aeb4846b-a415-454c-8014-fa90173614f6:
+            uuid: aeb4846b-a415-454c-8014-fa90173614f6
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:forum:comment_forum'
+              formatter:
+                type: comment_default
+                label: hidden
+                settings:
+                  view_mode: default
+                  pager_id: 0
+                third_party_settings: {  }
+            weight: 8
+            additional: {  }
+          8620a80f-6be2-4f4c-af34-b4ffd62631ab:
+            uuid: 8620a80f-6be2-4f4c-af34-b4ffd62631ab
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'extra_field_block:node:forum:links'
+            weight: 9
+            additional: {  }
+          a4d9a647-cac3-4d3a-9d89-42f11fe69128:
+            uuid: a4d9a647-cac3-4d3a-9d89-42f11fe69128
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'extra_field_block:node:forum:like_and_dislike'
+            weight: 10
+            additional: {  }
+          21872d7e-8994-4bbd-aee5-3fd839bfa1fc:
+            uuid: 21872d7e-8994-4bbd-aee5-3fd839bfa1fc
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:forum:field_forum_tags'
+              formatter:
+                type: entity_reference_label
+                label: above
+                settings:
+                  link: true
+                third_party_settings: {  }
+            weight: 11
+            additional: {  }
+          20b43fec-1ba0-45f1-9d31-a230b5d69039:
+            uuid: 20b43fec-1ba0-45f1-9d31-a230b5d69039
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:forum:taxonomy_forums'
+              formatter:
+                type: entity_reference_label
+                label: above
+                settings:
+                  link: true
+                third_party_settings: {  }
+            weight: 12
+            additional: {  }
+          da18c429-0b5c-420f-99d7-43cc0c7cadfc:
+            uuid: da18c429-0b5c-420f-99d7-43cc0c7cadfc
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:forum:body'
+              formatter:
+                type: text_default
+                label: hidden
+                settings: {  }
+                third_party_settings: {  }
+            weight: 13
+            additional: {  }
+          5cdd5c4d-2cf2-472b-b1fd-5e25b1ac6b59:
+            uuid: 5cdd5c4d-2cf2-472b-b1fd-5e25b1ac6b59
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:forum:comment_forum'
+              formatter:
+                type: comment_default
+                label: hidden
+                settings:
+                  view_mode: default
+                  pager_id: 0
+                third_party_settings: {  }
+            weight: 14
+            additional: {  }
+          06548d09-f68e-4201-9538-6029b98c929e:
+            uuid: 06548d09-f68e-4201-9538-6029b98c929e
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'extra_field_block:node:forum:links'
+            weight: 15
+            additional: {  }
+          12d47284-eb3e-487e-9285-c4c9cb786d3e:
+            uuid: 12d47284-eb3e-487e-9285-c4c9cb786d3e
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'extra_field_block:node:forum:like_and_dislike'
+            weight: 16
+            additional: {  }
+          15388ca2-d042-44ca-8a53-03edb3e63bca:
+            uuid: 15388ca2-d042-44ca-8a53-03edb3e63bca
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:forum:field_forum_tags'
+              formatter:
+                type: entity_reference_label
+                label: above
+                settings:
+                  link: true
+                third_party_settings: {  }
+            weight: 17
+            additional: {  }
+          93d8b0d6-50c6-49d7-bc34-86b35a2e03a5:
+            uuid: 93d8b0d6-50c6-49d7-bc34-86b35a2e03a5
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:forum:taxonomy_forums'
+              formatter:
+                type: entity_reference_label
+                label: above
+                settings:
+                  link: true
+                third_party_settings: {  }
+            weight: 18
+            additional: {  }
+          fcea55f3-46ef-40e6-8268-a407956ca10c:
+            uuid: fcea55f3-46ef-40e6-8268-a407956ca10c
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:forum:body'
+              formatter:
+                type: text_default
+                label: hidden
+                settings: {  }
+                third_party_settings: {  }
+            weight: 19
+            additional: {  }
+          11803a08-dc9f-4e11-be77-2bd0cb7102c5:
+            uuid: 11803a08-dc9f-4e11-be77-2bd0cb7102c5
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:forum:comment_forum'
+              formatter:
+                type: comment_default
+                label: hidden
+                settings:
+                  view_mode: default
+                  pager_id: 0
+                third_party_settings: {  }
+            weight: 20
+            additional: {  }
+          57f8b54e-c216-4eb7-8137-d9efadfe8e77:
+            uuid: 57f8b54e-c216-4eb7-8137-d9efadfe8e77
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'extra_field_block:node:forum:links'
+            weight: 21
+            additional: {  }
+          d1b9fb10-5c32-4ab3-a809-20739bc535aa:
+            uuid: d1b9fb10-5c32-4ab3-a809-20739bc535aa
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'extra_field_block:node:forum:like_and_dislike'
+            weight: 22
+            additional: {  }
+          cbe44199-d325-4eea-a733-77d5479d325c:
+            uuid: cbe44199-d325-4eea-a733-77d5479d325c
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:forum:field_forum_tags'
+              formatter:
+                type: entity_reference_label
+                label: above
+                settings:
+                  link: true
+                third_party_settings: {  }
+            weight: 23
+            additional: {  }
+          c27fc4d7-6feb-4308-ab3e-b725e17bbb8a:
+            uuid: c27fc4d7-6feb-4308-ab3e-b725e17bbb8a
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:forum:taxonomy_forums'
+              formatter:
+                type: entity_reference_label
+                label: above
+                settings:
+                  link: true
+                third_party_settings: {  }
+            weight: 24
+            additional: {  }
+          ca277b87-adc0-4c8f-82e3-f307f2be6f79:
+            uuid: ca277b87-adc0-4c8f-82e3-f307f2be6f79
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:forum:body'
+              formatter:
+                type: text_default
+                label: hidden
+                settings: {  }
+                third_party_settings: {  }
+            weight: 25
+            additional: {  }
+          628a1d11-a00f-407f-b652-f4a0485f1772:
+            uuid: 628a1d11-a00f-407f-b652-f4a0485f1772
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:forum:comment_forum'
+              formatter:
+                type: comment_default
+                label: hidden
+                settings:
+                  view_mode: default
+                  pager_id: 0
+                third_party_settings: {  }
+            weight: 26
+            additional: {  }
+          5e4b082a-9094-4b82-853b-bf888f762b0a:
+            uuid: 5e4b082a-9094-4b82-853b-bf888f762b0a
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'extra_field_block:node:forum:links'
+            weight: 27
+            additional: {  }
+          a08d683d-8b61-4809-b711-d4c546cd0202:
+            uuid: a08d683d-8b61-4809-b711-d4c546cd0202
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'extra_field_block:node:forum:like_and_dislike'
+            weight: 28
+            additional: {  }
+          72fe6858-c775-4ae2-aa91-ed2a3487e7e1:
+            uuid: 72fe6858-c775-4ae2-aa91-ed2a3487e7e1
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:forum:field_forum_tags'
+              formatter:
+                type: entity_reference_label
+                label: above
+                settings:
+                  link: true
+                third_party_settings: {  }
+            weight: 29
+            additional: {  }
+          6e60c218-c2c2-4eee-b569-ac68e3344831:
+            uuid: 6e60c218-c2c2-4eee-b569-ac68e3344831
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:forum:taxonomy_forums'
+              formatter:
+                type: entity_reference_label
+                label: above
+                settings:
+                  link: true
+                third_party_settings: {  }
+            weight: 30
+            additional: {  }
+          0bf940ae-b812-4d2d-a36f-413fb6c22ba6:
+            uuid: 0bf940ae-b812-4d2d-a36f-413fb6c22ba6
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:forum:body'
+              formatter:
+                type: text_default
+                label: hidden
+                settings: {  }
+                third_party_settings: {  }
+            weight: 31
+            additional: {  }
+          4766c4f7-6fbe-4788-be99-40947b1864e0:
+            uuid: 4766c4f7-6fbe-4788-be99-40947b1864e0
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:forum:comment_forum'
+              formatter:
+                type: comment_default
+                label: hidden
+                settings:
+                  view_mode: default
+                  pager_id: 0
+                third_party_settings: {  }
+            weight: 32
+            additional: {  }
+          9f306fcc-dead-4e47-a44d-97e59d4a0aeb:
+            uuid: 9f306fcc-dead-4e47-a44d-97e59d4a0aeb
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'extra_field_block:node:forum:links'
+            weight: 33
+            additional: {  }
+          20f6e08d-da49-4367-ba4f-55b9aef74aa5:
+            uuid: 20f6e08d-da49-4367-ba4f-55b9aef74aa5
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'extra_field_block:node:forum:like_and_dislike'
+            weight: 34
+            additional: {  }
+          7433523e-18d1-4115-9c18-9b645ed7f855:
+            uuid: 7433523e-18d1-4115-9c18-9b645ed7f855
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:forum:field_forum_tags'
+              formatter:
+                type: entity_reference_label
+                label: above
+                settings:
+                  link: true
+                third_party_settings: {  }
+            weight: 35
+            additional: {  }
+          f173d489-47b8-4651-a964-eda5b871e964:
+            uuid: f173d489-47b8-4651-a964-eda5b871e964
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:forum:taxonomy_forums'
+              formatter:
+                type: entity_reference_label
+                label: above
+                settings:
+                  link: true
+                third_party_settings: {  }
+            weight: 36
+            additional: {  }
+          57e0c943-3712-447c-971d-a186d4391fba:
+            uuid: 57e0c943-3712-447c-971d-a186d4391fba
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:forum:body'
+              formatter:
+                type: text_default
+                label: hidden
+                settings: {  }
+                third_party_settings: {  }
+            weight: 37
+            additional: {  }
+          63fc8d97-6ac5-46e5-b864-1cf109243829:
+            uuid: 63fc8d97-6ac5-46e5-b864-1cf109243829
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:forum:comment_forum'
+              formatter:
+                type: comment_default
+                label: hidden
+                settings:
+                  view_mode: default
+                  pager_id: 0
+                third_party_settings: {  }
+            weight: 38
+            additional: {  }
+          85ce9d1f-b65c-47cd-93db-0b8a83c90c96:
+            uuid: 85ce9d1f-b65c-47cd-93db-0b8a83c90c96
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'extra_field_block:node:forum:links'
+            weight: 39
+            additional: {  }
+          97291f4b-4300-48fa-8e7c-7a044706c256:
+            uuid: 97291f4b-4300-48fa-8e7c-7a044706c256
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'extra_field_block:node:forum:like_and_dislike'
+            weight: 40
+            additional: {  }
+          5f0abaa7-7604-450b-b56c-8c763dd057a1:
+            uuid: 5f0abaa7-7604-450b-b56c-8c763dd057a1
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:forum:field_forum_tags'
+              formatter:
+                type: entity_reference_label
+                label: above
+                settings:
+                  link: true
+                third_party_settings: {  }
+            weight: 41
+            additional: {  }
+          0c6305d9-3b0f-44df-9914-3cf5fbabec8d:
+            uuid: 0c6305d9-3b0f-44df-9914-3cf5fbabec8d
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:forum:taxonomy_forums'
+              formatter:
+                type: entity_reference_label
+                label: above
+                settings:
+                  link: true
+                third_party_settings: {  }
+            weight: 42
+            additional: {  }
+          0a6e532b-9471-493c-a3de-858f84dd240f:
+            uuid: 0a6e532b-9471-493c-a3de-858f84dd240f
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:forum:body'
+              formatter:
+                type: text_default
+                label: hidden
+                settings: {  }
+                third_party_settings: {  }
+            weight: 43
+            additional: {  }
+          235335b2-465b-4914-bc32-0d79c2f64b6b:
+            uuid: 235335b2-465b-4914-bc32-0d79c2f64b6b
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:forum:comment_forum'
+              formatter:
+                type: comment_default
+                label: hidden
+                settings:
+                  view_mode: default
+                  pager_id: 0
+                third_party_settings: {  }
+            weight: 44
+            additional: {  }
+          e72d2b2d-f86b-4632-b747-08a10ddf856d:
+            uuid: e72d2b2d-f86b-4632-b747-08a10ddf856d
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'extra_field_block:node:forum:links'
+            weight: 45
+            additional: {  }
+          62d159d3-c2fe-43df-b47c-2889803b7888:
+            uuid: 62d159d3-c2fe-43df-b47c-2889803b7888
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'extra_field_block:node:forum:like_and_dislike'
+            weight: 46
+            additional: {  }
+          722f3170-ebab-4741-aeba-9731dafec8f2:
+            uuid: 722f3170-ebab-4741-aeba-9731dafec8f2
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:forum:field_forum_tags'
+              formatter:
+                type: entity_reference_label
+                label: above
+                settings:
+                  link: true
+                third_party_settings: {  }
+            weight: 47
+            additional: {  }
+          3b866283-a577-4e32-981a-5728e68ac85e:
+            uuid: 3b866283-a577-4e32-981a-5728e68ac85e
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:forum:taxonomy_forums'
+              formatter:
+                type: entity_reference_label
+                label: above
+                settings:
+                  link: true
+                third_party_settings: {  }
+            weight: 48
+            additional: {  }
+          d98fb79a-06b2-4829-8148-1f6d9e0fcd89:
+            uuid: d98fb79a-06b2-4829-8148-1f6d9e0fcd89
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:forum:body'
+              formatter:
+                type: text_default
+                label: hidden
+                settings: {  }
+                third_party_settings: {  }
+            weight: 49
+            additional: {  }
+          d8b19c78-e085-43b1-bf3b-531788170505:
+            uuid: d8b19c78-e085-43b1-bf3b-531788170505
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:forum:comment_forum'
+              formatter:
+                type: comment_default
+                label: hidden
+                settings:
+                  view_mode: default
+                  pager_id: 0
+                third_party_settings: {  }
+            weight: 50
+            additional: {  }
+          ea2667b3-a526-4f17-abf3-fba289c525e0:
+            uuid: ea2667b3-a526-4f17-abf3-fba289c525e0
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'extra_field_block:node:forum:links'
+            weight: 51
+            additional: {  }
+          a5d537ae-aebb-4673-b0e7-4060f18f15a2:
+            uuid: a5d537ae-aebb-4673-b0e7-4060f18f15a2
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'extra_field_block:node:forum:like_and_dislike'
+            weight: 52
+            additional: {  }
+          6818c8e7-1282-415a-bed8-e9f91b16464b:
+            uuid: 6818c8e7-1282-415a-bed8-e9f91b16464b
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:forum:field_forum_tags'
+              formatter:
+                type: entity_reference_label
+                label: above
+                settings:
+                  link: true
+                third_party_settings: {  }
+            weight: 53
+            additional: {  }
+          06368a04-41f2-4537-a95f-e8329c190ac5:
+            uuid: 06368a04-41f2-4537-a95f-e8329c190ac5
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:forum:taxonomy_forums'
+              formatter:
+                type: entity_reference_label
+                label: above
+                settings:
+                  link: true
+                third_party_settings: {  }
+            weight: 54
+            additional: {  }
+          ab997a68-ebdc-4c18-8545-3b599c61bd05:
+            uuid: ab997a68-ebdc-4c18-8545-3b599c61bd05
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:forum:body'
+              formatter:
+                type: text_default
+                label: hidden
+                settings: {  }
+                third_party_settings: {  }
+            weight: 55
+            additional: {  }
+          8cdff967-88da-4d17-856c-5a46f3dc68b1:
+            uuid: 8cdff967-88da-4d17-856c-5a46f3dc68b1
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:forum:comment_forum'
+              formatter:
+                type: comment_default
+                label: hidden
+                settings:
+                  view_mode: default
+                  pager_id: 0
+                third_party_settings: {  }
+            weight: 56
+            additional: {  }
+          a4801040-de50-4487-acb6-3356c2a74896:
+            uuid: a4801040-de50-4487-acb6-3356c2a74896
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'extra_field_block:node:forum:links'
+            weight: 57
+            additional: {  }
+          c84152cc-ef3e-48ce-a59b-7dc3668adaae:
+            uuid: c84152cc-ef3e-48ce-a59b-7dc3668adaae
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'extra_field_block:node:forum:like_and_dislike'
+            weight: 58
+            additional: {  }
+          6739821f-9d91-47a8-ad93-a019fa2f715f:
+            uuid: 6739821f-9d91-47a8-ad93-a019fa2f715f
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:forum:field_forum_tags'
+              formatter:
+                type: entity_reference_label
+                label: above
+                settings:
+                  link: true
+                third_party_settings: {  }
+            weight: 59
+            additional: {  }
+        third_party_settings: {  }
+id: node.forum.default
+targetEntityType: node
+bundle: forum
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  comment_forum:
+    type: comment_default
+    label: hidden
+    settings:
+      view_mode: default
+      pager_id: 0
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_forum_tags:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  like_and_dislike:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  taxonomy_forums:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  breadcrumbs: true
+  layout_builder__layout: true

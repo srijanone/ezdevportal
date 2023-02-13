@@ -1,0 +1,4 @@
+services:
+  ezdevportal_sk.generateSdk_services:
+   class: Drupal\ezdevportal_sdk\GenerateSdk
+   arguments: ['@entity_type.manager', '@http_client', '@messenger','@logger.factory','@file_url_generator']

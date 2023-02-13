@@ -1,0 +1,38 @@
+.menu--account {
+    ul {
+      li {
+        padding: 0 25px;
+        position: relative;
+      }
+
+      a.nav-link.search {
+        background: url('../images/search.png') no-repeat 0px 3px;
+        font-size: 0;
+        width: 66px;
+        height: 66px;
+
+        &:before {
+          border-bottom: 0;
+        }
+      }
+
+      a.nav-link {
+        position: relative;
+        color: $black;
+        @include main-menu-font;
+        line-height: 66px;
+        padding: 0;
+
+        &:hover {
+          color: $black;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+
+.user-logged-in {
+  .nav-link--user-login {
+    display: none;
+  }
+}

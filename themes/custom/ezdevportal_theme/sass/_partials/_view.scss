@@ -1,0 +1,130 @@
+.view {
+  .view-footer {
+    .explore-all {
+      a {
+        @include explore-all-link;
+
+        &:hover {
+          text-decoration: none;
+        }
+      }
+
+      margin-top: 50px;
+      margin-bottom: 66px;
+
+      &:after {
+        content: "";
+        width: 39px;
+        height: 16px;
+        background: url(../images/right-arrow.png) no-repeat 3px 7px;
+        background-size: 24px;
+        padding: 0px 14px;
+        margin-left: 12px;
+      }
+    }
+  }
+
+  .bef-exposed-form {
+    .form-select {
+      &:after {
+        content: $fa_angle_down;
+        font-family: $fa;
+        font-weight: 900;
+        padding: 0.5rem 1rem;
+      }
+    }
+
+    .bef-links {
+      ul {
+        display: flex;
+
+        li {
+          display: inline-block;
+          padding: 0rem .75rem;
+          flex: auto;
+        }
+      }
+    }
+  }
+}
+
+.view-use-cases {
+  .view-header {
+    h3 {
+      @include heading-h1;
+    }
+  }
+
+  .pager {
+    margin-bottom: 100px;
+    margin-top: 60px;
+
+    li {
+      a {
+        @include footer-link;
+        text-transform: uppercase;
+
+        &:hover {
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
+
+.block-views-exposed-filter-blockapi-product-api-products-block {
+  .filter {
+    margin-top: 12px;
+    @include filters-heading;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+  }
+}
+
+.bef-exposed-form {
+  #edit-sort-bef-combine--2--wrapper {
+    legend {
+      span {
+        &:before {
+          content: "";
+          width: 24px;
+          height: 18px;
+          background: url(../images/sort-icon.png) no-repeat 0px 4px;
+          padding: 0rem 20px;
+        }
+
+        border-bottom: none;
+        @include filters-heading;
+        text-transform: uppercase;
+        margin-bottom: 40px;
+      }
+    }
+  }
+
+  .row {
+    details {
+      summary {
+        @include content-list-text-heading;
+        margin-bottom: 25px;
+        display: block;
+      }
+    }
+
+    .form-check {
+      padding-left: 0;
+      margin-bottom: 14px;
+
+      .form-check-input {
+        float: right;
+      }
+
+      label {
+        @include filter-label;
+      }
+    }
+  }
+}
+
+.block-views-blockapi-document-formatter-block-1 {
+  clear: both;
+}

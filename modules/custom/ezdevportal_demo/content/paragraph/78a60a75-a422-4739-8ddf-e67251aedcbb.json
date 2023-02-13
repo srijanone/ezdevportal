@@ -1,0 +1,129 @@
+{
+    "_links": {
+        "self": {
+            "href": ""
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/slide"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/paragraph\/slide\/field_slide_image": [
+            {
+                "href": "http:\/\/default\/media\/21\/edit?_format=hal_json"
+            }
+        ]
+    },
+    "id": [
+        {
+            "value": 23
+        }
+    ],
+    "uuid": [
+        {
+            "value": "78a60a75-a422-4739-8ddf-e67251aedcbb"
+        }
+    ],
+    "revision_id": [
+        {
+            "value": 33
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "slide"
+        }
+    ],
+    "status": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "created": [
+        {
+            "value": "2021-11-23T13:20:38+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "parent_id": [
+        {
+            "value": "30"
+        }
+    ],
+    "parent_type": [
+        {
+            "value": "block_content"
+        }
+    ],
+    "parent_field_name": [
+        {
+            "value": "field_slide"
+        }
+    ],
+    "behavior_settings": [
+        {
+            "value": []
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "revision_translation_affected": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "field_slide_description": [
+        {
+            "value": "<p><span><span><span><span><span><span>Explore the wide range of APIs, comprehensive documentation, and use cases. You can also connect your app to a sandbox setup and test the APIs instantly. You can now create innovative digital products with our APIs.<\/span><\/span><\/span><\/span><\/span><\/span><\/p>\r\n",
+            "format": "basic_html",
+            "processed": "<p><span><span><span><span><span><span>Explore the wide range of APIs, comprehensive documentation, and use cases. You can also connect your app to a sandbox setup and test the APIs instantly. You can now create innovative digital products with our APIs.<\/span><\/span><\/span><\/span><\/span><\/span><\/p>"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/paragraph\/slide\/field_slide_image": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/media\/21\/edit?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/media\/image"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "4f9e77ad-f3a6-478d-b2ee-0648e334890e"
+                    }
+                ]
+            }
+        ]
+    },
+    "field_slide_main_heading": [
+        {
+            "value": "Financial Data Integration"
+        }
+    ],
+    "field_slide_sub_heading": [
+        {
+            "value": "Fulfill all your banking needs with API integration"
+        }
+    ],
+    "field_slider_cta_link": [
+        {
+            "uri": "internal:\/products",
+            "title": "Know more about our Business Banking",
+            "options": []
+        }
+    ]
+}

@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 'API Product Categories'
+vid: api_product_categories
+description: 'Used to distinguish API Products into different categories'
+weight: 0

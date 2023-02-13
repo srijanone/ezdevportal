@@ -1,0 +1,76 @@
+.card {
+  width: 100%;
+  margin: 1rem 0rem;
+  border-radius: 10px;
+  border: 1px solid $lightgray;
+
+  &:hover {
+    box-shadow: 0px 8px 24px 0px rgba(0, 0, 0, 0.15);
+    top: -5px;
+    transition: all 0.2s ease;
+  }
+
+  img {
+    margin-bottom: 18px;
+    margin-top: 20px;
+    height: 60px;
+    width: 60px;
+  }
+
+  .card-header {
+    background: none;
+    border-style: none;
+
+    img {
+      margin-top: 16px;
+      margin-bottom: -8px;
+    }
+  }
+
+  .card-body {
+    padding: 0px 14px 4px;
+
+    p {
+      @include card-text;
+    }
+  }
+
+  .card-title {
+    padding: 0.5rem 1rem;
+    @include card-title;
+    margin-bottom: 0;
+
+    h3 {
+      @include card-title;
+      margin-top: 20px;
+      margin-bottom: 0;
+    }
+  }
+
+  .card-footer {
+    border-top: 1px solid $lightgray;
+    background: none;
+    border-radius: 0 0 10px 10px;
+    a{
+      color: $white;
+    }
+
+    .explore {
+      a {
+        text-transform: uppercase;
+        @include explore-link;
+      }
+    }
+
+    a {
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+.card-with-text {
+  @include body-para;
+  margin-bottom: 20px;
+}

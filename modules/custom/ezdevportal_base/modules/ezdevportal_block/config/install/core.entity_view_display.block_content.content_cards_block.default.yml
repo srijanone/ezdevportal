@@ -1,0 +1,72 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.content_cards_block
+    - field.field.block_content.content_cards_block.field_block_background_color
+    - field.field.block_content.content_cards_block.field_block_position
+    - field.field.block_content.content_cards_block.field_cards_layout
+    - field.field.block_content.content_cards_block.field_read_more_link
+    - field.field.block_content.content_cards_block.field_referenced_nodes
+    - field.field.block_content.content_cards_block.field_title
+  module:
+    - color_field
+    - link
+    - options
+id: block_content.content_cards_block.default
+targetEntityType: block_content
+bundle: content_cards_block
+mode: default
+content:
+  field_block_background_color:
+    type: color_field_formatter_text
+    label: above
+    settings:
+      format: hex
+      opacity: true
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_block_position:
+    type: list_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_cards_layout:
+    type: list_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_read_more_link:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_referenced_nodes:
+    type: entity_reference_entity_id
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  breadcrumbs: true

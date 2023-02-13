@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+id: banner_block
+label: 'Banner block'
+revision: 0
+description: 'Use this block to add a banner image and Title/Description over it.'

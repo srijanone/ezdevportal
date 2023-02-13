@@ -1,0 +1,224 @@
+.page-view-media-library,
+.page-view-products-listing-page {
+  .dropbutton-widget {
+    border: none;
+  }
+
+  .tabs {
+    margin-top: 80px;
+
+    .nav-tabs {
+      border-bottom: 0;
+
+      .nav-item {
+        padding: 5px 20px;
+
+        &:first-child {
+          padding-left: 0;
+        }
+
+        .nav-link {
+          border: none;
+          color: $black;
+          background: $white;
+          padding: 0;
+
+          &.active {
+            border-bottom: 2px solid $black;
+          }
+
+          &:hover {
+            border-bottom: 2px solid $black;
+          }
+        }
+      }
+    }
+  }
+}
+
+.view-products-listing-page {
+  label {
+    float: left;
+    margin-right: 15px;
+    margin-top: 12px;
+  }
+
+  .view-content {
+    clear: both;
+  }
+}
+
+#views-exposed-form-media-library-page-1 {
+  ul {
+    padding-left: 0;
+    border-bottom: 1px solid $black;
+
+    li {
+      padding: 0;
+
+      a {
+
+        @include card-text;
+
+        &.bef-link--selected {
+          border-bottom: 2px solid $black;
+        }
+      }
+    }
+  }
+}
+
+.node-form {
+  .vertical-tabs {
+    border: none;
+
+    .vertical-tabs__menu {
+      border: none;
+
+      .vertical-tabs__menu-item {
+        border: none;
+        background: none;
+
+        &.is-selected {
+          a {
+            strong {
+              color: $black;
+              text-decoration: none;
+            }
+          }
+        }
+
+        a {
+          padding: 0.5rem 1rem;
+          width: 103%;
+
+          strong {
+            font-weight: normal;
+            @include explore-all-link;
+            color: lightgray;
+
+          }
+
+          &:hover {
+            outline: none;
+            color: $black;
+
+            .vertical-tabs__menu-item-title {
+              text-decoration: none;
+
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.view-user-list {
+  td {
+    &.views-field-name {
+      line-height: 27px;
+    }
+
+    .list-group-item {
+      border: none;
+    }
+  }
+}
+
+.js-media-library-item-preview {
+  .field--type-image {
+    img {
+      margin: 1em;
+    }
+  }
+}
+
+.tabledrag-toggle-weight-wrapper {
+  display: none;
+}
+
+a {
+  &.tabledrag-handle {
+    .handle {
+      width: 16px;
+      height: 16px;
+      margin: 3px 8px 8px 8px;
+      background-position: 2px 0;
+    }
+  }
+}
+
+.field--type-entity-reference {
+  a {
+    &.tabledrag-handle {
+      overflow: visible;
+
+      .handle {
+        margin: 16px 8px 3px 0px;
+      }
+    }
+  }
+}
+
+.menu-edit-form {
+  .form-check-label {
+    display: none;
+  }
+}
+
+[id ^="views-form-products-listing-page-page-"] {
+
+  .form-item-select-all,
+  .vbo-multipage-selector {
+    display: none;
+  }
+
+  div[data-drupal-selector="edit-actions"] {
+    clear: both;
+  }
+}
+
+.progress {
+  height: 34px;
+
+  .progress__track {
+    min-width: 950px;
+    height: 25px;
+  }
+
+  .progress__bar {
+    height: 23px;
+  }
+
+  .progress__percentage,
+  .progress__description {
+    font-size: $basic-font-size-18;
+  }
+}
+
+.node-forum-edit-form {
+  .form-check {
+    margin-left: 12px;
+  }
+}
+
+[id ^="views-form-webform-submission-page-"] {
+  .form-check-label {
+    display: none;
+  }
+}
+
+.back-btn {
+  margin-bottom: 10px;
+}
+
+.js {
+  td {
+    .dropbutton-multiple {
+      .dropbutton-widget {
+        position: relative;
+      }
+    }
+  }
+}

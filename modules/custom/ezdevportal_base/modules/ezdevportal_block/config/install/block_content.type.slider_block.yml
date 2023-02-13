@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+id: slider_block
+label: 'Slider block'
+revision: 0
+description: 'Use this block to add CTA Slider with unlimited images.'

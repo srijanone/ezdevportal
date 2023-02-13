@@ -1,0 +1,39 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.video_collection_block
+    - field.storage.block_content.field_video_items
+    - paragraphs.paragraphs_type.video_item
+  module:
+    - entity_reference_revisions
+id: block_content.video_collection_block.field_video_items
+field_name: field_video_items
+entity_type: block_content
+bundle: video_collection_block
+label: 'Video Items'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      video_item: video_item
+    negate: 0
+    target_bundles_drag_drop:
+      action_block_item:
+        weight: 5
+        enabled: false
+      product_attributes:
+        weight: 6
+        enabled: false
+      slide:
+        weight: 7
+        enabled: false
+      video_item:
+        weight: 8
+        enabled: true
+field_type: entity_reference_revisions

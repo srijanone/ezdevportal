@@ -1,0 +1,42 @@
+.block-system-menu-blockfooter,
+.menu--footer-right-menu {
+  .nav {
+    li {
+      a {
+        @include footer-link;
+        padding-left: 0;
+        color: $primary;
+
+        &:hover {
+          text-decoration: none;
+          color: $primary;
+        }
+      }
+    }
+  }
+}
+
+.nav-tabs {
+  border-bottom: 1px solid $light-blue;
+  margin-top: 20px;
+
+  li {
+    .nav-link {
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+      color: $black;
+      background: $light-blue;
+      border-color: $light-blue;
+
+      &.active {
+        border-color: $light-blue $light-blue $white;
+      }
+
+      &:hover {
+        border-color: $light-blue $light-blue $white;
+        background: $white;
+
+      }
+    }
+  }
+}

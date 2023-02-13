@@ -1,0 +1,148 @@
+.block-inline-blockbasic {
+  h3 {
+    @include prod-title;
+    margin-top: 63px;
+    margin-bottom: 97px;
+  }
+}
+
+.block-field-blocknodeapi-producttitle {
+
+  margin-bottom: 30px;
+
+  .field--name-title {
+    @include prod-title;
+  }
+
+  .field--name-body {
+    @include form-label;
+  }
+}
+
+.block-product-content-block {
+  h2 {
+    @include blog-title;
+    margin-top: 74px;
+    margin-bottom: 39px;
+  }
+}
+
+.api-formatter-option-form {
+  .form-select {
+    width: 123px;
+    float: right;
+    border-radius: 10px;
+    border: 1px solid $black;
+  }
+}
+
+.block-field-blocknodeapi-documenttitle {
+  margin-top: 50px;
+  margin-bottom: 45px;
+
+  .field--name-title {
+    @include prod-title;
+
+  }
+}
+
+.block-field-blocknodeapi-documentbody {
+  p {
+    @include body-para;
+  }
+}
+
+.content-cards-centered {
+  padding-top: 1px;
+  .title {
+    margin-bottom: 40px;
+    margin-top: 42px;
+  }
+  .card {
+    width: 205px;
+    height: 200px;
+    margin: 0 auto;
+
+    .card-body {
+      padding: 0;
+    }
+
+    .card-title {
+      padding: 0;
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    img {
+      margin-top: 40px;
+      width: 42px;
+      height: 42px;
+      margin-bottom: 12px;
+    }
+  }
+}
+
+.content-list {
+  .text-lg-right {
+    padding-left: 10%;
+  }
+
+  .image-banner-left {
+    img {
+      margin-top: 125px;
+      margin-bottom: 120px;
+    }
+  }
+
+  .content-list-date {
+    @include card-text;
+  }
+
+  .content-list-title {
+    @include blog-title;
+  }
+
+  .content-list-text {
+    @include content-list-text-heading;
+    margin-top: 14px;
+  }
+
+  .top-trend {
+    @include card-text;
+    text-align: right;
+    padding-right: 35px;
+    svg{
+      margin-left: 5px;
+    }
+  }
+  .content-list-footer {
+    a {
+      margin-top: 50px;
+      margin-bottom: 66px;
+      @include explore-all-link;
+  
+      &:after {
+        content: "";
+        width: 39px;
+        height: 16px;
+        background: url(../images/right-arrow.png) no-repeat 3px 4px;
+        background-size: 24px;
+        padding: 0px 14px;
+        margin-left: 12px;
+      }
+    }
+  }
+}
+
+.block-download-sdk {
+  margin-top: 40px;
+}
+.content-list,
+.content-cards-full {
+  .title {
+    margin-top: 100px;
+    margin-bottom: 40px;
+  }
+}
+
+

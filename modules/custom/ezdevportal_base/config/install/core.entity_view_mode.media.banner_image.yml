@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.banner_image
+label: 'Banner image'
+targetEntityType: media
+cache: true

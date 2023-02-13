@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies: {  }
+id: slide
+label: Slide
+icon_uuid: null
+icon_default: null
+description: 'Field collection to add individual slide of the slider block.'
+behavior_plugins: {  }

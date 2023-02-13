@@ -1,0 +1,243 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.base_field_override.node.api_document.title
+    - core.entity_view_mode.node.graphql_view
+    - field.field.node.api_document.body
+    - field.field.node.api_document.field_api_display
+    - field.field.node.api_document.field_api_type
+    - field.field.node.api_document.field_banner_image
+    - field.field.node.api_document.field_document
+    - field.field.node.api_document.field_environment
+    - field.field.node.api_document.field_format
+    - field.field.node.api_document.field_listing_image
+    - field.field.node.api_document.field_sdk_language
+    - field.field.node.api_document.layout_builder__layout
+    - node.type.api_document
+    - views.view.api_document_formatter
+  module:
+    - layout_builder
+    - layout_discovery
+    - ezdevportal_asyncapi
+    - ezdevportal_base
+    - options
+    - system
+    - text
+    - user
+    - views
+third_party_settings:
+  layout_builder:
+    enabled: true
+    allow_custom: false
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+          context_mapping: {  }
+        components:
+          44a82c38-f774-4758-91d4-a034991c6fed:
+            uuid: 44a82c38-f774-4758-91d4-a034991c6fed
+            region: content
+            configuration:
+              id: banner_content_block
+              label: 'Banner Content Block'
+              label_display: '0'
+              provider: ezdevportal_product
+              context_mapping: {  }
+              banner_title: ''
+              banner_text: ''
+              banner_image: {  }
+            weight: 0
+            additional: {  }
+        third_party_settings: {  }
+      -
+        layout_id: layout_twocol_section
+        layout_settings:
+          label: ''
+          context_mapping: {  }
+          column_widths: 75-25
+          custom_id: ''
+          custom_classes: ''
+          custom_class_choose:
+            container: container
+          custom_styles: ''
+          custom_data_attributes: ''
+          regions:
+            first:
+              region_id: ''
+              region_class_choose:
+                container: 0
+              region_classes: ''
+              region_styles: ''
+              region_data: ''
+            second:
+              region_id: ''
+              region_class_choose:
+                container: 0
+              region_classes: ''
+              region_styles: ''
+              region_data: ''
+        components:
+          f397173b-16b0-420f-841a-75fb11bea40a:
+            uuid: f397173b-16b0-420f-841a-75fb11bea40a
+            region: first
+            configuration:
+              id: system_breadcrumb_block
+              label: Breadcrumbs
+              label_display: '0'
+              provider: system
+              context_mapping: {  }
+            weight: 2
+            additional: {  }
+        third_party_settings: {  }
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+          context_mapping: {  }
+          custom_id: ''
+          custom_classes: ''
+          custom_class_choose:
+            container: container
+          custom_styles: ''
+          custom_data_attributes: ''
+          regions:
+            content:
+              region_id: ''
+              region_class_choose:
+                container: 0
+              region_classes: ''
+              region_styles: ''
+              region_data: ''
+        components:
+          a210120c-841d-4605-afb6-6c2fc9356ef6:
+            uuid: a210120c-841d-4605-afb6-6c2fc9356ef6
+            region: content
+            configuration:
+              id: 'views_block:api_document_formatter-block_1'
+              label: ''
+              label_display: '0'
+              provider: views
+              context_mapping: {  }
+              views_label: ''
+              items_per_page: none
+            weight: -7
+            additional: {  }
+          907e62f9-032a-4d46-82d2-12d8ed4b0a00:
+            uuid: 907e62f9-032a-4d46-82d2-12d8ed4b0a00
+            region: content
+            configuration:
+              id: 'field_block:node:api_document:title'
+              label: Title
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: string
+                label: hidden
+                settings:
+                  link_to_entity: false
+                third_party_settings: {  }
+            weight: -10
+            additional: {  }
+          59a8dfbc-bca3-49f6-9aa8-13d4a0996f3e:
+            uuid: 59a8dfbc-bca3-49f6-9aa8-13d4a0996f3e
+            region: content
+            configuration:
+              id: 'field_block:node:api_document:body'
+              label: 'API Description'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: text_default
+                label: hidden
+                settings: {  }
+                third_party_settings: {  }
+            weight: -9
+            additional: {  }
+        third_party_settings: {  }
+id: node.api_document.graphql_view
+targetEntityType: node
+bundle: api_document
+mode: graphql_view
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  content_moderation_control:
+    settings: {  }
+    third_party_settings: {  }
+    weight: -20
+    region: content
+  field_api_display:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 108
+    region: content
+  field_api_type:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 105
+    region: content
+  field_banner_image:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  field_document:
+    type: async
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 104
+    region: content
+  field_environment:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 106
+    region: content
+  field_format:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 107
+    region: content
+  field_listing_image:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  breadcrumbs: true
+  field_sdk_language: true
+  layout_builder__layout: true

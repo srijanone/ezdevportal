@@ -1,0 +1,21 @@
+.form-checkbox,
+.form-check-input{
+    width: 21px;
+    height: 21px;
+    border: 1px solid $lightgray ;
+
+    &[type=checkbox]{
+        border-radius: 2px;
+        &:checked{
+            background-image:url('../images/check.png');
+        }
+    }
+    &:checked{
+        background-color:$black;
+        border-color:$black;
+    }
+    &:focus{
+        border-color:$black;
+        box-shadow: none;
+    }
+}

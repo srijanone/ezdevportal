@@ -1,0 +1,28 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_environment
+    - node.type.api_product
+    - taxonomy.vocabulary.environments
+id: node.api_product.field_environment
+field_name: field_environment
+entity_type: node
+bundle: api_product
+label: Environment
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      environments: environments
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

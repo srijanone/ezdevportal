@@ -1,0 +1,21 @@
+.featured-bottom {
+  background: #eee;
+
+  .navbar-nav {
+    flex-direction: row;
+    float: right;
+
+    li {
+      a {
+        @include footer-link;
+        padding: 0px 20px 0px 40px;
+        color: $primary;
+      }
+    }
+  }
+}
+.site-footer{
+  padding: 0;
+}
+
+

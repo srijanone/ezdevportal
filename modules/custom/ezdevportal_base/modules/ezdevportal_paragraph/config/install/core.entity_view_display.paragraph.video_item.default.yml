@@ -1,0 +1,50 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.video_item.field_video_caption
+    - field.field.paragraph.video_item.field_video_description
+    - field.field.paragraph.video_item.field_video_reference
+    - field.field.paragraph.video_item.field_video_tags
+    - paragraphs.paragraphs_type.video_item
+  module:
+    - text
+id: paragraph.video_item.default
+targetEntityType: paragraph
+bundle: video_item
+mode: default
+content:
+  field_video_caption:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_video_description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_video_reference:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_video_tags:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 3
+    region: content
+hidden:
+  breadcrumbs: true

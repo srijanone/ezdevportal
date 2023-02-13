@@ -1,0 +1,28 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.footer
+  module:
+    - system
+  theme:
+    - ezdevportal_theme
+id: ezdevportal_theme_footer
+theme: ezdevportal_theme
+region: featured_bottom_second
+weight: -7
+provider: null
+plugin: 'system_menu_block:footer'
+settings:
+  id: 'system_menu_block:footer'
+  label: 'Footer menu'
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility:
+  request_path:
+    id: request_path
+    negate: true
+    pages: '/user/*'

@@ -1,0 +1,27 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.filter_block
+    - field.field.block_content.filter_block.field_filter_options
+  module:
+    - link
+id: block_content.filter_block.default
+targetEntityType: block_content
+bundle: filter_block
+mode: default
+content:
+  field_filter_options:
+    type: link
+    label: visually_hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  breadcrumbs: true

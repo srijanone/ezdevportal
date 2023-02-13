@@ -1,0 +1,120 @@
+.simple-popup-blocks-global {
+  input[type="text"] {
+    &::placeholder {
+      color: $searchcolor;
+    }
+
+    border-left: none;
+    border-top: none;
+    border-right:none;
+    border-bottom: 1px solid $lightgray;
+    border-radius: 0;
+    @include form-label;
+    background: url('../images/search-icon.png') no-repeat 1px 10px;
+    padding-bottom: 18px;
+    padding-left: 70px;
+    width:64%;
+
+    &:focus {
+      box-shadow: none;
+    }
+
+    &:-webkit-autofill {
+      background-color: url('../images/search-icon.png') no-repeat 1px 10px !important;
+    }
+  }
+
+  .spb-popup-main-wrapper {
+    left: 0;
+    border: none;
+
+    .spb-controls {
+      right: 16%;
+      top: 17%;
+
+      .spb_close {
+        border: none;
+        font-size: $basic-font-size-30;
+        font-weight: $font-weight-300;
+      }
+    }
+  }
+
+  .form-submit {
+    display: none;
+  }
+
+  .form-item-combine {
+    margin: 9% 16% !important;
+  }
+}
+
+.path-search-page {
+  .view-search-page {
+    margin-top: 84px;
+
+    .view-header {
+      @include form-label;
+      color: $lightgray;
+
+      b {
+        font-weight: 400;
+        color: $black;
+      }
+    }
+
+    .views-field-body {
+      .field-content {
+        @include search-left-text;
+      }
+    }
+
+    .views-field-title {
+      margin-top: 32px;
+      margin-bottom: 5px;
+      display: block;
+
+      a {
+        color: $blue;
+        @include search-left-text;
+      }
+    }
+  }
+
+  .views-exposed-form {
+    margin-top: 70px;
+
+    fieldset {
+      label {
+        @include explore-all-link;
+        color: $lightgray;
+        margin-bottom: 13px;
+      }
+    }
+
+    .form-select {
+      border: none;
+      padding: 0;
+      background: 0;
+
+      ul {
+        padding-left: 0;
+        list-style: none;
+
+        li {
+          margin-bottom: 13px;
+
+          a {
+            color: $lightgray;
+            @include search-left-text;
+
+            &.bef-link--selected {
+              color: $black;
+
+            }
+          }
+        }
+      }
+    }
+  }
+}

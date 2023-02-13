@@ -1,0 +1,31 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.banner_block
+    - field.storage.block_content.field_banner_image
+    - media.type.image
+id: block_content.banner_block.field_banner_image
+field_name: field_banner_image
+entity_type: block_content
+bundle: banner_block
+label: 'Banner Image'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    target_uuid: 37a3f760-e084-4923-baa5-1dbfb10a300b
+    weight: 0
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

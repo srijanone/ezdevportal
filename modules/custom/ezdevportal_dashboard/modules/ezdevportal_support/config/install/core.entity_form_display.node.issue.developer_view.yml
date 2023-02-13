@@ -1,0 +1,60 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_form_mode.node.developer_view
+    - field.field.node.issue.body
+    - field.field.node.issue.field_issue_image
+    - field.field.node.issue.field_status
+    - field.field.node.issue.field_type
+    - field.field.node.issue.layout_builder__layout
+    - node.type.issue
+  module:
+    - media_library
+    - text
+id: node.issue.developer_view
+targetEntityType: node
+bundle: issue
+mode: developer_view
+content:
+  body:
+    type: text_textarea_with_summary
+    weight: 2
+    region: content
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: 'Max 1000 characters'
+      show_summary: false
+    third_party_settings: {  }
+  field_issue_image:
+    type: media_library_widget
+    weight: 3
+    region: content
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+  field_type:
+    type: options_select
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: 'Enter Issue Name'
+    third_party_settings: {  }
+hidden:
+  created: true
+  field_status: true
+  layout_builder__layout: true
+  path: true
+  promote: true
+  status: true
+  sticky: true
+  uid: true
+  url_redirects: true

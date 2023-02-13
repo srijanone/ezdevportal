@@ -1,0 +1,94 @@
+<?php
+
+/**
+ * @file
+ * EzDevPortal Api documents module file.
+ */
+
+use Drupal\node\NodeInterface;
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\ezdevportal_api_documents\ApiDocumentInterface;
+use Drupal\views\ViewExecutable;
+
+/**
+ * Implements hook_entity_view_mode_alter().
+ */
+function ezdevportal_api_documents_entity_view_mode_alter(&$view_mode, EntityInterface $entity, $context) {
+  if ($entity->getEntityTypeId() !== 'node') {
+    return;
+  }
+
+  // Change the node display mode of api for type Graphql and Async.
+  if ($entity->bundle() == 'api_document' &&
+   ($entity->get('field_api_type')->getValue()[0]['value'] == 'graphql' ||
+    $entity->get('field_api_type')->getValue()[0]['value'] == 'async')) {
+    $view_mode = 'graphql_view';
+  }
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function ezdevportal_api_documents_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  if (in_array($form_id, ApiDocumentInterface::FORM_IDS)) {
+    $form['field_format']['#states'] = [
+      'visible' => [
+        ':input[name="field_api_type"]' => ['value' => ApiDocumentInterface::API_TYPE[0]],
+      ],
+    ];
+    $form['field_api_display']['#states'] = [
+      'visible' => [
+        ':input[name="field_api_type"]' => ['value' => ApiDocumentInterface::API_TYPE[1]],
+      ],
+    ];
+    $form['field_sdk_language']['#states'] = [
+      'visible' => [
+        ':input[name="field_api_type"]' => ['value' => ApiDocumentInterface::API_TYPE[0]],
+      ],
+    ];
+  }
+}
+
+/**
+ * Implements hook_entity_delete().
+ */
+function ezdevportal_api_documents_entity_delete(EntityInterface $entity) {
+  // @todo check the usage of this hook.
+  if ($entity->getEntityTypeId() !== 'node') {
+    return;
+  }
+  if ($entity->bundle() == 'api_document') {
+    \Drupal::service('ezdevportal_api_documents.node')->deleteApiReference($entity->id());
+  }
+}
+
+/**
+ * Implements hook_views_pre_render().
+ */
+function ezdevportal_api_documents_views_pre_render(ViewExecutable $view) {
+  // Change the value of the API formatter dynamically.
+  // User can switch to different formatters to change the display of API.
+  if ($view->storage->id() == 'api_document_formatter' && isset($view->field['field_document'])) {
+    // Get the query parameter that holds value of API formatter option.
+    $formatter_option = \Drupal::request()->query->get('view');
+    if (!empty($formatter_option)) {
+      $view->field['field_document']->options['type'] = $formatter_option;
+    }
+    else {
+      $node = \Drupal::routeMatch()->getParameter('node');
+      if ($node instanceof NodeInterface) {
+        $selected_formatters = $node->field_format->getValue();
+        foreach ($selected_formatters as $selected_formatter) {
+          $formatter_options[] = $selected_formatter['value'];
+        }
+        if (!in_array('swagger_ui_file', $formatter_options)) {
+          $view->field['field_document']->options['type'] = $formatter_options[0];
+        }
+        else {
+          $view->field['field_document']->options['type'] = 'swagger_ui_file';
+        }
+      }
+    }
+  }
+}

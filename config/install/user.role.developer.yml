@@ -1,0 +1,41 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.forum
+    - node.type.issue
+    - rest.resource.notifications_update_widget
+  module:
+    - comment
+    - field_permissions
+    - node
+    - rest
+    - statistics
+id: developer
+label: Developer
+weight: 3
+is_admin: null
+permissions:
+  - 'create field_user_contact_no'
+  - 'create field_user_country'
+  - 'create field_user_first_name'
+  - 'create field_user_job_title'
+  - 'create field_user_last_name'
+  - 'create field_user_organization'
+  - 'create field_user_website'
+  - 'create forum content'
+  - 'create issue content'
+  - 'delete own issue content'
+  - 'edit own comments'
+  - 'edit own field_user_contact_no'
+  - 'edit own field_user_country'
+  - 'edit own field_user_first_name'
+  - 'edit own field_user_job_title'
+  - 'edit own field_user_last_name'
+  - 'edit own field_user_organization'
+  - 'edit own field_user_website'
+  - 'edit own forum content'
+  - 'edit own issue content'
+  - 'post comments'
+  - 'restful post notifications_update_widget'
+  - 'view post access counter'

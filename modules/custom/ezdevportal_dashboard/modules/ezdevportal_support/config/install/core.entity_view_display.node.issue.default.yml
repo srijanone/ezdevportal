@@ -1,0 +1,145 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.issue.body
+    - field.field.node.issue.field_issue_image
+    - field.field.node.issue.field_status
+    - field.field.node.issue.field_type
+    - field.field.node.issue.layout_builder__layout
+    - node.type.issue
+  module:
+    - layout_builder
+    - layout_discovery
+    - text
+    - user
+third_party_settings:
+  layout_builder:
+    allow_custom: true
+    enabled: true
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components:
+          c7f2ec09-10cc-42fd-9f6f-6e4c229c1f62:
+            uuid: c7f2ec09-10cc-42fd-9f6f-6e4c229c1f62
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'extra_field_block:node:issue:links'
+            weight: 0
+            additional: {  }
+          d0161ff2-599a-4e2c-b965-fef1b8bc20b5:
+            uuid: d0161ff2-599a-4e2c-b965-fef1b8bc20b5
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:issue:body'
+              formatter:
+                label: hidden
+                type: text_default
+                settings: {  }
+                third_party_settings: {  }
+            weight: 1
+            additional: {  }
+          f527d3af-2b3c-4f5b-8859-9e4c3db05d9b:
+            uuid: f527d3af-2b3c-4f5b-8859-9e4c3db05d9b
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:issue:field_type'
+              formatter:
+                label: above
+                settings:
+                  link: true
+                third_party_settings: {  }
+                type: entity_reference_label
+            weight: 2
+            additional: {  }
+          cccfc6dc-6efb-43dc-a3d4-bbc1064574ef:
+            uuid: cccfc6dc-6efb-43dc-a3d4-bbc1064574ef
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:issue:field_status'
+              formatter:
+                label: above
+                settings:
+                  link: true
+                third_party_settings: {  }
+                type: entity_reference_label
+            weight: 3
+            additional: {  }
+          293c7fce-a368-4e52-a345-5750564cddfd:
+            uuid: 293c7fce-a368-4e52-a345-5750564cddfd
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:issue:field_issue_image'
+              formatter:
+                type: entity_reference_entity_view
+                label: above
+                settings:
+                  view_mode: default
+                  link: false
+                third_party_settings: {  }
+            weight: 4
+            additional: {  }
+        third_party_settings: {  }
+id: node.issue.default
+targetEntityType: node
+bundle: issue
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_issue_image:
+    type: entity_reference_entity_view
+    weight: 104
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    region: content
+  field_status:
+    weight: 103
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_type:
+    weight: 102
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  breadcrumbs: true
+  layout_builder__layout: true

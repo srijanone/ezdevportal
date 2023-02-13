@@ -1,0 +1,31 @@
+table {
+  tr {
+    th {
+      background-color: $white;
+      color: $black;
+
+      &:hover {
+        color: $black;
+      }
+
+      &:focus {
+        color: $black;
+      }
+    }
+  }
+
+  &.table {
+    tr {
+      th {
+        background-color: $white;
+        box-shadow: none;
+      }
+
+      td {
+        background-color: $white;
+        box-shadow: none;
+        border-bottom: 1px solid $lightgray;
+      }
+    }
+  }
+}

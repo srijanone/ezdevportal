@@ -1,0 +1,107 @@
+.dashboard-menu-item {
+  .add-icon-dashboards {
+    float: right;
+    margin-right: 40px;
+  }
+}
+
+.field--name-field-filter-options {
+  select {
+    border: 1px solid $black;
+    padding: 9px 20px;
+    border-radius: 10px;
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1em;
+    min-width: 250px;
+  }
+}
+
+.node--type-forum,
+.node-issue-form,
+.developer-app-add-for-developer-form,
+.node-forum-form {
+  input[type=reset] {
+    order: 2;
+  }
+
+  button[type="submit"] {
+    order: 1;
+    background: $black;
+    color: $white;
+    margin-top: -4px;
+  }
+}
+
+.card-with-text {
+  .cardname {
+    @include body-para;
+    margin-top: 14px;
+  }
+
+  .created {
+    @include card-text;
+  }
+}
+
+.approval-pending {
+  margin-top: 88px;
+}
+
+.field--name-title {
+  @include content-list-text-heading;
+  margin-bottom: 14px;
+}
+
+.field--name-created {
+  @include card-text;
+  margin-top: 60px;
+  display: block;
+}
+
+.developer-app-add-for-developer-form {
+  .machine-name-source {
+    border-top-right-radius: 5px !important;
+    border-bottom-right-radius: 5px !important;
+  }
+
+  .input-group-append {
+    display: none;
+  }
+
+  .form-check {
+    display: inline-block;
+    margin-right: 15px;
+
+    .form-check-label {
+      padding-left: 3px;
+    }
+  }
+}
+
+.notification-icon {
+  &:after {
+    background: $black;
+  }
+}
+
+.notify-drop {
+  li {
+    &.unread {
+      border-left: 4px solid $black;
+    }
+  }
+}
+
+.node-forum-form,
+.node-issue-form {
+  .layout-region-node-footer {
+    margin-left: 25px;
+  }
+}
+
+summary::marker {
+  content: '';
+}

@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+id: video_collection_block
+label: 'Video Block'
+revision: 0
+description: 'Use this block type to create a video along with caption and other additional details.'

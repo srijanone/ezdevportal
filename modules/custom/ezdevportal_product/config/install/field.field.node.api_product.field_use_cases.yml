@@ -1,0 +1,28 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_use_cases
+    - node.type.api_product
+    - node.type.use_case
+id: node.api_product.field_use_cases
+field_name: field_use_cases
+entity_type: node
+bundle: api_product
+label: 'Use Cases'
+description: 'Used to reference the use cases.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      use_case: use_case
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

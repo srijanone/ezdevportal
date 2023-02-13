@@ -1,0 +1,14 @@
+langcode: en
+status: true
+dependencies: {  }
+id: app_developer_view
+label: 'App Developer View'
+description: ''
+entityType: _none
+entityBundle: _none
+language: und
+breadcrumbPaths: /dashboard
+breadcrumbTitles: 'My APP'
+type: '2'
+pathPattern: '/user/*/apps/*'
+extraCacheContexts: ''

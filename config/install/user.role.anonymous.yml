@@ -1,0 +1,32 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.restricted_html
+  module:
+    - comment
+    - contact
+    - field_permissions
+    - filter
+    - like_and_dislike
+    - media
+    - search
+    - system
+id: anonymous
+label: 'Anonymous user'
+weight: 0
+is_admin: false
+permissions:
+  - 'access comments'
+  - 'access content'
+  - 'access site-wide contact form'
+  - 'add or remove dislike votes on forum of node'
+  - 'add or remove like votes on forum of node'
+  - 'create field_user_contact_no'
+  - 'create field_user_first_name'
+  - 'create field_user_job_title'
+  - 'create field_user_last_name'
+  - 'create field_user_organization'
+  - 'search content'
+  - 'use text format restricted_html'
+  - 'view media'

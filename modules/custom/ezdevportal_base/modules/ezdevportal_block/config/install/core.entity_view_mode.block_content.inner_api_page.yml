@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_content
+id: block_content.inner_api_page
+label: 'Inner api page'
+targetEntityType: block_content
+cache: true

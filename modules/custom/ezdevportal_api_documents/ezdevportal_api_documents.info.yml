@@ -1,0 +1,12 @@
+name: EzDevPortal API Document Feature
+description: Provides the API customisations.
+type: module
+package: EzDevPortal
+core: 8.x
+core_version_requirement: ^8 || ^9
+
+dependencies:
+  - ezdevportal:ezdevportal_node
+  - ezdevportal:ezdevportal_asyncapi
+  - ezdevportal:ezdevportal_sdk
+  - redoc_field_formatter:redoc_field_formatter

@@ -1,0 +1,62 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_form_mode.node.developer_view
+    - field.field.node.forum.body
+    - field.field.node.forum.comment_forum
+    - field.field.node.forum.field_forum_tags
+    - field.field.node.forum.layout_builder__layout
+    - field.field.node.forum.taxonomy_forums
+    - node.type.forum
+  module:
+    - text
+id: node.forum.developer_view
+targetEntityType: node
+bundle: forum
+mode: developer_view
+content:
+  body:
+    type: text_textarea_with_summary
+    weight: 2
+    region: content
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: 'Max 1000 characters'
+      show_summary: false
+    third_party_settings: {  }
+  field_forum_tags:
+    type: entity_reference_autocomplete_tags
+    weight: 1
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: 'Select Tags'
+    third_party_settings: {  }
+  taxonomy_forums:
+    type: options_select
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: 'Type Topic Name'
+    third_party_settings: {  }
+hidden:
+  comment_forum: true
+  created: true
+  layout_builder__layout: true
+  path: true
+  promote: true
+  status: true
+  sticky: true
+  uid: true
+  url_redirects: true

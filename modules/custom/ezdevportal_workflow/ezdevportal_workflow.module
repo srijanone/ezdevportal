@@ -1,0 +1,38 @@
+<?php
+
+/**
+ * @file
+ * Hooks for workflow functionality.
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_form_alter().
+ */
+function ezdevportal_workflow_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  $form_id_list = [
+    'views_form_products_listing_page_page_5',
+    'views_form_products_listing_page_page_1',
+    'views_form_products_listing_page_page_4',
+    'views_form_products_listing_page_page_2',
+    'views_form_products_listing_page_page_3',
+    'views_form_products_listing_page_page_6',
+  ];
+  if (in_array($form_id, $form_id_list)) {
+
+    $remove_title_text = array_map("ezdevportal_workflow_override_title", $form['views_bulk_operations_bulk_form']);
+    $form['views_bulk_operations_bulk_form'] = $remove_title_text;
+
+  }
+}
+
+/**
+ * Sets title to empty.
+ */
+function ezdevportal_workflow_override_title($data) {
+  if (is_array($data)) {
+    $data['#title'] = '';
+  }
+  return $data;
+}

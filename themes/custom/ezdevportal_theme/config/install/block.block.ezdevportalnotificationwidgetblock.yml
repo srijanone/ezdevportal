@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - ezdevportal_notification
+  theme:
+    - ezdevportal_theme
+id: ezdevportalnotificationwidgetblock
+theme: ezdevportal_theme
+region: primary_menu
+weight: -12
+provider: null
+plugin: ezdevportal_notification_widget_block
+settings:
+  id: ezdevportal_notification_widget_block
+  label: 'EzDevPortal Notification widget block'
+  label_display: '0'
+  provider: ezdevportal_notification
+  block_notification_type: '0'
+  block_notification_logs_display: 1
+visibility: {  }

@@ -1,0 +1,37 @@
+<div id="{{ id }}" {{ attributes.addClass(classes) }}>
+  <div class="accordion accordion-flush" id="accordionFlushExample">
+  {% set i = 0 %}
+  {% set len = rows | length %}
+  {% for key, row in rows -%}
+    {% set i = i + 1 %}
+    {% set collapse_class = (
+        (i == 1 and options.collapse.first is defined and options.collapse.first > 0)
+        or (i == len and options.collapse.last is defined and options.collapse.last > 0)
+        or (i != 1 and i != len and options.collapse.middle is defined and options.collapse.middle > 0)
+        ) ? 'collapse show' : 'collapse'
+    %}
+    {% set collapse_class_boolean = (
+        (i == 1 and options.collapse.first is defined and options.collapse.first > 0)
+        or (i == len and options.collapse.last is defined and options.collapse.last > 0)
+        or (i != 1 and i != len and options.collapse.middle is defined and options.collapse.middle > 0)
+        ) ? 'true' : 'false'
+    %}
+    <div class="accordion-item">
+      <div class="accordion-header" id="heading{{ id }}-collapse-{{ key }}">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{ id }}-collapse-{{ key }}" aria-expanded="false" aria-controls="flush-collapseOne">
+          {{ row.title }}
+        </button>
+      </div>
+      <div id="collapse{{ id }}-collapse-{{ key }}" class="accordion-collapse collapse" aria-labelledby="heading{{ id }}-collapse-{{ key }}" data-bs-parent="#accordionFlushExample">
+        <div class="accordion-body">
+          {{row.content}}
+      </div>
+      </div>
+    </div>
+  {%- endfor %}
+  </div>
+</div>
+
+
+  
+  <!-- End row -->

@@ -1,0 +1,166 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.basic_html
+    - filter.format.full_html
+    - media.type.audio
+    - media.type.document
+    - media.type.image
+    - media.type.remote_video
+    - media.type.video
+    - node.type.api_document
+    - node.type.api_product
+    - node.type.article
+    - node.type.blog_post
+    - node.type.faq
+    - node.type.forum
+    - node.type.issue
+    - node.type.landing_page
+    - node.type.page
+    - node.type.use_case
+    - rest.resource.notifications_update_widget
+    - taxonomy.vocabulary.api_product_categories
+    - taxonomy.vocabulary.environments
+    - taxonomy.vocabulary.forums
+    - taxonomy.vocabulary.icons
+    - taxonomy.vocabulary.issue_status
+    - taxonomy.vocabulary.issue_type
+    - taxonomy.vocabulary.product_available_for
+    - taxonomy.vocabulary.sdk_languages
+    - taxonomy.vocabulary.tags
+    - taxonomy.vocabulary.units
+    - workflows.workflow.content
+  module:
+    - content_moderation
+    - field_permissions
+    - filter
+    - media
+    - node
+    - rest
+    - taxonomy
+id: editor
+label: Editor
+weight: 5
+is_admin: null
+permissions:
+  - 'access content overview'
+  - 'access media overview'
+  - 'access taxonomy overview'
+  - 'create api_document content'
+  - 'create api_product content'
+  - 'create audio media'
+  - 'create blog_post content'
+  - 'create document media'
+  - 'create faq content'
+  - 'create field_user_contact_no'
+  - 'create field_user_country'
+  - 'create field_user_first_name'
+  - 'create field_user_job_title'
+  - 'create field_user_last_name'
+  - 'create field_user_organization'
+  - 'create field_user_website'
+  - 'create forum content'
+  - 'create image media'
+  - 'create issue content'
+  - 'create landing_page content'
+  - 'create media'
+  - 'create remote_video media'
+  - 'create terms in api_product_categories'
+  - 'create terms in environments'
+  - 'create terms in forums'
+  - 'create terms in icons'
+  - 'create terms in issue_status'
+  - 'create terms in issue_type'
+  - 'create terms in product_available_for'
+  - 'create terms in sdk_languages'
+  - 'create terms in tags'
+  - 'create terms in units'
+  - 'create use_case content'
+  - 'create video media'
+  - 'delete any audio media'
+  - 'delete any document media'
+  - 'delete any image media'
+  - 'delete own issue content'
+  - 'delete any media'
+  - 'delete any remote_video media'
+  - 'delete any video media'
+  - 'delete media'
+  - 'delete own api_document content'
+  - 'delete own api_product content'
+  - 'delete own audio media'
+  - 'delete own document media'
+  - 'delete own image media'
+  - 'delete own remote_video media'
+  - 'delete own video media'
+  - 'edit any api_document content'
+  - 'edit any api_product content'
+  - 'edit any audio media'
+  - 'edit any blog_post content'
+  - 'edit any document media'
+  - 'edit any faq content'
+  - 'edit any forum content'
+  - 'edit any image media'
+  - 'edit any issue content'
+  - 'edit any landing_page content'
+  - 'edit any remote_video media'
+  - 'edit any use_case content'
+  - 'edit any video media'
+  - 'edit own api_document content'
+  - 'edit own api_product content'
+  - 'edit own audio media'
+  - 'edit own blog_post content'
+  - 'edit own document media'
+  - 'edit own faq content'
+  - 'edit own field_user_contact_no'
+  - 'edit own field_user_country'
+  - 'edit own field_user_first_name'
+  - 'edit own field_user_job_title'
+  - 'edit own field_user_last_name'
+  - 'edit own field_user_organization'
+  - 'edit own field_user_website'
+  - 'edit own forum content'
+  - 'edit own image media'
+  - 'edit own issue content'
+  - 'edit own landing_page content'
+  - 'edit own remote_video media'
+  - 'edit own use_case content'
+  - 'edit own video media'
+  - 'edit terms in api_product_categories'
+  - 'edit terms in environments'
+  - 'edit terms in forums'
+  - 'edit terms in icons'
+  - 'edit terms in issue_status'
+  - 'edit terms in issue_type'
+  - 'edit terms in product_available_for'
+  - 'edit terms in sdk_languages'
+  - 'edit terms in tags'
+  - 'edit terms in units'
+  - 'restful post notifications_update_widget'
+  - 'revert api_document revisions'
+  - 'revert api_product revisions'
+  - 'revert article revisions'
+  - 'revert blog_post revisions'
+  - 'revert faq revisions'
+  - 'revert forum revisions'
+  - 'revert issue revisions'
+  - 'revert landing_page revisions'
+  - 'revert page revisions'
+  - 'revert use_case revisions'
+  - 'update any media'
+  - 'update media'
+  - 'use content transition create_new_draft'
+  - 'use content transition review'
+  - 'use text format basic_html'
+  - 'use text format full_html'
+  - 'view any unpublished content'
+  - 'view api_document revisions'
+  - 'view api_product revisions'
+  - 'view article revisions'
+  - 'view blog_post revisions'
+  - 'view faq revisions'
+  - 'view forum revisions'
+  - 'view issue revisions'
+  - 'view landing_page revisions'
+  - 'view page revisions'
+  - 'view use_case revisions'

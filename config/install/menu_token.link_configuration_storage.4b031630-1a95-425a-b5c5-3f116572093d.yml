@@ -1,0 +1,6 @@
+langcode: en
+status: true
+dependencies: {  }
+id: 4b031630-1a95-425a-b5c5-3f116572093d
+label: 'Menu token link configuration'
+linkid: 'internal:/user/[current-user:uid]/edit'

@@ -1,0 +1,226 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.base_field_override.node.forum.title
+    - core.entity_view_display.comment.comment_forum.default
+    - core.entity_view_mode.node.full
+    - field.field.node.forum.body
+    - field.field.node.forum.comment_forum
+    - field.field.node.forum.field_forum_tags
+    - field.field.node.forum.layout_builder__layout
+    - field.field.node.forum.taxonomy_forums
+    - node.type.forum
+    - views.view.forum
+  module:
+    - comment
+    - layout_builder
+    - layout_discovery
+    - ezdevportal_base
+    - text
+    - user
+    - views
+third_party_settings:
+  layout_builder:
+    enabled: true
+    allow_custom: true
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+          context_mapping: {  }
+        components:
+          fd4602b4-a9b5-40f2-a2de-a2dcf068ccea:
+            uuid: fd4602b4-a9b5-40f2-a2de-a2dcf068ccea
+            region: content
+            configuration:
+              id: banner_content_block
+              label: 'Banner Content Block'
+              label_display: '0'
+              provider: ezdevportal_product
+              context_mapping: {  }
+              banner_title: ''
+              banner_text: ''
+              banner_image: {  }
+            weight: 0
+            additional: {  }
+        third_party_settings: {  }
+      -
+        layout_id: layout_twocol_section
+        layout_settings:
+          label: ''
+          context_mapping: {  }
+          column_widths: 25-75
+          custom_id: ''
+          custom_classes: ''
+          custom_class_choose:
+            container: container
+          custom_styles: ''
+          custom_data_attributes: ''
+          regions:
+            first:
+              region_id: ''
+              region_class_choose:
+                container: 0
+              region_classes: ''
+              region_styles: ''
+              region_data: ''
+            second:
+              region_id: ''
+              region_class_choose:
+                container: 0
+              region_classes: ''
+              region_styles: ''
+              region_data: ''
+        components:
+          a18083bc-d725-40ba-98ef-e2e29fa6cb40:
+            uuid: a18083bc-d725-40ba-98ef-e2e29fa6cb40
+            region: second
+            configuration:
+              id: 'extra_field_block:node:forum:like_and_dislike'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+            weight: -5
+            additional: {  }
+          af64bc69-0c51-4cde-ae10-b211d284a703:
+            uuid: af64bc69-0c51-4cde-ae10-b211d284a703
+            region: second
+            configuration:
+              id: 'field_block:node:forum:field_forum_tags'
+              label: Tag
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: entity_reference_label
+                label: hidden
+                settings:
+                  link: true
+                third_party_settings: {  }
+            weight: -6
+            additional: {  }
+          4c36a892-1272-4a90-945b-e8c7e877b89b:
+            uuid: 4c36a892-1272-4a90-945b-e8c7e877b89b
+            region: first
+            configuration:
+              id: 'views_block:forum-forum_topic_list'
+              label: ''
+              label_display: visible
+              provider: views
+              context_mapping: {  }
+              views_label: ''
+              items_per_page: '10'
+            weight: 0
+            additional: {  }
+          930abbec-c008-4318-88cf-579f6cbc0764:
+            uuid: 930abbec-c008-4318-88cf-579f6cbc0764
+            region: second
+            configuration:
+              id: 'field_block:node:forum:body'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: text_default
+                label: hidden
+                settings: {  }
+                third_party_settings: {  }
+            weight: -7
+            additional: {  }
+          46f7e8f2-2477-4b17-9610-63894e6b088d:
+            uuid: 46f7e8f2-2477-4b17-9610-63894e6b088d
+            region: second
+            configuration:
+              id: 'field_block:node:forum:comment_forum'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: comment_default
+                label: hidden
+                settings:
+                  view_mode: default
+                  pager_id: 0
+                third_party_settings: {  }
+            weight: -4
+            additional: {  }
+          4fe9c2ef-4e7a-4d76-bf6d-0c38d1bbff9d:
+            uuid: 4fe9c2ef-4e7a-4d76-bf6d-0c38d1bbff9d
+            region: second
+            configuration:
+              id: 'field_block:node:forum:title'
+              label: 'Topic Name'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: string
+                label: hidden
+                settings:
+                  link_to_entity: false
+                third_party_settings: {  }
+            weight: -10
+            additional: {  }
+        third_party_settings: {  }
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components: {  }
+        third_party_settings: {  }
+id: node.forum.full
+targetEntityType: node
+bundle: forum
+mode: full
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  comment_forum:
+    type: comment_default
+    label: hidden
+    settings:
+      view_mode: default
+      pager_id: 0
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_forum_tags:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  like_and_dislike:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  taxonomy_forums:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  breadcrumbs: true
+  layout_builder__layout: true

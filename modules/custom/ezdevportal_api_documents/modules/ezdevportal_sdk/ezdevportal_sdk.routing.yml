@@ -1,0 +1,11 @@
+ezdevportal_sdk.form:
+  path: '/sdk-generator/{node}'
+  defaults:
+    _form: '\Drupal\ezdevportal_sdk\Form\DownloadSdk'
+    _title: 'SDK Download'
+  requirements:
+    _permission: 'access content'
+  options:
+    parameters:
+      node:
+        type: entity:node

@@ -1,0 +1,55 @@
+.block-action-content-block {
+
+  .heading-img {
+    text-align: center;
+
+    .subscribe-title {
+      @include subscribe-title;
+      margin-top: 15px;
+      margin-bottom: 35px;
+      text-transform: uppercase;
+    }
+  }
+
+  p {
+    @include filter-label;
+
+  }
+
+  label {
+    @include explore-all-link;
+  }
+
+  .form-control {
+    border-top: 0;
+    border-radius: 0;
+    border-left: 0;
+    border-right: 0;
+
+    &:focus {
+      box-shadow: none;
+      border-color: inherit;
+    }
+  }
+}
+
+.region-featured-bottom-first {
+  .block-action-content-block {
+    .webform-submission-subscribe-form {
+      .form-email {
+        margin-bottom: 60px;
+      }
+    }
+
+    .btn-subscribe {
+      @include subscribe-btn;
+      padding: 24px;
+      width: 100%;
+      border: 1px solid $lightgray;
+      border-radius: 10px;
+      text-align: center;
+      display: inline-block;
+      margin-top: auto;
+    }
+  }
+}

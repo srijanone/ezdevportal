@@ -1,0 +1,92 @@
+{
+    "_links": {
+        "self": {
+            "href": ""
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/file\/file\/uid": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json"
+            }
+        ]
+    },
+    "fid": [
+        {
+            "value": 56
+        }
+    ],
+    "uuid": [
+        {
+            "value": "f6a94ec5-f194-4d8c-aa3b-fd48bca59489"
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/file\/file\/uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "3f6114f4-7508-4d03-a8d9-d921300515a8"
+                    }
+                ]
+            }
+        ]
+    },
+    "filename": [
+        {
+            "value": "blog-pencil-icon.png"
+        }
+    ],
+    "uri": [
+        {
+            "value": "public:\/\/2021-11\/blog-pencil-icon_1_0.png",
+            "url": "\/sites\/default\/files\/2021-11\/blog-pencil-icon_1_0.png"
+        }
+    ],
+    "filemime": [
+        {
+            "value": "image\/png"
+        }
+    ],
+    "filesize": [
+        {
+            "value": 2150
+        }
+    ],
+    "status": [
+        {
+            "value": true
+        }
+    ],
+    "created": [
+        {
+            "value": "2021-11-25T10:43:03+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "changed": [
+        {
+            "value": "2021-11-25T10:43:12+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "data": [
+        {
+            "value": "iVBORw0KGgoAAAANSUhEUgAAAHEAAABKCAYAAACMw7u+AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAf7SURBVHgB7Z1LctNKFIaPE5MRxfUdwiRidofmMWAWewXgFWBWEGcFMSvAWUGcFWBWgJmlipd2gBhlSBjndf9fdKfaiiS3HrYbu\/8qxVJLbin9qbvP6ZcbYujp06eDRqPx8ubmpo3PlmywkAbn+JhcX1+\/DcMwEofV4J92ux1sb2+\/56543RGADr99+\/ZWHNU2\/zx69Og7ct5\/4pUqpE3n4cOHv8\/Ozk7FQTVQhPbxkMdG2NG9e\/dGsuG6vLwMkAOZLoEKOr+6unqMovVcHFMTAF\/rA+y\/\/fLly1C8qAjVzBNUM9\/lD8jW1tbWK3yOxTFtYevog2azORavWzHXITd+MIKctBma5sHp6WkkXkmFegcl1T+yACHH0xPgCxKWKa6b4rUyER6K6Hd4Ofo6DDbKGG7NQRGYtUCkiyJ\/6o2wjoq\/6puZE1\/kis\/HZ0J9+1ESRTSBIhyn213b\/31LKojwnj179hE3\/cEHwvYLb9KhlBT\/MXz\/PeMx4nsnFcTvG\/H9wPGxgroyZQE0L+F52+esBFE1EHTMMLxJQyTUUEoI3x1he5UIG5QFye\/x+4n4+uq5VybLhhWCtPq\/S0PEW9LJehAk1H7Rt525GvXD64z4BiXiayUBGuqoKmDpYkkgiRc\/R32UdMfzLioNEQke5Jxuqc1arAfyzsP9KWre516P5+\/IkkWAphFjqbkgq0CM5lxSyCBBa0iUdx7\/fFEDJ8o7afH8taokQK1ckKUholmK\/lOUcXpc1KqkGSqGT2YKDvenz58\/h1JAygqdZpyO0DI1lSWpIkCtTJClIRIS3uaeJEDiYUO0vZZq8cf37sTH452dnb6UEOJ7kxYfwruyJNUEUCsVZCU\/kbnjxYsX3YuLizb7IAF1WuUNVy1Gj\/Ggr1SfZvj169eJlFQyPuxHDx48mEyn06U0YtcMUIsgBenyRgc0EHCjD3CiIV4zSvTyjM3Em\/O9Q7pb2D3Ctic1t7vipRyhj\/OA+5X8RK90aYDsFQL0AYw2Ft+F6vR5Uv5z3LDiIdYsE6Du1qP9sCCQbFgZeIg1Kg2glgEyknq17yHWpDyAhlqoy6RO4X6Bh1iDbACqRu\/3THQcprlSZRXOuBjskRCvGSHnBHnnDSv0ZA7AuNcCbtgbuGYTuGYhXDOGBVLt+Y6aiQDvYiSU19xnAoQV2k+7JgXgmOH0YZWPXRqksn7HMxDhd3TEa0bPnz\/v4OWOSyg2\/+nwKgC1qoA0i25fJ86RaoFiHdbDSz5mWB0AtQgScVk1IGgl617fYlNQdQJU17If9SPi1EGB5OvOfX1OLKBFAmSjvGqYjyRbqff1EC21aIAsVrkpkGnGVOZ9PUQL2QCk9NgZ1llFAepz3Me5JMjc+3qIc2QAnOQlpB47M6fFJhegFrv42EuhDnMBUtb9iermfVkzXV9fj7PGosLo48AttsSE9+\/fz7Qgdb9hHQDN+4oFQMoaYrPZ5Cyh0mNKXZUaazNOhquEHCuA3ayO5AUBHIslQMoaovKXNsIFcQDgxBYg5ediJLRqgPOK7jR5w8aQIwC7RccA+ZyotECAnPm0MICUz4myeIBZY2brAEhtPETOIRM7gIcuAqQ2GiIBqgS3ATi0ANiyAcj70pmvAyBVqE5Ub22hiTKuCA791Dw2AJ7DB+7VAVC1m84FqO9bB0DKGiJHUeNjpfP6qgjP39Ojyc2EzLMaSwAMbAHyvnWNRLeGyARAL\/fS5jDULbz1ccK6ArDORS4KFafLnEm0CC0QIKuZ3ioAUhtj2BQFKDmj11R8M32HWRN\/Fg2Q2hhnHwnJMZ+cAt6zAZjXdmnb+bsMgNRG5EQ1fz\/gPrqejtPm69sCpFwCSG1KcaqnlZ3Ew96RuCbIIgBV5+88gMGyAFIbUZwiQWOIV1dXA06E5XxDBbLLFTuKAGSrjUsAqY2AqGcdq3UExoAhCiTXeWXjRd0AZVkAqXV19qeAcuvTImF3AfK3PuYgYA2Sx8ihw7zIjIbvA9cAUtYQ8Y9O8ZDOLqGcUJQ4ZnF6ZAYQJBov4iEnumhNG2uT6LkYpd1slQCptR8BTitRLTzbS\/PlAHJIkNgiWK4zIG26nlYNkFp76xQAA35mLT5EOISUtFr\/FoDU2kNUS59I3mJGSZBqYT9bgOy16K1ywd+1h4hEjtdNnXedCRLboADAbtHVrurWJjj7u9h+2lyoQXIfOfhl2sqOrgGkNgEie9GtE9oAeWfhWBcBUmvt7KuRCPF6c0W+R5CwWpkbDxVI+pwtFwFSheZiqJVwnR6egQQ+0AmsLVPA2MNHoTXikiDx2XIRIGUNESZ0Cw7\/v+K4kOC3Qx5Uc5teQusnHPyRTRzKzWjDb9QLL8TxAOAT1wBS1hDVw3fkL5KyTPX+OzRs\/ILDf6LD9Cr9qoGcVukelzxpGL9Yh+OfOP6EayYuAqTWvQF8N3E8Qo58Aii7KpcGxrlzBewDDSFA43DCcFnLalbR2kI0fgvDFOu1fQWLuSoGtrOzM81z1rlcJj\/16hmuaZ1zIgHq3BWWzV2q9ybu7QDMACCH4pjWFqIaLFzZEFNWabzPYlgclJ9QswYixNuiZVU\/+OG4Ar1jdiy7JEK8NZtRZ+yL162UcWT+ao6bLgberhOU9R0eKKf4HE4uf\/jRedN6wdItVIE6ZqdxoVafZSmusWGBsee7LV6Z4viarOEZq1Zs2GT8qIiXUt74Ghc0M6ZGObXs0d4TL1Ynn5AWI9cnEv0PWDEp4xoZj6sAAAAASUVORK5CYII="
+        }
+    ]
+}
