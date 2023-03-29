@@ -138,7 +138,6 @@
     }
 
     .navbar-toggler-icon {
-      background-image: none;
       background: url('../images/cross.png');
       width: 14px;
       height: 14px;
@@ -147,7 +146,6 @@
 
     &.collapsed {
       .navbar-toggler-icon {
-        background-image: none;
         background: url('../images/hamburger-menu.png');
         width: 24px;
         height: 24px;
@@ -219,9 +217,8 @@
     }
 
     .region-featured-bottom-first {
-      margin-top: 40px;
       flex-direction: column;
-      margin: auto 10px;
+      margin:40px auto 10px;
 
       .block-social-media-links-block {
         margin-bottom: 24px;
