@@ -69,7 +69,7 @@
 #}
 <div id="page-wrapper">
   <div id="page">
-  
+
     <header id="header" class="header" role="banner" aria-label="{{ 'Site header'|t}}">
       {% block head %}
         {% if page.secondary_menu or page.top_header or page.top_header_form %}
@@ -142,7 +142,7 @@
     {% endif %}
     <div id="main-wrapper" class="layout-main-wrapper clearfix">
       {% block content %}
-        <div class="container" id="main">
+        <div class="{{ page.content.add_class }}" id="main">
           {{ page.breadcrumb }}
           <div class="row row-offcanvas row-offcanvas-left clearfix">
               <main{{ content_attributes }}>

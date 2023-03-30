@@ -110,7 +110,7 @@ class GenerateSdk {
    */
   public function sdkGenerateRequest($lang, $spec_path) {
     try {
-      $response = $this->httpClient->post('http://api.openapi-generator.tech/api/gen/clients/' . $lang, [
+      $response = $this->httpClient->post('https://api.openapi-generator.tech/api/gen/clients/' . $lang, [
         'body' => json_encode(["openAPIUrl" => $spec_path]),
         'headers' => [
           'Content-Type' => 'application/json',

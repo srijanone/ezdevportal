@@ -38,11 +38,11 @@
   <div{{ attributes.addClass(classes) }}>
       <div class="heading-img">
         {% if item.action_image_path and item.actionimg %}
-          <img src ="{{item.actionimg}}">
+          <img src ="{{item.actionimg}}" alt={{item.title}}>
         {% elseif item.action_image_path %}
-          <img src ="{{item.action_image_path}}">
+          <img src ="{{item.action_image_path}}" alt={{item.title}}>
         {% elseif item.actionimg %}
-          <img src ="{{item.actionimg}}">
+          <img src ="{{item.actionimg}}" alt={{item.title}}>
         {% endif %}
 
         {% if item.title %}
