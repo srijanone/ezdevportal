@@ -142,7 +142,7 @@
     {% endif %}
     <div id="main-wrapper" class="layout-main-wrapper clearfix">
       {% block content %}
-        <div class="{{ page.content.add_class }}" id="main">
+        <div class="{{ page.content.container_class }}" id="main">
           {{ page.breadcrumb }}
           <div class="row row-offcanvas row-offcanvas-left clearfix">
               <main{{ content_attributes }}>
