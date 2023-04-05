@@ -21,8 +21,31 @@ details {
 }
 
 .block-views-exposed-filter-blockblog-block-all-blogs {
-  ul {
+  .form-select {
+    border: none;
+    background-image: none;
     padding-left: 0;
+
+    ul {
+      padding-left: 0;
+
+      li {
+        margin: 10px 10px 0px 0px;
+        padding: 7px 37px;
+
+        &:hover {
+          a {
+            color: $white;
+          }
+        }
+
+        a {
+          &:hover {
+            color: $white;
+          }
+        }
+      }
+    }
   }
 
   fieldset {
@@ -33,19 +56,6 @@ details {
       margin-left: 23px;
     }
   }
-
-  .form-select {
-    border: none;
-    background-image: none;
-    padding-left: 0;
-
-    ul {
-      li {
-        margin: 10px 10px 0px 0px;
-        padding: 7px 37px;
-      }
-    }
-  }
 }
 
 .views-field-field-blog-tags {
@@ -53,34 +63,6 @@ details {
     li {
       margin: 10px 10px 0px 0px;
       padding: 7px 37px;
-    }
-  }
-}
-
-.block-views-exposed-filter-blockblog-block-all-blogs {
-  .form-select {
-    ul {
-      li {
-        a {
-          &:hover {
-            color: $white;
-          }
-        }
-      }
-    }
-  }
-}
-
-.block-views-exposed-filter-blockblog-block-all-blogs {
-  .form-select {
-    ul {
-      li {
-        &:hover {
-          a {
-            color: $white;
-          }
-        }
-      }
     }
   }
 }

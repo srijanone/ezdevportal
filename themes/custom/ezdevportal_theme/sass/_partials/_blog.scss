@@ -26,15 +26,6 @@
     font-weight: $font-weight-500;
   }
 }
-
-.block-views-blockblog-block-latest-blogs{
-  .blog-title {
-    @include banner-link;
-    margin-top: 85px;
-    margin-bottom: 28px;
-  }
-}
-
 .block-views-blockblog-discovery-tag-blog {
   h2{
     @include banner-link;
