@@ -31,14 +31,3 @@ color.preview:
     color/preview.js: {}
   dependencies:
     - color/drupal.color
-simple-popup-blocks:
-  version: VERSION
-  css:
-    theme:
-      css/simple_popup_blocks.css: {}
-  js:
-    js/simple_popup_blocks.js: {}
-  dependencies:
-    - core/jquery
-    - core/drupal
-    - core/drupalSettings
