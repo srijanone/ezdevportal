@@ -43,6 +43,7 @@ class Playground extends Component<{}, State> {
   }
 
   loadData() {
+    let array = new Uint32Array(1);
     fetch(fileUrl)
     .then(function (response) {
       if(response.ok){
@@ -51,7 +52,7 @@ class Playground extends Component<{}, State> {
       throw new Error('Error message.');
     })
     .then((data) => {
-      this.setState({schema : data, schemaFromEditor : data, key: Math.floor(Math.random()*10000)});
+      this.setState({schema : data, schemaFromEditor : data, key: crypto.getRandomValues(array)});
     })
     .catch(function (err) {
       console.log("failed to load ", fileUrl, err.message);

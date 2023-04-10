@@ -63,7 +63,7 @@ function ezdevportal_base_form_alter(&$form, &$form_state, $form_id) {
     'site_admin',
     'editor',
   ], $roles))) {
-    $form['#attached']['library'][] = 'ezdevportal_theme/simple-popup-blocks';
+    $form['#attached']['library'][] = 'simple_popup_blocks/simple_popup_blocks';
     $configFactory = \Drupal::service('config.factory');
     $configs = $configFactory->listAll('simple_popup_blocks.popup_');
     $form_settings = ezdevportal_base_get_simplepopupblock_settings($configs);

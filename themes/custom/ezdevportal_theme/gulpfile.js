@@ -1,9 +1,9 @@
-var gulp = require('gulp');
+const gulp = require('gulp');
 const sass = require('gulp-sass')(require('sass'));
-var cleanCSS = require('gulp-clean-css');
-var sassGlob = require('gulp-sass-glob');
-var browserSync = require('browser-sync').create();
-var sourcemaps = require('gulp-sourcemaps');
+const cleanCSS = require('gulp-clean-css');
+const sassGlob = require('gulp-sass-glob');
+const browserSync = require('browser-sync').create();
+const sourcemaps = require('gulp-sourcemaps');
 
 gulp.task('sass', function (done) {
   gulp.src('sass/**/*.scss')

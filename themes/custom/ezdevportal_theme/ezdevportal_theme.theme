@@ -5,6 +5,7 @@
  * Place your custom preprocessing code in this file.
  */
 
+use Drupal\node\NodeInterface;
 use Drupal\file\Entity\File;
 
 /**
@@ -25,6 +26,25 @@ function ezdevportal_theme_preprocess_page(&$variables) {
   if (!empty($fid[0])) {
     $file = File::load($fid[0]);
     $variables['background_image'] = $base_url . $file->createFileUrl();
+  }
+  // Adding container class on certain selected page types.
+  $current_path = \Drupal::service('path.current')->getPath();
+  $current_url = \Drupal::service('path_alias.manager')->getAliasByPath($current_path);
+  $node = \Drupal::routeMatch()->getParameter('node');
+  if ($node instanceof NodeInterface) {
+    $node_type = $node->getType();
+  }
+
+  $variables['page']['content']['container_class'] = 'container';
+  if (in_array($node_type, ['landing_page',
+    'use_case',
+    'blog_post',
+    'api_product',
+    'api_document',
+    'issue',
+    'forum',
+  ]) || str_contains($current_url, '/form/contact-us')) {
+    $variables['page']['content']['container_class'] = '';
   }
 }
 

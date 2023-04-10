@@ -4,6 +4,7 @@
       @include card-text;
     }
   }
+
   .view-content {
     clear: both;
   }
@@ -24,6 +25,8 @@
     border-bottom: 1px solid #b7b7b7;
 
     .title_fourm {
+      margin-top: 24px;
+
       a {
         @include filters-heading;
         margin-bottom: 4px;
@@ -66,10 +69,6 @@
           content: " Likes";
         }
       }
-    }
-
-    .title_fourm {
-      margin-top: 24px;
     }
 
     .flex-like {

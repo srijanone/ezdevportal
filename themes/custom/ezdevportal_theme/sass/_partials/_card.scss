@@ -51,20 +51,19 @@
     border-top: 1px solid $lightgray;
     background: none;
     border-radius: 0 0 10px 10px;
-    a{
+
+    a {
       color: $white;
+
+      &:hover {
+        text-decoration: none;
+      }
     }
 
     .explore {
       a {
         text-transform: uppercase;
         @include explore-link;
-      }
-    }
-
-    a {
-      &:hover {
-        text-decoration: none;
       }
     }
   }
