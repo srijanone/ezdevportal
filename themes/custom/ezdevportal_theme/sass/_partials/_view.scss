@@ -100,8 +100,12 @@
       }
     }
   }
+}
 
-  .row {
+.block-views-exposed-filter-blockapi-product-api-products-block {
+  .d-flex {
+    flex-direction: column;
+
     details {
       summary {
         @include content-list-text-heading;

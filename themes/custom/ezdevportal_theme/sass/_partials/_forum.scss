@@ -1,4 +1,8 @@
 .view-forum {
+  .d-flex {
+    flex-direction: column;
+  }
+
   .views-field-title {
     a {
       @include card-text;
