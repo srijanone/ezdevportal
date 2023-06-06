@@ -2,7 +2,7 @@ name: EzDevPortal Demo Content
 description : 'Enables the demo content.'
 type: module
 package: EzDevPortal
-core_version_requirement: ^8 || ^9
+core_version_requirement: ^9 || ^10
 dependencies:
   - default_content:default_content
 

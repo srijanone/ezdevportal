@@ -196,7 +196,7 @@ class ActionContentBlock extends BlockBase implements ContainerFactoryPluginInte
         $path = Url::fromRoute('<front>');
       }
       $cus_class = '';
-      if ($this->configuration[$i]['custom_class']) {
+      if (isset($this->configuration[$i]['custom_class'])) {
         $cus_class = $this->configuration[$i]['custom_class'];
       }
       $build[$i]['link'] = [

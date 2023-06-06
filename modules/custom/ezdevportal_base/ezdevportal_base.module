@@ -162,7 +162,7 @@ function ezdevportal_base_preprocess_block__content_list_block(&$variables) {
   $banner_content['link_title'] = $block_data->field_read_more_link->getValue()[0]['title'];
 
   if (!$block_data->field_block_image->isEmpty()) {
-    $banner_content['image'] = file_create_url($block_data->field_block_image->entity->field_media_image->entity->getFileUri());
+    $banner_content['image'] = \Drupal::service('file_url_generator')->generateAbsoluteString($block_data->field_block_image->entity->field_media_image->entity->getFileUri());
   }
   $banner_content['banner_image'] = $block_data->field_title->value;
   $referenced_nodes = $block_data->field_referenced_nodes->getValue();
@@ -218,7 +218,7 @@ function ezdevportal_base_preprocess_block__slider_block(&$variables) {
     $content_slides[$key]['description'] = $value->field_slide_description->value;
     $content_slides[$key]['cta_link'] = Url::fromUri($value->field_slider_cta_link->getValue()[0]['uri'])->toString();
     $content_slides[$key]['cta_link_title'] = $value->field_slider_cta_link->getValue()[0]['title'];
-    $content_slides[$key]['image_url'] = file_create_url($value->field_slide_image->entity->field_media_image->entity->getFileUri());
+    $content_slides[$key]['image_url'] = \Drupal::service('file_url_generator')->generateAbsoluteString($value->field_slide_image->entity->field_media_image->entity->getFileUri());
   }
   $variables['content_slides'] = $content_slides;
 }
@@ -269,13 +269,13 @@ function ezdevportal_base_get_node_card($nid) {
  */
 function ezdevportal_base_get_node_card_image($node) {
   if (in_array($node->bundle(), ['api_product', 'use_case', 'api_document'])) {
-    $image_url = (!$node->field_listing_image->isEmpty()) ? file_create_url($node->field_listing_image->entity->field_media_image->entity->getFileUri()) : '';
+    $image_url = (!$node->field_listing_image->isEmpty()) ? \Drupal::service('file_url_generator')->generateAbsoluteString($node->field_listing_image->entity->field_media_image->entity->getFileUri()) : '';
   }
   elseif ($node->bundle() == 'landing_page') {
-    $image_url = (!$node->field_icon->isEmpty()) ? file_create_url($node->field_icon->entity->field_media_image->entity->getFileUri()) : '';
+    $image_url = (!$node->field_icon->isEmpty()) ? \Drupal::service('file_url_generator')->generateAbsoluteString($node->field_icon->entity->field_media_image->entity->getFileUri()) : '';
   }
   elseif ($node->bundle() == 'blog_post') {
-    $image_url = (!$node->field_listing_image->isEmpty()) ? file_create_url($node->field_listing_image->entity->field_media_image->entity->getFileUri()) : '';
+    $image_url = (!$node->field_listing_image->isEmpty()) ? \Drupal::service('file_url_generator')->generateAbsoluteString($node->field_listing_image->entity->field_media_image->entity->getFileUri()) : '';
   }
   return $image_url;
 }
