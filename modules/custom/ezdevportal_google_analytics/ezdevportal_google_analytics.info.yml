@@ -2,8 +2,7 @@ name: EzDevPortal Analytics Module
 description : 'All customizations related to the google analytics feature'
 type: module
 package: EzDevPortal
-core: 8.x
-core_version_requirement: ^8 || ^9
+core_version_requirement: ^9 || ^10
 
 dependencies:
   - 'charts:charts'

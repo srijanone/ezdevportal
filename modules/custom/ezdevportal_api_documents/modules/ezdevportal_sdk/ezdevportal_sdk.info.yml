@@ -2,4 +2,4 @@ name: EzDevPortal SDK
 description : 'Extends the sdk functionality.'
 type: module
 package: EzDevPortal
-core_version_requirement: ^8 || ^9
+core_version_requirement: ^9 || ^10

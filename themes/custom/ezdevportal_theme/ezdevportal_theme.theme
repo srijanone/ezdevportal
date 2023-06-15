@@ -36,14 +36,14 @@ function ezdevportal_theme_preprocess_page(&$variables) {
   }
 
   $variables['page']['content']['container_class'] = 'container';
-  if (in_array($node_type, ['landing_page',
+  if ((isset($node_type) && in_array($node_type, ['landing_page',
     'use_case',
     'blog_post',
     'api_product',
     'api_document',
     'issue',
     'forum',
-  ]) || str_contains($current_url, '/form/contact-us')) {
+  ])) || str_contains($current_url, '/form/contact-us')) {
     $variables['page']['content']['container_class'] = '';
   }
 }

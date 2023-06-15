@@ -2,7 +2,7 @@ name: EzDevPortal Taxonomies
 description : 'Provides various categories for Ezdevportal'
 type: module
 package: EzDevPortal
-core_version_requirement: ^8 || ^9
+core_version_requirement: ^9 || ^10
 
 dependencies:
   - drupal:taxonomy

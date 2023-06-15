@@ -2,7 +2,7 @@ name: EzDevPortal Blocks
 description : 'Extends the functionality by providing some common usefull block types'
 type: module
 package: EzDevPortal
-core_version_requirement: ^8 || ^9
+core_version_requirement: ^9 || ^10
 
 dependencies:
   - color_field:color_field
