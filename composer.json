@@ -6,24 +6,20 @@
     "homepage": "https://www.drupal.org/project/drupal",
     "repositories": [
         {
-            "type": "composer",
-            "url": "https://packages.drupal.org/8",
-            "exclude": [
-                "drupal/better_normalizers",
-                "drupal/markdown"
-            ]
-        },
-        {
-            "type": "composer",
-            "url": "https://asset-packagist.org"
-        },
-        {
             "type":"vcs",
             "url":"https://git.drupalcode.org/issue/better_normalizers-3286221"
         },
         {
             "type":"vcs",
             "url":"https://git.drupalcode.org/issue/markdown-3288447"
+        },
+        {
+            "type": "composer",
+            "url": "https://packages.drupal.org/8"
+        },
+        {
+            "type": "composer",
+            "url": "https://asset-packagist.org"
         }
     ],
     "require": {
