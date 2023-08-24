@@ -76,9 +76,7 @@ install:
   - page_cache
   - path
   - path_alias
-  - quickedit
   - r4032login
-  - rdf
   - recaptcha
   - redirect
   - redoc_field_formatter
@@ -148,7 +146,6 @@ install:
   - ezdevportal_support
   - ezdevportal_forum
 themes:
-  - bartik
   - seven
   - adminimal_theme
   - stable9

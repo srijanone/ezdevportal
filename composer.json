@@ -37,6 +37,7 @@
         "drupal/blog": "^3.1",
         "drupal/charts": "^5.0",
         "drupal/codesnippet": "^1.9",
+        "drupal/color":"^1.0",
         "drupal/color_field": "^3.0",
         "drupal/components": "^3.0@beta",
         "drupal/config_ignore": "^2.4",
@@ -141,6 +142,9 @@
             },
             "drupal/notificationswidget":{
                 "SQLSTATE[42S02]: Base table or view not found":"https://www.drupal.org/files/issues/2023-06-07/3365257-2.patch"
+            },
+            "drupal/default_content": {
+                "Add a Normalizer and Denormalizer to support Layout Builder" : "https://www.drupal.org/files/issues/2022-12-06/default_content-3160146-53.patch"
             }
         },
         "drupal-core-project-message": {
