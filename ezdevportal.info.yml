@@ -37,7 +37,6 @@ install:
   - ctools
   - datetime
   - dblog
-  - default_content
   - dynamic_page_cache
   - editor
   - email_registration
