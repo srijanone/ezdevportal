@@ -1,0 +1,38 @@
+_meta:
+  version: '1.0'
+  entity_type: taxonomy_term
+  uuid: aacbb16a-83c9-405a-b104-df4f29f3e3ec
+  bundle: sdk_languages
+  default_langcode: en
+default:
+  status:
+    -
+      value: true
+  name:
+    -
+      value: php
+  weight:
+    -
+      value: 0
+  parent:
+    -
+      target_id: 0
+  revision_translation_affected:
+    -
+      value: true
+  metatag:
+    -
+      tag: meta
+      attributes:
+        name: title
+        content: 'php | Ezdevportal'
+    -
+      tag: link
+      attributes:
+        rel: canonical
+        href: 'https://ezp.ddev.site/taxonomy/term/31'
+  path:
+    -
+      alias: ''
+      langcode: en
+      pathauto: 0

@@ -1,0 +1,27 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: e0661b6c-9b13-458c-a1bb-947edbbddf0b
+  default_langcode: en
+default:
+  uid:
+    -
+      target_id: 1
+  filename:
+    -
+      value: API-Time-to-market-1.png
+  uri:
+    -
+      value: 'public://inline-images/API-Time-to-market-1.png'
+  filemime:
+    -
+      value: image/png
+  filesize:
+    -
+      value: 38464
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1653328918

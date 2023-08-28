@@ -1,0 +1,47 @@
+_meta:
+  version: '1.0'
+  entity_type: media
+  uuid: 37a3f760-e084-4923-baa5-1dbfb10a300b
+  bundle: image
+  default_langcode: en
+  depends:
+    b61dc6cb-a3b7-4072-a18b-fe0483178e81: file
+default:
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 1
+  name:
+    -
+      value: 'Rectangle 394.png'
+  created:
+    -
+      value: 1644909311
+  revision_translation_affected:
+    -
+      value: true
+  metatag:
+    -
+      tag: meta
+      attributes:
+        name: title
+        content: '| Ezdevportal'
+    -
+      tag: link
+      attributes:
+        rel: canonical
+        href: 'https://ezp.ddev.site/home'
+  path:
+    -
+      alias: ''
+      langcode: en
+      pathauto: 0
+  field_media_image:
+    -
+      entity: b61dc6cb-a3b7-4072-a18b-fe0483178e81
+      alt: 'product banner image'
+      title: ''
+      width: 1367
+      height: 307

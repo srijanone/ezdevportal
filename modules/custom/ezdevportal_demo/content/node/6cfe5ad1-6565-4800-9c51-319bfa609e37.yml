@@ -1,0 +1,180 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 6cfe5ad1-6565-4800-9c51-319bfa609e37
+  bundle: landing_page
+  default_langcode: en
+  depends:
+    c578391b-9ece-44ff-a1de-43883ee055d8: media
+    a78b49c2-ce3c-4dc3-9a58-a2d28760dd24: block_content
+default:
+  revision_uid:
+    -
+      target_id: 1
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 1
+  title:
+    -
+      value: 'Videos and Learnings'
+  created:
+    -
+      value: 1637668181
+  promote:
+    -
+      value: false
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  moderation_state:
+    -
+      value: published
+  metatag:
+    -
+      tag: meta
+      attributes:
+        name: title
+        content: 'Videos and Learnings | Ezdevportal'
+    -
+      tag: link
+      attributes:
+        rel: canonical
+        href: 'https://ezp.ddev.site/videos-and-learnings'
+  path:
+    -
+      alias: /videos-and-learnings
+      langcode: en
+      pathauto: 1
+  field_icon:
+    -
+      entity: c578391b-9ece-44ff-a1de-43883ee055d8
+  field_short_description:
+    -
+      value: 'Videos and Learnings.'
+  layout_builder__layout:
+    -
+      section:
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+          context_mapping: {  }
+        components:
+          -
+            uuid: 4967c8b2-9b32-4dd4-946c-11f53e72cddf
+            region: content
+            configuration:
+              id: banner_content_block
+              label: 'Banner Content Block'
+              label_display: 0
+              provider: ezdevportal_base
+              banner_title: 'Videos and Learnings'
+              banner_text: 'Let’s find out how our products/ APIs work by some great real-world examples!'
+              banner_height: 307px
+              banner_image: {  }
+              context_mapping: {  }
+            weight: 0
+            additional: {  }
+        third_party_settings: {  }
+    -
+      section:
+        layout_id: layout_twocol_section
+        layout_settings:
+          label: 'Top Section'
+          column_widths: 67-33
+          context_mapping: {  }
+          custom_id: ''
+          custom_classes: ''
+          custom_class_choose:
+            container: container
+          custom_styles: ''
+          custom_data_attributes: ''
+          regions:
+            first:
+              region_id: ''
+              region_class_choose:
+                container: 0
+              region_classes: ''
+              region_styles: ''
+              region_data: ''
+            second:
+              region_id: ''
+              region_class_choose:
+                container: 0
+              region_classes: ''
+              region_styles: ''
+              region_data: ''
+        components:
+          -
+            uuid: f47e3c79-1cca-4a55-b9ce-f3939756a380
+            region: first
+            configuration:
+              id: 'inline_block:basic'
+              label: 'Videos and Learning Header'
+              label_display: 0
+              provider: layout_builder
+              view_mode: full
+              block_revision_id: '39'
+              block_serialized: null
+              context_mapping: {  }
+              type: basic
+              uuid: a78b49c2-ce3c-4dc3-9a58-a2d28760dd24
+            weight: 0
+            additional:
+              target_uuid: a78b49c2-ce3c-4dc3-9a58-a2d28760dd24
+          -
+            uuid: 013887e7-12ac-448d-aeb9-a09975555d3b
+            region: second
+            configuration:
+              id: 'block_content:77f7e7bb-eef0-4b2f-bcf6-670d94e44178'
+              label: 'Help Pages Filter Block'
+              label_display: 0
+              provider: block_content
+              status: true
+              info: ''
+              view_mode: full
+              context_mapping: {  }
+            weight: 0
+            additional: {  }
+        third_party_settings: {  }
+    -
+      section:
+        layout_id: layout_onecol
+        layout_settings:
+          label: 'Main Section'
+          context_mapping: {  }
+          custom_id: ''
+          custom_classes: ''
+          custom_class_choose:
+            container: container
+          custom_styles: ''
+          custom_data_attributes: ''
+          regions:
+            content:
+              region_id: ''
+              region_class_choose:
+                container: 0
+              region_classes: ''
+              region_styles: ''
+              region_data: ''
+        components:
+          -
+            uuid: cc734840-09ff-4494-ad10-5387cecc5253
+            region: content
+            configuration:
+              id: 'block_content:c93ab8ef-6141-4170-b905-6272148ff69f'
+              label: 'Videos and Learnings'
+              label_display: 0
+              provider: block_content
+              status: true
+              info: ''
+              view_mode: full
+              context_mapping: {  }
+            weight: 0
+            additional: {  }
+        third_party_settings: {  }

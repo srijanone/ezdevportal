@@ -1,0 +1,19 @@
+_meta:
+  version: '1.0'
+  entity_type: paragraph
+  uuid: 4f0e436d-1df1-40f5-96f9-de914acba48f
+  bundle: product_attributes
+  default_langcode: en
+default:
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1637664419
+  behavior_settings:
+    -
+      value: {  }
+  revision_translation_affected:
+    -
+      value: true

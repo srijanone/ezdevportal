@@ -1,0 +1,27 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: f7772e05-8910-4eca-83c9-78efc6e0641f
+  default_langcode: en
+default:
+  uid:
+    -
+      target_id: 1
+  filename:
+    -
+      value: payments.yaml
+  uri:
+    -
+      value: 'public://2022-05/payments.yaml'
+  filemime:
+    -
+      value: application/octet-stream
+  filesize:
+    -
+      value: 138284
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1651764736

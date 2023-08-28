@@ -1,0 +1,27 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: e3bcaddc-1cda-44f8-b6d4-66ee6ca7bad3
+  default_langcode: en
+default:
+  uid:
+    -
+      target_id: 1
+  filename:
+    -
+      value: product-listing-image.png
+  uri:
+    -
+      value: 'public://2021-11/product-listing-image_1_0.png'
+  filemime:
+    -
+      value: image/png
+  filesize:
+    -
+      value: 2004
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1637658773

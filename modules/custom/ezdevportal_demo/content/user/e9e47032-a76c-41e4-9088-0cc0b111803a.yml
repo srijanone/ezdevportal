@@ -1,0 +1,66 @@
+_meta:
+  version: '1.0'
+  entity_type: user
+  uuid: e9e47032-a76c-41e4-9088-0cc0b111803a
+  default_langcode: en
+default:
+  preferred_langcode:
+    -
+      value: en
+  preferred_admin_langcode:
+    -
+      value: en
+  name:
+    -
+      value: developer
+  mail:
+    -
+      value: developer@example.com
+  timezone:
+    -
+      value: UTC
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1647421975
+  access:
+    -
+      value: 0
+  login:
+    -
+      value: 0
+  init:
+    -
+      value: developer@example.com
+  roles:
+    -
+      target_id: developer
+  metatag:
+    -
+      tag: meta
+      attributes:
+        name: title
+        content: 'developer | Ezdevportal'
+    -
+      tag: meta
+      attributes:
+        name: description
+        content: Ezdevportal
+    -
+      tag: link
+      attributes:
+        rel: canonical
+        href: 'https://ezp.ddev.site/user/3'
+  path:
+    -
+      alias: ''
+      langcode: en
+      pathauto: 0
+  field_user_first_name:
+    -
+      value: Developer
+  field_user_last_name:
+    -
+      value: Developer

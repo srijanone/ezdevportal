@@ -1,0 +1,27 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: a10af43c-527f-4bf2-98aa-982f9ba68ca2
+  default_langcode: en
+default:
+  uid:
+    -
+      target_id: 1
+  filename:
+    -
+      value: async.json
+  uri:
+    -
+      value: 'public://2021-11/async_1_0.json'
+  filemime:
+    -
+      value: application/octet-stream
+  filesize:
+    -
+      value: 8662
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1637663374

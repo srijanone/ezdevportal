@@ -1,0 +1,38 @@
+_meta:
+  version: '1.0'
+  entity_type: taxonomy_term
+  uuid: 5f5c9823-46d2-44d6-80b3-6cdfd668b60c
+  bundle: environments
+  default_langcode: en
+default:
+  status:
+    -
+      value: true
+  name:
+    -
+      value: Live
+  weight:
+    -
+      value: 0
+  parent:
+    -
+      target_id: 0
+  revision_translation_affected:
+    -
+      value: true
+  metatag:
+    -
+      tag: meta
+      attributes:
+        name: title
+        content: 'Live | Ezdevportal'
+    -
+      tag: link
+      attributes:
+        rel: canonical
+        href: 'https://ezp.ddev.site/taxonomy/term/4'
+  path:
+    -
+      alias: ''
+      langcode: en
+      pathauto: 0

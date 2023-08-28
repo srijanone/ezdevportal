@@ -1,0 +1,141 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 19756d2a-62b2-44e6-8f3c-b63a597c39f6
+  bundle: landing_page
+  default_langcode: en
+default:
+  revision_uid:
+    -
+      target_id: 1
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 1
+  title:
+    -
+      value: Dashboard
+  created:
+    -
+      value: 1645600893
+  promote:
+    -
+      value: false
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  moderation_state:
+    -
+      value: published
+  metatag:
+    -
+      tag: meta
+      attributes:
+        name: title
+        content: 'Dashboard | Ezdevportal'
+    -
+      tag: link
+      attributes:
+        rel: canonical
+        href: 'https://ezp.ddev.site/dashboard'
+  path:
+    -
+      alias: /dashboard
+      langcode: en
+      pathauto: 1
+  layout_builder__layout:
+    -
+      section:
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+          context_mapping: {  }
+        components:
+          -
+            uuid: a642976f-da0d-443d-a275-5ea7c27f2988
+            region: content
+            configuration:
+              id: banner_content_block
+              label: 'Banner Content Block'
+              label_display: 0
+              provider: ezdevportal_base
+              banner_title: Dashboard
+              banner_text: ''
+              banner_image: {  }
+              context_mapping: {  }
+            weight: 0
+            additional: {  }
+        third_party_settings: {  }
+    -
+      section:
+        layout_id: layout_twocol_section
+        layout_settings:
+          label: ''
+          column_widths: 25-75
+          context_mapping: {  }
+          custom_id: ''
+          custom_classes: ''
+          custom_class_choose:
+            container: container
+          custom_styles: ''
+          custom_data_attributes: ''
+          regions:
+            first:
+              region_id: ''
+              region_class_choose:
+                container: 0
+              region_classes: ''
+              region_styles: ''
+              region_data: ''
+            second:
+              region_id: ''
+              region_class_choose:
+                container: 0
+              region_classes: ''
+              region_styles: ''
+              region_data: ''
+        components:
+          -
+            uuid: f0248360-3891-409a-9810-c61766086538
+            region: first
+            configuration:
+              id: dashboard_navigation_block
+              label: 'Dashboard Navigation Block'
+              label_display: 0
+              provider: ezdevportal_dashboard
+              dashboard_sidebar_navigation:
+                -
+                  type: 'My Applications'
+                  text: 'My Applications'
+                  path: /dashboard
+                  add_icon_path: ''
+                -
+                  type: Support
+                  text: Support
+                  path: '?view=support'
+                  add_icon_path: /node/add/issue
+                -
+                  type: Forum
+                  text: Forum
+                  path: '?view=forum'
+                  add_icon_path: /node/add/forum
+              context_mapping: {  }
+            weight: 1
+            additional: {  }
+          -
+            uuid: 7ada1cce-9d6a-4a1b-b9e1-e329a2c70ca5
+            region: second
+            configuration:
+              id: dashboard_content_block
+              label: 'Dashboard Content Block'
+              label_display: 0
+              provider: ezdevportal_dashboard
+              context_mapping: {  }
+            weight: 2
+            additional: {  }
+        third_party_settings: {  }

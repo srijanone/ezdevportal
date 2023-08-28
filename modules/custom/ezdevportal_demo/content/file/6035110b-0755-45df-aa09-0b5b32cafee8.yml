@@ -1,0 +1,27 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: 6035110b-0755-45df-aa09-0b5b32cafee8
+  default_langcode: en
+default:
+  uid:
+    -
+      target_id: 1
+  filename:
+    -
+      value: 'Get Account Details.yaml'
+  uri:
+    -
+      value: 'public://2022-05/Get Account Details.yaml'
+  filemime:
+    -
+      value: application/octet-stream
+  filesize:
+    -
+      value: 12305
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1651764553

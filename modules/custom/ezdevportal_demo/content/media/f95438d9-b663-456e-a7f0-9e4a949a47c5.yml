@@ -1,0 +1,47 @@
+_meta:
+  version: '1.0'
+  entity_type: media
+  uuid: f95438d9-b663-456e-a7f0-9e4a949a47c5
+  bundle: image
+  default_langcode: en
+  depends:
+    c9cde786-a5b1-48c6-aabd-848214d8eaf6: file
+default:
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 1
+  name:
+    -
+      value: blogs-listing-image.png
+  created:
+    -
+      value: 1637848816
+  revision_translation_affected:
+    -
+      value: true
+  metatag:
+    -
+      tag: meta
+      attributes:
+        name: title
+        content: '| Ezdevportal'
+    -
+      tag: link
+      attributes:
+        rel: canonical
+        href: 'https://ezp.ddev.site/home'
+  path:
+    -
+      alias: ''
+      langcode: en
+      pathauto: 0
+  field_media_image:
+    -
+      entity: c9cde786-a5b1-48c6-aabd-848214d8eaf6
+      alt: 'Trending Blogs List'
+      title: ''
+      width: 350
+      height: 403

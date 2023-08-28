@@ -1,0 +1,178 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 5f26d82c-271d-4a59-91d9-7136373a5324
+  bundle: landing_page
+  default_langcode: en
+  depends:
+    92943223-7b67-4087-ac71-3ece190c6d89: media
+    c85d35f8-63c2-4998-98a9-70a73b8f64a0: block_content
+default:
+  revision_uid:
+    -
+      target_id: 1
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 1
+  title:
+    -
+      value: 'Use Cases'
+  created:
+    -
+      value: 1637668322
+  promote:
+    -
+      value: false
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  moderation_state:
+    -
+      value: published
+  metatag:
+    -
+      tag: meta
+      attributes:
+        name: title
+        content: 'Use Cases | Ezdevportal'
+    -
+      tag: link
+      attributes:
+        rel: canonical
+        href: 'https://ezp.ddev.site/use-cases'
+  path:
+    -
+      alias: /use-cases
+      langcode: en
+      pathauto: 1
+  field_icon:
+    -
+      entity: 92943223-7b67-4087-ac71-3ece190c6d89
+  field_short_description:
+    -
+      value: 'Explore the different use cases of our API Products.'
+  layout_builder__layout:
+    -
+      section:
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+          context_mapping: {  }
+        components:
+          -
+            uuid: e0583a5f-f955-4a9b-a095-1e3f14525f7c
+            region: content
+            configuration:
+              id: banner_content_block
+              label: 'Banner Content Block'
+              label_display: 0
+              provider: ezdevportal_base
+              banner_title: 'Use Cases'
+              banner_text: 'Let’s find out how our products/ APIs work by some great real-world examples!'
+              banner_image: {  }
+              context_mapping: {  }
+            weight: 0
+            additional: {  }
+        third_party_settings: {  }
+    -
+      section:
+        layout_id: layout_twocol_section
+        layout_settings:
+          label: 'Header Section'
+          column_widths: 67-33
+          context_mapping: {  }
+          custom_id: ''
+          custom_classes: ''
+          custom_class_choose:
+            container: container
+          custom_styles: ''
+          custom_data_attributes: ''
+          regions:
+            first:
+              region_id: ''
+              region_class_choose:
+                container: 0
+              region_classes: ''
+              region_styles: ''
+              region_data: ''
+            second:
+              region_id: ''
+              region_class_choose:
+                container: 0
+              region_classes: ''
+              region_styles: ''
+              region_data: ''
+        components:
+          -
+            uuid: 0418d314-1eb7-4787-a435-52ba2b0aa55e
+            region: second
+            configuration:
+              id: 'block_content:77f7e7bb-eef0-4b2f-bcf6-670d94e44178'
+              label: 'Help Pages Filter Block'
+              provider: block_content
+              label_display: 0
+              status: true
+              info: ''
+              view_mode: full
+              context_mapping: {  }
+            weight: 0
+            additional: {  }
+          -
+            uuid: 32b09aa1-3d99-4cc7-89d6-162f78b11692
+            region: first
+            configuration:
+              id: 'inline_block:basic'
+              label: 'Use Cases'
+              label_display: visible
+              provider: layout_builder
+              view_mode: full
+              block_revision_id: '33'
+              block_serialized: null
+              context_mapping: {  }
+              type: basic
+              uuid: c85d35f8-63c2-4998-98a9-70a73b8f64a0
+            weight: 0
+            additional:
+              target_uuid: c85d35f8-63c2-4998-98a9-70a73b8f64a0
+        third_party_settings: {  }
+    -
+      section:
+        layout_id: layout_onecol
+        layout_settings:
+          label: 'Main Section'
+          context_mapping: {  }
+          custom_id: ''
+          custom_classes: ''
+          custom_class_choose:
+            container: container
+          custom_styles: ''
+          custom_data_attributes: ''
+          regions:
+            content:
+              region_id: ''
+              region_class_choose:
+                container: 0
+              region_classes: ''
+              region_styles: ''
+              region_data: ''
+        components:
+          -
+            uuid: 1b70fcf1-2e7c-4690-8344-63cd0c759f81
+            region: content
+            configuration:
+              id: 'views_block:use_case-all_usecases_block'
+              label: ''
+              provider: views
+              label_display: 0
+              views_label: ''
+              items_per_page: none
+              context_mapping: {  }
+            weight: 0
+            additional: {  }
+        third_party_settings: {  }

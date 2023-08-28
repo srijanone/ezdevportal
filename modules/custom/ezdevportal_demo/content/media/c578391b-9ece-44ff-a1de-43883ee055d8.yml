@@ -1,0 +1,47 @@
+_meta:
+  version: '1.0'
+  entity_type: media
+  uuid: c578391b-9ece-44ff-a1de-43883ee055d8
+  bundle: image
+  default_langcode: en
+  depends:
+    283c161b-8d62-441e-be93-737ebc9ed5cf: file
+default:
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 1
+  name:
+    -
+      value: Videos-and-learning-icon.png
+  created:
+    -
+      value: 1637658809
+  revision_translation_affected:
+    -
+      value: true
+  metatag:
+    -
+      tag: meta
+      attributes:
+        name: title
+        content: '| Ezdevportal'
+    -
+      tag: link
+      attributes:
+        rel: canonical
+        href: 'https://ezp.ddev.site/home'
+  path:
+    -
+      alias: ''
+      langcode: en
+      pathauto: 0
+  field_media_image:
+    -
+      entity: 283c161b-8d62-441e-be93-737ebc9ed5cf
+      alt: 'Videos and Learnings'
+      title: ''
+      width: 44
+      height: 44

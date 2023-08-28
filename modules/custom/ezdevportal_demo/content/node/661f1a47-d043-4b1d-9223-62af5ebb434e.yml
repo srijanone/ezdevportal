@@ -1,0 +1,231 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 661f1a47-d043-4b1d-9223-62af5ebb434e
+  bundle: landing_page
+  default_langcode: en
+default:
+  revision_uid:
+    -
+      target_id: 1
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 1
+  title:
+    -
+      value: Home
+  created:
+    -
+      value: 1637673099
+  promote:
+    -
+      value: false
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  moderation_state:
+    -
+      value: published
+  metatag:
+    -
+      tag: meta
+      attributes:
+        name: title
+        content: 'Home | Ezdevportal'
+    -
+      tag: link
+      attributes:
+        rel: canonical
+        href: 'https://ezp.ddev.site/home'
+  path:
+    -
+      alias: /home
+      langcode: en
+      pathauto: 1
+  layout_builder__layout:
+    -
+      section:
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+          custom_id: ''
+          custom_classes: ''
+          custom_class_choose:
+            container: 0
+          custom_styles: ''
+          custom_data_attributes: ''
+          regions:
+            content:
+              region_id: ''
+              region_class_choose:
+                container: 0
+              region_classes: ''
+              region_styles: ''
+              region_data: ''
+          context_mapping: {  }
+        components:
+          -
+            uuid: 16ae2cf2-6ca6-4bae-be2e-def95df94c26
+            region: content
+            configuration:
+              id: 'block_content:18a70559-1956-4b41-b702-d74e182ea4c6'
+              label: 'Homepage Slider'
+              label_display: 0
+              provider: block_content
+              status: true
+              info: ''
+              view_mode: full
+              context_mapping: {  }
+            weight: 0
+            additional: {  }
+        third_party_settings: {  }
+    -
+      section:
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+          custom_id: ''
+          custom_classes: ''
+          custom_class_choose:
+            container: container
+          custom_styles: ''
+          custom_data_attributes: ''
+          regions:
+            content:
+              region_id: ''
+              region_class_choose:
+                container: 0
+              region_classes: ''
+              region_styles: ''
+              region_data: ''
+          context_mapping: {  }
+        components:
+          -
+            uuid: d82875d9-d17a-4128-a8d3-dc05db46671b
+            region: content
+            configuration:
+              id: 'block_content:b8da98e4-a78b-4c50-8b9f-05c00c41b4cf'
+              label: 'Featured Products'
+              label_display: 0
+              provider: block_content
+              status: true
+              info: ''
+              view_mode: full
+              context_mapping: {  }
+            weight: 0
+            additional: {  }
+        third_party_settings: {  }
+    -
+      section:
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+          custom_id: ''
+          custom_classes: ''
+          custom_class_choose:
+            container: 0
+          custom_styles: ''
+          custom_data_attributes: ''
+          regions:
+            content:
+              region_id: ''
+              region_class_choose:
+                container: 0
+              region_classes: ''
+              region_styles: ''
+              region_data: ''
+          context_mapping: {  }
+        components:
+          -
+            uuid: 06e73d51-d88b-4359-afea-94b3d0a4e756
+            region: content
+            configuration:
+              id: 'block_content:4cc2fd4e-d6cc-4bca-80fe-71998a8b713d'
+              label: 'Get Started'
+              label_display: 0
+              provider: block_content
+              status: true
+              info: ''
+              view_mode: full
+              context_mapping: {  }
+            weight: 0
+            additional: {  }
+        third_party_settings: {  }
+    -
+      section:
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+          custom_id: ''
+          custom_classes: ''
+          custom_class_choose:
+            container: container
+          custom_styles: ''
+          custom_data_attributes: ''
+          regions:
+            content:
+              region_id: ''
+              region_class_choose:
+                container: 0
+              region_classes: ''
+              region_styles: ''
+              region_data: ''
+          context_mapping: {  }
+        components:
+          -
+            uuid: f30b0be4-2f9c-4dff-8911-29213ad80d0e
+            region: content
+            configuration:
+              id: 'block_content:a217f072-57e6-4cdc-a462-7069a5d23ac9'
+              label: 'Use Cases'
+              label_display: 0
+              provider: block_content
+              status: true
+              info: ''
+              view_mode: full
+              context_mapping: {  }
+            weight: 0
+            additional: {  }
+        third_party_settings: {  }
+    -
+      section:
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+          custom_id: ''
+          custom_classes: ''
+          custom_class_choose:
+            container: 0
+          custom_styles: ''
+          custom_data_attributes: ''
+          regions:
+            content:
+              region_id: ''
+              region_class_choose:
+                container: 0
+              region_classes: ''
+              region_styles: ''
+              region_data: ''
+          context_mapping: {  }
+        components:
+          -
+            uuid: 051e27e1-a5c4-47cf-9579-3264a741c775
+            region: content
+            configuration:
+              id: 'block_content:10ddbb1c-50a6-46d9-9c54-f62f51f5ba72'
+              label: 'Trending Blogs List'
+              label_display: 0
+              provider: block_content
+              status: true
+              info: ''
+              view_mode: full
+              context_mapping: {  }
+            weight: 0
+            additional: {  }
+        third_party_settings: {  }

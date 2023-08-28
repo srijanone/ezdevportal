@@ -1,0 +1,27 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: b61dc6cb-a3b7-4072-a18b-fe0483178e81
+  default_langcode: en
+default:
+  uid:
+    -
+      target_id: 1
+  filename:
+    -
+      value: 'Rectangle 394.png'
+  uri:
+    -
+      value: 'public://2022-02/Rectangle 394_0.png'
+  filemime:
+    -
+      value: image/png
+  filesize:
+    -
+      value: 124708
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1644909311

@@ -1,0 +1,60 @@
+_meta:
+  version: '1.0'
+  entity_type: user
+  uuid: 28191c61-9bb1-443c-8712-12dac6c1654e
+  default_langcode: en
+default:
+  preferred_langcode:
+    -
+      value: en
+  preferred_admin_langcode:
+    -
+      value: en
+  name:
+    -
+      value: siteadmin
+  mail:
+    -
+      value: siteadmin@example.com
+  timezone:
+    -
+      value: UTC
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1646642299
+  access:
+    -
+      value: 1649139949
+  login:
+    -
+      value: 1649139457
+  roles:
+    -
+      target_id: site_admin
+  metatag:
+    -
+      tag: meta
+      attributes:
+        name: title
+        content: 'siteadmin | Ezdevportal'
+    -
+      tag: meta
+      attributes:
+        name: description
+        content: Ezdevportal
+    -
+      tag: link
+      attributes:
+        rel: canonical
+        href: 'https://ezp.ddev.site/user/2'
+  path:
+    -
+      alias: ''
+      langcode: en
+      pathauto: 0
+  field_user_first_name:
+    -
+      value: 'site admin'

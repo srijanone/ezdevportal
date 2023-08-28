@@ -1,0 +1,83 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: ce2034b1-9db7-4496-a9e4-191f67d89168
+  bundle: blog_post
+  default_langcode: en
+  depends:
+    171903ea-7ac4-4d77-bc8d-62c9e21b936e: taxonomy_term
+    ce39905a-6c90-4a82-a097-c8629e1e4054: taxonomy_term
+    41ed9781-f8e4-4182-95e9-2425433dfc38: taxonomy_term
+    de4edbf4-9e4f-4625-b0d5-c7a9004ef323: media
+default:
+  revision_uid:
+    -
+      target_id: 1
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 1
+  title:
+    -
+      value: 'Why Async APIs'
+  created:
+    -
+      value: 1637837550
+  promote:
+    -
+      value: false
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  moderation_state:
+    -
+      value: published
+  metatag:
+    -
+      tag: meta
+      attributes:
+        name: title
+        content: 'Why Async APIs | Ezdevportal'
+    -
+      tag: meta
+      attributes:
+        name: description
+        content: 'We know that asynchronous APIs are great in instances where user activity is heavy. These API requests excel at executing background tasks without getting in each other’s way.'
+    -
+      tag: link
+      attributes:
+        rel: canonical
+        href: 'https://ezp.ddev.site/blog/why-async-apis'
+  path:
+    -
+      alias: /blog/why-async-apis
+      langcode: en
+      pathauto: 1
+  body:
+    -
+      value: "<p>We know that asynchronous APIs are great in instances where user activity is heavy. These API requests excel at executing background tasks without getting in each other’s way. This is essential in a microservices environment where features are smaller, more integrated, and APIs are more plentiful.</p>\r\n\r\n<p>Today’s applications are now more interactive than ever from a&nbsp;UI standpoint. Many elements are dynamic, and a smooth user experience means eliminating delays characteristic of synchronous APIs. This is why async is often synonymous with “reactive.” When the user provides an input, it’s the API’s job to translate backend changes into frontend updates. Though far from an exhaustive list, this is useful for apps that provide event-driven notifications, messaging, content feeds, or even real-time collaboration.</p>\r\n"
+      format: full_html
+      summary: 'We know that asynchronous APIs are great in instances where user activity is heavy. These API requests excel at executing background tasks without getting in each other’s way.'
+  field_blog_comments:
+    -
+      status: 2
+      cid: 0
+      last_comment_timestamp: 1654680633
+      last_comment_name: ''
+      last_comment_uid: 1
+      comment_count: 0
+  field_blog_tags:
+    -
+      entity: 171903ea-7ac4-4d77-bc8d-62c9e21b936e
+    -
+      entity: ce39905a-6c90-4a82-a097-c8629e1e4054
+    -
+      entity: 41ed9781-f8e4-4182-95e9-2425433dfc38
+  field_listing_image:
+    -
+      entity: de4edbf4-9e4f-4625-b0d5-c7a9004ef323

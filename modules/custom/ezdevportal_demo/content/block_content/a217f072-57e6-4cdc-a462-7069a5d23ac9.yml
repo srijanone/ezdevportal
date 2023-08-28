@@ -1,0 +1,53 @@
+_meta:
+  version: '1.0'
+  entity_type: block_content
+  uuid: a217f072-57e6-4cdc-a462-7069a5d23ac9
+  bundle: content_cards_block
+  default_langcode: en
+  depends:
+    7a3ab3ea-300b-4ec1-8474-4373ae85be71: node
+    3d7bb68e-7e13-4297-8d45-d05fa0b24e41: node
+    e4a31e74-5baf-4dfc-8306-3b6a168c6d4d: node
+    82c551f2-4cdd-4429-a1c0-e05ffafe37a6: node
+default:
+  status:
+    -
+      value: true
+  info:
+    -
+      value: 'Use Cases'
+  reusable:
+    -
+      value: true
+  revision_translation_affected:
+    -
+      value: true
+  metatag:
+    -
+      tag: meta
+      attributes:
+        name: title
+        content: '| Ezdevportal'
+    -
+      tag: link
+      attributes:
+        rel: canonical
+        href: 'https://ezp.ddev.site/home'
+  field_block_position:
+    -
+      value: full
+  field_cards_layout:
+    -
+      value: 4-column
+  field_referenced_nodes:
+    -
+      entity: 7a3ab3ea-300b-4ec1-8474-4373ae85be71
+    -
+      entity: 3d7bb68e-7e13-4297-8d45-d05fa0b24e41
+    -
+      entity: e4a31e74-5baf-4dfc-8306-3b6a168c6d4d
+    -
+      entity: 82c551f2-4cdd-4429-a1c0-e05ffafe37a6
+  field_title:
+    -
+      value: 'Use Cases'

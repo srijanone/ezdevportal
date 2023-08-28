@@ -1,0 +1,42 @@
+_meta:
+  version: '1.0'
+  entity_type: paragraph
+  uuid: 2671b7c8-e113-46b1-ab64-ff80e991896c
+  bundle: action_block_item
+  default_langcode: en
+  depends:
+    5e903455-8aa4-42cc-a17e-49128ebd687d: media
+default:
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1646198005
+  behavior_settings:
+    -
+      value: {  }
+  revision_translation_affected:
+    -
+      value: true
+  field_block_description:
+    -
+      value: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem fringilla amet, tristique habitant sed pharetra ut aliquet sit.'
+  field_block_form:
+    -
+      target_id: subscribe
+      default_data: ''
+      status: open
+      open: ''
+      close: ''
+  field_block_icon:
+    -
+      entity: 5e903455-8aa4-42cc-a17e-49128ebd687d
+  field_block_link:
+    -
+      uri: 'internal:/user/login'
+      title: 'LOGIN TO CHECKOUT UPDATES'
+      options: {  }
+  field_block_title:
+    -
+      value: SUBSCRIBE

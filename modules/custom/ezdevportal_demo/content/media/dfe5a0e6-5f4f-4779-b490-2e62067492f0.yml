@@ -1,0 +1,47 @@
+_meta:
+  version: '1.0'
+  entity_type: media
+  uuid: dfe5a0e6-5f4f-4779-b490-2e62067492f0
+  bundle: image
+  default_langcode: en
+  depends:
+    7beb5187-aa31-43b8-9f60-a6016a545691: file
+default:
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 1
+  name:
+    -
+      value: homepage-slider-image.jpg
+  created:
+    -
+      value: 1637658577
+  revision_translation_affected:
+    -
+      value: true
+  metatag:
+    -
+      tag: meta
+      attributes:
+        name: title
+        content: '| Ezdevportal'
+    -
+      tag: link
+      attributes:
+        rel: canonical
+        href: 'https://ezp.ddev.site/home'
+  path:
+    -
+      alias: ''
+      langcode: en
+      pathauto: 0
+  field_media_image:
+    -
+      entity: 7beb5187-aa31-43b8-9f60-a6016a545691
+      alt: 'Homepage Slider'
+      title: ''
+      width: 980
+      height: 860

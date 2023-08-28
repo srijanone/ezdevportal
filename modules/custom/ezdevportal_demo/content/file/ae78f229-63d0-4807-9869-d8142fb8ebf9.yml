@@ -1,0 +1,27 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: ae78f229-63d0-4807-9869-d8142fb8ebf9
+  default_langcode: en
+default:
+  uid:
+    -
+      target_id: 1
+  filename:
+    -
+      value: 'Vector (1).png'
+  uri:
+    -
+      value: 'public://2022-02/Vector (1)_0.png'
+  filemime:
+    -
+      value: image/png
+  filesize:
+    -
+      value: 2215
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1644312484

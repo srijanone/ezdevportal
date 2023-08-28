@@ -1,0 +1,38 @@
+_meta:
+  version: '1.0'
+  entity_type: block_content
+  uuid: c93ab8ef-6141-4170-b905-6272148ff69f
+  bundle: media_cards_block
+  default_langcode: en
+  depends:
+    47780984-b075-4525-b383-771ded092d6a: media
+default:
+  status:
+    -
+      value: true
+  info:
+    -
+      value: 'Videos and Learnings'
+  reusable:
+    -
+      value: true
+  revision_translation_affected:
+    -
+      value: true
+  metatag:
+    -
+      tag: meta
+      attributes:
+        name: title
+        content: '| Ezdevportal'
+    -
+      tag: link
+      attributes:
+        rel: canonical
+        href: 'https://ezp.ddev.site/home'
+  field_cards_layout:
+    -
+      value: 4-column
+  field_referenced_media:
+    -
+      entity: 47780984-b075-4525-b383-771ded092d6a

@@ -1,0 +1,446 @@
+swagger: "2.0"
+info:
+  title: Account APIs
+  version: 1.0.0
+  description: This API is used to fetch account details  and Balance of customer on customer id
+    & scheme Type basis.
+basePath: /
+consumes:
+- application/json
+produces:
+- application/json
+securityDefinitions:
+  clientSecret:
+    type: apiKey
+    description: ""
+    in: header
+    name: X-Client-Secret
+  clientIdHeader:
+    type: apiKey
+    in: header
+    name: X-Client-Id
+security:
+- clientIdHeader: []
+  clientSecret: []
+paths:
+  /getAccountDetails:
+    post:
+      responses:
+        200:
+          description: 200 OK
+          schema:
+            $ref: '#/definitions/getAccountDetailsResponse'
+      parameters:
+      - name: Request
+        required: false
+        in: body
+        schema:
+          $ref: '#/definitions/getAccountDetailsRequest'
+      - name: X-TEST-ID
+        type: integer
+        required: true
+        in: header
+        format: int32
+        description: This is the test-id header. It will be used for creating the
+          type of response that is required.
+      description: 'This operation is used to fetch account details. On the Basis
+        of X-TEST-ID parameter, the API will respond for different conditions.
+        For eg: 1 = success, 2 = Failed, Others = Invalid Test Id.'
+  /BalanceInquiry:
+    post:
+      responses:
+        200:
+          description: 200 OK
+          schema:
+            $ref: '#/definitions/BalanceInquiryResponse'
+      parameters:
+      - name: Request
+        required: false
+        in: body
+        schema:
+          $ref: '#/definitions/BalanceInquiryRequest'
+      - name: X-TEST-ID
+        type: integer
+        required: true
+        in: header
+        description: This is the test-id header. It will be used for creating the
+          type of response that is required.
+        format: int32
+      description: 'This operation fetches the balance for different balance types
+        for the provided account number. On the Basis of X-TEST-ID parameter,
+        the API will respond for different conditions. For eg: 1 = success, 2 = Failed,
+        Others = Invalid Test Id.'      
+definitions:
+  BalInqReqBody:
+    description: ""
+    type: object
+    properties:
+      RequestBody:
+        type: object
+        properties:
+          ValueDt:
+            type: string
+          AcctCurr:
+            type: string
+          AcctInfo:
+            type: object
+            properties:
+              BankId:
+                type: string
+              BranchId:
+                type: string
+              AcctId:
+                type: string
+    example:
+      RequestBody:
+        ValueDt: "2014-01-28"
+        AcctCurr: INR
+        AcctInfo:
+          BankId: "211"
+          BranchId: "004"
+          AcctId: 401010015####
+  BalanceInquiryRequest:
+    properties:
+      Header:
+        $ref: '#/definitions/Header'
+      RequestBody:
+        $ref: '#/definitions/BalInqReqBody'
+    additionalProperties: false
+  BalanceInquiryResponseBody:
+    description: ""
+    type: object
+    properties:
+      ResponseBody:
+        type: object
+        properties:
+          ValueDt:
+            type: string
+          AcctCurr:
+            type: object
+          Status:
+            type: string
+          AcctBal:
+            type: array
+            items:
+              properties:
+                BalType:
+                  type: string
+                BalAmt:
+                  type: object
+                  properties:
+                    amountValue:
+                      type: string
+                    currencyCode:
+                      type: string
+              type: object
+    example:
+      ResponseBody:
+        ValueDt: "2014-01-28"
+        AcctCurr: []
+        Status: "904"
+        AcctBal:
+        - BalType: Ledger Balance
+          BalAmt:
+            amountValue: "123740.00"
+            currencyCode: INR
+        - BalType: Available Balance
+          BalAmt:
+            amountValue: "123740.00"
+            currencyCode: INR
+        - BalType: Fbat Balance
+          BalAmt:
+            amountValue: "123740.00"
+            currencyCode: INR
+        - BalType: FFD Balance
+          BalAmt:
+            amountValue: "123740.00"
+            currencyCode: INR
+        - BalType: UserDefined Balance
+          BalAmt:
+            amountValue: "123740.00"
+            currencyCode: INR
+  BalanceInquiryResponse:
+    properties:
+      Header:
+        $ref: '#/definitions/Header'
+      BalInq_Rsp_Body:
+        $ref: '#/definitions/BalanceInquiryResponseBody'
+    additionalProperties: false
+  subHeader:
+    description: ""
+    type: object
+    properties:
+      RequestUUID:
+        type: string
+        description: Unique Alphanumeric ID (without special characters) from the
+          source system.
+      ServiceRequestId:
+        type: string
+        description: Service Request ID configured at ESB for the Source System.
+      ServiceRequestVersion:
+        type: string
+        description: Service Request Version configured at ESB for the Source System.
+      ChannelId:
+        type: string
+        description: Channel ID configured at ESB for the Source System..
+    example:
+      RequestUUID: "1234"
+      ServiceRequestId: AE.DCMS.SSTP.001
+      ServiceRequestVersion: "1.0"
+      ChannelId: DCMS
+  Header:
+    properties:
+      subHeader:
+        $ref: '#/definitions/subHeader'
+    additionalProperties: false
+    description: ESB Header is the common header for all the services built in ESB.
+      Header structure is same for both request and response part of an ESB service.
+  getAccountDetailsRequest:
+    properties:
+      Header:
+        $ref: '#/definitions/Header'
+      Body:
+        $ref: '#/definitions/getAccountDetailsRequestBody'
+    additionalProperties: false
+  getAccountDetailsRequestBody:
+    description: ""
+    type: object
+    properties:
+      getAccountDetailsRequest:
+        type: object
+        properties:
+          customerId:
+            type: string
+          schemType:
+            type: string
+    example:
+      getAccountDetailsRequest:
+        customerId: 831505***
+        schemType: ""
+  getAccountDetailsResponse:
+    properties:
+      Header:
+        $ref: '#/definitions/Header'
+      Body:
+        $ref: '#/definitions/getAccountDetailsResponseBody'
+    additionalProperties: false
+  getAccountDetailsResponseBody:
+    description: ""
+    type: object
+    properties:
+      getAccountDetailsResponse:
+        type: object
+        properties:
+          recordCount:
+            type: number
+          matchFound:
+            type: string
+          CustomerDetails:
+            type: object
+            properties:
+              customerName:
+                type: string
+              dateOfBirth:
+                type: string
+              constitutionCode:
+                type: string
+              pan:
+                type: string
+              TodayTotFdAmt:
+                type: number
+              TaxSaverTotFdAmt:
+                type: number
+              corpID:
+                type: number
+              suspended:
+                type: string
+          AccountDetails:
+            type: object
+            properties:
+              customerId:
+                type: string
+              bayUserId:
+                type: string
+              branchId:
+                type: string
+              acid:
+                type: string
+              currencyCode:
+                type: string
+              schemType:
+                type: string
+              schemCode:
+                type: string
+              productDescription:
+                type: string
+              clearBalanceAmount:
+                type: number
+              unClearBalanceAmount:
+                type: number
+              openDate:
+                type: string
+              accountName:
+                type: string
+              nickName:
+                type: string
+              interestRate:
+                type: string
+              deleteFlag:
+                type: string
+              rModId:
+                type: string
+              rModTime:
+                type: string
+              rCreId:
+                type: string
+              rCreTime:
+                type: string
+              createdBy:
+                type: string
+              createdOn:
+                type: string
+              updatedBy:
+                type: string
+              updatedOn:
+                type: string
+              accountStatus:
+                type: string
+              deviceUniqueId:
+                type: string
+              bankId:
+                type: string
+              mbNickName:
+                type: string
+              syncType:
+                type: string
+              accountDesc:
+                type: string
+              custConst:
+                type: string
+              relationship:
+                type: string
+              mop:
+                type: string
+              ifscCode:
+                type: string
+              sysUpdateDate:
+                type: string
+              closeFlag:
+                type: string
+             
+              ownership:
+                type: string
+              acctRPTCode:
+                type: string
+              monAvgBal:
+                type: number
+              branchName:
+                type: string
+            
+              ledgerNo:
+                type: number
+              pbfFlag:
+                type: string
+           
+              status:
+                type: string
+              areaType:
+                type: string
+              priority:
+                type: string
+              burgundy:
+                type: string
+              labelCode:
+                type: string
+              baseLoanAccount:
+                type: string
+              sanctionLimit:
+                type: number
+              typeOfAdvance:
+                type: string
+              proposalNum:
+                type: string
+              proposalLabel:
+                type: string
+              
+              lastTranDate:
+                type: string
+    example:
+      getAccountDetailsResponse:
+        recordCount: 1
+        matchFound: "true"
+        CustomerDetails:
+          customerName: ABC MN LTD
+          dateOfBirth: 2000-01-0100:00:00
+          staffFlag: ~
+          constitutionCode: "11"
+          mobile: ~
+          pan: AAAAA11***
+          aadharNo: ~
+          passportNo: ~
+          TodayTotFdAmt: 0
+          TaxSaverTotFdAmt: 0
+          healthCode: ~
+          corpID: 666193
+          segmentationClass: ~
+          suspended: "N"
+        AccountDetails:
+          customerId: 831505***
+          bayUserId: 831505***
+          branchId: 019
+          acid: 917020041648***
+          currencyCode: INR
+          schemType: CAA
+          schemCode: CAADV
+          productDescription: CA - BUSINESSADVANTAGE
+          clearBalanceAmount: 0
+          unClearBalanceAmount: 0
+          openDate: 2017-06-1900:00:00
+          accountName: NITCONCONSTRUCTION
+          nickName: NITCON
+          interestRate: "0"
+          xferInd: ~
+          deleteFlag: "N"
+          rModId: CDCI
+          rModTime: "2017-06-20 13:28:30"
+          rCreId: CDCI
+          rCreTime: 2017-06-2013:28:29
+          createdBy: CDCI
+          createdOn: 2017-06-2013:28:29
+          updatedBy: CONT_SYNC
+          updatedOn: 2017-07-2012:42:05
+          accountStatus: OPEN
+          deviceUniqueId: "0"
+          bankId: "211"
+          mbNickName: NITCON
+          syncType: C
+          accountDesc: AC_DESC
+          custConst: "11"
+          relationship: Main
+          mop: PROPRIETOR/AUTH. SIGNATOR
+          ifscCode: AIB0000019
+          custType: ~
+          sysUpdateDate: 2017-07-2012:42:05
+          closeFlag: "N"
+          closeDate: ~
+          ownership: C
+          acctRPTCode: CANOR
+          monAvgBal: 0
+          branchName: VASAI, MUMBAI[MH]
+          acctFrezStatus: ~
+          ledgerNo: 1
+          pbfFlag: "N"
+          acctManager: ~
+          status: A
+          areaType: SMURB
+          priority: "N"
+          burgundy: "N"
+          labelCode: ""
+          baseLoanAccount: ""
+          sanctionLimit: 0
+          typeOfAdvance: ""
+          proposalNum: ""
+          proposalLabel: ""
+          disbursementMode: ~
+          lastTranDate: ""
+tags: []

@@ -1,0 +1,27 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: a204712e-b05e-4113-8fc4-452014ff8754
+  default_langcode: en
+default:
+  uid:
+    -
+      target_id: 1
+  filename:
+    -
+      value: Usecases-page-icon.png
+  uri:
+    -
+      value: 'public://2021-11/Usecases-page-icon_1_0.png'
+  filemime:
+    -
+      value: image/png
+  filesize:
+    -
+      value: 1587
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1637659097

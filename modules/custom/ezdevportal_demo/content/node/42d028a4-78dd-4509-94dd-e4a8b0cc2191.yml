@@ -1,0 +1,86 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 42d028a4-78dd-4509-94dd-e4a8b0cc2191
+  bundle: blog_post
+  default_langcode: en
+  depends:
+    171903ea-7ac4-4d77-bc8d-62c9e21b936e: taxonomy_term
+    de5eebb0-60ca-46e5-a65f-e6b0333f5486: taxonomy_term
+    bb182332-9ec8-4728-87e9-3cb011d93158: taxonomy_term
+    1d707526-d759-4bea-aa6d-1345a85a94f0: taxonomy_term
+    de4edbf4-9e4f-4625-b0d5-c7a9004ef323: media
+default:
+  revision_uid:
+    -
+      target_id: 1
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 1
+  title:
+    -
+      value: 'How APIs Work'
+  created:
+    -
+      value: 1637836445
+  promote:
+    -
+      value: false
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  moderation_state:
+    -
+      value: published
+  metatag:
+    -
+      tag: meta
+      attributes:
+        name: title
+        content: 'How APIs Work | Ezdevportal'
+    -
+      tag: meta
+      attributes:
+        name: description
+        content: 'APIs are the little pieces of code that make it possible for digital devices, software applications, and data servers to talk with each other, and they’re the essential backbone of so many services we now rely on.'
+    -
+      tag: link
+      attributes:
+        rel: canonical
+        href: 'https://ezp.ddev.site/blog/how-apis-work'
+  path:
+    -
+      alias: /blog/how-apis-work
+      langcode: en
+      pathauto: 1
+  body:
+    -
+      value: "<p>APIs work by sharing data and information between applications, systems, and devices—making it possible for these things to talk with each other.</p>\r\n\r\n<p>Sometimes the easiest way to think about APIs is to think about a metaphor, and a common scenario that a lot of folks use is that of the customer, a waiter, and a restaurant kitchen: A customer talks to the waiter and tells the waiter what she wants. The waiter takes down the order and communicates it to the kitchen. The kitchen does their work, creating the food, and then the waiter delivers the order back to the customer.</p>\r\n"
+      format: full_html
+      summary: 'APIs are the little pieces of code that make it possible for digital devices, software applications, and data servers to talk with each other, and they’re the essential backbone of so many services we now rely on.'
+  field_blog_comments:
+    -
+      status: 2
+      cid: 0
+      last_comment_timestamp: 1654680546
+      last_comment_name: ''
+      last_comment_uid: 1
+      comment_count: 0
+  field_blog_tags:
+    -
+      entity: 171903ea-7ac4-4d77-bc8d-62c9e21b936e
+    -
+      entity: de5eebb0-60ca-46e5-a65f-e6b0333f5486
+    -
+      entity: bb182332-9ec8-4728-87e9-3cb011d93158
+    -
+      entity: 1d707526-d759-4bea-aa6d-1345a85a94f0
+  field_listing_image:
+    -
+      entity: de4edbf4-9e4f-4625-b0d5-c7a9004ef323

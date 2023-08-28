@@ -1,0 +1,260 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: b1a81251-759c-4bcb-aa66-e0a7c3ac2c1f
+  bundle: api_document
+  default_langcode: en
+  depends:
+    6f7e881a-465c-4abd-9698-b6881b1f659c: file
+    407caf1b-f14d-4790-8bd2-887e9f1bdf31: taxonomy_term
+    0c90ba3d-a45c-4568-945d-73bf19fa44d9: media
+    18938564-00b9-4649-95d8-93ad99762cb2: taxonomy_term
+    fbcbf8a2-97cb-4823-8cd3-4af54b3863f6: taxonomy_term
+    aacbb16a-83c9-405a-b104-df4f29f3e3ec: taxonomy_term
+    35cd5fb5-779f-4a6a-b48e-f98d7e80796a: taxonomy_term
+default:
+  revision_uid:
+    -
+      target_id: 1
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 1
+  title:
+    -
+      value: 'Loan API'
+  created:
+    -
+      value: 1637663012
+  promote:
+    -
+      value: false
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  moderation_state:
+    -
+      value: published
+  metatag:
+    -
+      tag: meta
+      attributes:
+        name: title
+        content: 'Loan API | Ezdevportal'
+    -
+      tag: meta
+      attributes:
+        name: description
+        content: 'Lending APIs allow for making express credit scoring, retrieving loan pricing, applying for a loan, sending files, sharing credit history, making payments etc.'
+    -
+      tag: link
+      attributes:
+        rel: canonical
+        href: 'https://ezp.ddev.site/api-document/loan-api'
+  path:
+    -
+      alias: /api-document/loan-api
+      langcode: en
+      pathauto: 1
+  body:
+    -
+      value: "<p>Lending APIs allow for making express credit scoring, retrieving loan pricing, applying for a loan, sending files, sharing credit history, making payments etc.</p>\r\n"
+      format: full_html
+      summary: ''
+  field_api_display:
+    -
+      value: voyager_ui
+  field_api_type:
+    -
+      value: rest
+  field_document:
+    -
+      entity: 6f7e881a-465c-4abd-9698-b6881b1f659c
+      display: true
+      description: ''
+  field_environment:
+    -
+      entity: 407caf1b-f14d-4790-8bd2-887e9f1bdf31
+  field_format:
+    -
+      value: redoc_ui
+    -
+      value: rapidoc_ui
+    -
+      value: swagger_ui_file
+  field_listing_image:
+    -
+      entity: 0c90ba3d-a45c-4568-945d-73bf19fa44d9
+  field_sdk_language:
+    -
+      entity: 18938564-00b9-4649-95d8-93ad99762cb2
+    -
+      entity: fbcbf8a2-97cb-4823-8cd3-4af54b3863f6
+    -
+      entity: aacbb16a-83c9-405a-b104-df4f29f3e3ec
+    -
+      entity: 35cd5fb5-779f-4a6a-b48e-f98d7e80796a
+  layout_builder__layout:
+    -
+      section:
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+          context_mapping: {  }
+        components:
+          -
+            uuid: 727e8eab-b3c6-485b-8cbb-5bf47cb73745
+            region: content
+            configuration:
+              id: banner_content_block
+              label: 'Banner Content Block'
+              label_display: 0
+              provider: ezdevportal_base
+              context_mapping: {  }
+              banner_title: ''
+              banner_text: 'Explore our Loan Management APIs'
+              banner_image: {  }
+              banner_height: 307px
+            weight: -10
+            additional: {  }
+        third_party_settings: {  }
+    -
+      section:
+        layout_id: layout_twocol_section
+        layout_settings:
+          label: ''
+          column_widths: 75-25
+          context_mapping: {  }
+          custom_id: ''
+          custom_classes: ''
+          custom_class_choose:
+            container: container
+          custom_styles: ''
+          custom_data_attributes: ''
+          regions:
+            first:
+              region_id: ''
+              region_class_choose:
+                container: 0
+              region_classes: ''
+              region_styles: ''
+              region_data: ''
+            second:
+              region_id: ''
+              region_class_choose:
+                container: 0
+              region_classes: ''
+              region_styles: ''
+              region_data: ''
+        components:
+          -
+            uuid: 0544500b-43bf-4a08-9225-855c4383c477
+            region: first
+            configuration:
+              id: system_breadcrumb_block
+              label: Breadcrumbs
+              label_display: '0'
+              provider: system
+              context_mapping: {  }
+            weight: -9
+            additional: {  }
+          -
+            uuid: 2fb18b37-269e-46f2-ad83-86dcd8957cab
+            region: second
+            configuration:
+              id: download_sdk
+              label: 'Download SDK'
+              label_display: '0'
+              provider: ezdevportal_sdk
+              context_mapping: {  }
+            weight: -8
+            additional: {  }
+        third_party_settings: {  }
+    -
+      section:
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+          context_mapping: {  }
+          custom_id: ''
+          custom_classes: ''
+          custom_class_choose:
+            container: container
+          custom_styles: ''
+          custom_data_attributes: ''
+          regions:
+            content:
+              region_id: ''
+              region_class_choose:
+                container: 0
+              region_classes: ''
+              region_styles: ''
+              region_data: ''
+        components:
+          -
+            uuid: 62a582fa-a547-4865-972f-08d0f7dbf7f3
+            region: content
+            configuration:
+              id: api_formatter_option_block
+              label: 'API Formatter Option Block'
+              label_display: '0'
+              provider: ezdevportal_api_documents
+              context_mapping: {  }
+            weight: -7
+            additional: {  }
+          -
+            uuid: ddc99399-a521-4cd9-a877-b06ca8825255
+            region: content
+            configuration:
+              id: 'views_block:api_document_formatter-block_1'
+              label: ''
+              label_display: '0'
+              provider: views
+              context_mapping: {  }
+              views_label: ''
+              items_per_page: none
+            weight: -6
+            additional: {  }
+          -
+            uuid: ed630002-0823-4a76-a778-340a0244a88b
+            region: content
+            configuration:
+              id: 'field_block:node:api_document:title'
+              label: Title
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: string
+                label: hidden
+                settings:
+                  link_to_entity: false
+                third_party_settings: {  }
+            weight: -10
+            additional: {  }
+          -
+            uuid: 442a2675-f37f-4649-a4c3-3adf6b5ee358
+            region: content
+            configuration:
+              id: 'field_block:node:api_document:body'
+              label: 'API Description'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: text_default
+                label: hidden
+                settings: {  }
+                third_party_settings: {  }
+            weight: -9
+            additional: {  }
+        third_party_settings: {  }

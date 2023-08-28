@@ -1,0 +1,65 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 7a3ab3ea-300b-4ec1-8474-4373ae85be71
+  bundle: use_case
+  default_langcode: en
+  depends:
+    44972a58-15ce-483a-814f-77d902225471: media
+default:
+  revision_uid:
+    -
+      target_id: 1
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 1
+  title:
+    -
+      value: 'How We Helped A Telecom Giant Shorten The Time-To-Market For APIs'
+  created:
+    -
+      value: 1637662309
+  promote:
+    -
+      value: false
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  moderation_state:
+    -
+      value: published
+  metatag:
+    -
+      tag: meta
+      attributes:
+        name: title
+        content: 'How We Helped A Telecom Giant Shorten The Time-To-Market For APIs | Ezdevportal'
+    -
+      tag: meta
+      attributes:
+        name: description
+        content: '3X Reduction in time-to-market for APIs'
+    -
+      tag: link
+      attributes:
+        rel: canonical
+        href: 'https://ezp.ddev.site/use-case/how-we-helped-telecom-giant-shorten-time-market-apis'
+  path:
+    -
+      alias: /use-case/how-we-helped-telecom-giant-shorten-time-market-apis
+      langcode: en
+      pathauto: 1
+  body:
+    -
+      value: "<h2>Highlights</h2>\r\n\r\n<p>We helped our client reduce their time-to-market for their APIs by setting up a standard workflow for publishing APIs.</p>\r\n\r\n<h2>The Requirement</h2>\r\n\r\n<ul>\r\n\t<li>The client wanted to migrate all their monetized APIs from a home-grown API gateway to an industry standard solution. Such solutions have built-in features that can reduce the time-to-market for APIs.</li>\r\n\t<li>They wanted to expedite the time taken to productize their API endpoints, thus requiring workflow automation.</li>\r\n\t<li>The client needed documentation templates to drastically reduce the API documentation publishing cycle.</li>\r\n</ul>\r\n\r\n<h2>The Challenges&nbsp;</h2>\r\n\r\n<ul>\r\n\t<li>Publishing the documentation for new APIs was a time-consuming process.&nbsp;</li>\r\n\t<li>Lack of brand consistency in API documentation due to the absence of a standardized documentation template.</li>\r\n</ul>\r\n\r\n<h2>The Solution</h2>\r\n\r\n<ul>\r\n\t<li>We designed reusable components (shared flows) in the API gateways. We identified the scope of building shared flows and accomplished it through adherence to industry-standard practices.&nbsp;</li>\r\n\t<li>We built microservices to onboard new APIs automatically. The WSDL(Web Services Description Language) file contains the signature of how an API can be consumed. This automates the entire process of finding the APIs that can be exposed to customers in a shorter period of time.&nbsp;</li>\r\n\t<li>We built templates for faster and standard API documentation, which is needed to expose API endpoints to the portal’s API producers.</li>\r\n</ul>\r\n\r\n<h2>Overall Approach</h2>\r\n\r\n<p>The following diagram illustrates a reusable Apigee shared flow to quickly expose the client APIs</p>\r\n\r\n<p><img alt=\"Overall approach\" data-entity-type=\"file\" data-entity-uuid=\"86a38013-29bc-4d22-b526-868282057652\" src=\"/sites/default/files/inline-images/Shared%20flows.png\" /></p>\r\n\r\n<h2>Tech Stack</h2>\r\n\r\n<p><img alt=\"Time to market\" data-entity-type=\"file\" data-entity-uuid=\"e0661b6c-9b13-458c-a1bb-947edbbddf0b\" src=\"/sites/default/files/inline-images/API-Time-to-market-1.png\" /></p>\r\n\r\n<h2>Business Benefit</h2>\r\n\r\n<ul>\r\n\t<li>Reduced the time to market for APIs by 3X.</li>\r\n\t<li>Helped the client ensure consistency, shorten the development time, and manage the code more efficiently using reusable components.</li>\r\n\t<li>Standardized and catalyzed the API documentation process with consistent brand elements. The change in brand element is reflected across the entire set of API documentation.</li>\r\n</ul>\r\n"
+      format: full_html
+      summary: '3X Reduction in time-to-market for APIs'
+  field_listing_image:
+    -
+      entity: 44972a58-15ce-483a-814f-77d902225471

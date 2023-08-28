@@ -1,0 +1,73 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 98851df7-e59a-42f7-8bf9-e794d969f669
+  bundle: forum
+  default_langcode: en
+  depends:
+    1d707526-d759-4bea-aa6d-1345a85a94f0: taxonomy_term
+    171903ea-7ac4-4d77-bc8d-62c9e21b936e: taxonomy_term
+default:
+  revision_uid:
+    -
+      target_id: 1
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 1
+  title:
+    -
+      value: 'Testing tool for graph QL APIs'
+  created:
+    -
+      value: 1649138960
+  promote:
+    -
+      value: false
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  metatag:
+    -
+      tag: meta
+      attributes:
+        name: title
+        content: 'Testing tool for graph QL APIs | Ezdevportal'
+    -
+      tag: meta
+      attributes:
+        name: description
+        content: 'Sugesstions for Graph QL API testing.'
+    -
+      tag: link
+      attributes:
+        rel: canonical
+        href: 'https://ezp.ddev.site/forum/testing-tool-graph-ql-apis'
+  path:
+    -
+      alias: /forum/testing-tool-graph-ql-apis
+      langcode: en
+      pathauto: 1
+  body:
+    -
+      value: "<p>Sugesstions for Graph QL API testing.</p>\r\n"
+      format: full_html
+      summary: ''
+  comment_forum:
+    -
+      status: 2
+      cid: 0
+      last_comment_timestamp: 1654677401
+      last_comment_name: ''
+      last_comment_uid: 1
+      comment_count: 0
+  field_forum_tags:
+    -
+      entity: 1d707526-d759-4bea-aa6d-1345a85a94f0
+    -
+      entity: 171903ea-7ac4-4d77-bc8d-62c9e21b936e

@@ -1,0 +1,53 @@
+_meta:
+  version: '1.0'
+  entity_type: block_content
+  uuid: 10ddbb1c-50a6-46d9-9c54-f62f51f5ba72
+  bundle: content_list_block
+  default_langcode: en
+  depends:
+    f95438d9-b663-456e-a7f0-9e4a949a47c5: media
+    42d028a4-78dd-4509-94dd-e4a8b0cc2191: node
+    2b965319-85f6-457c-842d-a72a4f9dc721: node
+    3fc1727c-d96f-44ce-b9be-a347874e0d6f: node
+default:
+  status:
+    -
+      value: true
+  info:
+    -
+      value: 'Trending Blogs List'
+  reusable:
+    -
+      value: true
+  revision_translation_affected:
+    -
+      value: true
+  metatag:
+    -
+      tag: meta
+      attributes:
+        name: title
+        content: '| Ezdevportal'
+    -
+      tag: link
+      attributes:
+        rel: canonical
+        href: 'https://ezp.ddev.site/home'
+  field_block_image:
+    -
+      entity: f95438d9-b663-456e-a7f0-9e4a949a47c5
+  field_read_more_link:
+    -
+      uri: 'internal:/all-blogs'
+      title: 'Explore All Blogs'
+      options: {  }
+  field_referenced_nodes:
+    -
+      entity: 42d028a4-78dd-4509-94dd-e4a8b0cc2191
+    -
+      entity: 2b965319-85f6-457c-842d-a72a4f9dc721
+    -
+      entity: 3fc1727c-d96f-44ce-b9be-a347874e0d6f
+  field_title:
+    -
+      value: Blogs

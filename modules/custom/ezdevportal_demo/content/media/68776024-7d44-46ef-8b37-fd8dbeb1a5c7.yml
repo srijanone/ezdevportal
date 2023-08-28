@@ -1,0 +1,47 @@
+_meta:
+  version: '1.0'
+  entity_type: media
+  uuid: 68776024-7d44-46ef-8b37-fd8dbeb1a5c7
+  bundle: image
+  default_langcode: en
+  depends:
+    e3bcaddc-1cda-44f8-b6d4-66ee6ca7bad3: file
+default:
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 1
+  name:
+    -
+      value: product-listing-image.png
+  created:
+    -
+      value: 1637658760
+  revision_translation_affected:
+    -
+      value: true
+  metatag:
+    -
+      tag: meta
+      attributes:
+        name: title
+        content: '| Ezdevportal'
+    -
+      tag: link
+      attributes:
+        rel: canonical
+        href: 'https://ezp.ddev.site/home'
+  path:
+    -
+      alias: ''
+      langcode: en
+      pathauto: 0
+  field_media_image:
+    -
+      entity: e3bcaddc-1cda-44f8-b6d4-66ee6ca7bad3
+      alt: 'Product Image'
+      title: ''
+      width: 66
+      height: 61

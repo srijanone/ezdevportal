@@ -1,0 +1,27 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: b8fb2f85-4a7a-45d1-99f6-b48a025c1ff9
+  default_langcode: en
+default:
+  uid:
+    -
+      target_id: 1
+  filename:
+    -
+      value: faq-page-icon.png
+  uri:
+    -
+      value: 'public://2021-11/faq-page-icon_1_0.png'
+  filemime:
+    -
+      value: image/png
+  filesize:
+    -
+      value: 1555
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1637667913

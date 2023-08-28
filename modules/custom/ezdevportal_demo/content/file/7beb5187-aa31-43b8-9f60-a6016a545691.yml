@@ -1,0 +1,27 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: 7beb5187-aa31-43b8-9f60-a6016a545691
+  default_langcode: en
+default:
+  uid:
+    -
+      target_id: 1
+  filename:
+    -
+      value: homepage-slider-image.jpg
+  uri:
+    -
+      value: 'public://2021-11/homepage-slider-image_1_0.jpg'
+  filemime:
+    -
+      value: image/jpeg
+  filesize:
+    -
+      value: 285939
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1637658639

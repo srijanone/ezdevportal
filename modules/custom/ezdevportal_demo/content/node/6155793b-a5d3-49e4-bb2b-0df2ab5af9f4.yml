@@ -1,0 +1,178 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 6155793b-a5d3-49e4-bb2b-0df2ab5af9f4
+  bundle: landing_page
+  default_langcode: en
+  depends:
+    5dab57ea-1fd3-4387-af23-cdb8cf3c0aa1: media
+    072b9e18-5cf5-4e93-b1c8-227e8852a63e: block_content
+default:
+  revision_uid:
+    -
+      target_id: 1
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 1
+  title:
+    -
+      value: FAQs
+  created:
+    -
+      value: 1637667810
+  promote:
+    -
+      value: false
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  moderation_state:
+    -
+      value: published
+  metatag:
+    -
+      tag: meta
+      attributes:
+        name: title
+        content: 'FAQs | Ezdevportal'
+    -
+      tag: link
+      attributes:
+        rel: canonical
+        href: 'https://ezp.ddev.site/faqs'
+  path:
+    -
+      alias: /faqs
+      langcode: en
+      pathauto: 1
+  field_icon:
+    -
+      entity: 5dab57ea-1fd3-4387-af23-cdb8cf3c0aa1
+  field_short_description:
+    -
+      value: 'Get your questions answered in our FAQs section.'
+  layout_builder__layout:
+    -
+      section:
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+          context_mapping: {  }
+        components:
+          -
+            uuid: 647f8820-3bad-4f88-9e9f-db459146806f
+            region: content
+            configuration:
+              id: banner_content_block
+              label: 'Banner Content Block'
+              label_display: 0
+              provider: ezdevportal_base
+              banner_title: 'Frequently Asked Questions'
+              banner_text: 'Lets help you find what you are looking for!'
+              banner_image: {  }
+              context_mapping: {  }
+            weight: 0
+            additional: {  }
+        third_party_settings: {  }
+    -
+      section:
+        layout_id: layout_twocol_section
+        layout_settings:
+          label: 'Header Section'
+          column_widths: 67-33
+          context_mapping: {  }
+          custom_id: ''
+          custom_classes: ''
+          custom_class_choose:
+            container: container
+          custom_styles: ''
+          custom_data_attributes: ''
+          regions:
+            first:
+              region_id: ''
+              region_class_choose:
+                container: 0
+              region_classes: ''
+              region_styles: ''
+              region_data: ''
+            second:
+              region_id: ''
+              region_class_choose:
+                container: 0
+              region_classes: ''
+              region_styles: ''
+              region_data: ''
+        components:
+          -
+            uuid: a5675f88-c812-4a65-b48d-69a8e1c0bf44
+            region: first
+            configuration:
+              id: 'inline_block:basic'
+              label: 'FAQs Header'
+              label_display: 0
+              provider: layout_builder
+              view_mode: full
+              block_revision_id: '32'
+              block_serialized: null
+              context_mapping: {  }
+              type: basic
+              uuid: 072b9e18-5cf5-4e93-b1c8-227e8852a63e
+            weight: 0
+            additional:
+              target_uuid: 072b9e18-5cf5-4e93-b1c8-227e8852a63e
+          -
+            uuid: 5ce4a695-a977-4063-ac71-d68f362594b6
+            region: second
+            configuration:
+              id: 'block_content:77f7e7bb-eef0-4b2f-bcf6-670d94e44178'
+              label: 'Help Pages Filter Block'
+              label_display: 0
+              provider: block_content
+              status: true
+              info: ''
+              view_mode: full
+              context_mapping: {  }
+            weight: 0
+            additional: {  }
+        third_party_settings: {  }
+    -
+      section:
+        layout_id: layout_onecol
+        layout_settings:
+          label: 'Main Section'
+          context_mapping: {  }
+          custom_id: ''
+          custom_classes: ''
+          custom_class_choose:
+            container: container
+          custom_styles: ''
+          custom_data_attributes: ''
+          regions:
+            content:
+              region_id: ''
+              region_class_choose:
+                container: 0
+              region_classes: ''
+              region_styles: ''
+              region_data: ''
+        components:
+          -
+            uuid: e8d00845-b6bf-4f6f-905c-4de4a1a62f2d
+            region: content
+            configuration:
+              id: 'views_block:faq-all_faq_block'
+              label: ''
+              provider: views
+              label_display: 0
+              views_label: ''
+              items_per_page: none
+              context_mapping: {  }
+            weight: 0
+            additional: {  }
+        third_party_settings: {  }
