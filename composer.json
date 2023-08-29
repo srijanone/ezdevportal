@@ -10,10 +10,6 @@
             "url":"https://git.drupalcode.org/issue/better_normalizers-3286221"
         },
         {
-            "type":"vcs",
-            "url":"https://git.drupalcode.org/issue/markdown-3288447"
-        },
-        {
             "type": "composer",
             "url": "https://packages.drupal.org/8"
         },
@@ -53,7 +49,7 @@
         "drupal/layout_builder_modal": "^1.2",
         "drupal/layout_custom_section_classes": "^1.0",
         "drupal/like_and_dislike": "^1.0@beta",
-        "drupal/markdown": "dev-3288447-automated-drupal-10",
+        "drupal/markdown": "^3.0@RC",
         "drupal/menu_item_role_access": "^2.1",
         "drupal/menu_token": "^9.1.x-dev@dev",
         "drupal/metatag": "^2.0",
