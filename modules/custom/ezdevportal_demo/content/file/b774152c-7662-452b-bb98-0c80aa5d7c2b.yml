@@ -9,10 +9,10 @@ default:
       target_id: 1
   filename:
     -
-      value: ccc.json
+      value: ccc.yaml
   uri:
     -
-      value: 'public://2022-05/ccc.json'
+      value: 'public://ccc.yaml'
   filemime:
     -
       value: application/octet-stream

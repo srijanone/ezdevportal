@@ -9,10 +9,10 @@ default:
       target_id: 1
   filename:
     -
-      value: Loan.json
+      value: Loan.yaml
   uri:
     -
-      value: 'public://2022-05/Loan.json'
+      value: 'public://Loan.yaml'
   filemime:
     -
       value: application/octet-stream

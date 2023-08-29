@@ -9,10 +9,10 @@ default:
       target_id: 1
   filename:
     -
-      value: async.json
+      value: async.yaml
   uri:
     -
-      value: 'public://2021-11/async_1_0.json'
+      value: 'public://async.yaml'
   filemime:
     -
       value: application/octet-stream
