@@ -32,7 +32,6 @@
         "drupal/better_normalizers": "dev-3286221-8.x-1.x-automated-drupal-10",
         "drupal/blog": "^3.1",
         "drupal/charts": "^5.0",
-        "drupal/codesnippet": "^1.9",
         "drupal/color":"^1.0",
         "drupal/color_field": "^3.0",
         "drupal/components": "^3.0@beta",

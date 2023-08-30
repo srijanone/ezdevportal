@@ -23,8 +23,7 @@ install:
   - blog
   - breakpoint
   - captcha
-  - ckeditor
-  - codesnippet
+  - ckeditor5
   - color
   - color_field
   - comment
