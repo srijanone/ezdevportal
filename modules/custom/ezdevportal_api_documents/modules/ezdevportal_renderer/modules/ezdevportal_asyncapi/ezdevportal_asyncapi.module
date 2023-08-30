@@ -5,8 +5,8 @@
  * Async API module file.
  */
 
-use Drupal\views\ViewExecutable;
 use Drupal\ezdevportal_api_documents\ApiDocumentInterface;
+use Drupal\views\ViewExecutable;
 
 /**
  * Implements hook_views_pre_render().
