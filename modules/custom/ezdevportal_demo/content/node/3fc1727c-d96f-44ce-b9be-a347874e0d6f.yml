@@ -1,0 +1,86 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 3fc1727c-d96f-44ce-b9be-a347874e0d6f
+  bundle: blog_post
+  default_langcode: en
+  depends:
+    171903ea-7ac4-4d77-bc8d-62c9e21b936e: taxonomy_term
+    de5eebb0-60ca-46e5-a65f-e6b0333f5486: taxonomy_term
+    ce39905a-6c90-4a82-a097-c8629e1e4054: taxonomy_term
+    1d707526-d759-4bea-aa6d-1345a85a94f0: taxonomy_term
+    de4edbf4-9e4f-4625-b0d5-c7a9004ef323: media
+default:
+  revision_uid:
+    -
+      target_id: 1
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 1
+  title:
+    -
+      value: 'What makes Graph QL so useful'
+  created:
+    -
+      value: 1637837725
+  promote:
+    -
+      value: false
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  moderation_state:
+    -
+      value: published
+  metatag:
+    -
+      tag: meta
+      attributes:
+        name: title
+        content: 'What makes Graph QL so useful | Ezdevportal'
+    -
+      tag: meta
+      attributes:
+        name: description
+        content: 'GraphQL is a query language for APIs and a runtime for fulfilling those queries with your existing data.'
+    -
+      tag: link
+      attributes:
+        rel: canonical
+        href: 'https://ezp.ddev.site/blog/what-makes-graph-ql-so-useful'
+  path:
+    -
+      alias: /blog/what-makes-graph-ql-so-useful
+      langcode: en
+      pathauto: 1
+  body:
+    -
+      value: "<p>GraphQL is a query language for APIs and a runtime for fulfilling those queries with your existing data. GraphQL provides a complete and understandable description of the data in your API, gives clients the power to ask for exactly what they need and nothing more, makes it easier to evolve APIs over time, and enables powerful developer&nbsp;tools.</p>\r\n\r\n<p>Send a GraphQL query to your API and get exactly what you need, nothing more and nothing less. GraphQL queries always return predictable results. Apps using GraphQL are fast and stable because they control the data they get, not the&nbsp;server.</p>\r\n\r\n<p>GraphQL queries access not just the properties of one resource but also smoothly follow references between them. While typical REST APIs require loading from multiple URLs, GraphQL APIs get all the data your app needs in a single request. Apps using GraphQL can be quick even on slow mobile network&nbsp;connections.</p>\r\n"
+      format: full_html
+      summary: 'GraphQL is a query language for APIs and a runtime for fulfilling those queries with your existing data.'
+  field_blog_comments:
+    -
+      status: 2
+      cid: 0
+      last_comment_timestamp: 1667885488
+      last_comment_name: ''
+      last_comment_uid: 1
+      comment_count: 0
+  field_blog_tags:
+    -
+      entity: 171903ea-7ac4-4d77-bc8d-62c9e21b936e
+    -
+      entity: de5eebb0-60ca-46e5-a65f-e6b0333f5486
+    -
+      entity: ce39905a-6c90-4a82-a097-c8629e1e4054
+    -
+      entity: 1d707526-d759-4bea-aa6d-1345a85a94f0
+  field_listing_image:
+    -
+      entity: de4edbf4-9e4f-4625-b0d5-c7a9004ef323

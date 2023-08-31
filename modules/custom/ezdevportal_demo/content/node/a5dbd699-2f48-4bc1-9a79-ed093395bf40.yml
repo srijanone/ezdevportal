@@ -1,0 +1,142 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: a5dbd699-2f48-4bc1-9a79-ed093395bf40
+  bundle: landing_page
+  default_langcode: en
+default:
+  revision_uid:
+    -
+      target_id: 1
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 1
+  title:
+    -
+      value: 'All Blogs'
+  created:
+    -
+      value: 1637842032
+  promote:
+    -
+      value: false
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  moderation_state:
+    -
+      value: published
+  metatag:
+    -
+      tag: meta
+      attributes:
+        name: title
+        content: 'All Blogs | Ezdevportal'
+    -
+      tag: link
+      attributes:
+        rel: canonical
+        href: 'https://ezp.ddev.site/all-blogs'
+  path:
+    -
+      alias: /all-blogs
+      langcode: en
+      pathauto: 1
+  layout_builder__layout:
+    -
+      section:
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+          context_mapping: {  }
+        components:
+          -
+            uuid: 4a78320e-00d2-4727-ae47-d964c011bb1a
+            region: content
+            configuration:
+              id: banner_content_block
+              label: 'Banner Content Block'
+              label_display: 0
+              provider: ezdevportal_base
+              banner_title: Blogs
+              banner_text: 'Read about the latest news, releases, and feature updates across APIs and Products.'
+              banner_image: {  }
+              context_mapping: {  }
+              banner_height: 307px
+            weight: 0
+            additional: {  }
+        third_party_settings: {  }
+    -
+      section:
+        layout_id: layout_twocol_section
+        layout_settings:
+          label: 'Main Section'
+          column_widths: 67-33
+          context_mapping: {  }
+          custom_id: ''
+          custom_classes: ''
+          custom_class_choose:
+            container: container
+          custom_styles: ''
+          custom_data_attributes: ''
+          regions:
+            first:
+              region_id: ''
+              region_class_choose:
+                container: 0
+              region_classes: ''
+              region_styles: ''
+              region_data: ''
+            second:
+              region_id: ''
+              region_class_choose:
+                container: 0
+              region_classes: ''
+              region_styles: ''
+              region_data: ''
+        components:
+          -
+            uuid: 14c69c04-bb67-47be-b87a-e67dfc60e89c
+            region: first
+            configuration:
+              id: 'views_block:blog-block_all_blogs'
+              label: Blogs
+              label_display: visible
+              provider: views
+              views_label: Blogs
+              items_per_page: none
+              context_mapping: {  }
+            weight: 0
+            additional: {  }
+          -
+            uuid: 35b55713-2a05-414b-a872-9a8a0aa45e76
+            region: second
+            configuration:
+              id: 'views_exposed_filter_block:blog-block_all_blogs'
+              label: ''
+              provider: views
+              label_display: 0
+              views_label: ''
+              context_mapping: {  }
+            weight: 0
+            additional: {  }
+          -
+            uuid: 5f0bc167-b37a-41d6-acac-4340e71e8beb
+            region: second
+            configuration:
+              id: 'views_block:blog-block_latest_blogs'
+              label: ''
+              label_display: visible
+              provider: views
+              views_label: ''
+              items_per_page: none
+              context_mapping: {  }
+            weight: 1
+            additional: {  }
+        third_party_settings: {  }

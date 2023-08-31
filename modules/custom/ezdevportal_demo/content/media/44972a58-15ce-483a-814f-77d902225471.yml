@@ -1,0 +1,47 @@
+_meta:
+  version: '1.0'
+  entity_type: media
+  uuid: 44972a58-15ce-483a-814f-77d902225471
+  bundle: image
+  default_langcode: en
+  depends:
+    a1d844ab-a1cb-452f-a916-aa76fd701575: file
+default:
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 1
+  name:
+    -
+      value: usecases-block-icon.png
+  created:
+    -
+      value: 1637658853
+  revision_translation_affected:
+    -
+      value: true
+  metatag:
+    -
+      tag: meta
+      attributes:
+        name: title
+        content: '| Ezdevportal'
+    -
+      tag: link
+      attributes:
+        rel: canonical
+        href: 'https://ezp.ddev.site/home'
+  path:
+    -
+      alias: ''
+      langcode: en
+      pathauto: 0
+  field_media_image:
+    -
+      entity: a1d844ab-a1cb-452f-a916-aa76fd701575
+      alt: 'Use case card icon'
+      title: ''
+      width: 83
+      height: 82

@@ -1,0 +1,27 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: 86a38013-29bc-4d22-b526-868282057652
+  default_langcode: en
+default:
+  uid:
+    -
+      target_id: 1
+  filename:
+    -
+      value: 'Shared flows.png'
+  uri:
+    -
+      value: 'public://inline-images/Shared flows.png'
+  filemime:
+    -
+      value: image/png
+  filesize:
+    -
+      value: 60572
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1653328819

@@ -1,0 +1,64 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: ef71767f-504d-4284-9388-c2fac2471f9c
+  bundle: faq
+  default_langcode: en
+default:
+  revision_uid:
+    -
+      target_id: 1
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 1
+  title:
+    -
+      value: 'What is a API?'
+  created:
+    -
+      value: 1637661943
+  promote:
+    -
+      value: false
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  moderation_state:
+    -
+      value: published
+  metatag:
+    -
+      tag: meta
+      attributes:
+        name: title
+        content: 'What is a API? | Ezdevportal'
+    -
+      tag: meta
+      attributes:
+        name: description
+        content: 'What is a API?'
+    -
+      tag: link
+      attributes:
+        rel: canonical
+        href: 'https://ezp.ddev.site/node/35'
+  path:
+    -
+      alias: ''
+      langcode: en
+      pathauto: 0
+  body:
+    -
+      value: "<p>What is a API?</p>\r\n"
+      format: full_html
+      summary: ''
+  field_answer:
+    -
+      value: "<p>API&nbsp;is the acronym for Application Programming Interface, which is a software intermediary that allows two applications to talk to each other.</p>\r\n"
+      format: full_html

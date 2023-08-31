@@ -1,0 +1,27 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: b774152c-7662-452b-bb98-0c80aa5d7c2b
+  default_langcode: en
+default:
+  uid:
+    -
+      target_id: 1
+  filename:
+    -
+      value: ccc.yaml
+  uri:
+    -
+      value: 'public://ccc.yaml'
+  filemime:
+    -
+      value: application/octet-stream
+  filesize:
+    -
+      value: 226976
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1651765119

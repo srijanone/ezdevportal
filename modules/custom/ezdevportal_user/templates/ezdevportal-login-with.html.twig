@@ -8,15 +8,16 @@
 <div class="login-with">
   <div class="login-with-text">Log in with</div>
   <div class="login-with-social">
-    {% for social_network in social_networks %}
+    {% for id, social_network in social_networks %}
       {% if destination %}
-        <a class="{{ module }} auth-link" href="{{ path(social_network.route) }}?destination={{ destination | url_encode }}">
+        {% set options = {'query': {'destination': destination}} %}
       {% else %}
-        <a class="{{ module }} auth-link" href="{{ path(social_network.route) }}">
+        {% set options = {} %}
       {% endif %}
+      <a class="{{ module }} auth-link" href="{{ social_network.getRedirectUrl(options).toString }}">
         <img class="{{ module }} auth-icon"
-            src="{{ base_path }}{{ social_network.img_path }}"
-            alt="{{ 'Authenticate through @social_network_name' | t({'@social_network_name': social_network.name}) }}">
+          src="{{ social_network.getProviderLogoPath }}"
+          alt="{{ 'Authenticate through @social_network_name' | t({'@social_network_name': social_network.getPluginDefinition.social_network}) }}">
       </a>
     {% endfor %}
   </div>

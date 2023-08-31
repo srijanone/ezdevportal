@@ -1,0 +1,96 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: b15b3180-93a5-4d57-9767-75373b45c520
+  bundle: api_product
+  default_langcode: en
+  depends:
+    59c5e683-08d7-4511-b740-dc4eab05fe51: node
+    407caf1b-f14d-4790-8bd2-887e9f1bdf31: taxonomy_term
+    1bcf5aff-4361-46f5-82cf-ea9bf552bac9: node
+    68776024-7d44-46ef-8b37-fd8dbeb1a5c7: media
+    fd6e1b91-2d65-402a-9a82-765c721c1b68: taxonomy_term
+    9aad4038-4cd2-4828-8eff-4299fc5413b2: taxonomy_term
+    82c551f2-4cdd-4429-a1c0-e05ffafe37a6: node
+default:
+  revision_uid:
+    -
+      target_id: 1
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 1
+  title:
+    -
+      value: 'Account Management Product'
+  created:
+    -
+      value: 1637664286
+  promote:
+    -
+      value: false
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  moderation_state:
+    -
+      value: published
+  metatag:
+    -
+      tag: meta
+      attributes:
+        name: title
+        content: 'Account Management Product | Ezdevportal'
+    -
+      tag: meta
+      attributes:
+        name: description
+        content: 'This API fetches the account details of customer on customer id and balance for different balance types for the provided account number.'
+    -
+      tag: link
+      attributes:
+        rel: canonical
+        href: 'https://ezp.ddev.site/api-product/account-management-product'
+  path:
+    -
+      alias: /api-product/account-management-product
+      langcode: en
+      pathauto: 1
+  body:
+    -
+      value: "<p>This API fetches the account details of customer on customer id and balance for different balance types for the provided account number.</p>\r\n"
+      format: full_html
+      summary: ''
+  field_api_specifications:
+    -
+      entity: 59c5e683-08d7-4511-b740-dc4eab05fe51
+  field_environment:
+    -
+      entity: 407caf1b-f14d-4790-8bd2-887e9f1bdf31
+  field_faqs:
+    -
+      entity: 1bcf5aff-4361-46f5-82cf-ea9bf552bac9
+  field_listing_image:
+    -
+      entity: 68776024-7d44-46ef-8b37-fd8dbeb1a5c7
+  field_product_available_for:
+    -
+      entity: fd6e1b91-2d65-402a-9a82-765c721c1b68
+  field_product_category:
+    -
+      entity: 9aad4038-4cd2-4828-8eff-4299fc5413b2
+  field_product_version:
+    -
+      value: '1.1'
+  field_summary:
+    -
+      value: "<p>Account Management APIs gives you an overview of your customers' savings and current accounts. Use this API to retrieve IBAN, BIC, account type and product description as well as account balances consisting of amount and currency.</p>\r\n"
+      format: full_html
+  field_use_cases:
+    -
+      entity: 82c551f2-4cdd-4429-a1c0-e05ffafe37a6

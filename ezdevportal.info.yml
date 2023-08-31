@@ -23,8 +23,7 @@ install:
   - blog
   - breakpoint
   - captcha
-  - ckeditor
-  - codesnippet
+  - ckeditor5
   - color
   - color_field
   - comment
@@ -37,7 +36,6 @@ install:
   - ctools
   - datetime
   - dblog
-  - default_content
   - dynamic_page_cache
   - editor
   - email_registration
@@ -76,9 +74,7 @@ install:
   - page_cache
   - path
   - path_alias
-  - quickedit
   - r4032login
-  - rdf
   - recaptcha
   - redirect
   - redoc_field_formatter
@@ -148,7 +144,6 @@ install:
   - ezdevportal_support
   - ezdevportal_forum
 themes:
-  - bartik
   - seven
   - adminimal_theme
   - stable9

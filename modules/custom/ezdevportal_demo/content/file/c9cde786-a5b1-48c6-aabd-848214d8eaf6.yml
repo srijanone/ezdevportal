@@ -1,0 +1,27 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: c9cde786-a5b1-48c6-aabd-848214d8eaf6
+  default_langcode: en
+default:
+  uid:
+    -
+      target_id: 1
+  filename:
+    -
+      value: blogs-listing-image.png
+  uri:
+    -
+      value: 'public://2021-11/blogs-listing-image_0_1_0.png'
+  filemime:
+    -
+      value: image/png
+  filesize:
+    -
+      value: 34918
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1637848816

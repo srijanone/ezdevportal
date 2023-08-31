@@ -4,92 +4,137 @@ dependencies:
   config:
     - filter.format.full_html
   module:
-    - ckeditor
+    - ckeditor5
 format: full_html
-editor: ckeditor
+editor: ckeditor5
 settings:
   toolbar:
-    rows:
-      -
-        -
-          name: Formatting
-          items:
-            - Bold
-            - Italic
-            - Underline
-            - Strike
-            - Superscript
-            - Subscript
-            - '-'
-            - RemoveFormat
-            - Outdent
-            - Indent
-        -
-          name: Linking
-          items:
-            - DrupalLink
-            - DrupalUnlink
-        -
-          name: Lists
-          items:
-            - BulletedList
-            - NumberedList
-        -
-          name: Media
-          items:
-            - Blockquote
-            - DrupalImage
-            - DrupalMediaLibrary
-            - Table
-            - HorizontalRule
-            - CodeSnippet
-        -
-          name: 'Block Formatting'
-          items:
-            - Format
-        -
-          name: Tools
-          items:
-            - ShowBlocks
-            - Source
+    items:
+      - bold
+      - italic
+      - underline
+      - strikethrough
+      - superscript
+      - subscript
+      - removeFormat
+      - outdent
+      - indent
+      - '|'
+      - link
+      - '|'
+      - bulletedList
+      - numberedList
+      - '|'
+      - blockQuote
+      - drupalInsertImage
+      - drupalMedia
+      - insertTable
+      - horizontalLine
+      - codeBlock
+      - '|'
+      - heading
+      - codeBlock
+      - '|'
+      - sourceEditing
   plugins:
-    language:
-      language_list: un
-    stylescombo:
-      styles: ''
-    codesnippet:
-      highlight_style: arta
-      highlight_languages:
-        apache: apache
-        bash: bash
-        cs: cs
-        cpp: cpp
-        coffeescript: coffeescript
-        css: css
-        diff: diff
-        html: html
-        http: http
-        ini: ini
-        java: java
-        javascript: javascript
-        json: json
-        makefile: makefile
-        markdown: markdown
-        nginx: nginx
-        objectivec: objectivec
-        perl: perl
-        php: php
-        python: python
-        ruby: ruby
-        sql: sql
-        vbscript: vbscript
-        xhtml: xhtml
-        xml: xml
+    ckeditor5_codeBlock:
+      languages:
+        -
+          label: apache
+          language: apache
+        -
+          label: bash
+          language: bash
+        -
+          label: cs
+          language: cs
+        -
+          label: cpp
+          language: cpp
+        -
+          label: coffeescript
+          language: coffeescript
+        -
+          label: css
+          language: css
+        -
+          label: diff
+          language: diff
+        -
+          label: html
+          language: html
+        -
+          label: http
+          language: http
+        -
+          label: ini
+          language: ini
+        -
+          label: java
+          language: java
+        -
+          label: javascript
+          language: javascript
+        -
+          label: json
+          language: json
+        -
+          label: makefile
+          language: makefile
+        -
+          label: markdown
+          language: markdown
+        -
+          label: nginx
+          language: nginx
+        -
+          label: objectivec
+          language: objectivec
+        -
+          label: perl
+          language: perl
+        -
+          label: php
+          language: php
+        -
+          label: python
+          language: python
+        -
+          label: ruby
+          language: ruby
+        -
+          label: sql
+          language: sql
+        -
+          label: vbscript
+          language: vbscript
+        -
+          label: xhtml
+          language: xhtml
+        -
+          label: xml
+          language: xml
+    ckeditor5_heading:
+      enabled_headings:
+        - heading2
+        - heading3
+        - heading4
+        - heading5
+        - heading6
+    ckeditor5_imageResize:
+      allow_resize: true
+    ckeditor5_list:
+      reversed: true
+      startIndex: true
+    ckeditor5_sourceEditing:
+      allowed_tags: {  }
+    media_media:
+      allow_view_mode_override: false
 image_upload:
   status: true
   scheme: public
   directory: inline-images
   max_size: ''
   max_dimensions:
-    width: null
-    height: null
+    width: 0
+    height: 0

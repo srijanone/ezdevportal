@@ -1,0 +1,131 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 82f06393-bfe8-41d7-8010-ad869dea1b00
+  bundle: api_product
+  default_langcode: en
+  depends:
+    41a500f5-467c-4127-a9b3-de83922dc150: node
+    1fe86965-9a35-4a5d-adb3-8b921bb5ca7a: media
+    42d028a4-78dd-4509-94dd-e4a8b0cc2191: node
+    2b965319-85f6-457c-842d-a72a4f9dc721: node
+    3fc1727c-d96f-44ce-b9be-a347874e0d6f: node
+    ce2034b1-9db7-4496-a9e4-191f67d89168: node
+    6f8e6152-9aa4-47e7-a180-ec4013900c2e: node
+    5f5c9823-46d2-44d6-80b3-6cdfd668b60c: taxonomy_term
+    ef71767f-504d-4284-9388-c2fac2471f9c: node
+    4bbd1f3a-36f9-4fb1-90cb-11db5d708789: node
+    68776024-7d44-46ef-8b37-fd8dbeb1a5c7: media
+    a6d7e857-4a88-4ee5-9a2c-a4c2e1755b21: taxonomy_term
+    1e352662-22ab-487f-87d3-9a6371f0d4c9: taxonomy_term
+    bf036be9-4c22-4b05-9b62-997d72846949: taxonomy_term
+    dd0e3cec-43a0-44db-bfe4-a44d7da7d0b7: taxonomy_term
+    7a3ab3ea-300b-4ec1-8474-4373ae85be71: node
+    3d7bb68e-7e13-4297-8d45-d05fa0b24e41: node
+    e4a31e74-5baf-4dfc-8306-3b6a168c6d4d: node
+default:
+  revision_uid:
+    -
+      target_id: 1
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 1
+  title:
+    -
+      value: 'Credit Card Product'
+  created:
+    -
+      value: 1637663866
+  promote:
+    -
+      value: false
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  moderation_state:
+    -
+      value: published
+  metatag:
+    -
+      tag: meta
+      attributes:
+        name: title
+        content: 'Credit Card Product | Ezdevportal'
+    -
+      tag: meta
+      attributes:
+        name: description
+        content: 'This specification includes all relevant artefacts for the Open Data Business Commercial Credit Cards (CCC) API Specification. Having a standard API would make the data capture side much easier and allow more third party providers to provide applications that could target particular SME markets. This endpoint can contain multiple brands owned by a particular banking group. Each brand can own multiple SME Commercial Credit Card products.'
+    -
+      tag: link
+      attributes:
+        rel: canonical
+        href: 'https://ezp.ddev.site/api-product/credit-card-product'
+  path:
+    -
+      alias: /api-product/credit-card-product
+      langcode: en
+      pathauto: 1
+  body:
+    -
+      value: "<p>This specification includes all relevant artefacts for the Open Data Business Commercial Credit Cards (CCC) API Specification. Having a standard API would make the data capture side much easier and allow more third party providers to provide applications that could target particular SME markets. This endpoint can contain multiple brands owned by a particular banking group. Each brand can own multiple SME Commercial Credit Card products.</p>\r\n"
+      format: full_html
+      summary: ''
+  field_api_specifications:
+    -
+      entity: 41a500f5-467c-4127-a9b3-de83922dc150
+  field_banner_image:
+    -
+      entity: 1fe86965-9a35-4a5d-adb3-8b921bb5ca7a
+  field_blogs:
+    -
+      entity: 42d028a4-78dd-4509-94dd-e4a8b0cc2191
+    -
+      entity: 2b965319-85f6-457c-842d-a72a4f9dc721
+    -
+      entity: 3fc1727c-d96f-44ce-b9be-a347874e0d6f
+    -
+      entity: ce2034b1-9db7-4496-a9e4-191f67d89168
+    -
+      entity: 6f8e6152-9aa4-47e7-a180-ec4013900c2e
+  field_environment:
+    -
+      entity: 5f5c9823-46d2-44d6-80b3-6cdfd668b60c
+  field_faqs:
+    -
+      entity: ef71767f-504d-4284-9388-c2fac2471f9c
+    -
+      entity: 4bbd1f3a-36f9-4fb1-90cb-11db5d708789
+  field_listing_image:
+    -
+      entity: 68776024-7d44-46ef-8b37-fd8dbeb1a5c7
+  field_product_available_for:
+    -
+      entity: a6d7e857-4a88-4ee5-9a2c-a4c2e1755b21
+  field_product_category:
+    -
+      entity: 1e352662-22ab-487f-87d3-9a6371f0d4c9
+    -
+      entity: bf036be9-4c22-4b05-9b62-997d72846949
+    -
+      entity: dd0e3cec-43a0-44db-bfe4-a44d7da7d0b7
+  field_product_version:
+    -
+      value: '1.0'
+  field_summary:
+    -
+      value: "<p>The Card as a Service (CaaS) API allows you to integrate a collection of APIs into your user experience to supply a digital corporate credit card for business purchases and expenses. Using tokenization and encryption, the card can be pushed to the user's mobile wallet in a frictionless way. Extensive controls enhance the card's security, making fraud or misuse nearly impossible.</p>\r\n"
+      format: full_html
+  field_use_cases:
+    -
+      entity: 7a3ab3ea-300b-4ec1-8474-4373ae85be71
+    -
+      entity: 3d7bb68e-7e13-4297-8d45-d05fa0b24e41
+    -
+      entity: e4a31e74-5baf-4dfc-8306-3b6a168c6d4d

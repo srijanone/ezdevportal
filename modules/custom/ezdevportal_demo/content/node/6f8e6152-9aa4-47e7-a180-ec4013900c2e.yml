@@ -1,0 +1,83 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 6f8e6152-9aa4-47e7-a180-ec4013900c2e
+  bundle: blog_post
+  default_langcode: en
+  depends:
+    171903ea-7ac4-4d77-bc8d-62c9e21b936e: taxonomy_term
+    de5eebb0-60ca-46e5-a65f-e6b0333f5486: taxonomy_term
+    ce39905a-6c90-4a82-a097-c8629e1e4054: taxonomy_term
+    de4edbf4-9e4f-4625-b0d5-c7a9004ef323: media
+default:
+  revision_uid:
+    -
+      target_id: 1
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 1
+  title:
+    -
+      value: 'Developer Portals: 101'
+  created:
+    -
+      value: 1637836830
+  promote:
+    -
+      value: false
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  moderation_state:
+    -
+      value: published
+  metatag:
+    -
+      tag: meta
+      attributes:
+        name: title
+        content: 'Developer Portals: 101 | Ezdevportal'
+    -
+      tag: meta
+      attributes:
+        name: description
+        content: 'API portal is an essential tool for companies seeking to make the most of Application Programming Interfaces (APIs). An API portal is a place where developers can go to access a company’s APIs'
+    -
+      tag: link
+      attributes:
+        rel: canonical
+        href: 'https://ezp.ddev.site/blog/developer-portals-101'
+  path:
+    -
+      alias: /blog/developer-portals-101
+      langcode: en
+      pathauto: 1
+  body:
+    -
+      value: "<p>API portal is an essential tool for companies seeking to make the most of Application Programming Interfaces (APIs). An API portal is a place where developers can go to access a company’s APIs</p>\r\n\r\n<p>“Build it and they will come” isn’t a winning strategy for API creators. The most brilliant APIs are brimming with potential. They use common standards to share useful data or services, like Google maps, from underlying systems. When a developer is building a new application, he or she can leverage APIs to add capabilities - like mapping - without having to create them from scratch using data that they otherwise might not have access to. And each time a developer adopts an API, it opens up a new channel of consumers for the API creator.</p>\r\n"
+      format: full_html
+      summary: 'API portal is an essential tool for companies seeking to make the most of Application Programming Interfaces (APIs). An API portal is a place where developers can go to access a company’s APIs'
+  field_blog_comments:
+    -
+      status: 2
+      cid: 0
+      last_comment_timestamp: 1654680934
+      last_comment_name: ''
+      last_comment_uid: 1
+      comment_count: 0
+  field_blog_tags:
+    -
+      entity: 171903ea-7ac4-4d77-bc8d-62c9e21b936e
+    -
+      entity: de5eebb0-60ca-46e5-a65f-e6b0333f5486
+    -
+      entity: ce39905a-6c90-4a82-a097-c8629e1e4054
+  field_listing_image:
+    -
+      entity: de4edbf4-9e4f-4625-b0d5-c7a9004ef323

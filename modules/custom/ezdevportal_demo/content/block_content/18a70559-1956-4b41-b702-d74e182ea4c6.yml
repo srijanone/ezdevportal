@@ -1,0 +1,112 @@
+_meta:
+  version: '1.0'
+  entity_type: block_content
+  uuid: 18a70559-1956-4b41-b702-d74e182ea4c6
+  bundle: slider_block
+  default_langcode: en
+  depends:
+    4f9e77ad-f3a6-478d-b2ee-0648e334890e: media
+    36eb1e84-f658-4022-97c5-559c82a7e8ed: media
+default:
+  status:
+    -
+      value: true
+  info:
+    -
+      value: 'Homepage Slider'
+  reusable:
+    -
+      value: true
+  revision_translation_affected:
+    -
+      value: true
+  metatag:
+    -
+      tag: meta
+      attributes:
+        name: title
+        content: '| Ezdevportal'
+    -
+      tag: link
+      attributes:
+        rel: canonical
+        href: 'https://ezp.ddev.site/home'
+  field_slide:
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 78a60a75-a422-4739-8ddf-e67251aedcbb
+          bundle: slide
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1637673638
+          behavior_settings:
+            -
+              value: {  }
+          revision_translation_affected:
+            -
+              value: true
+          field_slider_cta_link:
+            -
+              uri: 'internal:/products'
+              title: 'Know more about our Business Banking'
+              options: {  }
+          field_slide_description:
+            -
+              value: "<p><span><span><span><span><span><span>Explore the wide range of APIs, comprehensive documentation, and use cases. You can also connect your app to a sandbox setup and test the APIs instantly. You can now create innovative digital products with our APIs.</span></span></span></span></span></span></p>\r\n"
+              format: basic_html
+          field_slide_image:
+            -
+              entity: 4f9e77ad-f3a6-478d-b2ee-0648e334890e
+          field_slide_main_heading:
+            -
+              value: 'Financial Data Integration'
+          field_slide_sub_heading:
+            -
+              value: 'Fulfill all your banking needs with API integration'
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: d02bebaf-d6a8-45fe-b24c-d3965738d22f
+          bundle: slide
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1646112468
+          behavior_settings:
+            -
+              value: {  }
+          revision_translation_affected:
+            -
+              value: true
+          field_slider_cta_link:
+            -
+              uri: 'internal:/docs'
+              title: 'Know more about our APIs'
+              options: {  }
+          field_slide_description:
+            -
+              value: "<p><span><span><span><span><span><span>Welcome to the world of API Banking. Discover, build, and empower your apps with these Bank APIs.</span></span></span></span></span></span></p>\r\n"
+              format: basic_html
+          field_slide_image:
+            -
+              entity: 36eb1e84-f658-4022-97c5-559c82a7e8ed
+          field_slide_main_heading:
+            -
+              value: Payments
+          field_slide_sub_heading:
+            -
+              value: 'Make smooth business payments without any worries Start API Banking today'

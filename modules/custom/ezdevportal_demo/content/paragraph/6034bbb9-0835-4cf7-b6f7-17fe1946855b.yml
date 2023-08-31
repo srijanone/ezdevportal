@@ -1,0 +1,35 @@
+_meta:
+  version: '1.0'
+  entity_type: paragraph
+  uuid: 6034bbb9-0835-4cf7-b6f7-17fe1946855b
+  bundle: action_block_item
+  default_langcode: en
+  depends:
+    83679255-fd68-470d-a454-6c1e8a6a8451: media
+default:
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1646197811
+  behavior_settings:
+    -
+      value: {  }
+  revision_translation_affected:
+    -
+      value: true
+  field_block_description:
+    -
+      value: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem fringilla amet, tristique habitant sed pharetra ut aliquet sit.'
+  field_block_icon:
+    -
+      entity: 83679255-fd68-470d-a454-6c1e8a6a8451
+  field_block_link:
+    -
+      uri: 'internal:/form/contact-us'
+      title: CONTACT
+      options: {  }
+  field_block_title:
+    -
+      value: SUPPORT

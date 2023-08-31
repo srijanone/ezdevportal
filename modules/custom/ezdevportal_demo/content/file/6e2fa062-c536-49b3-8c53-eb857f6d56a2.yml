@@ -1,0 +1,27 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: 6e2fa062-c536-49b3-8c53-eb857f6d56a2
+  default_langcode: en
+default:
+  uid:
+    -
+      target_id: 1
+  filename:
+    -
+      value: product-banner-image.png
+  uri:
+    -
+      value: 'public://2021-11/product-banner-image_1_0.png'
+  filemime:
+    -
+      value: image/png
+  filesize:
+    -
+      value: 19020
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1637659230

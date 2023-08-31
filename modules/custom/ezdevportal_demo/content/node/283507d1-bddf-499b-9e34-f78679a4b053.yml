@@ -1,0 +1,183 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 283507d1-bddf-499b-9e34-f78679a4b053
+  bundle: landing_page
+  default_langcode: en
+  depends:
+    c578391b-9ece-44ff-a1de-43883ee055d8: media
+    52c81919-4353-4a3f-9a6e-dfc3721a9fb1: block_content
+    4d949d9d-3759-4ced-aecc-869e09953289: block_content
+default:
+  revision_uid:
+    -
+      target_id: 1
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 1
+  title:
+    -
+      value: 'Quick Guide'
+  created:
+    -
+      value: 1637668247
+  promote:
+    -
+      value: false
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  moderation_state:
+    -
+      value: published
+  metatag:
+    -
+      tag: meta
+      attributes:
+        name: title
+        content: 'Quick Guide | Ezdevportal'
+    -
+      tag: link
+      attributes:
+        rel: canonical
+        href: 'https://ezp.ddev.site/quick-guide'
+  path:
+    -
+      alias: /quick-guide
+      langcode: en
+      pathauto: 1
+  field_icon:
+    -
+      entity: c578391b-9ece-44ff-a1de-43883ee055d8
+  field_short_description:
+    -
+      value: 'Quick Guide on how to use our API Products.'
+  layout_builder__layout:
+    -
+      section:
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+          context_mapping: {  }
+        components:
+          -
+            uuid: c08dcee6-a963-492f-8d4c-d549e21834d9
+            region: content
+            configuration:
+              id: banner_content_block
+              label: 'Banner Content Block'
+              label_display: 0
+              provider: ezdevportal_base
+              banner_title: 'Getting Started'
+              banner_text: 'Lets get you started with our products/ APIs and discover a new world of possibilties!'
+              banner_image: {  }
+              context_mapping: {  }
+            weight: 0
+            additional: {  }
+        third_party_settings: {  }
+    -
+      section:
+        layout_id: layout_twocol_section
+        layout_settings:
+          label: 'Top Section'
+          column_widths: 67-33
+          context_mapping: {  }
+          custom_id: ''
+          custom_classes: ''
+          custom_class_choose:
+            container: container
+          custom_styles: ''
+          custom_data_attributes: ''
+          regions:
+            first:
+              region_id: ''
+              region_class_choose:
+                container: 0
+              region_classes: ''
+              region_styles: ''
+              region_data: ''
+            second:
+              region_id: ''
+              region_class_choose:
+                container: 0
+              region_classes: ''
+              region_styles: ''
+              region_data: ''
+        components:
+          -
+            uuid: 5f1fe3fb-d533-4231-92e2-cc640b1b711f
+            region: first
+            configuration:
+              id: 'inline_block:basic'
+              label: 'Getting Started Summary'
+              label_display: 0
+              provider: layout_builder
+              view_mode: full
+              block_revision_id: '35'
+              block_serialized: null
+              context_mapping: {  }
+              type: basic
+              uuid: 52c81919-4353-4a3f-9a6e-dfc3721a9fb1
+            weight: 0
+            additional:
+              target_uuid: 52c81919-4353-4a3f-9a6e-dfc3721a9fb1
+          -
+            uuid: bd8f72b8-ef0c-438c-82e0-f1011dc842b9
+            region: second
+            configuration:
+              id: 'block_content:77f7e7bb-eef0-4b2f-bcf6-670d94e44178'
+              label: 'Help Pages Filter Block'
+              provider: block_content
+              label_display: 0
+              status: true
+              info: ''
+              view_mode: full
+              context_mapping: {  }
+            weight: 0
+            additional: {  }
+        third_party_settings: {  }
+    -
+      section:
+        layout_id: layout_onecol
+        layout_settings:
+          label: 'Main Section'
+          context_mapping: {  }
+          custom_id: ''
+          custom_classes: ''
+          custom_class_choose:
+            container: container
+          custom_styles: ''
+          custom_data_attributes: ''
+          regions:
+            content:
+              region_id: ''
+              region_class_choose:
+                container: 0
+              region_classes: ''
+              region_styles: ''
+              region_data: ''
+        components:
+          -
+            uuid: 5a1d7097-4b04-4aac-9a13-c70dead92f51
+            region: content
+            configuration:
+              id: 'inline_block:basic'
+              label: 'Getting Started Content'
+              label_display: 0
+              provider: layout_builder
+              view_mode: full
+              block_revision_id: '37'
+              block_serialized: null
+              context_mapping: {  }
+              type: basic
+              uuid: 4d949d9d-3759-4ced-aecc-869e09953289
+            weight: 0
+            additional:
+              target_uuid: 4d949d9d-3759-4ced-aecc-869e09953289
+        third_party_settings: {  }

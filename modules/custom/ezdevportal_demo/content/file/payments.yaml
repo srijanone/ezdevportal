@@ -1,0 +1,2707 @@
+swagger: '2.0'
+info:
+  title: Payment Initiation API
+  description: Swagger for Payment Initiation API Specification
+  termsOfService: https://www.openbanking.org.uk/terms
+  contact:
+    name: Service Desk
+    url: https://groupapiservicedesk.spectrumhosting.net/plugins/servlet/desk/portal/1
+  license:
+    name: open-licence
+    url: https://www.openbanking.org.uk/open-licence
+  version: v3.1.7
+basePath: /open-banking/v3.1/pisp
+host: api.com
+schemes:
+  - https
+consumes:
+  - application/json; charset=utf-8
+produces:
+  - application/json; charset=utf-8
+paths:
+  /domestic-payment-consents:
+    post:
+      tags:
+        - Domestic Payments
+      summary: Create Domestic Payment Consents
+      description: Create Domestic Payment Consents
+      operationId: CreateDomesticPaymentConsents
+      parameters:
+        - name: OBWriteDomesticConsent4
+          in: body
+          description: Create a Domestic Payment Consent
+          required: true
+          schema:
+            type: object
+            properties:
+              Data:
+                type: object
+                properties:
+                  ReadRefundAccount:
+                    description: Specifies to share the refund account details with PISP
+                    type: string
+                    enum:
+                      - 'No'
+                      - 'Yes'
+                  Initiation:
+                    description: The Initiation payload is sent by the initiating party to the ASPSP. It is used to request movement of funds from the debtor account to a creditor for a single domestic payment.
+                    type: object
+                    properties:
+                      InstructionIdentification:
+                        description: |-
+                          Unique identification as assigned by an instructing party for an instructed party to unambiguously identify the instruction.
+                          Usage: the  instruction identification is a point to point reference that can be used between the instructing party and the instructed party to refer to the individual instruction. It can be included in several messages related to the instruction.
+                        type: string
+                        minLength: 1
+                        maxLength: 35
+                      EndToEndIdentification:
+                        description: |-
+                          Unique identification assigned by the initiating party to unambiguously identify the transaction. This identification is passed on, unchanged, throughout the entire end-to-end chain.
+                          Usage: The end-to-end identification can be used for reconciliation or to link tasks relating to the transaction. It can be included in several messages related to the transaction.
+                          OB: The Faster Payments Scheme can only access 31 characters for the EndToEndIdentification field.
+                          OB: For CHAPS payment scheme can only access 30 characters for EndToEndIdentification field.
+                        type: string
+                        minLength: 1
+                        maxLength: 35
+                      LocalInstrument:
+                        description: User community specific instrument.
+                        type: string
+                        example:
+                          - UK.OBIE.FPS
+                          - UK.OBIE.CHAPS
+                        minLength: 1
+                        maxLength: 50
+                      InstructedAmount:
+                        type: object
+                        properties:
+                          Amount:
+                            description: A number of monetary units specified in an active currency where the unit of currency is explicit and compliant with ISO 4217.
+                            type: string
+                            pattern: ^\d{1,13}$|^\d{1,13}\.\d{1,5}$
+                          Currency:
+                            type: string
+                            pattern: ^[A-Z]{3,3}$
+                        required:
+                          - Amount
+                          - Currency
+                      DebtorAccount:
+                        description: Provides the details to identify the debtor account.
+                        type: object
+                        properties:
+                          SchemeName:
+                            description: Name of the identification scheme, in a coded form as published in an external list.
+                            type: string
+                            example:
+                              - UK.OBIE.SortCodeAccountNumber
+                              - SortCodeAccountNumber
+                            minLength: 1
+                            maxLength: 40
+                          Identification:
+                            description: Identification assigned by an institution to identify an account. This identification is known by the account owner.
+                            type: string
+                            minLength: 1
+                            maxLength: 14
+                          Name:
+                            description: |-
+                              Name of the account, as assigned by the account servicing institution.
+                              Usage: The account name is the name or names of the account owner(s) represented at an account level. The account name is not the product name or the nickname of the account.
+                            type: string
+                            minLength: 1
+                            maxLength: 70
+                          SecondaryIdentification:
+                            description: |-
+                              This is secondary identification of the account, as assigned by the account servicing institution. 
+                              This can be used by building societies to additionally identify accounts with a roll number (in addition to a sort code and account number combination).
+                            type: string
+                            minLength: 1
+                            maxLength: 34
+                        required:
+                          - SchemeName
+                          - Identification
+                      CreditorAccount:
+                        description: Provides the details to identify the beneficiary account.
+                        type: object
+                        properties:
+                          SchemeName:
+                            description: Name of the identification scheme, in a coded form as published in an external list.
+                            type: string
+                            example:
+                              - UK.OBIE.SortCodeAccountNumber
+                              - SortCodeAccountNumber
+                            minLength: 1
+                            maxLength: 40
+                          Identification:
+                            description: Identification assigned by an institution to identify an account. This identification is known by the account owner.
+                            type: string
+                            minLength: 1
+                            maxLength: 14
+                          Name:
+                            description: |-
+                              Name of the account, as assigned by the account servicing institution.
+                              Usage: The account name is the name or names of the account owner(s) represented at an account level. The account name is not the product name or the nickname of the account.
+                              OB: ASPSPs may carry out name validation for Confirmation of Payee, but it is not mandatory.
+                            type: string
+                            minLength: 1
+                            maxLength: 70
+                          SecondaryIdentification:
+                            description: |-
+                              This is secondary identification of the account, as assigned by the account servicing institution. 
+                              This can be used by building societies to additionally identify accounts with a roll number (in addition to a sort code and account number combination).
+                            type: string
+                            minLength: 1
+                            maxLength: 34
+                        required:
+                          - SchemeName
+                          - Identification
+                          - Name
+                      CreditorPostalAddress:
+                        description: Information that locates and identifies a specific address, as defined by postal services. This field is supported for CHAPS payments only.
+                        type: object
+                        properties:
+                          StreetName:
+                            description: Name of a street or thoroughfare.
+                            type: string
+                            minLength: 1
+                            maxLength: 66
+                          TownName:
+                            description: Name of a built-up area, with defined boundaries, and a local government.
+                            type: string
+                            minLength: 1
+                            maxLength: 30
+                          Country:
+                            description: Nation with its own government.
+                            type: string
+                            pattern: ^[A-Z]{2,2}$
+                      RemittanceInformation:
+                        description: Information supplied to enable the matching of an entry with the items that the transfer is intended to settle, such as commercial invoices in an accounts' receivable system.
+                        type: object
+                        properties:
+                          Unstructured:
+                            description: Information supplied to enable the matching/reconciliation of an entry with the items that the payment is intended to settle, such as commercial invoices in an accounts' receivable system, in an unstructured form. We do not make use of the ExtendedPurpose field. Information about the purpose of the payment must be added to the RemittanceInformation unstructured field.
+                            type: string
+                            minLength: 1
+                            maxLength: 140
+                          Reference:
+                            description: |-
+                              Unique reference, as assigned by the creditor, to unambiguously refer to the payment transaction.
+                              Usage: If available, the initiating party should provide this reference in the structured remittance information, to enable reconciliation by the creditor upon receipt of the amount of money.
+                              If the business context requires the use of a creditor reference or a payment remit identification, and only one identifier can be passed through the end-to-end chain, the creditor's reference or payment remittance identification should be quoted in the end-to-end transaction identification.
+                              OB: The Faster Payments Scheme can only accept 18 characters for the ReferenceInformation field - which is where this ISO field will be mapped.nOB: The CHAPS Payments Scheme can only accept 16 characters for the ReferenceInformation field.
+                            type: string
+                            minLength: 1
+                            maxLength: 35
+                    required:
+                      - InstructionIdentification
+                      - EndToEndIdentification
+                      - InstructedAmount
+                      - CreditorAccount
+                  Authorisation:
+                    description: The authorisation type request from the TPP.
+                    type: object
+                    properties:
+                      AuthorisationType:
+                        description: Type of authorisation flow requested.
+                        type: string
+                        enum:
+                          - Any
+                          - Single
+                    required:
+                      - AuthorisationType
+                required:
+                  - Initiation
+              Risk:
+                description: The Risk section is sent by the initiating party to the ASPSP. It is used to specify additional details for risk scoring for Payments.
+                type: object
+                properties:
+                  PaymentContextCode:
+                    description: Specifies the payment context
+                    type: string
+                    enum:
+                      - BillPayment
+                      - EcommerceGoods
+                      - EcommerceServices
+                      - Other
+                      - PartyToParty
+                  MerchantCategoryCode:
+                    description: Category code conform to ISO 18245, related to the type of services or goods the merchant provides for the transaction.
+                    type: string
+                    minLength: 3
+                    maxLength: 4
+                  MerchantCustomerIdentification:
+                    description: The unique customer identifier of the PSU with the merchant.
+                    type: string
+                    minLength: 1
+                    maxLength: 70
+                  DeliveryAddress:
+                    description: Information that locates and identifies a specific address, as defined by postal services or in free format text.
+                    type: object
+                    properties:
+                      AddressLine:
+                        items:
+                          type: string
+                          minLength: 1
+                          maxLength: 70
+                        type: array
+                        description: Information that locates and identifies a specific address, as defined by postal services, that is presented in free format text.
+                        minItems: 0
+                        maxItems: 2
+                      StreetName:
+                        description: Name of a street or thoroughfare.
+                        type: string
+                        minLength: 1
+                        maxLength: 70
+                      BuildingNumber:
+                        description: Number that identifies the position of a building on a street.
+                        type: string
+                        minLength: 1
+                        maxLength: 16
+                      PostCode:
+                        description: Identifier consisting of a group of letters and/or numbers that is added to a postal address to assist the sorting of mail.
+                        type: string
+                        minLength: 1
+                        maxLength: 16
+                      TownName:
+                        description: Name of a built-up area, with defined boundaries, and a local government.
+                        type: string
+                        minLength: 1
+                        maxLength: 35
+                      CountrySubDivision:
+                        description: Identifies a subdivision of a country, for instance state, region, county.
+                        type: string
+                        minLength: 1
+                        maxLength: 35
+                      Country:
+                        description: Nation with its own government, occupying a particular territory.
+                        type: string
+                        pattern: ^[A-Z]{2,2}$
+                    required:
+                      - TownName
+                      - Country
+            required:
+              - Data
+              - Risk
+            example:
+              Data:
+                Initiation:
+                  InstructionIdentification: 6767842bc9864fa181cc57ae
+                  EndToEndIdentification: 1793a7f5-eed6-430b-8980-92436f385414
+                  LocalInstrument: UK.OBIE.FPS
+                  InstructedAmount:
+                    Amount: '0.01'
+                    Currency: GBP
+                  DebtorAccount:
+                    SchemeName: UK.OBIE.SortCodeAccountNumber
+                    Identification: '60225392909531'
+                  CreditorAccount:
+                    SchemeName: UK.OBIE.SortCodeAccountNumber
+                    Identification: '60225392909544'
+                    Name: ABC Name
+                  RemittanceInformation:
+                    Reference: EXAMPLE REF
+              Risk:
+                PaymentContextCode: PartyToParty
+                MerchantCategoryCode: '1234'
+        - name: x-idempotency-key
+          in: header
+          description: Every request will be processed only once per x-idempotency-key.  The Idempotency Key will be valid for 24 hours.
+          required: true
+          type: string
+          pattern: ^(?!\s)(.*)(\S)$
+          maxLength: 40
+        - in: header
+          name: x-fapi-auth-date
+          type: string
+          required: false
+          description: |-
+            The time when the PSU last logged in with the TPP. 
+            All dates in the HTTP headers are represented as RFC 7231 Full Dates. An example is below: 
+            Sun, 10 Sep 2017 19:43:31 UTC
+          pattern: ^(Mon|Tue|Wed|Thu|Fri|Sat|Sun), \d{2} (Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec) \d{4} \d{2}:\d{2}:\d{2} (GMT|UTC)$
+        - in: header
+          name: x-fapi-customer-ip-address
+          type: string
+          required: false
+          description: The PSU's IP address if the PSU is currently logged in with the TPP.
+        - in: header
+          name: x-fapi-interaction-id
+          type: string
+          required: false
+          description: An RFC4122 UID used as a correlation id.
+        - in: header
+          name: Authorization
+          type: string
+          required: true
+          description: An Authorisation Token as per https://tools.ietf.org/html/rfc6750
+        - in: header
+          name: x-jws-signature
+          type: string
+          required: true
+          description: Header containing a detached JWS signature of the body of the payload.
+        - in: header
+          name: x-customer-user-agent
+          type: string
+          description: Indicates the user-agent that the PSU is using.
+          required: false
+      responses:
+        '201':
+          description: Domestic Payment Consents Created
+          headers:
+            x-fapi-interaction-id:
+              type: string
+              description: An RFC4122 UID used as a correlation id.
+            x-jws-signature:
+              type: string
+              description: Header containing a detached JWS signature of the body of the payload.
+          schema:
+            type: object
+            properties:
+              Data:
+                type: object
+                properties:
+                  ConsentId:
+                    description: 'OB: Unique identification as assigned by the ASPSP to uniquely identify the consent resource.'
+                    type: string
+                    minLength: 1
+                    maxLength: 40
+                  CreationDateTime:
+                    description: |-
+                      Date and time at which the resource was created.
+                      All dates in the JSON payloads are represented in ISO 8601 date-time format. 
+                      All date-time fields in responses must include the timezone. An example is below:
+                      2017-04-05T10:43:07+00:00
+                    type: string
+                    format: date-time
+                  Status:
+                    description: Specifies the status of Consent.
+                    type: string
+                    enum:
+                      - Authorised
+                      - AwaitingAuthorisation
+                      - Consumed
+                      - Rejected
+                  StatusUpdateDateTime:
+                    description: |-
+                      Date and time at which the resource status was updated.
+                      All dates in the JSON payloads are represented in ISO 8601 date-time format. 
+                      All date-time fields in responses must include the timezone. An example is below:
+                      2017-04-05T10:43:07+00:00
+                    type: string
+                    format: date-time
+                  ReadRefundAccount:
+                    description: Specifies to share the refund account details with PISP
+                    type: string
+                    enum:
+                      - 'No'
+                      - 'Yes'
+                  Initiation:
+                    description: The Initiation payload is sent by the initiating party to the ASPSP. It is used to request movement of funds from the debtor account to a creditor for a single domestic payment.
+                    type: object
+                    properties:
+                      InstructionIdentification:
+                        description: |-
+                          Unique identification as assigned by an instructing party for an instructed party to unambiguously identify the instruction.
+                          Usage: the  instruction identification is a point to point reference that can be used between the instructing party and the instructed party to refer to the individual instruction. It can be included in several messages related to the instruction.
+                        type: string
+                        minLength: 1
+                        maxLength: 35
+                      EndToEndIdentification:
+                        description: |-
+                          Unique identification assigned by the initiating party to unambiguously identify the transaction. This identification is passed on, unchanged, throughout the entire end-to-end chain.
+                          Usage: The end-to-end identification can be used for reconciliation or to link tasks relating to the transaction. It can be included in several messages related to the transaction.
+                          OB: The Faster Payments Scheme can only access 31 characters for the EndToEndIdentification field.
+                          OB: For CHAPS payment scheme can only access 30 characters for EndToEndIdentification field.
+                        type: string
+                        minLength: 1
+                        maxLength: 35
+                      LocalInstrument:
+                        description: User community specific instrument.
+                        type: string
+                        example:
+                          - UK.OBIE.CHAPS
+                          - UK.OBIE.FPS
+                        minLength: 1
+                        maxLength: 50
+                      InstructedAmount:
+                        type: object
+                        properties:
+                          Amount:
+                            description: A number of monetary units specified in an active currency where the unit of currency is explicit and compliant with ISO 4217.
+                            type: string
+                            pattern: ^\d{1,13}$|^\d{1,13}\.\d{1,5}$
+                          Currency:
+                            type: string
+                            pattern: ^[A-Z]{3,3}$
+                        required:
+                          - Amount
+                          - Currency
+                      DebtorAccount:
+                        description: Provides the details to identify the debtor account.
+                        type: object
+                        properties:
+                          SchemeName:
+                            description: Name of the identification scheme, in a coded form as published in an external list.
+                            type: string
+                            example:
+                              - UK.OBIE.SortCodeAccountNumber
+                            minLength: 1
+                            maxLength: 40
+                          Identification:
+                            description: Identification assigned by an institution to identify an account. This identification is known by the account owner.
+                            type: string
+                            minLength: 1
+                            maxLength: 14
+                          Name:
+                            description: |-
+                              Name of the account, as assigned by the account servicing institution.
+                              Usage: The account name is the name or names of the account owner(s) represented at an account level. The account name is not the product name or the nickname of the account.
+                            type: string
+                            minLength: 1
+                            maxLength: 70
+                          SecondaryIdentification:
+                            description: |-
+                              This is secondary identification of the account, as assigned by the account servicing institution. 
+                              This can be used by building societies to additionally identify accounts with a roll number (in addition to a sort code and account number combination).
+                            type: string
+                            minLength: 1
+                            maxLength: 34
+                        required:
+                          - SchemeName
+                          - Identification
+                      CreditorAccount:
+                        description: Provides the details to identify the beneficiary account.
+                        type: object
+                        properties:
+                          SchemeName:
+                            description: Name of the identification scheme, in a coded form as published in an external list.
+                            type: string
+                            example:
+                              - UK.OBIE.SortCodeAccountNumber
+                            minLength: 1
+                            maxLength: 40
+                          Identification:
+                            description: Identification assigned by an institution to identify an account. This identification is known by the account owner.
+                            type: string
+                            minLength: 1
+                            maxLength: 14
+                          Name:
+                            description: |-
+                              Name of the account, as assigned by the account servicing institution.
+                              Usage: The account name is the name or names of the account owner(s) represented at an account level. The account name is not the product name or the nickname of the account.
+                              OB: ASPSPs may carry out name validation for Confirmation of Payee, but it is not mandatory.
+                            type: string
+                            minLength: 1
+                            maxLength: 70
+                          SecondaryIdentification:
+                            description: |-
+                              This is secondary identification of the account, as assigned by the account servicing institution. 
+                              This can be used by building societies to additionally identify accounts with a roll number (in addition to a sort code and account number combination).
+                            type: string
+                            minLength: 1
+                            maxLength: 34
+                        required:
+                          - SchemeName
+                          - Identification
+                          - Name
+                      CreditorPostalAddress:
+                        description: Information that locates and identifies a specific address, as defined by postal services. This field is supported for CHAPS payments only.
+                        type: object
+                        properties:
+                          AddressType:
+                            description: Identifies the nature of the postal address.
+                            type: string
+                            enum:
+                              - Business
+                              - Correspondence
+                              - DeliveryTo
+                              - MailTo
+                              - POBox
+                              - Postal
+                              - Residential
+                              - Statement
+                          StreetName:
+                            description: Name of a street or thoroughfare.
+                            type: string
+                            minLength: 1
+                            maxLength: 66
+                          TownName:
+                            description: Name of a built-up area, with defined boundaries, and a local government.
+                            type: string
+                            minLength: 1
+                            maxLength: 30
+                          Country:
+                            description: Nation with its own government.
+                            type: string
+                            pattern: ^[A-Z]{2,2}$
+                      RemittanceInformation:
+                        description: Information supplied to enable the matching of an entry with the items that the transfer is intended to settle, such as commercial invoices in an accounts' receivable system.
+                        type: object
+                        properties:
+                          Unstructured:
+                            description: Information supplied to enable the matching/reconciliation of an entry with the items that the payment is intended to settle, such as commercial invoices in an accounts' receivable system, in an unstructured form. We do not make use of the ExtendedPurpose field. Information about the purpose of the payment must be added to the RemittanceInformation unstructured field.
+                            type: string
+                            minLength: 1
+                            maxLength: 140
+                          Reference:
+                            description: |-
+                              Unique reference, as assigned by the creditor, to unambiguously refer to the payment transaction.
+                              Usage: If available, the initiating party should provide this reference in the structured remittance information, to enable reconciliation by the creditor upon receipt of the amount of money.
+                              If the business context requires the use of a creditor reference or a payment remit identification, and only one identifier can be passed through the end-to-end chain, the creditor's reference or payment remittance identification should be quoted in the end-to-end transaction identification.
+                              OB: The Faster Payments Scheme can only accept 18 characters for the ReferenceInformation field - which is where this ISO field will be mapped.nOB: The CHAPS Payments Scheme can only accept 16 characters for the ReferenceInformation field.
+                            type: string
+                            minLength: 1
+                            maxLength: 35
+                    required:
+                      - InstructionIdentification
+                      - EndToEndIdentification
+                      - InstructedAmount
+                      - CreditorAccount
+                  Authorisation:
+                    description: The authorisation type request from the TPP.
+                    type: object
+                    properties:
+                      AuthorisationType:
+                        description: Type of authorisation flow requested.
+                        type: string
+                        enum:
+                          - Any
+                          - Single
+                    required:
+                      - AuthorisationType
+                  Debtor:
+                    type: object
+                    description: Set of elements used to identify a person or an organisation.
+                    properties:
+                      SchemeName:
+                        description: Name of the identification scheme, in a coded form as published in an external list.
+                        type: string
+                        example:
+                          - UK.OBIE.SortCodeAccountNumber
+                          - SortCodeAccountNumber
+                        minLength: 1
+                        maxLength: 40
+                      Identification:
+                        description: Identification assigned by an institution to identify an account. This identification is known by the account owner.
+                        type: string
+                        minLength: 1
+                        maxLength: 256
+                      Name:
+                        type: string
+                        description: The account name is the name or names of the account owner(s) represented at an account level, as displayed by the ASPSP's online channels. Note, the account name is not the product name or the nickname of the account.
+                        minLength: 1
+                        maxLength: 70
+                      SecondaryIdentification:
+                        description: |-
+                          This is secondary identification of the account, as assigned by the account servicing institution. 
+                          This can be used by building societies to additionally identify accounts with a roll number (in addition to a sort code and account number combination).
+                        type: string
+                        minLength: 1
+                        maxLength: 34
+                    required:
+                      - SchemeName
+                      - Identification
+                required:
+                  - ConsentId
+                  - CreationDateTime
+                  - Status
+                  - StatusUpdateDateTime
+                  - Initiation
+              Risk:
+                description: The Risk section is sent by the initiating party to the ASPSP. It is used to specify additional details for risk scoring for Payments.
+                type: object
+                properties:
+                  PaymentContextCode:
+                    description: Specifies the payment context
+                    type: string
+                    enum:
+                      - BillPayment
+                      - EcommerceGoods
+                      - EcommerceServices
+                      - Other
+                      - PartyToParty
+                  MerchantCategoryCode:
+                    description: Category code conform to ISO 18245, related to the type of services or goods the merchant provides for the transaction.
+                    type: string
+                    minLength: 3
+                    maxLength: 4
+                  MerchantCustomerIdentification:
+                    description: The unique customer identifier of the PSU with the merchant.
+                    type: string
+                    minLength: 1
+                    maxLength: 70
+                  DeliveryAddress:
+                    description: Information that locates and identifies a specific address, as defined by postal services or in free format text.
+                    type: object
+                    properties:
+                      AddressLine:
+                        items:
+                          type: string
+                          minLength: 1
+                          maxLength: 70
+                        type: array
+                        description: Information that locates and identifies a specific address, as defined by postal services, that is presented in free format text.
+                        minItems: 0
+                        maxItems: 2
+                      StreetName:
+                        description: Name of a street or thoroughfare.
+                        type: string
+                        minLength: 1
+                        maxLength: 70
+                      BuildingNumber:
+                        description: Number that identifies the position of a building on a street.
+                        type: string
+                        minLength: 1
+                        maxLength: 16
+                      PostCode:
+                        description: Identifier consisting of a group of letters and/or numbers that is added to a postal address to assist the sorting of mail.
+                        type: string
+                        minLength: 1
+                        maxLength: 16
+                      TownName:
+                        description: Name of a built-up area, with defined boundaries, and a local government.
+                        type: string
+                        minLength: 1
+                        maxLength: 35
+                      CountrySubDivision:
+                        description: Identifies a subdivision of a country, for instance state, region, county.
+                        type: string
+                        minLength: 1
+                        maxLength: 35
+                      Country:
+                        description: Nation with its own government, occupying a particular territory.
+                        type: string
+                        pattern: ^[A-Z]{2,2}$
+                    required:
+                      - TownName
+                      - Country
+              Links:
+                type: object
+                description: Links relevant to the payload
+                properties:
+                  Self:
+                    type: string
+                    format: uri
+                required:
+                  - Self
+              Meta:
+                title: MetaData
+                type: object
+                description: Meta Data relevant to the payload
+                properties:
+                  TotalPages:
+                    type: integer
+                    format: int32
+            required:
+              - Data
+              - Risk
+              - Links
+              - Meta
+        '400':
+          description: |
+            Bad Request - Invalid request parameters passed.
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '405':
+          description: Method Not Allowed
+        '406':
+          description: Not Acceptable
+        '415':
+          description: Unsupported Media Type
+        '429':
+          description: Too Many Requests
+          headers:
+            Retry-After:
+              description: Number in seconds to wait
+              type: integer
+        '500':
+          description: Internal Server Error
+      security:
+        - TPPOAuth2Security:
+            - payments
+  /domestic-payment-consents/{ConsentId}:
+    get:
+      tags:
+        - Domestic Payments
+      summary: Get Domestic Payment Consents
+      description: Get Domestic Payment Consents
+      operationId: GetDomesticPaymentConsentsConsentId
+      parameters:
+        - in: path
+          name: ConsentId
+          description: Unique identification as assigned by the ASPSP to uniquely identify the consent resource.
+          required: true
+          type: string
+        - in: header
+          name: x-fapi-auth-date
+          type: string
+          required: false
+          description: |-
+            The time when the PSU last logged in with the TPP. 
+            All dates in the HTTP headers are represented as RFC 7231 Full Dates. An example is below: 
+            Sun, 10 Sep 2017 19:43:31 UTC
+          pattern: ^(Mon|Tue|Wed|Thu|Fri|Sat|Sun), \d{2} (Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec) \d{4} \d{2}:\d{2}:\d{2} (GMT|UTC)$
+        - in: header
+          name: x-fapi-customer-ip-address
+          type: string
+          required: false
+          description: The PSU's IP address if the PSU is currently logged in with the TPP.
+        - in: header
+          name: x-fapi-interaction-id
+          type: string
+          required: false
+          description: An RFC4122 UID used as a correlation id.
+        - in: header
+          name: Authorization
+          type: string
+          required: true
+          description: An Authorisation Token as per https://tools.ietf.org/html/rfc6750
+        - in: header
+          name: x-customer-user-agent
+          type: string
+          description: Indicates the user-agent that the PSU is using.
+          required: false
+      responses:
+        '200':
+          description: Domestic Payment Consents Read
+          headers:
+            x-fapi-interaction-id:
+              type: string
+              description: An RFC4122 UID used as a correlation id.
+            x-jws-signature:
+              type: string
+              description: Header containing a detached JWS signature of the body of the payload.
+          schema:
+            type: object
+            properties:
+              Data:
+                type: object
+                properties:
+                  ConsentId:
+                    description: 'OB: Unique identification as assigned by the ASPSP to uniquely identify the consent resource.'
+                    type: string
+                    minLength: 1
+                    maxLength: 40
+                  CreationDateTime:
+                    description: |-
+                      Date and time at which the resource was created.
+                      All dates in the JSON payloads are represented in ISO 8601 date-time format. 
+                      All date-time fields in responses must include the timezone. An example is below:
+                      2017-04-05T10:43:07+00:00
+                    type: string
+                    format: date-time
+                  Status:
+                    description: Specifies the status of Consent.
+                    type: string
+                    enum:
+                      - Authorised
+                      - AwaitingAuthorisation
+                      - Consumed
+                      - Rejected
+                  StatusUpdateDateTime:
+                    description: |-
+                      Date and time at which the resource status was updated.
+                      All dates in the JSON payloads are represented in ISO 8601 date-time format. 
+                      All date-time fields in responses must include the timezone. An example is below:
+                      2017-04-05T10:43:07+00:00
+                    type: string
+                    format: date-time
+                  ReadRefundAccount:
+                    description: Specifies to share the refund account details with PISP
+                    type: string
+                    enum:
+                      - 'No'
+                      - 'Yes'
+                  Initiation:
+                    description: The Initiation payload is sent by the initiating party to the ASPSP. It is used to request movement of funds from the debtor account to a creditor for a single domestic payment.
+                    type: object
+                    properties:
+                      InstructionIdentification:
+                        description: |-
+                          Unique identification as assigned by an instructing party for an instructed party to unambiguously identify the instruction.
+                          Usage: the  instruction identification is a point to point reference that can be used between the instructing party and the instructed party to refer to the individual instruction. It can be included in several messages related to the instruction.
+                        type: string
+                        minLength: 1
+                        maxLength: 35
+                      EndToEndIdentification:
+                        description: |-
+                          Unique identification assigned by the initiating party to unambiguously identify the transaction. This identification is passed on, unchanged, throughout the entire end-to-end chain.
+                          Usage: The end-to-end identification can be used for reconciliation or to link tasks relating to the transaction. It can be included in several messages related to the transaction.
+                          OB: The Faster Payments Scheme can only access 31 characters for the EndToEndIdentification field.
+                          OB: For CHAPS payment scheme can only access 30 characters for EndToEndIdentification field.
+                        type: string
+                        minLength: 1
+                        maxLength: 35
+                      LocalInstrument:
+                        description: User community specific instrument.
+                        type: string
+                        example:
+                          - UK.OBIE.FPS
+                          - UK.OBIE.CHAPS
+                        minLength: 1
+                        maxLength: 50
+                      InstructedAmount:
+                        type: object
+                        properties:
+                          Amount:
+                            description: A number of monetary units specified in an active currency where the unit of currency is explicit and compliant with ISO 4217.
+                            type: string
+                            pattern: ^\d{1,13}$|^\d{1,13}\.\d{1,5}$
+                          Currency:
+                            type: string
+                            pattern: ^[A-Z]{3,3}$
+                        required:
+                          - Amount
+                          - Currency
+                      DebtorAccount:
+                        description: Provides the details to identify the debtor account.
+                        type: object
+                        properties:
+                          SchemeName:
+                            description: Name of the identification scheme, in a coded form as published in an external list.
+                            type: string
+                            example:
+                              - UK.OBIE.SortCodeAccountNumber
+                              - SortCodeAccountNUmber
+                            minLength: 1
+                            maxLength: 40
+                          Identification:
+                            description: Identification assigned by an institution to identify an account. This identification is known by the account owner.
+                            type: string
+                            minLength: 1
+                            maxLength: 14
+                          Name:
+                            description: |-
+                              Name of the account, as assigned by the account servicing institution.
+                              Usage: The account name is the name or names of the account owner(s) represented at an account level. The account name is not the product name or the nickname of the account.
+                            type: string
+                            minLength: 1
+                            maxLength: 70
+                          SecondaryIdentification:
+                            description: |-
+                              This is secondary identification of the account, as assigned by the account servicing institution. 
+                              This can be used by building societies to additionally identify accounts with a roll number (in addition to a sort code and account number combination).
+                            type: string
+                            minLength: 1
+                            maxLength: 34
+                        required:
+                          - SchemeName
+                          - Identification
+                      CreditorAccount:
+                        description: Provides the details to identify the beneficiary account.
+                        type: object
+                        properties:
+                          SchemeName:
+                            description: Name of the identification scheme, in a coded form as published in an external list.
+                            type: string
+                            example:
+                              - UK.OBIE.SortCodeAccountNumber
+                              - SortCodeAccountNUmber
+                            minLength: 1
+                            maxLength: 40
+                          Identification:
+                            description: Identification assigned by an institution to identify an account. This identification is known by the account owner.
+                            type: string
+                            minLength: 1
+                            maxLength: 14
+                          Name:
+                            description: |-
+                              Name of the account, as assigned by the account servicing institution.
+                              Usage: The account name is the name or names of the account owner(s) represented at an account level. The account name is not the product name or the nickname of the account.
+                              OB: ASPSPs may carry out name validation for Confirmation of Payee, but it is not mandatory.
+                            type: string
+                            minLength: 1
+                            maxLength: 70
+                          SecondaryIdentification:
+                            description: |-
+                              This is secondary identification of the account, as assigned by the account servicing institution. 
+                              This can be used by building societies to additionally identify accounts with a roll number (in addition to a sort code and account number combination).
+                            type: string
+                            minLength: 1
+                            maxLength: 34
+                        required:
+                          - SchemeName
+                          - Identification
+                          - Name
+                      CreditorPostalAddress:
+                        description: Information that locates and identifies a specific address, as defined by postal services. This field is supported for CHAPS payments only.
+                        type: object
+                        properties:
+                          AddressType:
+                            description: Identifies the nature of the postal address.
+                            type: string
+                            enum:
+                              - Business
+                              - Correspondence
+                              - DeliveryTo
+                              - MailTo
+                              - POBox
+                              - Postal
+                              - Residential
+                              - Statement
+                          StreetName:
+                            description: Name of a street or thoroughfare.
+                            type: string
+                            minLength: 1
+                            maxLength: 66
+                          TownName:
+                            description: Name of a built-up area, with defined boundaries, and a local government.
+                            type: string
+                            minLength: 1
+                            maxLength: 30
+                          Country:
+                            description: Nation with its own government.
+                            type: string
+                            pattern: ^[A-Z]{2,2}$
+                      RemittanceInformation:
+                        description: Information supplied to enable the matching of an entry with the items that the transfer is intended to settle, such as commercial invoices in an accounts' receivable system.
+                        type: object
+                        properties:
+                          Unstructured:
+                            description: Information supplied to enable the matching/reconciliation of an entry with the items that the payment is intended to settle, such as commercial invoices in an accounts' receivable system, in an unstructured form. We do not make use of the ExtendedPurpose field. Information about the purpose of the payment must be added to the RemittanceInformation unstructured field.
+                            type: string
+                            minLength: 1
+                            maxLength: 140
+                          Reference:
+                            description: |-
+                              Unique reference, as assigned by the creditor, to unambiguously refer to the payment transaction.
+                              Usage: If available, the initiating party should provide this reference in the structured remittance information, to enable reconciliation by the creditor upon receipt of the amount of money.
+                              If the business context requires the use of a creditor reference or a payment remit identification, and only one identifier can be passed through the end-to-end chain, the creditor's reference or payment remittance identification should be quoted in the end-to-end transaction identification.
+                              OB: The Faster Payments Scheme can only accept 18 characters for the ReferenceInformation field - which is where this ISO field will be mapped.nOB: The CHAPS Payments Scheme can only accept 16 characters for the ReferenceInformation field.
+                            type: string
+                            minLength: 1
+                            maxLength: 35
+                    required:
+                      - InstructionIdentification
+                      - EndToEndIdentification
+                      - InstructedAmount
+                      - CreditorAccount
+                  Authorisation:
+                    description: The authorisation type request from the TPP.
+                    type: object
+                    properties:
+                      AuthorisationType:
+                        description: Type of authorisation flow requested.
+                        type: string
+                        enum:
+                          - Any
+                          - Single
+                    required:
+                      - AuthorisationType
+                  Debtor:
+                    type: object
+                    description: Set of elements used to identify a person or an organisation.
+                    properties:
+                      SchemeName:
+                        description: Name of the identification scheme, in a coded form as published in an external list.
+                        type: string
+                        example:
+                          - UK.OBIE.SortCodeAccountNumber
+                          - SortCodeAccountNumber
+                        minLength: 1
+                        maxLength: 40
+                      Identification:
+                        description: Identification assigned by an institution to identify an account. This identification is known by the account owner.
+                        type: string
+                        minLength: 1
+                        maxLength: 256
+                      Name:
+                        type: string
+                        description: The account name is the name or names of the account owner(s) represented at an account level, as displayed by the ASPSP's online channels. Note, the account name is not the product name or the nickname of the account.
+                        minLength: 1
+                        maxLength: 70
+                      SecondaryIdentification:
+                        description: |-
+                          This is secondary identification of the account, as assigned by the account servicing institution. 
+                          This can be used by building societies to additionally identify accounts with a roll number (in addition to a sort code and account number combination).
+                        type: string
+                        minLength: 1
+                        maxLength: 34
+                    required:
+                      - SchemeName
+                      - Identification
+                required:
+                  - ConsentId
+                  - CreationDateTime
+                  - Status
+                  - StatusUpdateDateTime
+                  - Initiation
+              Risk:
+                description: The Risk section is sent by the initiating party to the ASPSP. It is used to specify additional details for risk scoring for Payments.
+                type: object
+                properties:
+                  PaymentContextCode:
+                    description: Specifies the payment context
+                    type: string
+                    enum:
+                      - BillPayment
+                      - EcommerceGoods
+                      - EcommerceServices
+                      - Other
+                      - PartyToParty
+                  MerchantCategoryCode:
+                    description: Category code conform to ISO 18245, related to the type of services or goods the merchant provides for the transaction.
+                    type: string
+                    minLength: 3
+                    maxLength: 4
+                  MerchantCustomerIdentification:
+                    description: The unique customer identifier of the PSU with the merchant.
+                    type: string
+                    minLength: 1
+                    maxLength: 70
+                  DeliveryAddress:
+                    description: Information that locates and identifies a specific address, as defined by postal services or in free format text.
+                    type: object
+                    properties:
+                      AddressLine:
+                        items:
+                          type: string
+                          minLength: 1
+                          maxLength: 70
+                        type: array
+                        description: Information that locates and identifies a specific address, as defined by postal services, that is presented in free format text.
+                        minItems: 0
+                        maxItems: 2
+                      StreetName:
+                        description: Name of a street or thoroughfare.
+                        type: string
+                        minLength: 1
+                        maxLength: 70
+                      BuildingNumber:
+                        description: Number that identifies the position of a building on a street.
+                        type: string
+                        minLength: 1
+                        maxLength: 16
+                      PostCode:
+                        description: Identifier consisting of a group of letters and/or numbers that is added to a postal address to assist the sorting of mail.
+                        type: string
+                        minLength: 1
+                        maxLength: 16
+                      TownName:
+                        description: Name of a built-up area, with defined boundaries, and a local government.
+                        type: string
+                        minLength: 1
+                        maxLength: 35
+                      CountrySubDivision:
+                        description: Identifies a subdivision of a country, for instance state, region, county.
+                        type: string
+                        minLength: 1
+                        maxLength: 35
+                      Country:
+                        description: Nation with its own government, occupying a particular territory.
+                        type: string
+                        pattern: ^[A-Z]{2,2}$
+                    required:
+                      - TownName
+                      - Country
+              Links:
+                type: object
+                description: Links relevant to the payload
+                properties:
+                  Self:
+                    type: string
+                    format: uri
+                required:
+                  - Self
+              Meta:
+                title: MetaData
+                type: object
+                description: Meta Data relevant to the payload
+                properties:
+                  TotalPages:
+                    type: integer
+                    format: int32
+            required:
+              - Data
+              - Risk
+              - Links
+              - Meta
+            example:
+              Data:
+                ConsentId: 6710128983094680bbe01eed6e9e8d71
+                CreationDateTime: '2019-01-07T17:37:30.187Z'
+                Status: AwaitingAuthorisation
+                StatusUpdateDateTime: '2019-01-07T17:37:30.187Z'
+                Charges: []
+                Initiation:
+                  InstructionIdentification: 6a0421b8382848c68b41c0d78eebca61
+                  EndToEndIdentification: 3baf59d96bfc4430a91943861b07544
+                  InstructedAmount:
+                    Amount: '1.00'
+                    Currency: GBP
+                  DebtorAccount:
+                    SchemeName: UK.OBIE.SortCodeAccountNumber
+                    Identification: '60225339600416'
+                  CreditorAccount:
+                    SchemeName: UK.OBIE.SortCodeAccountNumber
+                    Identification: '60225392909531'
+                    Name: ACME Ltd
+                  RemittanceInformation:
+                    Unstructured: Unstructured
+                    Reference: 00c041b955c242cf8b
+                Debtor:
+                  SchemeName: UK.OBIE.SortCodeAccountNumber
+                  Identification: '60225392905678'
+                  Name: ZAJIOM IU
+              Risk: {}
+              Links:
+                Self: https://api.natwest.com/open-banking/v3.1/pisp/domestic-payment-consents/6710128983094680bbe01eed6e9e8d71
+              Meta:
+                TotalPages: 1
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '405':
+          description: Method Not Allowed
+        '406':
+          description: Not Acceptable
+        '429':
+          description: Too Many Requests
+          headers:
+            Retry-After:
+              description: Number in seconds to wait
+              type: integer
+        '500':
+          description: Internal Server Error
+      security:
+        - TPPOAuth2Security:
+            - payments
+  /domestic-payment-consents/{ConsentId}/funds-confirmation:
+    get:
+      tags:
+        - Domestic Payments
+      summary: Domestic Payment Consents Funds Confirmation
+      description: Domestic Payment Consents Funds Confirmation
+      operationId: GetDomesticPaymentConsentsConsentIdFundsConfirmation
+      parameters:
+        - in: path
+          name: ConsentId
+          description: ConsentId
+          required: true
+          type: string
+        - in: header
+          name: x-fapi-auth-date
+          type: string
+          required: false
+          description: |-
+            The time when the PSU last logged in with the TPP. 
+            All dates in the HTTP headers are represented as RFC 7231 Full Dates. An example is below: 
+            Sun, 10 Sep 2017 19:43:31 UTC
+          pattern: ^(Mon|Tue|Wed|Thu|Fri|Sat|Sun), \d{2} (Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec) \d{4} \d{2}:\d{2}:\d{2} (GMT|UTC)$
+        - in: header
+          name: x-fapi-customer-ip-address
+          type: string
+          required: false
+          description: The PSU's IP address if the PSU is currently logged in with the TPP.
+        - in: header
+          name: x-fapi-interaction-id
+          type: string
+          required: false
+          description: An RFC4122 UID used as a correlation id.
+        - in: header
+          name: Authorization
+          type: string
+          required: true
+          description: An Authorisation Token as per https://tools.ietf.org/html/rfc6750
+        - in: header
+          name: x-customer-user-agent
+          type: string
+          description: Indicates the user-agent that the PSU is using.
+          required: false
+      responses:
+        '200':
+          description: Domestic Payment Consents Funds Confirmation Read
+          headers:
+            x-fapi-interaction-id:
+              type: string
+              description: An RFC4122 UID used as a correlation id.
+            x-jws-signature:
+              type: string
+              description: Header containing a detached JWS signature of the body of the payload.
+          schema:
+            type: object
+            properties:
+              Data:
+                type: object
+                properties:
+                  FundsAvailableResult:
+                    description: Result of a funds availability check.
+                    type: object
+                    properties:
+                      FundsAvailableDateTime:
+                        description: |-
+                          Date and time at which the funds availability check was generated.
+                          All dates in the JSON payloads are represented in ISO 8601 date-time format. 
+                          All date-time fields in responses must include the timezone. An example is below:
+                          2017-04-05T10:43:07+00:00
+                        type: string
+                        format: date-time
+                      FundsAvailable:
+                        description: Flag to indicate the availability of funds given the Amount in the consent request.
+                        type: boolean
+                    required:
+                      - FundsAvailableDateTime
+                      - FundsAvailable
+              Links:
+                type: object
+                description: Links relevant to the payload
+                properties:
+                  Self:
+                    type: string
+                    format: uri
+                required:
+                  - Self
+              Meta:
+                title: MetaData
+                type: object
+                description: Meta Data relevant to the payload
+                properties:
+                  TotalPages:
+                    type: integer
+                    format: int32
+            required:
+              - Data
+              - Links
+              - Meta
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '405':
+          description: Method Not Allowed
+        '406':
+          description: Not Acceptable
+        '415':
+          description: Unsupported Media Type
+        '429':
+          description: Too Many Requests
+          headers:
+            Retry-After:
+              description: Number in seconds to wait
+              type: integer
+        '500':
+          description: Internal Server Error
+      security:
+        - PSUOAuth2Security:
+            - payments
+  /domestic-payments:
+    post:
+      tags:
+        - Domestic Payments
+      summary: Create Domestic Payments
+      description: Create Domestic Payments
+      operationId: CreateDomesticPayments
+      parameters:
+        - name: OBWriteDomestic1Param
+          in: body
+          description: Default
+          required: true
+          schema:
+            type: object
+            properties:
+              Data:
+                type: object
+                properties:
+                  ConsentId:
+                    description: 'OB: Unique identification as assigned by the ASPSP to uniquely identify the consent resource.'
+                    type: string
+                    minLength: 1
+                    maxLength: 40
+                  Initiation:
+                    description: The Initiation payload is sent by the initiating party to the ASPSP. It is used to request movement of funds from the debtor account to a creditor for a single domestic payment.
+                    type: object
+                    properties:
+                      InstructionIdentification:
+                        description: |-
+                          Unique identification as assigned by an instructing party for an instructed party to unambiguously identify the instruction.
+                          Usage: the  instruction identification is a point to point reference that can be used between the instructing party and the instructed party to refer to the individual instruction. It can be included in several messages related to the instruction.
+                        type: string
+                        minLength: 1
+                        maxLength: 35
+                      EndToEndIdentification:
+                        description: |-
+                          Unique identification assigned by the initiating party to unambiguously identify the transaction. This identification is passed on, unchanged, throughout the entire end-to-end chain.
+                          Usage: The end-to-end identification can be used for reconciliation or to link tasks relating to the transaction. It can be included in several messages related to the transaction.
+                          OB: The Faster Payments Scheme can only access 31 characters for the EndToEndIdentification field.
+                          OB: For CHAPS payment scheme can only access 30 characters for EndToEndIdentification field.
+                        type: string
+                        minLength: 1
+                        maxLength: 35
+                      LocalInstrument:
+                        description: User community specific instrument.
+                        type: string
+                        example:
+                          - UK.OBIE.FPS
+                          - UK.OBIE.CHAPS
+                        minLength: 1
+                        maxLength: 50
+                      InstructedAmount:
+                        type: object
+                        properties:
+                          Amount:
+                            description: A number of monetary units specified in an active currency where the unit of currency is explicit and compliant with ISO 4217.
+                            type: string
+                            pattern: ^\d{1,13}$|^\d{1,13}\.\d{1,5}$
+                          Currency:
+                            type: string
+                            pattern: ^[A-Z]{3,3}$
+                        required:
+                          - Amount
+                          - Currency
+                      DebtorAccount:
+                        description: Provides the details to identify the debtor account.
+                        type: object
+                        properties:
+                          SchemeName:
+                            description: Name of the identification scheme, in a coded form as published in an external list.
+                            type: string
+                            example:
+                              - UK.OBIE.SortCodeAccountNumber
+                              - SortCodeAccountNUmber
+                            minLength: 1
+                            maxLength: 40
+                          Identification:
+                            description: Identification assigned by an institution to identify an account. This identification is known by the account owner.
+                            type: string
+                            minLength: 1
+                            maxLength: 14
+                          Name:
+                            description: |-
+                              Name of the account, as assigned by the account servicing institution.
+                              Usage: The account name is the name or names of the account owner(s) represented at an account level. The account name is not the product name or the nickname of the account.
+                            type: string
+                            minLength: 1
+                            maxLength: 70
+                          SecondaryIdentification:
+                            description: |-
+                              This is secondary identification of the account, as assigned by the account servicing institution. 
+                              This can be used by building societies to additionally identify accounts with a roll number (in addition to a sort code and account number combination).
+                            type: string
+                            minLength: 1
+                            maxLength: 34
+                        required:
+                          - SchemeName
+                          - Identification
+                      CreditorAccount:
+                        description: Provides the details to identify the beneficiary account.
+                        type: object
+                        properties:
+                          SchemeName:
+                            description: Name of the identification scheme, in a coded form as published in an external list.
+                            type: string
+                            example:
+                              - UK.OBIE.SortCodeAccountNumber
+                            minLength: 1
+                            maxLength: 40
+                          Identification:
+                            description: Identification assigned by an institution to identify an account. This identification is known by the account owner.
+                            type: string
+                            minLength: 1
+                            maxLength: 14
+                          Name:
+                            description: |-
+                              Name of the account, as assigned by the account servicing institution.
+                              Usage: The account name is the name or names of the account owner(s) represented at an account level. The account name is not the product name or the nickname of the account.
+                              OB: ASPSPs may carry out name validation for Confirmation of Payee, but it is not mandatory.
+                            type: string
+                            minLength: 1
+                            maxLength: 70
+                          SecondaryIdentification:
+                            description: |-
+                              This is secondary identification of the account, as assigned by the account servicing institution. 
+                              This can be used by building societies to additionally identify accounts with a roll number (in addition to a sort code and account number combination).
+                            type: string
+                            minLength: 1
+                            maxLength: 34
+                        required:
+                          - SchemeName
+                          - Identification
+                          - Name
+                      CreditorPostalAddress:
+                        description: Information that locates and identifies a specific address, as defined by postal services. This field is supported for CHAPS payments only.
+                        type: object
+                        properties:
+                          AddressType:
+                            description: Identifies the nature of the postal address.
+                            type: string
+                            enum:
+                              - Business
+                              - Correspondence
+                              - DeliveryTo
+                              - MailTo
+                              - POBox
+                              - Postal
+                              - Residential
+                              - Statement
+                          StreetName:
+                            description: Name of a street or thoroughfare.
+                            type: string
+                            minLength: 1
+                            maxLength: 66
+                          TownName:
+                            description: Name of a built-up area, with defined boundaries, and a local government.
+                            type: string
+                            minLength: 1
+                            maxLength: 30
+                          Country:
+                            description: Nation with its own government.
+                            type: string
+                            pattern: ^[A-Z]{2,2}$
+                      RemittanceInformation:
+                        description: Information supplied to enable the matching of an entry with the items that the transfer is intended to settle, such as commercial invoices in an accounts' receivable system.
+                        type: object
+                        properties:
+                          Unstructured:
+                            description: Information supplied to enable the matching/reconciliation of an entry with the items that the payment is intended to settle, such as commercial invoices in an accounts' receivable system, in an unstructured form. We do not make use of the ExtendedPurpose field. Information about the purpose of the payment must be added to the RemittanceInformation unstructured field.
+                            type: string
+                            minLength: 1
+                            maxLength: 140
+                          Reference:
+                            description: |-
+                              Unique reference, as assigned by the creditor, to unambiguously refer to the payment transaction.
+                              Usage: If available, the initiating party should provide this reference in the structured remittance information, to enable reconciliation by the creditor upon receipt of the amount of money.
+                              If the business context requires the use of a creditor reference or a payment remit identification, and only one identifier can be passed through the end-to-end chain, the creditor's reference or payment remittance identification should be quoted in the end-to-end transaction identification.
+                              OB: The Faster Payments Scheme can only accept 18 characters for the ReferenceInformation field - which is where this ISO field will be mapped.nOB: The CHAPS Payments Scheme can only accept 16 characters for the ReferenceInformation field.
+                            type: string
+                            minLength: 1
+                            maxLength: 35
+                    required:
+                      - InstructionIdentification
+                      - EndToEndIdentification
+                      - InstructedAmount
+                      - CreditorAccount
+                required:
+                  - ConsentId
+                  - Initiation
+              Risk:
+                description: The Risk section is sent by the initiating party to the ASPSP. It is used to specify additional details for risk scoring for Payments.
+                type: object
+                properties:
+                  PaymentContextCode:
+                    description: Specifies the payment context
+                    type: string
+                    enum:
+                      - BillPayment
+                      - EcommerceGoods
+                      - EcommerceServices
+                      - Other
+                      - PartyToParty
+                  MerchantCategoryCode:
+                    description: Category code conform to ISO 18245, related to the type of services or goods the merchant provides for the transaction.
+                    type: string
+                    minLength: 3
+                    maxLength: 4
+                  MerchantCustomerIdentification:
+                    description: The unique customer identifier of the PSU with the merchant.
+                    type: string
+                    minLength: 1
+                    maxLength: 70
+                  DeliveryAddress:
+                    description: Information that locates and identifies a specific address, as defined by postal services or in free format text.
+                    type: object
+                    properties:
+                      AddressLine:
+                        items:
+                          type: string
+                          minLength: 1
+                          maxLength: 70
+                        type: array
+                        description: Information that locates and identifies a specific address, as defined by postal services, that is presented in free format text.
+                        minItems: 0
+                        maxItems: 2
+                      StreetName:
+                        description: Name of a street or thoroughfare.
+                        type: string
+                        minLength: 1
+                        maxLength: 70
+                      BuildingNumber:
+                        description: Number that identifies the position of a building on a street.
+                        type: string
+                        minLength: 1
+                        maxLength: 16
+                      PostCode:
+                        description: Identifier consisting of a group of letters and/or numbers that is added to a postal address to assist the sorting of mail.
+                        type: string
+                        minLength: 1
+                        maxLength: 16
+                      TownName:
+                        description: Name of a built-up area, with defined boundaries, and a local government.
+                        type: string
+                        minLength: 1
+                        maxLength: 35
+                      CountrySubDivision:
+                        description: Identifies a subdivision of a country, for instance state, region, county.
+                        type: string
+                        minLength: 1
+                        maxLength: 35
+                      Country:
+                        description: Nation with its own government, occupying a particular territory.
+                        type: string
+                        pattern: ^[A-Z]{2,2}$
+                    required:
+                      - TownName
+                      - Country
+            required:
+              - Data
+              - Risk
+            example:
+              Data:
+                ConsentId: 6710128983094680bbe01eed6e9e8d71
+                Initiation:
+                  InstructionIdentification: 6a0421b8382848c68b41c0d78eebca61
+                  EndToEndIdentification: 3baf59d96bfc4430a91943861b07544
+                  InstructedAmount:
+                    Amount: '1.00'
+                    Currency: GBP
+                  DebtorAccount:
+                    SchemeName: UK.OBIE.SortCodeAccountNumber
+                    Identification: '60225339600416'
+                  CreditorAccount:
+                    SchemeName: UK.OBIE.SortCodeAccountNumber
+                    Identification: '60225392909531'
+                    Name: ACME Ltd
+                  RemittanceInformation:
+                    Unstructured: Unstructured
+                    Reference: 00c041b955c242cf8b
+              Risk:
+                PaymentContextCode: PartyToParty
+                MerchantCategoryCode: '1234'
+        - name: x-idempotency-key
+          in: header
+          description: Every request will be processed only once per x-idempotency-key.  The Idempotency Key will be valid for 24 hours.
+          required: true
+          type: string
+          pattern: ^(?!\s)(.*)(\S)$
+          maxLength: 40
+        - in: header
+          name: x-fapi-auth-date
+          type: string
+          required: false
+          description: |-
+            The time when the PSU last logged in with the TPP. 
+            All dates in the HTTP headers are represented as RFC 7231 Full Dates. An example is below: 
+            Sun, 10 Sep 2017 19:43:31 UTC
+          pattern: ^(Mon|Tue|Wed|Thu|Fri|Sat|Sun), \d{2} (Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec) \d{4} \d{2}:\d{2}:\d{2} (GMT|UTC)$
+        - in: header
+          name: x-fapi-customer-ip-address
+          type: string
+          required: false
+          description: The PSU's IP address if the PSU is currently logged in with the TPP.
+        - in: header
+          name: x-fapi-interaction-id
+          type: string
+          required: false
+          description: An RFC4122 UID used as a correlation id.
+        - in: header
+          name: Authorization
+          type: string
+          required: true
+          description: An Authorisation Token as per https://tools.ietf.org/html/rfc6750
+        - in: header
+          name: x-jws-signature
+          type: string
+          required: true
+          description: Header containing a detached JWS signature of the body of the payload.
+        - in: header
+          name: x-customer-user-agent
+          type: string
+          description: Indicates the user-agent that the PSU is using.
+          required: false
+      responses:
+        '201':
+          description: Domestic Payments Created
+          headers:
+            x-fapi-interaction-id:
+              type: string
+              description: An RFC4122 UID used as a correlation id.
+            x-jws-signature:
+              type: string
+              description: Header containing a detached JWS signature of the body of the payload.
+          schema:
+            type: object
+            properties:
+              Data:
+                type: object
+                properties:
+                  DomesticPaymentId:
+                    description: 'OB: Unique identification as assigned by the ASPSP to uniquely identify the domestic payment resource.'
+                    type: string
+                    minLength: 1
+                    maxLength: 40
+                  ConsentId:
+                    description: 'OB: Unique identification as assigned by the ASPSP to uniquely identify the consent resource.'
+                    type: string
+                    minLength: 1
+                    maxLength: 40
+                  CreationDateTime:
+                    description: |-
+                      Date and time at which the message was created.
+                      All dates in the JSON payloads are represented in ISO 8601 date-time format. 
+                      All date-time fields in responses must include the timezone. An example is below:
+                      2017-04-05T10:43:07+00:00
+                    type: string
+                    format: date-time
+                  Status:
+                    description: Specifies the status of the payment.
+                    type: string
+                    enum:
+                      - AcceptedSettlementCompleted
+                      - AcceptedSettlementInProcess
+                      - Pending
+                      - Rejected
+                  StatusUpdateDateTime:
+                    description: |-
+                      Date and time at which the resource status was updated.
+                      All dates in the JSON payloads are represented in ISO 8601 date-time format. 
+                      All date-time fields in responses must include the timezone. An example is below:
+                      2017-04-05T10:43:07+00:00
+                    type: string
+                    format: date-time
+                  Refund:
+                    type: object
+                    required:
+                      - Account
+                    description: Unambiguous identification of the refund account to which a refund will be made as a result of the transaction.
+                    properties:
+                      Account:
+                        type: object
+                        required:
+                          - SchemeName
+                          - Identification
+                          - Name
+                        description: Provides the details to identify an account.
+                        properties:
+                          SchemeName:
+                            description: Name of the identification scheme, in a coded form as published in an external list.
+                            type: string
+                            example:
+                              - UK.OBIE.SortCodeAccountNumber
+                            minLength: 1
+                            maxLength: 40
+                          Identification:
+                            description: Identification assigned by an institution to identify an account. This identification is known by the account owner.
+                            type: string
+                            minLength: 1
+                            maxLength: 256
+                          Name:
+                            description: |-
+                              Name of the account, as assigned by the account servicing institution.
+                              Usage: The account name is the name or names of the account owner(s) represented at an account level. The account name is not the product name or the nickname of the account.
+                              OB: ASPSPs may carry out name validation for Confirmation of Payee, but it is not mandatory.
+                            type: string
+                            minLength: 1
+                            maxLength: 70
+                          SecondaryIdentification:
+                            description: |-
+                              This is secondary identification of the account, as assigned by the account servicing institution. 
+                              This can be used by building societies to additionally identify accounts with a roll number (in addition to a sort code and account number combination).
+                            type: string
+                            minLength: 1
+                            maxLength: 34
+                  Initiation:
+                    description: The Initiation payload is sent by the initiating party to the ASPSP. It is used to request movement of funds from the debtor account to a creditor for a single domestic payment.
+                    type: object
+                    properties:
+                      InstructionIdentification:
+                        description: |-
+                          Unique identification as assigned by an instructing party for an instructed party to unambiguously identify the instruction.
+                          Usage: the  instruction identification is a point to point reference that can be used between the instructing party and the instructed party to refer to the individual instruction. It can be included in several messages related to the instruction.
+                        type: string
+                        minLength: 1
+                        maxLength: 35
+                      EndToEndIdentification:
+                        description: |-
+                          Unique identification assigned by the initiating party to unambiguously identify the transaction. This identification is passed on, unchanged, throughout the entire end-to-end chain.
+                          Usage: The end-to-end identification can be used for reconciliation or to link tasks relating to the transaction. It can be included in several messages related to the transaction.
+                          OB: The Faster Payments Scheme can only access 31 characters for the EndToEndIdentification field.
+                          OB: For CHAPS payment scheme can only access 30 characters for EndToEndIdentification field.
+                        type: string
+                        minLength: 1
+                        maxLength: 35
+                      LocalInstrument:
+                        description: User community specific instrument.
+                        type: string
+                        example:
+                          - UK.OBIE.CHAPS
+                          - UK.OBIE.FPS
+                        minLength: 1
+                        maxLength: 50
+                      InstructedAmount:
+                        type: object
+                        properties:
+                          Amount:
+                            description: A number of monetary units specified in an active currency where the unit of currency is explicit and compliant with ISO 4217.
+                            type: string
+                            pattern: ^\d{1,13}$|^\d{1,13}\.\d{1,5}$
+                          Currency:
+                            type: string
+                            pattern: ^[A-Z]{3,3}$
+                        required:
+                          - Amount
+                          - Currency
+                      DebtorAccount:
+                        description: Provides the details to identify the debtor account.
+                        type: object
+                        properties:
+                          SchemeName:
+                            description: Name of the identification scheme, in a coded form as published in an external list.
+                            type: string
+                            example:
+                              - UK.OBIE.SortCodeAccountNumber
+                            minLength: 1
+                            maxLength: 40
+                          Identification:
+                            description: Identification assigned by an institution to identify an account. This identification is known by the account owner.
+                            type: string
+                            minLength: 1
+                            maxLength: 14
+                          Name:
+                            description: |-
+                              Name of the account, as assigned by the account servicing institution.
+                              Usage: The account name is the name or names of the account owner(s) represented at an account level. The account name is not the product name or the nickname of the account.
+                            type: string
+                            minLength: 1
+                            maxLength: 70
+                          SecondaryIdentification:
+                            description: |-
+                              This is secondary identification of the account, as assigned by the account servicing institution. 
+                              This can be used by building societies to additionally identify accounts with a roll number (in addition to a sort code and account number combination).
+                            type: string
+                            minLength: 1
+                            maxLength: 34
+                        required:
+                          - SchemeName
+                          - Identification
+                      CreditorAccount:
+                        description: Provides the details to identify the beneficiary account.
+                        type: object
+                        properties:
+                          SchemeName:
+                            description: Name of the identification scheme, in a coded form as published in an external list.
+                            type: string
+                            example:
+                              - UK.OBIE.SortCodeAccountNumber
+                            minLength: 1
+                            maxLength: 40
+                          Identification:
+                            description: Identification assigned by an institution to identify an account. This identification is known by the account owner.
+                            type: string
+                            minLength: 1
+                            maxLength: 14
+                          Name:
+                            description: |-
+                              Name of the account, as assigned by the account servicing institution.
+                              Usage: The account name is the name or names of the account owner(s) represented at an account level. The account name is not the product name or the nickname of the account.
+                              OB: ASPSPs may carry out name validation for Confirmation of Payee, but it is not mandatory.
+                            type: string
+                            minLength: 1
+                            maxLength: 70
+                          SecondaryIdentification:
+                            description: |-
+                              This is secondary identification of the account, as assigned by the account servicing institution. 
+                              This can be used by building societies to additionally identify accounts with a roll number (in addition to a sort code and account number combination).
+                            type: string
+                            minLength: 1
+                            maxLength: 34
+                        required:
+                          - SchemeName
+                          - Identification
+                          - Name
+                      CreditorPostalAddress:
+                        description: Information that locates and identifies a specific address, as defined by postal services. This field is supported for CHAPS payments only.
+                        type: object
+                        properties:
+                          AddressType:
+                            description: Identifies the nature of the postal address.
+                            type: string
+                            enum:
+                              - Business
+                              - Correspondence
+                              - DeliveryTo
+                              - MailTo
+                              - POBox
+                              - Postal
+                              - Residential
+                              - Statement
+                          StreetName:
+                            description: Name of a street or thoroughfare.
+                            type: string
+                            minLength: 1
+                            maxLength: 66
+                          TownName:
+                            description: Name of a built-up area, with defined boundaries, and a local government.
+                            type: string
+                            minLength: 1
+                            maxLength: 30
+                          Country:
+                            description: Nation with its own government.
+                            type: string
+                            pattern: ^[A-Z]{2,2}$
+                      RemittanceInformation:
+                        description: Information supplied to enable the matching of an entry with the items that the transfer is intended to settle, such as commercial invoices in an accounts' receivable system.
+                        type: object
+                        properties:
+                          Unstructured:
+                            description: Information supplied to enable the matching/reconciliation of an entry with the items that the payment is intended to settle, such as commercial invoices in an accounts' receivable system, in an unstructured form. We do not make use of the ExtendedPurpose field. Information about the purpose of the payment must be added to the RemittanceInformation unstructured field.
+                            type: string
+                            minLength: 1
+                            maxLength: 140
+                          Reference:
+                            description: |-
+                              Unique reference, as assigned by the creditor, to unambiguously refer to the payment transaction.
+                              Usage: If available, the initiating party should provide this reference in the structured remittance information, to enable reconciliation by the creditor upon receipt of the amount of money.
+                              If the business context requires the use of a creditor reference or a payment remit identification, and only one identifier can be passed through the end-to-end chain, the creditor's reference or payment remittance identification should be quoted in the end-to-end transaction identification.
+                              OB: The Faster Payments Scheme can only accept 18 characters for the ReferenceInformation field - which is where this ISO field will be mapped.nOB: The CHAPS Payments Scheme can only accept 16 characters for the ReferenceInformation field.
+                            type: string
+                            minLength: 1
+                            maxLength: 35
+                    required:
+                      - InstructionIdentification
+                      - EndToEndIdentification
+                      - InstructedAmount
+                      - CreditorAccount
+                  MultiAuthorisation:
+                    description: The multiple authorisation flow response from the ASPSP.
+                    type: object
+                    properties:
+                      Status:
+                        description: Specifies the status of the authorisation flow in code form.
+                        type: string
+                        enum:
+                          - Authorised
+                          - AwaitingFurtherAuthorisation
+                          - Rejected
+                    required:
+                      - Status
+                  Debtor:
+                    type: object
+                    description: Set of elements used to identify a person or an organisation.
+                    properties:
+                      SchemeName:
+                        description: Name of the identification scheme, in a coded form as published in an external list.
+                        type: string
+                        example:
+                          - UK.OBIE.SortCodeAccountNumber
+                          - SortCodeAccountNumber
+                        minLength: 1
+                        maxLength: 40
+                      Identification:
+                        description: Identification assigned by an institution to identify an account. This identification is known by the account owner.
+                        type: string
+                        minLength: 1
+                        maxLength: 256
+                      Name:
+                        type: string
+                        description: The account name is the name or names of the account owner(s) represented at an account level, as displayed by the ASPSP's online channels. Note, the account name is not the product name or the nickname of the account.
+                        minLength: 1
+                        maxLength: 70
+                      SecondaryIdentification:
+                        description: |-
+                          This is secondary identification of the account, as assigned by the account servicing institution. 
+                          This can be used by building societies to additionally identify accounts with a roll number (in addition to a sort code and account number combination).
+                        type: string
+                        minLength: 1
+                        maxLength: 34
+                    required:
+                      - SchemeName
+                      - Identification
+                required:
+                  - DomesticPaymentId
+                  - ConsentId
+                  - CreationDateTime
+                  - Status
+                  - StatusUpdateDateTime
+                  - Initiation
+              Links:
+                type: object
+                description: Links relevant to the payload
+                properties:
+                  Self:
+                    type: string
+                    format: uri
+                required:
+                  - Self
+              Meta:
+                title: MetaData
+                type: object
+                description: Meta Data relevant to the payload
+                properties:
+                  TotalPages:
+                    type: integer
+                    format: int32
+                additionalProperties: false
+            required:
+              - Data
+              - Links
+              - Meta
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '405':
+          description: Method Not Allowed
+        '406':
+          description: Not Acceptable
+        '415':
+          description: Unsupported Media Type
+        '429':
+          description: Too Many Requests
+          headers:
+            Retry-After:
+              description: Number in seconds to wait
+              type: integer
+        '500':
+          description: Internal Server Error
+      security:
+        - PSUOAuth2Security:
+            - payments
+  /domestic-payments/{DomesticPaymentId}:
+    get:
+      tags:
+        - Domestic Payments
+      summary: Get Domestic Payments
+      description: Get Domestic Payments.
+      operationId: GetDomesticPaymentsDomesticPaymentId
+      parameters:
+        - name: DomesticPaymentId
+          in: path
+          description: DomesticPaymentId
+          required: true
+          type: string
+        - in: header
+          name: x-fapi-auth-date
+          type: string
+          required: false
+          description: |-
+            The time when the PSU last logged in with the TPP. 
+            All dates in the HTTP headers are represented as RFC 7231 Full Dates. An example is below: 
+            Sun, 10 Sep 2017 19:43:31 UTC
+          pattern: ^(Mon|Tue|Wed|Thu|Fri|Sat|Sun), \d{2} (Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec) \d{4} \d{2}:\d{2}:\d{2} (GMT|UTC)$
+        - in: header
+          name: x-fapi-customer-ip-address
+          type: string
+          required: false
+          description: The PSU's IP address if the PSU is currently logged in with the TPP.
+        - in: header
+          name: x-fapi-interaction-id
+          type: string
+          required: false
+          description: An RFC4122 UID used as a correlation id.
+        - in: header
+          name: Authorization
+          type: string
+          required: true
+          description: An Authorisation Token as per https://tools.ietf.org/html/rfc6750
+        - in: header
+          name: x-customer-user-agent
+          type: string
+          description: Indicates the user-agent that the PSU is using.
+          required: false
+      responses:
+        '200':
+          description: Domestic Payments Read
+          headers:
+            x-fapi-interaction-id:
+              type: string
+              description: An RFC4122 UID used as a correlation id.
+            x-jws-signature:
+              type: string
+              description: Header containing a detached JWS signature of the body of the payload.
+          schema:
+            type: object
+            properties:
+              Data:
+                type: object
+                properties:
+                  DomesticPaymentId:
+                    description: 'OB: Unique identification as assigned by the ASPSP to uniquely identify the domestic payment resource.'
+                    type: string
+                    minLength: 1
+                    maxLength: 40
+                  ConsentId:
+                    description: 'OB: Unique identification as assigned by the ASPSP to uniquely identify the consent resource.'
+                    type: string
+                    minLength: 1
+                    maxLength: 40
+                  CreationDateTime:
+                    description: |-
+                      Date and time at which the message was created.
+                      All dates in the JSON payloads are represented in ISO 8601 date-time format. 
+                      All date-time fields in responses must include the timezone. An example is below:
+                      2017-04-05T10:43:07+00:00
+                    type: string
+                    format: date-time
+                  Status:
+                    description: Specifies the status of the payment information group.
+                    type: string
+                    enum:
+                      - AcceptedSettlementCompleted
+                      - AcceptedSettlementInProcess
+                      - Pending
+                      - Rejected
+                  StatusUpdateDateTime:
+                    description: |-
+                      Date and time at which the resource status was updated.
+                      All dates in the JSON payloads are represented in ISO 8601 date-time format. 
+                      All date-time fields in responses must include the timezone. An example is below:
+                      2017-04-05T10:43:07+00:00
+                    type: string
+                    format: date-time
+                  Refund:
+                    type: object
+                    required:
+                      - Account
+                    description: Unambiguous identification of the refund account to which a refund will be made as a result of the transaction.
+                    properties:
+                      Account:
+                        type: object
+                        required:
+                          - SchemeName
+                          - Identification
+                          - Name
+                        description: Provides the details to identify an account.
+                        properties:
+                          SchemeName:
+                            description: Name of the identification scheme, in a coded form as published in an external list.
+                            type: string
+                            example:
+                              - UK.OBIE.SortCodeAccountNumber
+                            minLength: 1
+                            maxLength: 40
+                          Identification:
+                            description: Identification assigned by an institution to identify an account. This identification is known by the account owner.
+                            type: string
+                            minLength: 1
+                            maxLength: 256
+                          Name:
+                            description: |-
+                              Name of the account, as assigned by the account servicing institution.
+                              Usage: The account name is the name or names of the account owner(s) represented at an account level. The account name is not the product name or the nickname of the account.
+                              OB: ASPSPs may carry out name validation for Confirmation of Payee, but it is not mandatory.
+                            type: string
+                            minLength: 1
+                            maxLength: 70
+                          SecondaryIdentification:
+                            description: |-
+                              This is secondary identification of the account, as assigned by the account servicing institution. 
+                              This can be used by building societies to additionally identify accounts with a roll number (in addition to a sort code and account number combination).
+                            type: string
+                            minLength: 1
+                            maxLength: 34
+                  Initiation:
+                    description: The Initiation payload is sent by the initiating party to the ASPSP. It is used to request movement of funds from the debtor account to a creditor for a single domestic payment.
+                    type: object
+                    properties:
+                      InstructionIdentification:
+                        description: |-
+                          Unique identification as assigned by an instructing party for an instructed party to unambiguously identify the instruction.
+                          Usage: the  instruction identification is a point to point reference that can be used between the instructing party and the instructed party to refer to the individual instruction. It can be included in several messages related to the instruction.
+                        type: string
+                        minLength: 1
+                        maxLength: 35
+                      EndToEndIdentification:
+                        description: |-
+                          Unique identification assigned by the initiating party to unambiguously identify the transaction. This identification is passed on, unchanged, throughout the entire end-to-end chain.
+                          Usage: The end-to-end identification can be used for reconciliation or to link tasks relating to the transaction. It can be included in several messages related to the transaction.
+                          OB: The Faster Payments Scheme can only access 31 characters for the EndToEndIdentification field.
+                          OB: For CHAPS payment scheme can only access 30 characters for EndToEndIdentification field.
+                        type: string
+                        minLength: 1
+                        maxLength: 35
+                      LocalInstrument:
+                        description: User community specific instrument.
+                        type: string
+                        example:
+                          - UK.OBIE.FPS
+                          - UK.OBIE.CHAPS
+                        minLength: 1
+                        maxLength: 50
+                      InstructedAmount:
+                        type: object
+                        properties:
+                          Amount:
+                            description: A number of monetary units specified in an active currency where the unit of currency is explicit and compliant with ISO 4217.
+                            type: string
+                            pattern: ^\d{1,13}$|^\d{1,13}\.\d{1,5}$
+                          Currency:
+                            type: string
+                            pattern: ^[A-Z]{3,3}$
+                        required:
+                          - Amount
+                          - Currency
+                      DebtorAccount:
+                        description: Provides the details to identify the debtor account.
+                        type: object
+                        properties:
+                          SchemeName:
+                            description: Name of the identification scheme, in a coded form as published in an external list.
+                            type: string
+                            example:
+                              - UK.OBIE.SortCodeAccountNumber
+                            minLength: 1
+                            maxLength: 40
+                          Identification:
+                            description: Identification assigned by an institution to identify an account. This identification is known by the account owner.
+                            type: string
+                            minLength: 1
+                            maxLength: 14
+                          Name:
+                            description: |-
+                              Name of the account, as assigned by the account servicing institution.
+                              Usage: The account name is the name or names of the account owner(s) represented at an account level. The account name is not the product name or the nickname of the account.
+                            type: string
+                            minLength: 1
+                            maxLength: 70
+                          SecondaryIdentification:
+                            description: |-
+                              This is secondary identification of the account, as assigned by the account servicing institution. 
+                              This can be used by building societies to additionally identify accounts with a roll number (in addition to a sort code and account number combination).
+                            type: string
+                            minLength: 1
+                            maxLength: 34
+                        required:
+                          - SchemeName
+                          - Identification
+                      CreditorAccount:
+                        description: Provides the details to identify the beneficiary account.
+                        type: object
+                        properties:
+                          SchemeName:
+                            description: Name of the identification scheme, in a coded form as published in an external list.
+                            type: string
+                            example:
+                              - UK.OBIE.SortCodeAccountNumber
+                            minLength: 1
+                            maxLength: 40
+                          Identification:
+                            description: Identification assigned by an institution to identify an account. This identification is known by the account owner.
+                            type: string
+                            minLength: 1
+                            maxLength: 14
+                          Name:
+                            description: |-
+                              Name of the account, as assigned by the account servicing institution.
+                              Usage: The account name is the name or names of the account owner(s) represented at an account level. The account name is not the product name or the nickname of the account.
+                              OB: ASPSPs may carry out name validation for Confirmation of Payee, but it is not mandatory.
+                            type: string
+                            minLength: 1
+                            maxLength: 70
+                          SecondaryIdentification:
+                            description: |-
+                              This is secondary identification of the account, as assigned by the account servicing institution. 
+                              This can be used by building societies to additionally identify accounts with a roll number (in addition to a sort code and account number combination).
+                            type: string
+                            minLength: 1
+                            maxLength: 34
+                        required:
+                          - SchemeName
+                          - Identification
+                          - Name
+                      CreditorPostalAddress:
+                        description: Information that locates and identifies a specific address, as defined by postal services. This field is supported for CHAPS payments only.
+                        type: object
+                        properties:
+                          AddressType:
+                            description: Identifies the nature of the postal address.
+                            type: string
+                            enum:
+                              - Business
+                              - Correspondence
+                              - DeliveryTo
+                              - MailTo
+                              - POBox
+                              - Postal
+                              - Residential
+                              - Statement
+                          StreetName:
+                            description: Name of a street or thoroughfare.
+                            type: string
+                            minLength: 1
+                            maxLength: 66
+                          TownName:
+                            description: Name of a built-up area, with defined boundaries, and a local government.
+                            type: string
+                            minLength: 1
+                            maxLength: 30
+                          Country:
+                            description: Nation with its own government.
+                            type: string
+                            pattern: ^[A-Z]{2,2}$
+                      RemittanceInformation:
+                        description: Information supplied to enable the matching of an entry with the items that the transfer is intended to settle, such as commercial invoices in an accounts' receivable system.
+                        type: object
+                        properties:
+                          Unstructured:
+                            description: Information supplied to enable the matching/reconciliation of an entry with the items that the payment is intended to settle, such as commercial invoices in an accounts' receivable system, in an unstructured form. We do not make use of the ExtendedPurpose field. Information about the purpose of the payment must be added to the RemittanceInformation unstructured field.
+                            type: string
+                            minLength: 1
+                            maxLength: 140
+                          Reference:
+                            description: |-
+                              Unique reference, as assigned by the creditor, to unambiguously refer to the payment transaction.
+                              Usage: If available, the initiating party should provide this reference in the structured remittance information, to enable reconciliation by the creditor upon receipt of the amount of money.
+                              If the business context requires the use of a creditor reference or a payment remit identification, and only one identifier can be passed through the end-to-end chain, the creditor's reference or payment remittance identification should be quoted in the end-to-end transaction identification.
+                              OB: The Faster Payments Scheme can only accept 18 characters for the ReferenceInformation field - which is where this ISO field will be mapped.nOB: The CHAPS Payments Scheme can only accept 16 characters for the ReferenceInformation field.
+                            type: string
+                            minLength: 1
+                            maxLength: 35
+                    required:
+                      - InstructionIdentification
+                      - EndToEndIdentification
+                      - InstructedAmount
+                      - CreditorAccount
+                  MultiAuthorisation:
+                    description: The multiple authorisation flow response from the ASPSP.
+                    type: object
+                    properties:
+                      Status:
+                        description: Specifies the status of the authorisation flow in code form.
+                        type: string
+                        enum:
+                          - Authorised
+                          - AwaitingFurtherAuthorisation
+                          - Rejected
+                    required:
+                      - Status
+                  Debtor:
+                    type: object
+                    description: Set of elements used to identify a person or an organisation.
+                    properties:
+                      SchemeName:
+                        description: Name of the identification scheme, in a coded form as published in an external list.
+                        type: string
+                        example:
+                          - UK.OBIE.SortCodeAccountNumber
+                          - SortCodeAccountNumber
+                        minLength: 1
+                        maxLength: 40
+                      Identification:
+                        description: Identification assigned by an institution to identify an account. This identification is known by the account owner.
+                        type: string
+                        minLength: 1
+                        maxLength: 256
+                      Name:
+                        type: string
+                        description: The account name is the name or names of the account owner(s) represented at an account level, as displayed by the ASPSP's online channels. Note, the account name is not the product name or the nickname of the account.
+                        minLength: 1
+                        maxLength: 70
+                      SecondaryIdentification:
+                        description: |-
+                          This is secondary identification of the account, as assigned by the account servicing institution. 
+                          This can be used by building societies to additionally identify accounts with a roll number (in addition to a sort code and account number combination).
+                        type: string
+                        minLength: 1
+                        maxLength: 34
+                    required:
+                      - SchemeName
+                      - Identification
+                required:
+                  - DomesticPaymentId
+                  - ConsentId
+                  - CreationDateTime
+                  - Status
+                  - StatusUpdateDateTime
+                  - Initiation
+              Links:
+                type: object
+                description: Links relevant to the payload
+                properties:
+                  Self:
+                    type: string
+                    format: uri
+                required:
+                  - Self
+              Meta:
+                title: MetaData
+                type: object
+                description: Meta Data relevant to the payload
+                properties:
+                  TotalPages:
+                    type: integer
+                    format: int32
+            required:
+              - Data
+              - Links
+              - Meta
+            example:
+              Data:
+                DomesticPaymentId: 16e53daf65a44484928a3d66b82b122a
+                ConsentId: 6710128983094680bbe01eed6e9e8d71
+                CreationDateTime: '2019-01-07T17:38:18.432Z'
+                Status: AcceptedSettlementInProcess
+                StatusUpdateDateTime: '2019-01-07T17:38:23.106Z'
+                Initiation:
+                  InstructionIdentification: 6a0421b8382848c68b41c0d78eebca61
+                  EndToEndIdentification: 3baf59d96bfc4430a91943861b07544
+                  InstructedAmount:
+                    Amount: '1.00'
+                    Currency: GBP
+                  DebtorAccount:
+                    SchemeName: UK.OBIE.SortCodeAccountNumber
+                    Identification: '60225339600416'
+                  CreditorAccount:
+                    SchemeName: UK.OBIE.SortCodeAccountNumber
+                    Identification: '60225392909531'
+                    Name: ACME Ltd
+                  RemittanceInformation:
+                    Unstructured: Unstructured
+                    Reference: 00c041b955c242cf8b
+                Debtor:
+                  SchemeName: UK.OBIE.SortCodeAccountNumber
+                  Identification: '60225392905678'
+                  Name: ZAJIOM IU
+              Links:
+                Self: https://api.natwest.com/open-banking/v3.1/pisp/domestic-payments/16e53daf65a44484928a3d66b82b122a
+              Meta:
+                TotalPages: 1
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '405':
+          description: Method Not Allowed
+        '406':
+          description: Not Acceptable
+        '429':
+          description: Too Many Requests
+          headers:
+            Retry-After:
+              description: Number in seconds to wait
+              type: integer
+        '500':
+          description: Internal Server Error
+      security:
+        - TPPOAuth2Security:
+            - payments
+parameters:
+  x-idempotency-key:
+    name: x-idempotency-key
+    in: header
+    description: Every request will be processed only once per x-idempotency-key.  The Idempotency Key will be valid for 24 hours.
+    required: true
+    type: string
+    pattern: ^(?!\s)(.*)(\S)$
+    maxLength: 40
+  ConsentId:
+    name: ConsentId
+    in: path
+    description: ConsentId
+    required: true
+    type: string
+  DomesticPaymentId:
+    name: DomesticPaymentId
+    in: path
+    description: DomesticPaymentId
+    required: true
+    type: string
+  DomesticScheduledPaymentId:
+    name: DomesticScheduledPaymentId
+    in: path
+    description: Unique identification as assigned by the ASPSP to uniquely identify the domestic standing order resource.
+    required: true
+    type: string
+responses:
+  400ErrorResponse:
+    description: Bad request
+    schema:
+      description: An array of detail error codes, and messages, and URLs to documentation to help remediation.
+      type: object
+      properties:
+        Code:
+          description: High level textual error code, to help categorize the errors.
+          type: string
+          minLength: 1
+          maxLength: 40
+        Id:
+          description: A unique reference for the error instance, for audit purposes, in case of unknown/unclassified errors.
+          type: string
+          minLength: 1
+          maxLength: 40
+        Message:
+          description: Brief Error message, e.g., 'There is something wrong with the request parameters provided'
+          type: string
+          minLength: 1
+          maxLength: 500
+        Errors:
+          items:
+            type: object
+            properties:
+              ErrorCode:
+                description: Low level textual error code, e.g., UK.OBIE.Field.Missing
+                type: string
+                minLength: 1
+                maxLength: 128
+              Message:
+                description: |-
+                  A description of the error that occurred. e.g., 'A mandatory field isn't supplied' or 'RequestedExecutionDateTime must be in future'
+                  OBIE doesn't standardise this field
+                type: string
+                minLength: 1
+                maxLength: 500
+              Path:
+                description: Recommended but optional reference to the JSON Path of the field with error, e.g., Data.Initiation.InstructedAmount.Currency
+                type: string
+                minLength: 1
+                maxLength: 500
+              Url:
+                description: URL to help remediate the problem, or provide more information, or to API Reference, or help etc
+                type: string
+            required:
+              - ErrorCode
+              - Message
+            minProperties: 1
+          type: array
+          minItems: 1
+      required:
+        - Code
+        - Message
+        - Errors
+  401ErrorResponse:
+    description: Unauthorized
+  403ErrorResponse:
+    description: Forbidden
+  404ErrorResponse:
+    description: Not found
+  405ErrorResponse:
+    description: Method Not Allowed
+  406ErrorResponse:
+    description: Not Acceptable
+  415ErrorResponse:
+    description: Unsupported Media Type
+  429ErrorResponse:
+    description: Too Many Requests
+    headers:
+      Retry-After:
+        description: Number in seconds to wait
+        type: integer
+  500ErrorResponse:
+    description: Internal Server Error
+    schema:
+      description: An array of detail error codes, and messages, and URLs to documentation to help remediation.
+      type: object
+      properties:
+        Code:
+          description: High level textual error code, to help categorize the errors.
+          type: string
+          minLength: 1
+          maxLength: 40
+        Id:
+          description: A unique reference for the error instance, for audit purposes, in case of unknown/unclassified errors.
+          type: string
+          minLength: 1
+          maxLength: 40
+        Message:
+          description: Brief Error message, e.g., 'There is something wrong with the request parameters provided'
+          type: string
+          minLength: 1
+          maxLength: 500
+        Errors:
+          items:
+            type: object
+            properties:
+              ErrorCode:
+                description: Low level textual error code, e.g., UK.OBIE.Field.Missing
+                type: string
+                minLength: 1
+                maxLength: 128
+              Message:
+                description: |-
+                  A description of the error that occurred. e.g., 'A mandatory field isn't supplied' or 'RequestedExecutionDateTime must be in future'
+                  OBIE doesn't standardise this field
+                type: string
+                minLength: 1
+                maxLength: 500
+              Path:
+                description: Recommended but optional reference to the JSON Path of the field with error, e.g., Data.Initiation.InstructedAmount.Currency
+                type: string
+                minLength: 1
+                maxLength: 500
+              Url:
+                description: URL to help remediate the problem, or provide more information, or to API Reference, or help etc
+                type: string
+            required:
+              - ErrorCode
+              - Message
+            minProperties: 1
+          type: array
+          minItems: 1
+      required:
+        - Code
+        - Message
+        - Errors
+securityDefinitions:
+  PSUOAuth2Security:
+    type: oauth2
+    flow: accessCode
+    tokenUrl: https://secure1t.natwest.com/as/token.oauth2
+    authorizationUrl: https://secure1.natwest.com/as/authorization.oauth2
+    scopes:
+      payments: Generic payment scope
+    description: OAuth flow, it is required when the PSU needs to perform SCA with the ASPSP when a TPP wants to access an ASPSP resource owned by the PSU
+  TPPOAuth2Security:
+    type: oauth2
+    flow: application
+    tokenUrl: https://secure1t.natwest.com/as/token.oauth2
+    scopes:
+      payments: Generic payment scope
+    description: TPP client credential authorisation flow with the ASPSP
+definitions:
+  OBError1:
+    type: object
+    properties:
+      ErrorCode:
+        description: Low level textual error code, e.g., UK.OBIE.Field.Missing
+        type: string
+        minLength: 1
+        maxLength: 128
+      Message:
+        description: |-
+          A description of the error that occurred. e.g., 'A mandatory field isn't supplied' or 'RequestedExecutionDateTime must be in future'
+          OBIE doesn't standardise this field
+        type: string
+        minLength: 1
+        maxLength: 500
+      Path:
+        description: Recommended but optional reference to the JSON Path of the field with error, e.g., Data.Initiation.InstructedAmount.Currency
+        type: string
+        minLength: 1
+        maxLength: 500
+      Url:
+        description: URL to help remediate the problem, or provide more information, or to API Reference, or help etc
+        type: string
+    required:
+      - ErrorCode
+      - Message
+    minProperties: 1
+  OBErrorResponse1:
+    description: An array of detail error codes, and messages, and URLs to documentation to help remediation.
+    type: object
+    properties:
+      Code:
+        description: High level textual error code, to help categorize the errors.
+        type: string
+        minLength: 1
+        maxLength: 40
+      Id:
+        description: A unique reference for the error instance, for audit purposes, in case of unknown/unclassified errors.
+        type: string
+        minLength: 1
+        maxLength: 40
+      Message:
+        description: Brief Error message, e.g., 'There is something wrong with the request parameters provided'
+        type: string
+        minLength: 1
+        maxLength: 500
+      Errors:
+        items:
+          type: object
+          properties:
+            ErrorCode:
+              description: Low level textual error code, e.g., UK.OBIE.Field.Missing
+              type: string
+              minLength: 1
+              maxLength: 128
+            Message:
+              description: |-
+                A description of the error that occurred. e.g., 'A mandatory field isn't supplied' or 'RequestedExecutionDateTime must be in future'
+                OBIE doesn't standardise this field
+              type: string
+              minLength: 1
+              maxLength: 500
+            Path:
+              description: Recommended but optional reference to the JSON Path of the field with error, e.g., Data.Initiation.InstructedAmount.Currency
+              type: string
+              minLength: 1
+              maxLength: 500
+            Url:
+              description: URL to help remediate the problem, or provide more information, or to API Reference, or help etc
+              type: string
+          required:
+            - ErrorCode
+            - Message
+          minProperties: 1
+        type: array
+        minItems: 1
+    required:
+      - Code
+      - Message
+      - Errors
+  ErrorResponse:
+    type: object
+    properties:
+      code:
+        type: string
+        enum:
+          - VALIDATION
+          - INSUFFICIENT_FUNDS
+          - LIMITS_EXCEEDED
+          - INTERNAL_SERVER_ERROR
+          - INVALID_CONSENT
+          - MISSING_ACCOUNT
+          - TOO_MANY_ACCOUNTS
+          - INVALID_ACCOUNT
+          - REQUIRES_2FA
+          - NO_2FA_REQUIRED
+          - INCORRECT_2FA_CODE
+          - INCORRECT_2FA_CODE_LAST_CHANCE
+          - CARD_CANCELLED_2FA
+          - CUSTOMER_NOT_AUTHORIZED
+          - INVALID_PAYMENT_DATE
+          - ERROR_PROCESSING_2FA
+          - FAILED_AUTHORISATION
+          - NO_ACCOUNTS_AVAILABLE
+          - ACCOUNT_SUSPENDED
+          - CUSTOMER_UNDERAGE
+          - UNABLE_PROCESS_PROVIDED_ACCOUNT
+          - INSUFFICIENT_PERMiSSIONS
+          - PAYMENT_NOT_ENABLED
+          - UNABLE_TO_PROCEED_WTH_PAYMENT
+          - UNABLE_PROCESS_SELECTED_ACCOUNT
+          - PAYMENT_EXCEEDS_CUTOFF_TIME
+          - PAYMENT_REFERENCE_INVALID
+          - LIMITS_EXCEEDED_FOR_USER
+          - LIMITS_EXCEEDED_FOR_CUSTOMER
+          - INVALID_BENEFICIARY_ACCOUNT
+          - PAYMENT_SCHEME_NOT_SUPPORTED
+          - SO_NOT_SUPPORTED
+          - END_TO_END_ID_SIZE_EXCEEDED
+      message:
+        type: string
+      field:
+        type: string
+      channelId:
+        type: string
+      customerType:
+        type: string
+        enum:
+          - PERSONAL
+          - NON_PERSONAL
+    required:
+      - code
+      - message
+  Links:
+    type: object
+    description: Links relevant to the payload
+    properties:
+      Self:
+        type: string
+        format: uri
+    required:
+      - Self
+  Meta:
+    title: MetaData
+    type: object
+    description: Meta Data relevant to the payload
+    properties:
+      TotalPages:
+        type: integer
+        format: int32

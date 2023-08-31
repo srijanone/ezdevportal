@@ -1,0 +1,35 @@
+_meta:
+  version: '1.0'
+  entity_type: block_content
+  uuid: 4d949d9d-3759-4ced-aecc-869e09953289
+  bundle: basic
+  default_langcode: en
+default:
+  status:
+    -
+      value: true
+  info:
+    -
+      value: 'Getting Started Content'
+  reusable:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  metatag:
+    -
+      tag: meta
+      attributes:
+        name: title
+        content: '| Ezdevportal'
+    -
+      tag: link
+      attributes:
+        rel: canonical
+        href: 'https://ezp.ddev.site/home'
+  body:
+    -
+      value: "<h2>Get up and running with our APIs in 5 minutes with our quick guide</h2>\r\n\r\n<p>Whether you are a researcher or developer you can easily try out our APIs without writing any code, just follow the steps below.</p>\r\n\r\n<h3>Quick Start Steps:</h3>\r\n\r\n<p>The subsequent pages will cover the following topics:</p>\r\n\r\n<ol>\r\n\t<li>Login or Create an Account</li>\r\n\t<li>Create an API key</li>\r\n\t<li>Learn about our API Docs</li>\r\n\t<li>Walkthrough an example API workflow</li>\r\n\t<li>See how to incorporate APIs in your applications</li>\r\n</ol>\r\n"
+      format: basic_html
+      summary: ''

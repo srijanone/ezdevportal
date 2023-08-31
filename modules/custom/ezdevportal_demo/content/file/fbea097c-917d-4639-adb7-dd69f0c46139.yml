@@ -1,0 +1,27 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: fbea097c-917d-4639-adb7-dd69f0c46139
+  default_langcode: en
+default:
+  uid:
+    -
+      target_id: 1
+  filename:
+    -
+      value: Consent-management.png
+  uri:
+    -
+      value: 'public://inline-images/Consent-management.png'
+  filemime:
+    -
+      value: image/png
+  filesize:
+    -
+      value: 177965
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1653328284

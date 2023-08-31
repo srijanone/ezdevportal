@@ -1,0 +1,27 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: 16c7c9ab-c453-47c8-a139-affbe05ef615
+  default_langcode: en
+default:
+  uid:
+    -
+      target_id: 1
+  filename:
+    -
+      value: Diagram-final_0.png
+  uri:
+    -
+      value: 'public://inline-images/Diagram-final_0.png'
+  filemime:
+    -
+      value: image/png
+  filesize:
+    -
+      value: 57269
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1653327410

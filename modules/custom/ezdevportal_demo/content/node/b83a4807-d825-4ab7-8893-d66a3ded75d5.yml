@@ -1,0 +1,70 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: b83a4807-d825-4ab7-8893-d66a3ded75d5
+  bundle: forum
+  default_langcode: en
+  depends:
+    bb182332-9ec8-4728-87e9-3cb011d93158: taxonomy_term
+default:
+  revision_uid:
+    -
+      target_id: 1
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 1
+  title:
+    -
+      value: 'General discussion of rest api'
+  created:
+    -
+      value: 1645779857
+  promote:
+    -
+      value: false
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  metatag:
+    -
+      tag: meta
+      attributes:
+        name: title
+        content: 'General discussion of rest api | Ezdevportal'
+    -
+      tag: meta
+      attributes:
+        name: description
+        content: 'This forum is a general discussion of rest api'
+    -
+      tag: link
+      attributes:
+        rel: canonical
+        href: 'https://ezp.ddev.site/forum/general-discussion-rest-api'
+  path:
+    -
+      alias: /forum/general-discussion-rest-api
+      langcode: en
+      pathauto: 1
+  body:
+    -
+      value: "<p>This forum is a general discussion of rest api</p>\r\n"
+      format: full_html
+      summary: ''
+  comment_forum:
+    -
+      status: 2
+      cid: 0
+      last_comment_timestamp: 1664212631
+      last_comment_name: ''
+      last_comment_uid: 1
+      comment_count: 0
+  field_forum_tags:
+    -
+      entity: bb182332-9ec8-4728-87e9-3cb011d93158

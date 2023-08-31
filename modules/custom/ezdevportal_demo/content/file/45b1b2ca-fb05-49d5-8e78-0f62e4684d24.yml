@@ -1,0 +1,27 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: 45b1b2ca-fb05-49d5-8e78-0f62e4684d24
+  default_langcode: en
+default:
+  uid:
+    -
+      target_id: 1
+  filename:
+    -
+      value: api-listing-image.png
+  uri:
+    -
+      value: 'public://2021-11/api-listing-image_1_0.png'
+  filemime:
+    -
+      value: image/png
+  filesize:
+    -
+      value: 15303
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1637659273

@@ -1,0 +1,27 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: 16f279a4-8ab9-425a-8794-c8a58c32a7f1
+  default_langcode: en
+default:
+  uid:
+    -
+      target_id: 1
+  filename:
+    -
+      value: Fintech-Sandbox.png
+  uri:
+    -
+      value: 'public://inline-images/Fintech-Sandbox.png'
+  filemime:
+    -
+      value: image/png
+  filesize:
+    -
+      value: 56136
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1653327994

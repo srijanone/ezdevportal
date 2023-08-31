@@ -1,0 +1,38 @@
+_meta:
+  version: '1.0'
+  entity_type: taxonomy_term
+  uuid: e31b3a64-f690-409f-a82c-54f7d2d2226a
+  bundle: product_available_for
+  default_langcode: en
+default:
+  status:
+    -
+      value: true
+  name:
+    -
+      value: Food
+  weight:
+    -
+      value: 0
+  parent:
+    -
+      target_id: 0
+  revision_translation_affected:
+    -
+      value: true
+  metatag:
+    -
+      tag: meta
+      attributes:
+        name: title
+        content: 'Food | Ezdevportal'
+    -
+      tag: link
+      attributes:
+        rel: canonical
+        href: 'https://ezp.ddev.site/taxonomy/term/17'
+  path:
+    -
+      alias: ''
+      langcode: en
+      pathauto: 0

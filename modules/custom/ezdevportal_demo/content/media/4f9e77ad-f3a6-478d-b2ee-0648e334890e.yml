@@ -1,0 +1,47 @@
+_meta:
+  version: '1.0'
+  entity_type: media
+  uuid: 4f9e77ad-f3a6-478d-b2ee-0648e334890e
+  bundle: image
+  default_langcode: en
+  depends:
+    afbd72ce-870a-4540-8160-a3caaa76dbe3: file
+default:
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 1
+  name:
+    -
+      value: 'banks API logo.jpeg'
+  created:
+    -
+      value: 1653398124
+  revision_translation_affected:
+    -
+      value: true
+  metatag:
+    -
+      tag: meta
+      attributes:
+        name: title
+        content: '| Ezdevportal'
+    -
+      tag: link
+      attributes:
+        rel: canonical
+        href: 'https://ezp.ddev.site/home'
+  path:
+    -
+      alias: ''
+      langcode: en
+      pathauto: 0
+  field_media_image:
+    -
+      entity: afbd72ce-870a-4540-8160-a3caaa76dbe3
+      alt: 'Bank API'
+      title: ''
+      width: 1600
+      height: 900

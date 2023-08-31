@@ -1,0 +1,64 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 4bbd1f3a-36f9-4fb1-90cb-11db5d708789
+  bundle: faq
+  default_langcode: en
+default:
+  revision_uid:
+    -
+      target_id: 1
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 1
+  title:
+    -
+      value: 'What is API Management?'
+  created:
+    -
+      value: 1637661993
+  promote:
+    -
+      value: false
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  moderation_state:
+    -
+      value: published
+  metatag:
+    -
+      tag: meta
+      attributes:
+        name: title
+        content: 'What is API Management? | Ezdevportal'
+    -
+      tag: meta
+      attributes:
+        name: description
+        content: 'What is API Management?'
+    -
+      tag: link
+      attributes:
+        rel: canonical
+        href: 'https://ezp.ddev.site/node/36'
+  path:
+    -
+      alias: ''
+      langcode: en
+      pathauto: 0
+  body:
+    -
+      value: "<p>What is API Management?</p>\r\n"
+      format: full_html
+      summary: ''
+  field_answer:
+    -
+      value: "<p>API management refers to the processes for distributing, controlling, and analyzing the&nbsp;APIs&nbsp;that&nbsp;connect applications and data&nbsp;across the enterprise and across clouds. The goal of API management is to allow organizations that create APIs or use others’ APIs to monitor activity and ensure the needs of the developers and applications using the API are being met.</p>\r\n"
+      format: full_html

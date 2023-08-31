@@ -9,7 +9,7 @@ type: 'canonical_entities:node'
 pattern: '/use-case/[node:title]'
 selection_criteria:
   935c3c09-a78a-4a1a-b7e9-11e5975ef6bc:
-    id: node_type
+    id: 'entity_bundle:node'
     bundles:
       use_case: use_case
     negate: false

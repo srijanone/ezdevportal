@@ -1,0 +1,27 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: 6f7e881a-465c-4abd-9698-b6881b1f659c
+  default_langcode: en
+default:
+  uid:
+    -
+      target_id: 1
+  filename:
+    -
+      value: Loan.yaml
+  uri:
+    -
+      value: 'public://Loan.yaml'
+  filemime:
+    -
+      value: application/octet-stream
+  filesize:
+    -
+      value: 280493
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1651764912

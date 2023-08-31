@@ -1,0 +1,58 @@
+_meta:
+  version: '1.0'
+  entity_type: block_content
+  uuid: b8da98e4-a78b-4c50-8b9f-05c00c41b4cf
+  bundle: content_cards_block
+  default_langcode: en
+  depends:
+    82f06393-bfe8-41d7-8010-ad869dea1b00: node
+    b15b3180-93a5-4d57-9767-75373b45c520: node
+    c125cd37-21cd-47f0-b51e-b98ba48407fb: node
+    4d6c6015-559a-4f84-b489-9f6668c53610: node
+default:
+  status:
+    -
+      value: true
+  info:
+    -
+      value: 'Featured Products'
+  reusable:
+    -
+      value: true
+  revision_translation_affected:
+    -
+      value: true
+  metatag:
+    -
+      tag: meta
+      attributes:
+        name: title
+        content: '| Ezdevportal'
+    -
+      tag: link
+      attributes:
+        rel: canonical
+        href: 'https://ezp.ddev.site/home'
+  field_block_position:
+    -
+      value: full
+  field_cards_layout:
+    -
+      value: 4-column
+  field_read_more_link:
+    -
+      uri: 'internal:/products'
+      title: 'Explore All Products'
+      options: {  }
+  field_referenced_nodes:
+    -
+      entity: 82f06393-bfe8-41d7-8010-ad869dea1b00
+    -
+      entity: b15b3180-93a5-4d57-9767-75373b45c520
+    -
+      entity: c125cd37-21cd-47f0-b51e-b98ba48407fb
+    -
+      entity: 4d6c6015-559a-4f84-b489-9f6668c53610
+  field_title:
+    -
+      value: 'Featured Products'

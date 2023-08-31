@@ -1,0 +1,126 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 920cd25c-7137-481b-ad97-5f796b3691e1
+  bundle: landing_page
+  default_langcode: en
+  depends:
+    d751c8f7-0a71-49b0-bff4-2d79767f1065: block_content
+default:
+  revision_uid:
+    -
+      target_id: 1
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 1
+  title:
+    -
+      value: Docs
+  created:
+    -
+      value: 1637668464
+  promote:
+    -
+      value: false
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  moderation_state:
+    -
+      value: published
+  metatag:
+    -
+      tag: meta
+      attributes:
+        name: title
+        content: 'Docs | Ezdevportal'
+    -
+      tag: link
+      attributes:
+        rel: canonical
+        href: 'https://ezp.ddev.site/docs'
+  path:
+    -
+      alias: /docs
+      langcode: en
+      pathauto: 1
+  layout_builder__layout:
+    -
+      section:
+        layout_id: layout_onecol
+        layout_settings:
+          label: 'Banner Section'
+          context_mapping: {  }
+        components:
+          -
+            uuid: 22c84aa4-db27-47f9-95e0-67de7cc1cb2d
+            region: content
+            configuration:
+              id: banner_content_block
+              label: 'Banner Content Block'
+              label_display: 0
+              provider: ezdevportal_base
+              banner_title: APIs
+              banner_text: 'Equipped with our services inventory and open API platform, we provide you the chance to reach, test, and use our digital services. Using these, you now can develop the next generation of applications.'
+              banner_image: {  }
+              context_mapping: {  }
+              banner_height: 307px
+            weight: 0
+            additional: {  }
+        third_party_settings: {  }
+    -
+      section:
+        layout_id: layout_onecol
+        layout_settings:
+          label: 'Main Section'
+          context_mapping: {  }
+          custom_id: ''
+          custom_classes: ''
+          custom_class_choose:
+            container: container
+          custom_styles: ''
+          custom_data_attributes: ''
+          regions:
+            content:
+              region_id: ''
+              region_class_choose:
+                container: 0
+              region_classes: ''
+              region_styles: ''
+              region_data: ''
+        components:
+          -
+            uuid: 687b2ce7-f587-46fb-9940-467dc4a2622f
+            region: content
+            configuration:
+              id: 'inline_block:basic'
+              label: 'Docs description'
+              label_display: 0
+              provider: layout_builder
+              view_mode: full
+              block_revision_id: '25'
+              block_serialized: null
+              context_mapping: {  }
+            weight: 0
+            additional:
+              target_uuid: d751c8f7-0a71-49b0-bff4-2d79767f1065
+          -
+            uuid: 328c2dc3-4e4e-4532-9f45-0a062159136f
+            region: content
+            configuration:
+              id: 'views_block:api_documents-all_api_docs'
+              label: ''
+              provider: views
+              label_display: 0
+              views_label: ''
+              items_per_page: none
+              context_mapping: {  }
+            weight: 1
+            additional: {  }
+        third_party_settings: {  }

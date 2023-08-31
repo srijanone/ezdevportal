@@ -1,0 +1,47 @@
+_meta:
+  version: '1.0'
+  entity_type: media
+  uuid: 0c90ba3d-a45c-4568-945d-73bf19fa44d9
+  bundle: image
+  default_langcode: en
+  depends:
+    45b1b2ca-fb05-49d5-8e78-0f62e4684d24: file
+default:
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 1
+  name:
+    -
+      value: api-listing-image.png
+  created:
+    -
+      value: 1637659266
+  revision_translation_affected:
+    -
+      value: true
+  metatag:
+    -
+      tag: meta
+      attributes:
+        name: title
+        content: '| Ezdevportal'
+    -
+      tag: link
+      attributes:
+        rel: canonical
+        href: 'https://ezp.ddev.site/home'
+  path:
+    -
+      alias: ''
+      langcode: en
+      pathauto: 0
+  field_media_image:
+    -
+      entity: 45b1b2ca-fb05-49d5-8e78-0f62e4684d24
+      alt: 'API Listing Image'
+      title: ''
+      width: 165
+      height: 107

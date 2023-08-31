@@ -1,0 +1,27 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: af88d065-2bb1-485b-beae-153c3267360c
+  default_langcode: en
+default:
+  uid:
+    -
+      target_id: 1
+  filename:
+    -
+      value: 'payment logo.jpeg'
+  uri:
+    -
+      value: 'public://2022-05/payment logo.jpeg'
+  filemime:
+    -
+      value: image/jpeg
+  filesize:
+    -
+      value: 26751
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1653398185

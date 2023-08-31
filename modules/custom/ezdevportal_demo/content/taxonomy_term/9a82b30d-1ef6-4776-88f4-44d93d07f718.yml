@@ -1,0 +1,38 @@
+_meta:
+  version: '1.0'
+  entity_type: taxonomy_term
+  uuid: 9a82b30d-1ef6-4776-88f4-44d93d07f718
+  bundle: units
+  default_langcode: en
+default:
+  status:
+    -
+      value: true
+  name:
+    -
+      value: P
+  weight:
+    -
+      value: 0
+  parent:
+    -
+      target_id: 0
+  revision_translation_affected:
+    -
+      value: true
+  metatag:
+    -
+      tag: meta
+      attributes:
+        name: title
+        content: 'P | Ezdevportal'
+    -
+      tag: link
+      attributes:
+        rel: canonical
+        href: 'https://ezp.ddev.site/taxonomy/term/21'
+  path:
+    -
+      alias: ''
+      langcode: en
+      pathauto: 0

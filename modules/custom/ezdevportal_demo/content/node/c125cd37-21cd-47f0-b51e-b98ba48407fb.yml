@@ -1,0 +1,88 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: c125cd37-21cd-47f0-b51e-b98ba48407fb
+  bundle: api_product
+  default_langcode: en
+  depends:
+    d8403297-5272-48b4-87c5-66405b9837e8: node
+    407caf1b-f14d-4790-8bd2-887e9f1bdf31: taxonomy_term
+    68776024-7d44-46ef-8b37-fd8dbeb1a5c7: media
+    a6d7e857-4a88-4ee5-9a2c-a4c2e1755b21: taxonomy_term
+    bf036be9-4c22-4b05-9b62-997d72846949: taxonomy_term
+default:
+  revision_uid:
+    -
+      target_id: 1
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 1
+  title:
+    -
+      value: 'Payment Management Product'
+  created:
+    -
+      value: 1637664419
+  promote:
+    -
+      value: false
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  moderation_state:
+    -
+      value: published
+  metatag:
+    -
+      tag: meta
+      attributes:
+        name: title
+        content: 'Payment Management Product | Ezdevportal'
+    -
+      tag: meta
+      attributes:
+        name: description
+        content: 'The API supports a variety of payment types from business and personal accounts, leveraging the financial grade security customers expect and demand.'
+    -
+      tag: link
+      attributes:
+        rel: canonical
+        href: 'https://ezp.ddev.site/api-product/payment-management-product'
+  path:
+    -
+      alias: /api-product/payment-management-product
+      langcode: en
+      pathauto: 1
+  body:
+    -
+      value: "<p>The API supports a variety of payment types from business and personal accounts, leveraging the financial grade security customers expect and demand.</p>\r\n"
+      format: full_html
+      summary: ''
+  field_api_specifications:
+    -
+      entity: d8403297-5272-48b4-87c5-66405b9837e8
+  field_environment:
+    -
+      entity: 407caf1b-f14d-4790-8bd2-887e9f1bdf31
+  field_listing_image:
+    -
+      entity: 68776024-7d44-46ef-8b37-fd8dbeb1a5c7
+  field_product_available_for:
+    -
+      entity: a6d7e857-4a88-4ee5-9a2c-a4c2e1755b21
+  field_product_category:
+    -
+      entity: bf036be9-4c22-4b05-9b62-997d72846949
+  field_product_version:
+    -
+      value: '1.3'
+  field_summary:
+    -
+      value: "<p>The Payments Initiation API enables applications to make payments directly from a customer's account. Customers remain in control, providing approval for each payment.</p>\r\n"
+      format: full_html

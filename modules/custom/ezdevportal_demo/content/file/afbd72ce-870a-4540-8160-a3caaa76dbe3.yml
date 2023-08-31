@@ -1,0 +1,27 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: afbd72ce-870a-4540-8160-a3caaa76dbe3
+  default_langcode: en
+default:
+  uid:
+    -
+      target_id: 1
+  filename:
+    -
+      value: 'banks API logo.jpeg'
+  uri:
+    -
+      value: 'public://2022-05/banks API logo.jpeg'
+  filemime:
+    -
+      value: image/jpeg
+  filesize:
+    -
+      value: 100638
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1653398124

@@ -1,0 +1,57 @@
+_meta:
+  version: '1.0'
+  entity_type: block_content
+  uuid: 4cc2fd4e-d6cc-4bca-80fe-71998a8b713d
+  bundle: content_cards_block
+  default_langcode: en
+  depends:
+    283507d1-bddf-499b-9e34-f78679a4b053: node
+    6cfe5ad1-6565-4800-9c51-319bfa609e37: node
+    5f26d82c-271d-4a59-91d9-7136373a5324: node
+    6155793b-a5d3-49e4-bb2b-0df2ab5af9f4: node
+default:
+  status:
+    -
+      value: true
+  info:
+    -
+      value: 'Get Started'
+  reusable:
+    -
+      value: true
+  revision_translation_affected:
+    -
+      value: true
+  metatag:
+    -
+      tag: meta
+      attributes:
+        name: title
+        content: '| Ezdevportal'
+    -
+      tag: link
+      attributes:
+        rel: canonical
+        href: 'https://ezp.ddev.site/home'
+  field_block_background_color:
+    -
+      color: '#EAF1FF'
+      opacity: 0.0
+  field_block_position:
+    -
+      value: centered
+  field_cards_layout:
+    -
+      value: 4-column
+  field_referenced_nodes:
+    -
+      entity: 283507d1-bddf-499b-9e34-f78679a4b053
+    -
+      entity: 6cfe5ad1-6565-4800-9c51-319bfa609e37
+    -
+      entity: 5f26d82c-271d-4a59-91d9-7136373a5324
+    -
+      entity: 6155793b-a5d3-49e4-bb2b-0df2ab5af9f4
+  field_title:
+    -
+      value: 'Get Started'

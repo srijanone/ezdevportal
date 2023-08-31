@@ -1,0 +1,38 @@
+_meta:
+  version: '1.0'
+  entity_type: taxonomy_term
+  uuid: d6d9782f-f488-4af0-821e-fb05ce8dca90
+  bundle: product_available_for
+  default_langcode: en
+default:
+  status:
+    -
+      value: true
+  name:
+    -
+      value: Automobile
+  weight:
+    -
+      value: 0
+  parent:
+    -
+      target_id: 0
+  revision_translation_affected:
+    -
+      value: true
+  metatag:
+    -
+      tag: meta
+      attributes:
+        name: title
+        content: 'Automobile | Ezdevportal'
+    -
+      tag: link
+      attributes:
+        rel: canonical
+        href: 'https://ezp.ddev.site/taxonomy/term/15'
+  path:
+    -
+      alias: ''
+      langcode: en
+      pathauto: 0

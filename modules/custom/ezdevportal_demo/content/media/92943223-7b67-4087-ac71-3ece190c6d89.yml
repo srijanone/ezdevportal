@@ -1,0 +1,47 @@
+_meta:
+  version: '1.0'
+  entity_type: media
+  uuid: 92943223-7b67-4087-ac71-3ece190c6d89
+  bundle: image
+  default_langcode: en
+  depends:
+    a204712e-b05e-4113-8fc4-452014ff8754: file
+default:
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 1
+  name:
+    -
+      value: Usecases-page-icon.png
+  created:
+    -
+      value: 1637659090
+  revision_translation_affected:
+    -
+      value: true
+  metatag:
+    -
+      tag: meta
+      attributes:
+        name: title
+        content: '| Ezdevportal'
+    -
+      tag: link
+      attributes:
+        rel: canonical
+        href: 'https://ezp.ddev.site/home'
+  path:
+    -
+      alias: ''
+      langcode: en
+      pathauto: 0
+  field_media_image:
+    -
+      entity: a204712e-b05e-4113-8fc4-452014ff8754
+      alt: 'Use Cases Landing page'
+      title: ''
+      width: 43
+      height: 43
