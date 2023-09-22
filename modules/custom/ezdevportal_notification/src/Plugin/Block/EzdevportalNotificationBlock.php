@@ -2,14 +2,14 @@
 
 namespace Drupal\ezdevportal_notification\Plugin\Block;
 
-use Drupal\Core\Block\BlockBase;
-use Drupal\Core\Database\Connection;
 use Drupal\Core\Access\AccessResult;
-use Drupal\Core\Session\AccountInterface;
-use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
-use Symfony\Component\DependencyInjection\ContainerInterface;
+use Drupal\Core\Block\BlockBase;
 use Drupal\Core\Block\BlockPluginInterface;
+use Drupal\Core\Database\Connection;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
+use Drupal\Core\Session\AccountInterface;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * Provides a block with list of notification items.
@@ -130,7 +130,7 @@ class EzdevportalNotificationBlock extends BlockBase implements ContainerFactory
     $clerallQuery->orderBy('nca.id', 'DESC');
     $ncaRes = $clerallQuery->execute()->fetchObject();
 
-    $startingNotiId = isset($ncaRes->notification_id) ? $ncaRes->notification_id : 0;
+    $startingNotiId = $ncaRes->notification_id ?? 0;
 
     $query = $connection->select('notifications', 'n');
     $query->fields('n', [
@@ -180,8 +180,8 @@ class EzdevportalNotificationBlock extends BlockBase implements ContainerFactory
         $nasQuery->condition('nas.notification_id', $notification->id);
         $nasRes = $nasQuery->execute()->fetchObject();
 
-        $nasId  = isset($nasRes->id) ? $nasRes->id : '';
-        $status = isset($nasRes->status) ? $nasRes->status : 0;
+        $nasId  = $nasRes->id ?? '';
+        $status = $nasRes->status ?? 0;
 
         if ($status == 2) {
           continue;

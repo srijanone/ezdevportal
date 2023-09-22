@@ -2,15 +2,17 @@
 
 namespace Drupal\ezdevportal_api_documents\Form;
 
-use Drupal\node\NodeInterface;
-use Drupal\Core\Form\FormBase;
-use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Ajax\AjaxResponse;
 use Drupal\Core\Ajax\RedirectCommand;
+use Drupal\Core\Entity\EntityTypeManagerInterface;
+use Drupal\Core\Form\FormBase;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Routing\RouteMatchInterface;
 use Drupal\Core\Url;
+use Drupal\node\NodeInterface;
+use Drupal\path_alias\AliasManager;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpFoundation\RequestStack;
-use Drupal\path_alias\AliasManager;
 
 /**
  * Form to provide option for the UI formatter for API.
@@ -32,6 +34,20 @@ class ApiFormatterOptionsForm extends FormBase {
   protected $aliasManager;
 
   /**
+   * The route match service.
+   *
+   * @var \Drupal\Core\Routing\RouteMatchInterface
+   */
+  protected $routeMatch;
+
+  /**
+   * The entity type manager.
+   *
+   * @var \Drupal\Core\Entity\EntityTypeManagerInterface
+   */
+  protected $entityTypeManager;
+
+  /**
    * {@inheritdoc}
    */
   public function getFormId() {
@@ -45,10 +61,16 @@ class ApiFormatterOptionsForm extends FormBase {
    *   The plugin request stack service.
    * @param Drupal\path_alias\AliasManager $path_alias
    *   The plugin path alias service.
+   * @param \Drupal\Core\Routing\RouteMatchInterface $routeMatch
+   *   The route match service.
+   * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entity_type_manager
+   *   The entity type manager.
    */
-  public function __construct(RequestStack $request_stack, AliasManager $path_alias) {
+  public function __construct(RequestStack $request_stack, AliasManager $path_alias, RouteMatchInterface $routeMatch, EntityTypeManagerInterface $entity_type_manager) {
     $this->currentPath = $request_stack;
     $this->aliasManager = $path_alias;
+    $this->routeMatch = $routeMatch;
+    $this->entityTypeManager = $entity_type_manager;
   }
 
   /**
@@ -57,7 +79,10 @@ class ApiFormatterOptionsForm extends FormBase {
   public static function create(ContainerInterface $container) {
     return new static(
       $container->get('request_stack'),
-      $container->get('path_alias.manager')
+      $container->get('path_alias.manager'),
+      $container->get('current_route_match'),
+      $container->get('entity_type.manager')
+
     );
   }
 
@@ -74,10 +99,10 @@ class ApiFormatterOptionsForm extends FormBase {
 
     // Get node based on whether revision feature is enabled.
     if (empty($this->path_info[4])) {
-      $node = \Drupal::routeMatch()->getParameter('node');
+      $node = $this->routeMatch->getParameter('node');
     }
     else {
-      $node = \Drupal::entityTypeManager()->getStorage('node')->loadRevision($this->path_info[4]);
+      $node = $this->entityTypeManager->getStorage('node')->loadRevision($this->path_info[4]);
     }
 
     if ($node instanceof NodeInterface &&

@@ -3,14 +3,14 @@
 namespace Drupal\ezdevportal_dashboard\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
+use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
-use Symfony\Component\DependencyInjection\ContainerInterface;
-use Symfony\Component\HttpFoundation\RequestStack;
-use Drupal\path_alias\AliasManager;
-use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Session\AccountInterface;
 use Drupal\ezdevportal_dashboard\DashboardHelper;
+use Drupal\path_alias\AliasManager;
+use Symfony\Component\DependencyInjection\ContainerInterface;
+use Symfony\Component\HttpFoundation\RequestStack;
 
 /**
  * Provides a 'Dashboard Navigation' Block.
@@ -185,7 +185,8 @@ class DashboardNavigationBlock extends BlockBase implements ContainerFactoryPlug
     if (!empty($this->configuration['dashboard_sidebar_navigation'])) {
       $navigation = $this->configuration['dashboard_sidebar_navigation'];
 
-      $parameters = \Drupal::request()->query->all();
+      $request = $this->currentPath->getCurrentRequest();
+      $parameters = $request->query->all();
 
       foreach ($navigation as $key => $value) {
         $navigation[$key]['class'] = $this->navDashboardData->getNavigationClass($value['type']);

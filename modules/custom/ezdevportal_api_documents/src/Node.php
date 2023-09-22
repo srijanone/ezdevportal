@@ -3,8 +3,8 @@
 namespace Drupal\ezdevportal_api_documents;
 
 use Drupal\Core\Database\Connection;
-use Drupal\Core\Logger\LoggerChannelTrait;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
+use Drupal\Core\Logger\LoggerChannelTrait;
 
 /**
  * Node class to handle node functionalities.

@@ -2,9 +2,9 @@
 
 namespace Drupal\Tests\ezdevportal_dashboard\Unit;
 
-use Drupal\Tests\UnitTestCase;
-use Drupal\ezdevportal_dashboard\DashboardHelper;
 use Drupal\Core\DependencyInjection\ContainerBuilder;
+use Drupal\ezdevportal_dashboard\DashboardHelper;
+use Drupal\Tests\UnitTestCase;
 
 /**
  * Simple test to ensure that asserts pass.

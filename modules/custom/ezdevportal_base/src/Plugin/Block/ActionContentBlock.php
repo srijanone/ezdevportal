@@ -3,15 +3,15 @@
 namespace Drupal\ezdevportal_base\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
-use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\File\FileUrlGeneratorInterface;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Path\PathValidatorInterface;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
+use Drupal\Core\Url;
+use Drupal\path_alias\AliasManager;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpFoundation\RequestStack;
-use Drupal\path_alias\AliasManager;
-use Drupal\Core\Entity\EntityTypeManagerInterface;
-use Drupal\Core\Url;
-use Drupal\Core\Path\PathValidatorInterface;
 
 /**
  * Provides a Action Content block.
@@ -204,7 +204,10 @@ class ActionContentBlock extends BlockBase implements ContainerFactoryPluginInte
         '#title' => $this->configuration[$i]['action_url_text'],
         "#weight" => 1,
         '#url' => $path,
-        '#attributes' => ['target' => '_blank', 'class' => 'btn-subscribe ' . $cus_class],
+        '#attributes' => [
+          'target' => '_blank',
+          'class' => 'btn-subscribe ' . $cus_class,
+        ],
       ];
 
       $webform = $this->configuration[$i]['webform'];

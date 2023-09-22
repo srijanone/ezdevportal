@@ -33,8 +33,8 @@
 
 /*login etc having button class*/
 .developer-app-add-for-developer-form button[type=submit],
-.node--type-forum button[type=submit], 
-.node-forum-form button[type=submit], 
+.node--type-forum button[type=submit],
+.node-forum-form button[type=submit],
 .node-issue-form button[type=submit],
 .page-user-login .form-submit,
 .page-user-password .form-submit,
@@ -87,12 +87,12 @@
 .content-list-inner-wrap,
 .slider-background,
 .content-cards-centered-wrapper {
-  background: #EAF1FF;
+  background: #eaf1ff;
 }
 
 .dropdown-menu.notify-drop .drop-content li a,
 .d-notification i::before,
-.region-featured-bottom-first .block-action-content-block .btn-subscribe{
+.region-featured-bottom-first .block-action-content-block .btn-subscribe {
   color: #333333 !important;
 }
 

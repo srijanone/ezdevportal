@@ -2,15 +2,17 @@
 
 namespace Drupal\ezdevportal_base\Plugin\Block;
 
-use Drupal\Core\Url;
 use Drupal\Core\Block\BlockBase;
-use Drupal\path_alias\AliasManager;
-use Drupal\Core\Form\FormStateInterface;
-use Drupal\Core\File\FileUrlGeneratorInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
-use Symfony\Component\HttpFoundation\RequestStack;
+use Drupal\Core\File\FileUrlGeneratorInterface;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Path\CurrentPathStack;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
+use Drupal\Core\StringTranslation\StringTranslationTrait;
+use Drupal\Core\Url;
+use Drupal\path_alias\AliasManager;
 use Symfony\Component\DependencyInjection\ContainerInterface;
+use Symfony\Component\HttpFoundation\RequestStack;
 
 /**
  * Provides a Banner Content block.
@@ -22,6 +24,8 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  * )
  */
 class BannerContentBlock extends BlockBase implements ContainerFactoryPluginInterface {
+
+  use StringTranslationTrait;
 
   /**
    * The current path.
@@ -59,6 +63,13 @@ class BannerContentBlock extends BlockBase implements ContainerFactoryPluginInte
   protected $fileUrlGenerator;
 
   /**
+   * The current path stack service.
+   *
+   * @var \Drupal\Core\Path\CurrentPathStack
+   */
+  protected $currentPathStack;
+
+  /**
    * Bannercontent constructor.
    *
    * @param array $configuration
@@ -75,6 +86,8 @@ class BannerContentBlock extends BlockBase implements ContainerFactoryPluginInte
    *   The Entity Manager.
    * @param Drupal\Core\File\FileUrlGeneratorInterface $file_url_generator
    *   The file url generator.
+   * @param \Drupal\Core\Path\CurrentPathStack $currentPathStack
+   *   The current path stack service.
    */
   public function __construct(
       array $configuration,
@@ -83,13 +96,15 @@ class BannerContentBlock extends BlockBase implements ContainerFactoryPluginInte
       RequestStack $request_stack,
       AliasManager $alias_manager,
       EntityTypeManagerInterface $entity_type_manager,
-      FileUrlGeneratorInterface $file_url_generator) {
+      FileUrlGeneratorInterface $file_url_generator,
+      CurrentPathStack $currentPathStack) {
     parent::__construct($configuration, $plugin_id, $plugin_definition);
     $this->currentPath = $request_stack;
     $this->aliasManager = $alias_manager;
     $this->entityTypeManager = $entity_type_manager;
     $this->fileStorage = $entity_type_manager->getStorage('file');
     $this->fileUrlGenerator = $file_url_generator;
+    $this->currentPathStack = $currentPathStack;
   }
 
   /**
@@ -103,7 +118,8 @@ class BannerContentBlock extends BlockBase implements ContainerFactoryPluginInte
       $container->get('request_stack'),
       $container->get('path_alias.manager'),
       $container->get('entity_type.manager'),
-      $container->get('file_url_generator')
+      $container->get('file_url_generator'),
+      $container->get('path.current')
     );
   }
 
@@ -115,7 +131,7 @@ class BannerContentBlock extends BlockBase implements ContainerFactoryPluginInte
     $build = [];
     $banner_image = [];
 
-    $current_path = \Drupal::service('path.current')->getPath();
+    $current_path = $this->currentPathStack->getPath();
     $array_node = explode('/', $current_path);
     $nid = end($array_node);
     $node = $this->entityTypeManager->getStorage('node')->load($nid);
@@ -209,7 +225,7 @@ class BannerContentBlock extends BlockBase implements ContainerFactoryPluginInte
 
     $form['banner_image'] = [
       '#type' => 'managed_file',
-      '#title' => t('Banner Image'),
+      '#title' => $this->t('Banner Image'),
       '#upload_validators' => [
         'file_validate_extensions' => ['gif png jpg jpeg'],
         'file_validate_size' => [25600000],

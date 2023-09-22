@@ -2,11 +2,12 @@
 
 namespace Drupal\ezdevportal_user\Plugin\Block;
 
+use Drupal\Core\Access\AccessResult;
 use Drupal\Core\Block\BlockBase;
 use Drupal\Core\Form\FormBuilderInterface;
-use Drupal\Core\Session\AccountInterface;
-use Drupal\Core\Access\AccessResult;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Core\Session\AccountInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
@@ -28,6 +29,13 @@ class EzdevportalUserChangepwd extends BlockBase implements ContainerFactoryPlug
   protected $formBuilder;
 
   /**
+   * The route match service.
+   *
+   * @var \Drupal\Core\Routing\RouteMatchInterface
+   */
+  protected $routeMatch;
+
+  /**
    * Ezdevportal User Changepwd constructor.
    *
    * @param array $configuration
@@ -38,10 +46,13 @@ class EzdevportalUserChangepwd extends BlockBase implements ContainerFactoryPlug
    *   The plugin implementation definition.
    * @param \Drupal\Core\Form\FormBuilderInterface $formBuilder
    *   The plugin implementation formBuilder.
+   * @param \Drupal\Core\Routing\RouteMatchInterface $routeMatch
+   *   The route match service.
    */
-  public function __construct(array $configuration, $plugin_id, $plugin_definition, FormBuilderInterface $formBuilder) {
+  public function __construct(array $configuration, $plugin_id, $plugin_definition, FormBuilderInterface $formBuilder, RouteMatchInterface $routeMatch) {
     parent::__construct($configuration, $plugin_id, $plugin_definition);
     $this->formBuilder = $formBuilder;
+    $this->routeMatch = $routeMatch;
   }
 
   /**
@@ -52,7 +63,8 @@ class EzdevportalUserChangepwd extends BlockBase implements ContainerFactoryPlug
       $configuration,
       $plugin_id,
       $plugin_definition,
-      $container->get('form_builder')
+      $container->get('form_builder'),
+      $container->get('current_route_match')
     );
   }
 
@@ -68,7 +80,7 @@ class EzdevportalUserChangepwd extends BlockBase implements ContainerFactoryPlug
    */
   protected function blockAccess(AccountInterface $account) {
 
-    return AccessResult::allowedIf(\Drupal::routeMatch()->getRouteName() == 'entity.user.canonical')
+    return AccessResult::allowedIf($this->routeMatch->getRouteName() == 'entity.user.canonical')
       ->cachePerUser();
   }
 
