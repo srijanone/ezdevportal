@@ -2,8 +2,8 @@
 
 namespace Drupal\Tests\ezdevportal_product\Unit;
 
-use Drupal\Tests\UnitTestCase;
 use Drupal\ezdevportal_product\ProductHelper;
+use Drupal\Tests\UnitTestCase;
 
 /**
  * Simple test to ensure that asserts pass.

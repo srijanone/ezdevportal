@@ -2,16 +2,16 @@
 
 namespace Drupal\ezdevportal_dashboard\Plugin\Block;
 
+use Drupal\Core\Access\AccessResult;
 use Drupal\Core\Block\BlockBase;
+use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
-use Symfony\Component\DependencyInjection\ContainerInterface;
-use Symfony\Component\HttpFoundation\RequestStack;
-use Drupal\path_alias\AliasManager;
-use Drupal\Core\Entity\EntityTypeManagerInterface;
+use Drupal\Core\Routing\RouteMatchInterface;
 use Drupal\Core\Session\AccountInterface;
-use Drupal\Core\Access\AccessResult;
 use Drupal\ezdevportal_dashboard\DashboardHelper;
+use Drupal\path_alias\AliasManager;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * Provides a 'Developer Navigation' Block.
@@ -25,11 +25,11 @@ use Drupal\ezdevportal_dashboard\DashboardHelper;
 class DeveloperNavigationBlock extends BlockBase implements ContainerFactoryPluginInterface {
 
   /**
-   * The current path.
+   * The route match service.
    *
-   * @var \Symfony\Component\HttpFoundation\RequestStack
+   * @var \Drupal\Core\Routing\RouteMatchInterface
    */
-  protected $currentPath;
+  protected $routeMatch;
 
   /**
    * The path alias manager.
@@ -68,28 +68,29 @@ class DeveloperNavigationBlock extends BlockBase implements ContainerFactoryPlug
    *   The plugin_id for the plugin instance.
    * @param mixed $plugin_definition
    *   The plugin implementation definition.
-   * @param \Symfony\Component\HttpFoundation\RequestStack $request_stack
-   *   The plugin request stack service.
    * @param \Drupal\Core\Path\AliasManager $alias_manager
    *   The path alias manager.
    * @param Drupal\Core\Entity\EntityTypeManagerInterface $entity_type_manager
    *   The Entity Manager.
    * @param \Drupal\Core\Session\AccountInterface $account
    *   The current user account.
+   * @param \Drupal\Core\Routing\RouteMatchInterface $routeMatch
+   *   The route match service.
    */
   public function __construct(
     array $configuration,
     $plugin_id,
     $plugin_definition,
-    RequestStack $request_stack,
     AliasManager $alias_manager,
     EntityTypeManagerInterface $entity_type_manager,
-  AccountInterface $account) {
+  AccountInterface $account,
+  RouteMatchInterface $routeMatch
+  ) {
     parent::__construct($configuration, $plugin_id, $plugin_definition);
-    $this->currentPath = $request_stack;
     $this->aliasManager = $alias_manager;
     $this->entityTypeManager = $entity_type_manager;
     $this->currentUser = $account;
+    $this->routeMatch = $routeMatch;
     $this->navData = new DashboardHelper();
   }
 
@@ -101,10 +102,10 @@ class DeveloperNavigationBlock extends BlockBase implements ContainerFactoryPlug
       $configuration,
       $plugin_id,
       $plugin_definition,
-      $container->get('request_stack'),
       $container->get('path_alias.manager'),
       $container->get('entity_type.manager'),
-      $container->get('current_user')
+      $container->get('current_user'),
+      $container->get('current_route_match')
     );
   }
 
@@ -214,7 +215,7 @@ class DeveloperNavigationBlock extends BlockBase implements ContainerFactoryPlug
 
     $route_name = ['user.login', 'user.pass', 'user.register'];
 
-    if (in_array(\Drupal::routeMatch()->getRouteName(), $route_name)) {
+    if (in_array($this->routeMatch->getRouteName(), $route_name)) {
       return AccessResult::forbidden();
     }
     else {

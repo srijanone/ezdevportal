@@ -72,4 +72,5 @@ class EzdevportalSocialAuthLoginBlock extends BlockBase implements ContainerFact
       '#social_networks' => $networks,
     ];
   }
+
 }

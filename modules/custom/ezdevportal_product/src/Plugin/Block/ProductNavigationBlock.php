@@ -3,13 +3,13 @@
 namespace Drupal\ezdevportal_product\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
+use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
+use Drupal\ezdevportal_product\ProductHelper;
+use Drupal\path_alias\AliasManager;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpFoundation\RequestStack;
-use Drupal\path_alias\AliasManager;
-use Drupal\Core\Entity\EntityTypeManagerInterface;
-use Drupal\ezdevportal_product\ProductHelper;
 
 /**
  * Provides a 'Product Navigation' Block.
@@ -178,7 +178,8 @@ class ProductNavigationBlock extends BlockBase implements ContainerFactoryPlugin
 
     if (!empty($this->configuration['product_sidebar_navigation'])) {
       $navigation = $this->configuration['product_sidebar_navigation'];
-      $parameters = \Drupal::request()->query->all();
+      $request = $this->currentPath->getCurrentRequest();
+      $parameters = $request->query->all();
       foreach ($navigation as $key => $value) {
 
         // Set class-name of navigation link.

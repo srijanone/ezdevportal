@@ -29,15 +29,6 @@ class RapiDocUIFormatter extends FileFormatterBase {
   /**
    * {@inheritdoc}
    */
-  public function view(FieldItemListInterface $items, $langcode = NULL) {
-    return parent::view($items, $langcode);
-    // Library cannot be attached here. Need to be added inline in twig.
-    // $elements['#attached']['library'][] = 'ezdevportal_rapidoc_formatter/rapidoc';.
-  }
-
-  /**
-   * {@inheritdoc}
-   */
   public function viewElements(FieldItemListInterface $items, $langcode) {
     $element = [];
     foreach ($this->getEntitiesToView($items, $langcode) as $delta => $file) {

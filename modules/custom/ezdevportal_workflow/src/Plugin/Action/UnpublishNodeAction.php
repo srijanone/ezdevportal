@@ -2,11 +2,11 @@
 
 namespace Drupal\ezdevportal_workflow\Plugin\Action;
 
-use Drupal\views_bulk_operations\Action\ViewsBulkOperationsActionBase;
+use Drupal\Core\Access\AccessResult;
+use Drupal\Core\Entity\ContentEntityInterface;
 use Drupal\Core\Session\AccountInterface;
 use Drupal\Core\StringTranslation\StringTranslationTrait;
-use Drupal\Core\Entity\ContentEntityInterface;
-use Drupal\Core\Access\AccessResult;
+use Drupal\views_bulk_operations\Action\ViewsBulkOperationsActionBase;
 
 /**
  * Content moderation unpublish node.

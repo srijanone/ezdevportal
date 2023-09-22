@@ -2,10 +2,12 @@
 
 namespace Drupal\ezdevportal_user\Form;
 
-use Drupal\user\Entity\User;
+use Drupal\Core\Config\ConfigFactoryInterface;
+use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Password\PasswordInterface;
+use Drupal\Core\Session\AccountInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
@@ -28,13 +30,43 @@ class ChangePasswordForm extends FormBase {
   protected $userProfile;
 
   /**
+   * Current user account.
+   *
+   * @var \Drupal\Core\Session\AccountInterface
+   */
+  protected $currentUser;
+
+  /**
+   * The configuration factory.
+   *
+   * @var \Drupal\Core\Config\ConfigFactoryInterface
+   */
+  protected $configFactory;
+
+  /**
+   * The entity type manager.
+   *
+   * @var \Drupal\Core\Entity\EntityTypeManagerInterface
+   */
+  protected $entityTypeManager;
+
+  /**
    * Constructs a UserPasswordForm object.
    *
    * @param \Drupal\Core\Password\PasswordInterface $password_hasher
    *   The password service.
+   * @param \Drupal\Core\Session\AccountInterface $current_user
+   *   The current user.
+   * @param \Drupal\Core\Config\ConfigFactoryInterface $config_factory
+   *   The configuration factory.
+   * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entity_type_manager
+   *   The entity type manager.
    */
-  public function __construct(PasswordInterface $password_hasher) {
+  public function __construct(PasswordInterface $password_hasher, AccountInterface $current_user, ConfigFactoryInterface $config_factory, EntityTypeManagerInterface $entity_type_manager) {
     $this->passwordHasher = $password_hasher;
+    $this->currentUser = $current_user;
+    $this->configFactory = $config_factory;
+    $this->entityTypeManager = $entity_type_manager;
   }
 
   /**
@@ -42,7 +74,10 @@ class ChangePasswordForm extends FormBase {
    */
   public static function create(ContainerInterface $container) {
     return new static(
-      $container->get('password')
+      $container->get('password'),
+      $container->get('current_user'),
+      $container->get('config.factory'),
+      $container->get('entity_type.manager')
     );
   }
 
@@ -63,9 +98,9 @@ class ChangePasswordForm extends FormBase {
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
     /** @var \Drupal\user\UserInterface $account */
-    $this->userProfile = $account = User::load(\Drupal::currentUser()->id());
-    $user = $this->currentUser();
-    $config = \Drupal::config('user.settings');
+    $this->userProfile = $account = $this->entityTypeManager->getStorage('user')->load($this->currentUser->id());
+    $user = $this->currentUser;
+    $config = $this->configFactory->get('user.settings');
     $form['#cache']['tags'] = $config->getCacheTags();
     $register = $account->isAnonymous();
 
@@ -117,7 +152,7 @@ class ChangePasswordForm extends FormBase {
   public function validateForm(array &$form, FormStateInterface $form_state) {
     $current_pass_input = trim($form_state->getValue('current_pass'));
     if ($current_pass_input) {
-      $user = User::load(\Drupal::currentUser()->id());
+      $user = $account = $this->entityTypeManager->getStorage('user')->load($this->currentUser->id());
       if (!$this->passwordHasher->check($current_pass_input, $user->getPassword())) {
         $form_state->setErrorByName('current_pass', $this->t('The current password you provided is incorrect.'));
       }
@@ -128,7 +163,7 @@ class ChangePasswordForm extends FormBase {
    * {@inheritdoc}
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
-    $user = User::load($this->userProfile->id());
+    $user = $account = $this->entityTypeManager->getStorage('user')->load($this->userProfile->id());
     $user->setPassword($form_state->getValue('pass'));
     $user->save();
     $this->messenger()->addStatus($this->t('Your password has been changed.'));
