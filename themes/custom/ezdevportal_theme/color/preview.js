@@ -21,18 +21,18 @@
             var $colorPreview = $form.find('.color-preview');
             var $colorPalette = $form.find('.js-color-palette');
 
-            $colorPreview.find('.color-preview-tags li').hover(function (){
+            $colorPreview.find('.color-preview-tags li').hover(function () {
                 $(this).css('background-color', $colorPalette.find('input[name="palette[discovermoretagsbghover]"]').val());
                 $(this).css('color', $colorPalette.find('input[name="palette[discovermoretagshover]"]').val());
             },
-            function (){
+            function () {
                 $(this).css('background-color', $colorPalette.find('input[name="palette[discovermoretagsbg]"]').val());
                 $(this).css('color', $colorPalette.find('input[name="palette[discovermoretagscolor]"]').val());
             });
-            $colorPreview.find('.color-preview-main-menu-links a').hover(function (){
+            $colorPreview.find('.color-preview-main-menu-links a').hover(function () {
                 $(this).css('border-color', $colorPalette.find('input[name="palette[menulinkhover]"]').val());
             },
-            function (){
+            function () {
                 $(this).css('border-color', $colorPalette.find('input[name="palette[menulinkhover]"]').val());
             });
 
@@ -54,7 +54,6 @@
             $colorPreview.find('.color-preview-tags li:hover').css('background', $colorPalette.find('input[name="palette[discovermoretagsbghover]"]').val());
             var footerbg = $colorPalette.find('input[name="palette[footerbg]"]').val();
             $colorPreview.find('.color-preview-footer-wrapper').css('background', $colorPalette.find('input[name="palette[footerbg]"]').val());
-          
         }
     };
 })(jQuery, Drupal, drupalSettings);
